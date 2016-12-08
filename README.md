@@ -1,4 +1,4 @@
-# loklak
+# apps.loklak.org
 [![Build Status](https://travis-ci.org/loklak/loklak_server.svg?branch=master)](https://travis-ci.org/fossasia/apps.loklak.org)
 [![Join the chat at https://gitter.im/loklak/loklak](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/loklak/loklak)
 [![Percentage of issues still open](http://isitmaintained.com/badge/open/fossasia/apps.loklak.org.svg)](http://isitmaintained.com/project/fossasia/apps.loklak.org "Percentage of issues still open")
