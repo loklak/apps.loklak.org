@@ -52,37 +52,37 @@ Some of the applications in the repository include-
 ## How to create a loklak app
 
 1. Create your app
-  - make a subdirectory in ```fossasia/apps.loklak.org/[your-app]``` folder
-  - add at least three files into this folder, named ```index.html```, ```app.json``` and ```screenshot.png```.
+  - Make a subdirectory in ```fossasia/apps.loklak.org/[your-app]``` folder
+  - Add at least three files into this folder, named ```index.html```, ```app.json``` and ```screenshot.png```.
     For an easy quick-start, use and copy the app boilerplate from
     https://github.com/fossasia/apps.loklak.org/tree/master/boilerplate
-  - all libraries, css files, javascript and fonts must be either already existent
+  - All libraries, css files, javascript and fonts must be either already existent
     in loklak or you must add this to your app path as well. 
   - The screenshot must be cropped into 640 x 640 pixels and in .png format.
-  - the file ```index.html``` is the landing page of your app.
+  - The file ```index.html``` is the landing page of your app.
     Use ```/js/angular.min.js``` from the loklak root path for your application.
     The app should make use of the json libraries in ```/js```.
     If applicable, make use of the bootstrap style from ```/css```.
-  - the file ```app.json``` must be in json-ld format (see http://json-ld.org/)
+  - The file ```app.json``` must be in json-ld format (see http://json-ld.org/)
     and must contain the ```SoftwareApplication``` object from schema.org:
     https://schema.org/SoftwareApplication -- just copy-paste an existing ```app.json``` from another app to start you own file
-  - modify the field ```"permissions"``` in ```app.json```: it must contain a comma-separated list of all api paths,
+  - Modify the field ```"permissions"``` in ```app.json```: it must contain a comma-separated list of all api paths,
     that the app calls. This is used to apply authorization markers to the app, so it becomes visible if the app
     is actually usable for the user. Examples:
     ```"permissions":"/api/suggest.json"```, or ```"permissions":"/api/settings.json,/api/account.json"```
 
-3. Check quality of your app
-  - do a json-ld validation: use https://developers.google.com/structured-data/testing-tool/ to check your ```app.json```
-  - call http://api.loklak.org/api/apps.json to see if your ```app.json``` is included in the app list
-  - check if all declarations in your ```app.json``` relate to your own app
+2. Check quality of your app
+  - Do a json-ld validation: use https://developers.google.com/structured-data/testing-tool/ to check your ```app.json```
+  - Call http://api.loklak.org/api/apps.json to see if your ```app.json``` is included in the app list
+  - Check if all declarations in your ```app.json``` relate to your own app
     (if you copy-pasted another ```app.json```, you may have forgotten to change some fields)
-  - check the style and behaviour of your app: don't deliver half-done code.
-  - open your ```index.html``` in different browser to check that your code is not browser-specific
-  - add a backlink in your app to ```/apps/``` to make it possible that users can browse from your app to all other apps
+  - Check the style and behaviour of your app: don't deliver half-done code.
+  - Open your ```index.html``` in different browser to check that your code is not browser-specific
+  - Add a backlink in your app to ```/apps/``` to make it possible that users can browse from your app to all other apps
 
-4. Publish your app
-  - send a pull request to https://github.com/fossasia/apps.loklak.org
-  - all your files must be contained into one commit
+3. Publish your app
+  - Send a pull request to https://github.com/fossasia/apps.loklak.org
+  - All your files must be contained into one commit
 
 ## How users will discover your app
 The loklak front-end will compute an aggregation of all those app.json descriptions and provide this in ```/api/apps.json``` as a list of the single app.json files.
