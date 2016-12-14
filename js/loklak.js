@@ -1,6 +1,6 @@
 var app = angular.module("loklak", ['ngRoute']);
 app.controller("status", function($scope, $http) {
-  $http.get("api/status.json").
+  $http.get("http://loklak.org/api/status.json").
     success(function(data, status, headers, config) {
       $scope.index = data.index;
     });
@@ -12,7 +12,7 @@ app.controller("search", function($scope, $http) {
   $scope.search = function() {
     if ($scope.query != '') {
       $scope.results = [];
-      $http.get("/api/search.json?q=" + $scope.query).
+      $http.get("http://loklak.org/api/search.json?q=" + $scope.query).
         success(function(data, status, headers, config) {
           for (var i = 0; i < data.statuses.length; i++) {
             $scope.results.push(data.statuses[i].text);
@@ -34,7 +34,7 @@ app.filter("reverse", function() {
 angular.element(document).ready(function () {
   var navString = "";
   var winLocation = window.location.href;
-  $.getJSON("/cms/topmenu.json", function(data) {
+  $.getJSON("http://loklak.org/cms/topmenu.json", function(data) {
     navItems = data.items;
     navItems = navItems.reverse();
     var count = 0;
