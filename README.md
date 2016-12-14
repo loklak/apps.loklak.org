@@ -6,7 +6,7 @@
 [![Twitter](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Wow Check Loklak on @gitHub @lklknt: https://github.com/fossasia/apps.loklak.org &url=%5Bobject%20Object%5D)
 [![Twitter Follow](https://img.shields.io/twitter/follow/lklknt.svg?style=social&label=Follow&maxAge=2592000?style=flat-square)](https://twitter.com/lklknt)
 
-loklak is a server application which is able to collect messages from various sources, including twitter. The server contains a search index and a peer-to-peer index sharing interface. All messages are stored in an elasticsearch index. An automatic deployment from the development branch at GitHub is available for tests here https://loklak-server-dev.herokuapp.com
+Loklak is a server application which is able to collect messages from various sources, including Twitter. The server contains a search index and a peer-to-peer index sharing interface. All messages are stored in an elasticsearch index. An automatic deployment from the development branch at GitHub is available for testing here https://loklak-server-dev.herokuapp.com
 
 'Lok Lak' is also a very tasty Cambodian stir-fry meat dish (usually beef) with a LOT of fresh black pepper. If you ever have the chance to eat Beef Lok Lak, please try it. I hope not to scare vegetarians with this name, currently I am one as well.
 
@@ -14,11 +14,40 @@ loklak is a server application which is able to collect messages from various so
 
 Please join our mailing list to discuss questions regarding the project: https://groups.google.com/forum/#!forum/loklak
 
-Our chat channel is on gitter here: https://gitter.im/loklak/loklak
+Our chat channel is on Gitter here: https://gitter.im/loklak/loklak
 
-# loklak Applications
+# Loklak Applications
 
-loklak_server is the framework for messages, queries, suggestion, geocoding, accounts and more. These services do not have a graphical front-end. The apps page is a showcase for developers to show off their apps.
+Loklak_server is the framework for messages, queries, suggestion, geocoding, accounts and more. These services do not have a graphical front-end, hence this repository houses the apps page, which is a showcase for developers and their applications which use loklak_search.
+Some of the applications in the repository include-
+- LQL (Loklak Query Language), an advanced search tool for loklak
+- NMEA, a software application for tracking GPS NMEA Data using Loklak and OpenStreetMaps
+- WebScraper, an application which converts web pages into structured data
+- accountpermissions, an accounts operations application using an Accounts API for view permissions
+- barchart, a stacked bar chart using loklak_search and D3 stack layout
+- boilerplate, a 'hello world' loklak app
+- bubblecharts, a bubble chart using D3 pack layout and loklak
+- ducphanduy, a lokalk tweet search page using AngularJS
+- forgotpassword, a accounts operations application for  password recovery system
+- fossasia-histrogram, a tweet analytcs application of loklak tweets histogram about FOSSASIA
+- histogram, a message visualiser encompassing a tweet histogram plotter
+- keyRegistration, a accounts operations application for registering a public key
+- knowTheDiff, a software application comparing search and aggregations
+- loginPage, an account operations application to log in to loklak
+- oneClickDeploy, an API to increase loklak peers
+- queryBrowser, a suggestion search listing all queries made in loklak
+- resetpass, an account operations application to reset one's loklak password
+- sentimentVisualiser, a tool for visualising the sentiment of a tweet
+- signup, an account operations application to sign up to loklak
+- social-wall, a loklak API-based twitter social wall
+- superwoman7, a vertical tweet search message timeline
+- susi, a chat with Susi API
+- tweetfeed, a twitter feed using polls with infinite scroll
+- tweetsleaderboard, a leaderboard based on the number of tweets using a Users API
+- userprofile, a user profile visualisation using loklak
+- yasoob, a loklak search page
+- yathannsh, a loklak search page
+
 
 ## How to create a loklak app
 
