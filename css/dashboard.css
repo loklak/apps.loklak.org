@@ -12,6 +12,9 @@
 .sidebar a:hover {
   background-color: #000;
 }
+#sidebar-header {
+  padding-top: 1px;
+}
 
 ul, p {
   color: White;
