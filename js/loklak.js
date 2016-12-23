@@ -34,7 +34,7 @@ app.filter("reverse", function() {
 angular.element(document).ready(function () {
   var navString = "";
   var winLocation = window.location.href;
-  $.getJSON("http://loklak.org/cms/topmenu.json", function(data) {
+  $.getJSON("/cms/topmenu.json", function(data) {
     navItems = data.items;
     navItems = navItems.reverse();
     var count = 0;
