@@ -22,7 +22,7 @@
     <script src="../../js/loklak.js"></script>
     <meta name="description" content="loklak provides an easy-to-extend app infrastructure. Here is a list of large-data evaluation applictions.">
     <link rel="icon" type="image/png" href="/artwork/favicon.png">
-    <title>loklak.org - Application List</title>
+    <title>Loklak Apps</title>
     <script src="../../js/jquery.min.js"></script>
     <script src="../../js/angular-route.min.js"></script>
     <script src="../../js/angular-touch.min.js"></script>
@@ -44,7 +44,7 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="http://loklak.org">
-            <img src="../../images/loklak_org.png" height="24" style="float:left;">: App List
+            Loklak Apps
           </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
@@ -63,14 +63,11 @@
                 <li ng-repeat="category in categoryKeys track by $index" class=""><a href="#{{category | nospace}}" ng-click="categoryFilter($event)" id="{{category | nospace}}">{{category}}</a></li>
               </ul>
           </div>
-            <p>Read the
-            <a href="https://github.com/loklak/loklak_server/blob/master/html/apps/apps.md">loklak app primer</a> to learn how you can contribute a loklak app!</p>
+            <p>Contribute your app on
+            <a href="https://github.com/fossasia/apps.loklak.org">Github</a>!</p>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <div>
-            <h1>
-              <code id="categoryName">Loklak Apps</code>
-            </h1>
             <div class="content class" ng-repeat="app in apps track by $index">
               <div class="span2 animated fadeInRight" id="{{app.applicationCategory | nospace}}">
                 <div class="reveal">
