@@ -84,6 +84,14 @@ Some of the applications in the repository include-
   - Send a pull request to https://github.com/fossasia/apps.loklak.org
   - All your files must be contained into one commit
 
+## How to run Loklak Apps locally
+
+You need to have NodeJS and NPM. To run Loklak Apps locally, follow the nexr steps
+
+1. Install http-server by running the command ```npm install -g http-server```
+2. Navigate the ```apps.loklak.org``` folder
+3. Run the command ```http-server -o``` and the app will open on your default browser.
+
 ## How users will discover your app
 The loklak front-end will compute an aggregation of all those app.json descriptions and provide this in ```/api/apps.json``` as a list of the single app.json files.
 A front-end (another app) will provide an overview of the given apps in visual form. This will be linked in the loklak front-end.

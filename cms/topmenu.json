@@ -3,10 +3,6 @@
     {"Home": "http://loklak.org/index.html"},
     {"About": "http://loklak.org/about.html"},
     {"Blog": "http://blog.loklak.net/"},
-    {"Architecture": "http://loklak.org/architecture.html"},
-    {"Download": "http://loklak.org/download.html"},
-    {"Tutorials": "http://loklak.org/tutorials.html"},
-    {"API": "http://loklak.org/api.html"},
-    {"Apps": "http://apps.loklak.org/"}
+    {"API": "http://loklak.org/api.html"}
   ]
 }
