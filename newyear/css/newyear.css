@@ -1,0 +1,54 @@
+#body{
+    background-color: white;
+}
+#body h1 {
+    text-align: center;
+    color: #0288D1;
+}
+.tweets ul{
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+.tweets li .tweet .head{
+    width: 100%;
+    background-color: #E0E0E0;
+    margin: 0;
+    color: black;
+    padding: 20px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    font-size: 16px;
+}
+.tweets li{
+    list-style: none;
+    width: 100%;
+    padding: 20px 0;
+    border-top: 2px solid #BDBDBD;
+    border-bottom: 1px solid #BDBDBD;
+}
+.tweets li .tweet .message {
+    width: 100%;
+    /*padding: 30px;*/
+    color: black;
+    background-color: white;
+    padding: 15px;
+    font-size: 24px;
+    margin: 0;
+    border-left: 1px solid #E0E0E0;
+    border-right: 1px solid #E0E0E0;
+}
+
+.tweets li .tweet .link {
+    width: 100%;
+    background-color: #E0E0E0;
+    margin-right: 40px;
+    padding: 20px;
+    margin: 0;
+    margin-bottom: 20px;
+    color: black;
+    text-align: right;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-size: 14px;
+}
