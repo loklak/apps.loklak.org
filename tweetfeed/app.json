@@ -5,7 +5,7 @@
   "name":"tweetfeed",
   "headline":"Tweetfeed",
   "alternativeHeadline":"Twitter feed using poll and diff, infinite scroll",
-  "applicationCategory":"Demo",
+  "applicationCategory":"Scraper",
   "applicationSubCategory":"front-end app",
   "operatingSystem":"http://loklak.org",
   "author":{

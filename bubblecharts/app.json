@@ -5,7 +5,7 @@
   "name":"bubblecharts",
   "headline":"Bubble Charts",
   "alternativeHeadline":"Using D3 pack layout",
-  "applicationCategory":"Demo",
+  "applicationCategory":"Visualizer",
   "applicationSubCategory":"Hello World",
   "operatingSystem":"http://loklak.org",
   "author":{

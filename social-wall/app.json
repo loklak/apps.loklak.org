@@ -5,7 +5,7 @@
   "name":"social-wall",
   "headline":"Twitter Social Wall",
   "alternativeHeadline":"A loklak API based twitter social-wall",
-  "applicationCategory":"Tweet Search",
+  "applicationCategory":"Scraper",
   "applicationSubCategory":"data aggregation",
   "operatingSystem":"http://loklak.org",
   "author":{

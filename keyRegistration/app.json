@@ -5,7 +5,7 @@
   "name":"keyRegistration",
   "headline":"Register a public key",
   "alternativeHeadline":"Key Registration",
-  "applicationCategory":"Accounts API",
+  "applicationCategory":"Accounts",
   "applicationSubCategory":"account operations",
   "operatingSystem":"http://loklak.org",
   "author":{
