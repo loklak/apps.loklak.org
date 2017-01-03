@@ -47,7 +47,7 @@ Some of the applications in the repository include-
 - userprofile, a user profile visualisation using loklak
 - yasoob, a loklak search page
 - yathannsh, a loklak search page
-
+- newyear, a page that displays new year tweets using the loklak api
 
 ## How to create a loklak app
 
@@ -57,7 +57,7 @@ Some of the applications in the repository include-
     For an easy quick-start, use and copy the app boilerplate from
     https://github.com/fossasia/apps.loklak.org/tree/master/boilerplate
   - All libraries, css files, javascript and fonts must be either already existent
-    in loklak or you must add this to your app path as well. 
+    in loklak or you must add this to your app path as well.
   - The screenshot must be cropped into 640 x 640 pixels and in .png format.
   - The file ```index.html``` is the landing page of your app.
     Use ```/js/angular.min.js``` from the loklak root path for your application.
