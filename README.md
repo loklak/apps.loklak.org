@@ -76,6 +76,14 @@ Some of the applications in the repository include-
   - Call http://api.loklak.org/api/apps.json to see if your ```app.json``` is included in the app list
   - Check if all declarations in your ```app.json``` relate to your own app
     (if you copy-pasted another ```app.json```, you may have forgotten to change some fields)
+  - Under Application Category try and choose one of the following Categories:
+  a. Accounts
+  b. Game
+  c. Visualizer
+  d. Scraper
+  e. Search
+  f. Internet of Things
+  - List an appropriate Application Sub Category too
   - Check the style and behaviour of your app: don't deliver half-done code.
   - Open your ```index.html``` in different browser to check that your code is not browser-specific
   - Add a backlink in your app to ```/apps/``` to make it possible that users can browse from your app to all other apps
