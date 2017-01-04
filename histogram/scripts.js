@@ -3,7 +3,7 @@ var histogramApp = angular.module("histogramApp", ['ngResource']);
 
 histogramApp.controller("LoklakCtrl", ["$scope", "$resource", function ($scope, $resource) {
     //in order to test locally, you need to add http://loklak.org before the uri
-	    $scope.loklak = $resource('/api/:action',
+	    $scope.loklak = $resource('http://api.loklak.org/api/:action',
 	   {
             action:'search.json',
             q:'fossasia',

@@ -23,7 +23,7 @@
    <script>
 angular.module('Twitter', ['ngResource']);
 function TwitterCtrl($scope, $resource) {
-    $scope.twitter = $resource('/api/:action',
+    $scope.twitter = $resource('http://api.loklak.org/api/:action',
         {action:'search.json', q:'angularjs', callback:'JSON_CALLBACK'},
         {get:{method:'JSONP'}});
     $scope.doSearch = function () {
