@@ -5,7 +5,7 @@
   "name":"tweetsleaderboard",
   "headline":"Leaderboard",
   "alternativeHeadline":"A Leaderboard based on the number of tweets",
-  "applicationCategory":"Users API",
+  "applicationCategory":"Scraper",
   "applicationSubCategory":"Text Retrieval",
   "operatingSystem":"http://loklak.org",
   "author":{

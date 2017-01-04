@@ -5,7 +5,7 @@
   "name":"signup",
   "headline":"Sign Up to Loklak",
   "alternativeHeadline":"Sign Up",
-  "applicationCategory":"Accounts API",
+  "applicationCategory":"Accounts",
   "applicationSubCategory":"account operations",
   "operatingSystem":"http://loklak.org",
   "author":{

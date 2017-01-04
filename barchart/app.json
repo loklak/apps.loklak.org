@@ -5,7 +5,7 @@
   "name":"barchart",
   "headline":"Stacked Bar Chart",
   "alternativeHeadline":"Using D3 stack layout",
-  "applicationCategory":"Demo",
+  "applicationCategory":"Visualizer",
   "applicationSubCategory":"Hello World",
   "operatingSystem":"http://loklak.org",
   "author":{

@@ -5,7 +5,7 @@
   "name":"resetpass",
   "headline":"Reset your Loklak Password",
   "alternativeHeadline":"Reset Password",
-  "applicationCategory":"Accounts API",
+  "applicationCategory":"Accounts",
   "applicationSubCategory":"account operations",
   "operatingSystem":"http://loklak.org",
   "author":{

@@ -5,7 +5,7 @@
   "name":"WebScraper",
   "headline":"WebScraper",
   "alternativeHeadline":"Application which converts web pages into structured data",
-  "applicationCategory":"Generic Scraper API",
+  "applicationCategory":"Scraper",
   "applicationSubCategory":"JSON Object Retrieval",
   "operatingSystem":"http://loklak.org",
   "author":{

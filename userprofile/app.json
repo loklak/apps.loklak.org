@@ -5,7 +5,7 @@
   "name":"userprofile",
   "headline":"User Profile Page",
   "alternativeHeadline":"A user profile visualization using loklak",
-  "applicationCategory":"Users API",
+  "applicationCategory":"Visualizer",
   "applicationSubCategory":"Text Retrieval",
   "operatingSystem":"http://loklak.org",
   "author":{
