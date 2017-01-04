@@ -1,0 +1,17 @@
+{
+  "@context":"http://schema.org",
+  "@type":"SoftwareApplication",
+  "permissions":"http://api.loklak.org/api/search.json",
+  "name":"newyear",
+  "headline":"New Year tweets collected with loklak",
+  "alternativeHeadline":"Timeline of New Year Tweets",
+  "applicationCategory":"Demo",
+  "applicationSubCategory":"Hello World",
+  "operatingSystem":"http://loklak.org",
+  "author":{
+    "@type":"Person",
+    "name":"Ridhwanul Haque",
+    "url":"http://rhemon.github.io",
+    "sameAs":"https://github.com/rhemon"
+  }
+}

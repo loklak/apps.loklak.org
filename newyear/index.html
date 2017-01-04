@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='newyear'>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="Content-Language" content="en, english"/>
+    <meta name="Ridhwanul Haque" content="@rhemon">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>loklak.org - New Year Tweets</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/loklak.css" rel="stylesheet">
+    <link href="css/newyear.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    <!-- <script src="js/loklak.js"></script> -->
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://loklak.org"><img src="loklak_org.png" height="24" style="float:left;">: newyear</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div id="body" class="container-fluid" ng-controller="TweetsController">
+        <h1>New Year Tweets</h1>
+        <div class="tweets">
+            <ul>
+                <li ng-repeat="tweet in tweets">
+                    <div class="tweet">
+                        <div class="head">
+                            Posted by {{tweet.screen_name}} on {{tweet.timestamp | date:'medium'}}
+                        </div>
+                        <div class="message">
+                            {{tweet.text}}
+                        </div>
+                        <div class="link">
+                            See it in <a ng-href="{{tweet.link}}">Twitter </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <!-- newyear app's script -->
+    <script src="js/newyear.js"></script>
+  </body>
+</html>
