@@ -63,7 +63,7 @@
          
              $scope.Search = function() {
                 $scope.spinner=true;
-                 var QueryCommand = '/api/search.json?callback=JSON_CALLBACK&q=' + $scope.query;
+                 var QueryCommand = 'http://api.loklak.org/api/search.json?callback=JSON_CALLBACK&q=' + $scope.query;
          
                  $http.jsonp(String(QueryCommand)).success(function(response) {
                      

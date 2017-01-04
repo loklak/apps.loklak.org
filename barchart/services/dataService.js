@@ -11,7 +11,7 @@
         function getTweets(queryType, queryTerm, dateFrom, dateTo, count){
             
             // user's tweets latest first
-            var defaultUri = "/api/search.json?q=loklak";
+            var defaultUri = "http://api.loklak.org/api/search.json?callback=JSON_CALLBACK&q=loklak";
             var uri = "";
             var qCount = "&count=" + count;
             if(queryType === "search"){
@@ -19,11 +19,11 @@
                 if(typeof(dateFrom) !== "undefined" || typeof(dateTo) !== "undefined"){
                     var dateFromF = $moment(dateFrom).format('YYYY-MM-DD') || "";
                     var dateToF = $moment(dateTo).format('YYYY-MM-DD') || "";
-                    uri = "/api/search.json?q=" + queryTerm + "+since:" + dateFromF + "+until:" + dateToF;
+                    uri = "http://api.loklak.org/api/search.json?callback=JSON_CALLBACK&q=" + queryTerm + "+since:" + dateFromF + "+until:" + dateToF;
                     console.log(uri);
                     
                 } else {
-                    uri = "/api/search.json?q=" + queryTerm;
+                    uri = "http://api.loklak.org/api/search.json?callback=JSON_CALLBACK&q=" + queryTerm;
                 }
             } else {
                 uri = defaultUri;
@@ -31,7 +31,7 @@
             uri += qCount;
             console.log(uri);
             
-            var promise = $http.get(uri)
+            var promise = $http.jsonp(String(uri))
             .then(searchCompleted)
             .catch(searchFailed);
             

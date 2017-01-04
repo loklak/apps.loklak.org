@@ -55,7 +55,7 @@ $('#search-but').click(function(event){
   .done(function(data){
 
     $('#loadingmessage').hide();
-
+    
     var theTemplateScript = $("#feeds").html();
     var theTemplate = Handlebars.compile(theTemplateScript);
     var context = data.statuses;

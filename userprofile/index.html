@@ -101,7 +101,7 @@
 
             $scope.Search = function() {
 
-                var QueryCommand = '/api/search.json?callback=JSON_CALLBACK&q=' + $scope.query;
+                var QueryCommand = 'http://api.loklak.org/api/search.json?callback=JSON_CALLBACK&q=' + $scope.query;
 
                 $http.jsonp(String(QueryCommand)).success(function(response) {
                     $scope.myData = response.statuses;
@@ -110,7 +110,7 @@
                     }
                 });
 
-                var userQueryCommand = '/api/user.json?callback=JSON_CALLBACK&screen_name=' + $scope.query;
+                var userQueryCommand = 'http://api.loklak.org/api/user.json?callback=JSON_CALLBACK&screen_name=' + $scope.query;
 
                 $http.jsonp(String(userQueryCommand)).success(function(response) {
                 	$scope.userData = response.user;

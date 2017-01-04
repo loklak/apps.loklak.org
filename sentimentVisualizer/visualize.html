@@ -83,7 +83,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/apps/sentimentVisualizer/index.html">Sentiment Analysis</a>
+                    <a class="navbar-brand" href="/sentimentVisualizer/index.html">Sentiment Analysis</a>
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
@@ -129,7 +129,7 @@
          
              $scope.Search = function() {
                 $scope.spinner=true;
-                 var QueryCommand = '/api/search.json?callback=JSON_CALLBACK&q=' + $scope.query;
+                 var QueryCommand = 'http://api.loklak.org/api/search.json?callback=JSON_CALLBACK&q=' + $scope.query;
          
                  $http.jsonp(String(QueryCommand)).success(function(response) {
                      

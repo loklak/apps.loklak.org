@@ -40,9 +40,9 @@
 
             $scope.Search = function() {
 
-                var QueryCommand = '/api/search.json?q=' + $scope.query;
+                var QueryCommand = 'http://api.loklak.org/api/search.json?callback=JSON_CALLBACK&q=' + $scope.query;
 
-                $http.get(String(QueryCommand)).then(function(response) {
+                $http.jsonp(String(QueryCommand)).then(function(response) {
                     $scope.myData = response.data.statuses;
                     for (var i = 0; i < $scope.myData.length; ++i) {
                         $scope.myData[i].text = $sce.trustAsHtml($scope.myData[i].text);

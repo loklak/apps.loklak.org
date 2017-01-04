@@ -11,16 +11,16 @@
         function getTweets(queryType, queryTerm){
             
             // user's tweets latest first
-            var defaultUri = "/api/search.json?q=loklak";
+            var defaultUri = "http://api.loklak.org/api/search.json?callback=JSON_CALLBACK&q=loklak";
             var uri = "";
             if(queryType === "search"){
                 console.log(queryTerm);
-                uri = "/api/search.json?q=" + queryTerm;
+                uri = "http://api.loklak.org/api/search.json?callback=JSON_CALLBACK&q=" + queryTerm;
             } else {
                 uri = defaultUri;
             }
             
-            var promise = $http.get(uri)
+            var promise = $http.jsonp(String(uri))
             .then(searchCompleted)
             .catch(searchFailed);
             
