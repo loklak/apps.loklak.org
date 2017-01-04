@@ -3,21 +3,31 @@
  */
 
 *, .list-group-item li {
-  background-color: #000;
-  color: GreenYellow;
+  
+  color: Black;
 }
 .sidebar, .sidebar a {
-  background-color: #333;
+  
 }
 .sidebar a:hover {
-  background-color: #000;
+  background-color: Grey;
+  
 }
 
+.reveal a:hover{
+  color:Black;
+}
 ul, p {
   color: White;
 }
-a, a:hover, a:visited, a:focus {
-  color: GreenYellow;
+a {
+  color: Grey;
+}
+a:visited {
+  color:#551A8B;
+}
+a:hover{
+  color: White; 
 }
 ul.request {
   font-size: 80%;
@@ -27,26 +37,26 @@ ul.request {
   width:130px;
   display:block;
   float:left;
-  color: GreenYellow;
+  color: rgb(49,79,79);
 }
 .tabcol1 {
   width:200px;
   display:block;
   float:left;
-  color: GreenYellow;
+  color: rgb(49,79,79);
 }
 .tabcol2 {
   width:300px;
   display:block;
   float:left;
-  color: GreenYellow;
+  color: rgb(49,79,79);
 }
 
 code {
   padding: 2px 4px;
   font-size: 100%;
-  color: GreenYellow;
-  background-color: #444;
+  color: White;
+  background-color: #000;
   border-radius: 4px;
 }
 
@@ -55,7 +65,7 @@ pre {
   margin-right: 24px;
   padding: 2px 4px;
   font-size: 80%;
-  color: GreenYellow;
+  color: rgb(49,79,79);
   background-color: #444;
   border-radius: 4px;
   border-color: #444;
