@@ -30,3 +30,11 @@ body {
   padding-top: 50px;
   font: DroidSansMono;
 }
+
+.color-black{
+  color: black;
+}
+
+.navbar-color{
+  background-color: #f1f1f1;
+}
