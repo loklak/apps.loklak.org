@@ -3,8 +3,7 @@ var app = angular.module('appListApp', ['loklak', 'ngTouch']);
 app.controller("app_list", function($scope, $http) {
     $scope.apps = [];
     $scope.categoryKeys = [];
-    $http.jsonp('http://loklak.org/api/apps.json?callback=JSON_CALLBACK')
-    .success(function(data, status, headers, config) {
+    $http.get('apps.json').success(function(data) {
         $scope.categoryKeys = data.categories;
         $scope.apps = data.apps;
         $scope.categoryKeys.unshift('All');
