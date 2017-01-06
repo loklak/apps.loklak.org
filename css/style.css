@@ -73,3 +73,19 @@ p {
     font-size: 11px; 
   }
 }
+
+#logo1 {
+   color:#fb3adb;
+}
+
+#logo2 {
+   color:#4048fa;
+}
+
+#logo1:hover {
+   color:#ef00c7;
+}
+
+#logo2:hover {
+   color:#4b4b4d;
+}
