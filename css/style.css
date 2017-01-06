@@ -3,7 +3,7 @@
 	margin: 0px auto; 
 }
 .span2 { 
-	width: 23%; 
+	width: 23%;
 	padding: 0px;
 	margin-right: 16px;
 	margin-bottom: 16px;
@@ -71,5 +71,23 @@ p {
 @media (min-width: 480px) and (max-width: 979px) {
   .reveal .caption { 
     font-size: 11px; 
+  }
+}
+
+@media (min-width: 976px) and (max-width: 1056) {
+  .span2 { 
+    width: 30%;
+  }
+}
+
+@media (max-width: 529px) and (min-width: 300px){
+  .span2 { 
+    width: 45%;
+  }
+}
+
+@media (max-width: 975px) and (min-width: 530px){
+  .span2{
+    width: 30%;
   }
 }

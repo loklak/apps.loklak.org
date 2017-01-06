@@ -38,3 +38,15 @@ body {
 .navbar-color{
   background-color: #f1f1f1;
 }
+
+.navbar-collapse-button{
+  border: 1px solid #551a8e;
+}
+
+.navbar-collapse-button span.icon-bar{
+  background-color: #551a8e;
+}
+
+.hidden a:visited{
+  color: gray;
+}
