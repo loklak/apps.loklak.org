@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html ng-app="Twitter">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="theme-color" content="#3498db">
+    <link rel="icon" type="image/png" href="../../artwork/favicon.png">
+    <title>Street Stream</title>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <div class="container" ng-controller="TwitterCtrl">
+      <h1>Street Stream</h1><hr>
+        <form class="form-inline">
+          <div class="form-group col-lg-12">
+            <input type="text" class="form-control" ng-model="searchTerm" placeholder="What do you want to stream?" id="search" required>
+            <button type="submit" class="btn btn-success" id="submit" ng-click="doSearch()" >Stream!</button>
+          </div>
+        </form>
+
+      <h2 class="text-center">Streaming Live: {{ searchTerm }}</h3>
+      <div class="container thetweet">
+        <div ng-repeat="tweet in twitterResult" class="col-lg-4"></li>
+          <div class="thumbnail">
+            <h5>Tweet by: <a href="https://twitter.com/{{tweet.user.screen_name}}">@{{tweet.user.screen_name}}</a></h5>
+            <p ng-bind-html='tweet.text'></p>
+            <img ng-src='images' ng-repeat='images in tweet.images'>
+            <p><a target="_blank" href="https://twitter.com/intent/tweet?in_reply_to={{tweet.id_str}}"><i class="fa fa-reply"></i></a> Reply</p>
+            <p><a target="_blank" href="https://twitter.com/intent/retweet?tweet_id={{tweet.id_str}}"><i class="fa fa-retweet" aria-hidden="true"></i></a> {{tweet.retweet_count}} retweets</p>
+            <p><a target="_blank" href="https://twitter.com/intent/like?tweet_id={{tweet.id_str}}"><i class="fa fa-heart" aria-hidden="true"></i></a> {{tweet.favourites_count}} favorites</p>
+            <a href='{{tweet.link}}' target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i> Go to Tweet</a>          
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="http://code.angularjs.org/angular-1.0.0rc4.min.js"></script>
+    <script src="http://code.angularjs.org/angular-resource-1.0.0rc4.min.js"></script>
+   <script>
+angular.module('Twitter', ['ngResource']);
+function TwitterCtrl($scope, $resource) {
+    $scope.twitter = $resource('/api/:action',
+        {
+          action:'search.json', 
+          callback:'JSON_CALLBACK'
+        },
+        {
+          get:{
+            method:'JSONP'
+          }
+    });
+    $scope.hideit = false;
+    $scope.doSearch = function () {
+      if ($scope.hideit !== true) {
+        $scope.hideit = !$scope.hideit;
+      }
+      $scope.twitterResult = $scope.twitter.get({q:$scope.searchTerm});
+    };
+}
+</script> 
+  </body>
+</html>

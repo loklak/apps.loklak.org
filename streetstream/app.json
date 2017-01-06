@@ -1,0 +1,17 @@
+{
+  "@context":"http://schema.org",
+  "@type":"SoftwareApplication",
+  "permissions":"/api/search.json",
+  "name":"streetstream",
+  "headline":"Street Stream",
+  "alternativeHeadline":"The Street's Live Stream",
+  "applicationCategory":"Live Streaming",
+  "applicationSubCategory":"Searching App",
+  "operatingSystem":"http://loklak.org",
+  "author":{
+    "@type":"Person",
+    "name":"Mostafa Elgayar",
+    "url":"https://elgayar.github.io/",
+    "sameAs":"https://github.com/Elgayar/"
+  }
+}
