@@ -75,11 +75,11 @@
             <div class="content class" ng-repeat="app in apps track by $index">
               <div class="span2 animated fadeInRight" id="{{app.applicationCategory | nospace}}">
                 <div class="reveal">
-                  <img ng-src="../{{ app.name }}/screenshot.png" />
+                  <img ng-src="../apps/{{ app.name }}/screenshot.png" />
                   <div class="hidden">
                     <div class="caption">
                       <div class="centered">
-                        <p><a href='../{{ app.name }}'>{{ app.headline | uppercase}}</a></p>
+                        <p><a href='../apps/{{ app.name }}'>{{ app.headline | uppercase}}</a></p>
                         <p class="color-black">{{ app.alternativeHeadline }}</p>
                         <br/>
                         <p class="color-black">Author: <a href='{{ app.author.url }}'>{{ app.author.name | uppercase }}</a></p>
