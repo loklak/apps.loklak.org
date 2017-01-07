@@ -10,9 +10,9 @@
     <link rel="icon" type="image/png" href="../../artwork/favicon.png">
     <title>loklak.org - Apps Boilerplate</title> <!-- CHANGE THIS -->
       
-    <link href="../../css/bootstrap.min.css" rel="stylesheet">
-    <link href="../../css/dashboard.css" rel="stylesheet">
-    <link href="../../css/loklak.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/dashboard.css" rel="stylesheet">
+    <link href="/css/loklak.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -20,30 +20,21 @@
       <script src="../../js/respond.min.js"></script>
     <![endif]-->
     
-    <script src="../../js/angular.min.js"></script>
-    <script src="../../js/angular-route.min.js"></script>
-    <script src="../../js/loklak.js"></script>
+    <script src="/js/angular.min.js"></script>
+    <script src="/js/angular-route.min.js"></script>
+    <script src="/js/loklak.js"></script>
+
+    <style>
+      p a{
+        color: rgb(51,122,183);
+      }
+      p a:hover{
+        color: rgb(51,122,183)
+      }
+    </style>
   </head>
 
   <body>
-
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="http://loklak.org"><img src="../../images/loklak_org.png" height="24" style="float:left;">: App Boilerplate</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-          </ul>
-        </div>
-      </div>
-    </nav>
 
     <div class="container-fluid">
       <div class="row">
@@ -59,13 +50,13 @@
           <h1 class="page-header">loklak App Boilerplate</h1>
           <p>This is the loklak app boilerplate. You can copy this file to quick-start your own loklak app!</p>
 		  
-		  <br id="section1"/><br/>
+		      <br id="section1"/><br/>
           <h2 class="sub-header">section 1</h2>
           <p>This boilerplate has three demo sections which are linked with the menu on the left side. You probably don't need sections, then simply delete them.</p>
           
           <br id="section2"/><br/>
           <h2 class="sub-header">section 2</h2>
-          <p>To learn how to create an app, please read <a href="https://github.com/loklak/loklak_server/blob/master/html/apps/apps.md">the apps readme</a></p>
+          <p>To learn how to create an app, please read <a href="https://github.com/fossasia/apps.loklak.org/blob/master/README.md">the apps readme</a></p>
           
           <br id="section2"/><br/>
           <h2 class="sub-header">section 3</h2>
@@ -73,13 +64,27 @@
         </div>
       </div>
     </div>
+
+    <footer>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6">
+            <a class="left" href="http://apps.loklak.org">Loklak Apps</a>
+          </div>
+          <div class="col-md-6">
+            <a class="right" href="https://github.com/fossasia/apps.loklak.org/blob/master/README.md">Create a Loklak app</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
     
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="../../js/jquery.min.js"></script>
-    <script src="../../js/bootstrap.min.js"></script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../js/ie10-viewport-bug-workaround.js"></script>
+    <script src="/js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>
