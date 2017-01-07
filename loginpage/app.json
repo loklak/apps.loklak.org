@@ -5,7 +5,7 @@
   "name":"loginpage",
   "headline":"Log In to Loklak",
   "alternativeHeadline":"Login",
-  "applicationCategory":"Accounts API",
+  "applicationCategory":"Accounts",
   "applicationSubCategory":"account operations",
   "operatingSystem":"http://loklak.org",
   "author":{
