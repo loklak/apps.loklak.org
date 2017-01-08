@@ -52,7 +52,7 @@ Some of the applications in the repository include-
 ## How to create a loklak app
 
 1. Create your app
-  - Make a subdirectory in ```fossasia/apps.loklak.org/[your-app]``` folder
+  - Make a subdirectory in ```fossasia/apps.loklak.org/apps/[your-app]``` folder
   - Add at least three files into this folder, named ```index.html```, ```app.json``` and ```screenshot.png```.
     For an easy quick-start, use and copy the app boilerplate from
     https://github.com/fossasia/apps.loklak.org/tree/master/boilerplate
