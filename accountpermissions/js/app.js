@@ -1,6 +1,6 @@
 $(document).ready(function()
 {
-	$.ajax(	"/api/account-permissions.json", {
+	$.ajax(	"http://api.loklak.org/api/account-permissions.json", {
 		dataType: "json",
 		success (response) {
 		    $("#permissions").removeClass("hidden");

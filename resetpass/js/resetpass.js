@@ -6,7 +6,7 @@ $(document).ready(function()
 	var regex;
 	var urltoken = getParameter('token');
 
-	$.ajax(	"/api/recoverpassword.json", {
+	$.ajax(	"http://api.loklak.org/api/recoverpassword.json", {
 		data: { getParameters: true, token: urltoken },
 		dataType: 'json',
 		success: function (response) {
