@@ -117,7 +117,6 @@ body {
     top: 51px;
     bottom: 0;
     left: 0;
-    z-index: 1000;
     display: block;
     padding: 20px;
     overflow-x: hidden;
@@ -168,8 +167,33 @@ body {
   padding-bottom: 0px;
   margin-bottom: 0px;
 }
-
 section{
   padding-top: 50px;
   margin-top: -50px;
+}
+footer{
+  z-index: 1000;
+  width: 100%;
+  border-top: 1px solid #e4e4e4;
+  background-color: #f1f1f1;
+  padding: 0px 14px;
+  margin-top:30px;
+}
+footer a {
+    padding: 0px 14px;
+    color:rgb(119,119,119);
+    line-height: 40px;
+    display:block;
+    font-size: small;
+    font-family:"Courier New";
+}
+footer .left{
+  float:left;
+  color:#C8254D;
+}
+footer .right{
+  float:right;
+}
+footer .right:hover{
+  color:rgb(51,51,51);
 }
