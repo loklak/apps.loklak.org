@@ -12,6 +12,9 @@
 .sidebar a:hover {
   text-decoration: none;
 }
+#sidebar-header {
+  padding-top: 1px;
+}
 
 .reveal a:hover{
   color:Black;
