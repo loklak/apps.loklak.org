@@ -33,8 +33,17 @@ a:hover{
   background-color:#f1f1f1;
 }
 .brand {
-  color:#C8254D;
-  font-family:"Courier New";
+  display: block;
+  height: 50px;
+  font-family: "Courier New";
+  padding:15px 15px;
+  font-size:35px;
+  color: #C8254D;
+  line-height: 20px;
+}
+.brand span{
+  color:rgb(51,51,51);
+  font-family: inherit;
 }
 .brand:hover{
   color:#C8254D;
@@ -68,6 +77,7 @@ code {
   color: White;
   background-color: #000;
   border-radius: 4px;
+  font-family: "Courier New";
 }
 
 pre {
@@ -114,7 +124,8 @@ body {
 @media (min-width: 768px) {
   .sidebar {
     position: fixed;
-    top: 51px;
+    background-color: #f1f1f1;
+    top: 50px;
     bottom: 0;
     left: 0;
     display: block;
@@ -124,7 +135,6 @@ body {
   }
 }
 
-/* Sidebar navigation */
 .nav-sidebar {
   margin-right: -21px; /* 20px padding + 1px border */
   margin-bottom: 20px;
@@ -134,13 +144,8 @@ body {
   padding-right: 20px;
   padding-left: 20px;
 }
-.nav-sidebar > .active > a,
-.nav-sidebar > .active > a:hover,
-.nav-sidebar > .active > a:focus {
+.nav-sidebar > .active > a:hover{
   color: white;
-}
-.nav-sidebar > .active > a{
-  background-color: grey;
 }
 .nav-sidebar li a:hover {
   background-color: grey;

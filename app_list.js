@@ -20,7 +20,7 @@ app.controller("app_list", function($scope, $http) {
             event.stopImmediatePropagation();
         }
         else {
-            $('#categoryName')[0].innerHTML = 'Loklak Apps';
+            $('#categoryName')[0].innerHTML = 'loklak apps';
             $('div.span2').show();
         }
     }
