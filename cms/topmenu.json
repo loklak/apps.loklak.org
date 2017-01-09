@@ -1,8 +1,10 @@
 {
   "items": [
-    {"Home": "http://loklak.org/index.html"},
-    {"About": "http://loklak.org/about.html"},
+    {"Home": "http://apps.loklak.org"},
+    {"Search": "http://loklak.net"},
+    {"About": "http://loklak.net/about"},
     {"Blog": "http://blog.loklak.net/"},
-    {"API": "http://loklak.org/api.html"}
+    {"Developers": "http://dev.loklak.org"},
+    {"API": "http://api.loklak.org"}
   ]
 }
