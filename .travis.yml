@@ -4,10 +4,8 @@ node_js:
 before_install:
   - npm install -g grunt-cli
   - npm install -g http-server
-  - npm install -g bower
 install:
   - npm install
-  - bower install
 services:
   - http-server
 script: grunt mocha
