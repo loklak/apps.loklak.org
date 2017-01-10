@@ -104,6 +104,15 @@ You need to have NodeJS and NPM. To run Loklak Apps locally, follow the nexr ste
 The loklak front-end will compute an aggregation of all those app.json descriptions and provide this in ```/api/apps.json``` as a list of the single app.json files.
 A front-end (another app) will provide an overview of the given apps in visual form. This will be linked in the loklak front-end.
 
+## Code practices
+
+Please help us follow the best practice to make it easy for the reviewer as well as the contributor. We want to focus on the code quality more than on managing pull request ethics. 
+
+ * Single commit per pull request
+ * Reference the issue numbers in the commit message. Follow the pattern ``` Fixes #<issue number> <commit message>```
+ * Follow uniform design practices. The design language must be consistent throughout the app.
+ * The pull request will not get merged until and unless the commits are squashed. In case there are multiple commits on the PR, the commit author needs to squash them and not the maintainers cherrypicking and merging squashes.
+ * If the PR is related to any front end change, please attach relevant screenshots in the pull request description.
 
 ## What is the software license?
 
