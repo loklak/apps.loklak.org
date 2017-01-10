@@ -34,21 +34,21 @@
   </head>
   <body data-spy="scroll" data-target="#navSidebar" data-offset="50">
 
-    <nav class="navbar navbar-fixed-top navbar-light" style="background-color: #f1f1f1;">
+    <nav class="navbar navbar-fixed-top navbar-light navbar-color">
       <div class="container-fluid">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <button type="button" class="navbar-toggle collapsed navbar-collapse-button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="http://loklak.org">
-            <span id="logo1">Loklak</span> <span id="logo2">Apps</span>
+          <a class="navbar-brand brand" href="http://apps.loklak.org">
+            loklak <span>apps</span>
           </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
+          <ul class="nav navbar-nav navbar-right topmenu">
             <!-- This will get populated -->
           </ul>
         </div>
@@ -63,15 +63,15 @@
                 <li ng-repeat="category in categoryKeys track by $index" class=""><a href="#{{category | nospace}}" ng-click="categoryFilter($event)" id="{{category | nospace}}">{{category}}</a></li>
               </ul>
           </div>
-            <p>Contribute your app on
+            <p class="color-black">Contribute your app on
             <a href="https://github.com/fossasia/apps.loklak.org">Github</a>!</p>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <div>
-            <h1 style="color:black">
-              loklak Apps
+            <h1 class="color-black">
+              <code id="categoryName">loklak apps</code>
             </h1>
-
+            <center>
             <div class="content class" ng-repeat="app in apps track by $index">
               <div class="span2 animated fadeInRight" id="{{app.applicationCategory | nospace}}">
                 <div class="reveal">
@@ -80,15 +80,16 @@
                     <div class="caption">
                       <div class="centered">
                         <p><a href='../{{ app.name }}'>{{ app.headline | uppercase}}</a></p>
-                        <p>{{ app.alternativeHeadline }}</p>
+                        <p class="color-black">{{ app.alternativeHeadline }}</p>
                         <br/>
-                        <p>Author: <a href='{{ app.author.url }}'>{{ app.author.name | uppercase }}</a></p>
+                        <p class="color-black">Author: <a href='{{ app.author.url }}'>{{ app.author.name | uppercase }}</a></p>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+            </center>
           </div>
         </div>
       </div>
@@ -100,3 +101,4 @@
       </body>
 
     </html>
+

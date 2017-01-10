@@ -3,7 +3,7 @@
 	margin: 0px auto; 
 }
 .span2 { 
-	width: 23%; 
+	width: 23%;
 	padding: 0px;
 	margin-right: 16px;
 	margin-bottom: 16px;
@@ -74,18 +74,20 @@ p {
   }
 }
 
-#logo1 {
-   color:#fb3adb;
+@media (min-width: 976px) and (max-width: 1056) {
+  .span2 { 
+    width: 30%;
+  }
 }
 
-#logo2 {
-   color:#4048fa;
+@media (max-width: 529px) and (min-width: 300px){
+  .span2 { 
+    width: 45%;
+  }
 }
 
-#logo1:hover {
-   color:#ef00c7;
-}
-
-#logo2:hover {
-   color:#a4a4a5;
+@media (max-width: 975px) and (min-width: 530px){
+  .span2{
+    width: 30%;
+  }
 }
