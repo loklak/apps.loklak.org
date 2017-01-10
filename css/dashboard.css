@@ -28,6 +28,10 @@ a {
 a:hover{
   color: White;
 }
+.topmenu li a:focus {
+  background-color: #f1f1f1;
+  color:rgb(119,119,119);
+}
 .topmenu li a:hover{
   color:rgb(51,51,51);
   background-color:#f1f1f1;
@@ -144,11 +148,13 @@ body {
   padding-right: 20px;
   padding-left: 20px;
 }
-.nav-sidebar > .active > a:hover{
-  color: white;
+.nav-sidebar li a:focus {
+  background-color: #f1f1f1;
+  color:rgb(119,119,119);
 }
 .nav-sidebar li a:hover {
   background-color: grey;
+  color:white;
 }
 
 /*

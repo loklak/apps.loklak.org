@@ -1,1 +1,11 @@
-language : genric
+language: generic
+services: docker
+script:
+ - touch .gitignore
+ - >
+   docker run --volume=$(pwd):/app --workdir=/app coala/base:0.9 /bin/bash -c
+   "coala --non-interactive";
+ branches:
+   only:
+     - master
+ 
