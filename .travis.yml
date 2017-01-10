@@ -1,12 +1,17 @@
 language: node_js
 node_js:
-  - "node"
+  - "6"
+sudo: false
 before_install:
-  - npm install grunt-cli
   - npm install -g http-server
 install:
   - npm install
 services:
   - http-server
-script: grunt mocha
+before_script:
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+  - sleep 3 # give xvfb some time to start
 after_success: "./travis.sh"
+branches:
+ only: master
