@@ -1,7 +1,7 @@
 $(document).ready(function()
 {
 	// get password parameters
-	$.ajax(	"/api/signup.json", {
+	$.ajax(	"http://api.loklak.org/api/signup.json", {
 		data: { getParameters: true },
 		dataType: "json",
 		success: function (response) {

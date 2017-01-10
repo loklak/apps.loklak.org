@@ -5,7 +5,7 @@
   "name":"oneClickDeploy",
   "headline":"One Click Deploy",
   "alternativeHeadline":"Increase Loklak peers",
-  "applicationCategory":"Internet of Things",
+  "applicationCategory":"Internet Of Things",
   "applicationSubCategory":"Peers Deployment",
   "operatingSystem":"http://loklak.org",
   "author":{

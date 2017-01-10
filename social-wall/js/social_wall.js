@@ -18,7 +18,7 @@ function twitterLinks(text)
       function($0, $1, $2) {
           return ($1 ? $0 : '<a href="http://' + $2 + '">' + $2 + '</a>');
       });
-  // convert @mentions into follow links
+  // convert @mentions into follow links .
   text = text.replace(
       /(:\/\/|>)?(@([_a-z0-9\-]+))/gi,
       function($0, $1, $2, $3) {
@@ -43,16 +43,15 @@ $(function() {
 
 $('#search-but').click(function(event){
   var query = $("#query").val();
-  query = '/api/search.json?q=' + encodeURIComponent(query);
+  query = 'http://api.loklak.org/api/search.json?q=' + encodeURIComponent(query);
 
   $("#masonry").empty();
   $("#masonry").html("<div class='item-size'></div>");
   $('#loadingmessage').show();
 
-  $.getJSON( 
-    query       
-  )
-  .done(function(data){
+  $.getJSON(
+	query+"&timezoneOffset="+(new Date()).getTimezoneOffset()+"&callback=?",
+	function(data){
 
     $('#loadingmessage').hide();
     
