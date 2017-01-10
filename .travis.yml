@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - "node"
 before_install:
-  - npm install -g grunt-cli
+  - npm install grunt-cli
   - npm install -g http-server
 install:
   - npm install
