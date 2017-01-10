@@ -21,4 +21,4 @@ before_script:
 - npm install -g http-server
 
 script:
-- http-serve -o
+- http-serve
