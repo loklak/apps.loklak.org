@@ -56,6 +56,18 @@ ul.request {
   font-size: 80%;
   list-style-type: none;
 }
+.search {
+  position: absolute;
+  top:8px;
+  left:275px;
+}
+.search input{
+  width:550px;
+}
+.search input:focus {
+  border-color: rgb(119,119,119);
+  box-shadow: none;
+}
 .tabcol0 {
   width:130px;
   display:block;

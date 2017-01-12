@@ -46,6 +46,8 @@
           <a class="navbar-brand brand" href="http://apps.loklak.org">
             loklak <span>apps</span>
           </a>
+          <div class="form-group search"><input type="text" class="form-control" id="usr" ng-model="searchTerm" 
+            ng-init="searchTerm = ''" placeholder="Search apps by app name or author's name"></div>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right topmenu">
@@ -73,7 +75,23 @@
             </h1>
             <center>
             <div class="content class" ng-repeat="app in apps track by $index">
-              <div class="span2 animated fadeIn" id="{{app.applicationCategory | nospace}}">
+              <div ng-if = "searchTerm.length==0" class="span2 animated fadeIn" id="{{app.applicationCategory | nospace}}">
+                <div class="reveal">
+                  <img ng-src="../{{ app.name }}/screenshot.png" />
+                  <div class="hidden">
+                    <div class="caption">
+                      <div class="centered">
+                        <p><a href='../{{ app.name }}'>{{ app.headline | uppercase}}</a></p>
+                        <p class="color-black">{{ app.alternativeHeadline }}</p>
+                        <br/>
+                        <p class="color-black">Author: <a href='{{ app.author.url }}'>{{ app.author.name | uppercase }}</a></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div ng-if = "searchTerm.length>0 && ((app.name.toUpperCase().indexOf(searchTerm.toUpperCase())!=-1) || (app.headline.toUpperCase().indexOf(searchTerm.toUpperCase())!=-1) || ((app.author.name.toUpperCase().indexOf(searchTerm.toUpperCase())!=-1)))" class="span2 animated fadeIn" id="{{app.applicationCategory | nospace}}">
                 <div class="reveal">
                   <img ng-src="../{{ app.name }}/screenshot.png" />
                   <div class="hidden">
