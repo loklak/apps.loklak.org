@@ -402,7 +402,7 @@
       "@context": "http://schema.org",
       "@type": "SoftwareApplication",
       "permissions": ["/api/apps.json"],
-      "name": "",
+      "name": "applist",
       "headline": "loklak app list",
       "alternativeHeadline": "work from GCI task",
       "applicationCategory": "About Project",

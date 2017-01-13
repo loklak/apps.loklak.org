@@ -86,16 +86,22 @@ ul.request {
   float:left;
   color: rgb(49,79,79);
 }
-
-code {
-  padding: 2px 4px;
-  font-size: 100%;
-  color: White;
-  background-color: #000;
-  border-radius: 4px;
-  font-family: "Courier New";
+#catTitle{
+  background-color: #d3d3d3;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
 }
-
+#categoryName{
+  margin-left: 30px;
+}
+code {
+  font-size: 70%;
+  color: White;
+  background-color: rgba(53,29,25,0);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 pre {
   margin-left: 24px;
   margin-right: 24px;
@@ -109,7 +115,7 @@ pre {
 
 /* Move down content because we have a fixed navbar that is 50px tall */
 body {
-  padding-top: 50px;
+
 }
 
 /*
@@ -145,7 +151,8 @@ body {
     bottom: 0;
     left: 0;
     display: block;
-    padding: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
     overflow-x: hidden;
     overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
   }
@@ -159,9 +166,10 @@ body {
 .nav-sidebar > li > a {
   padding-right: 20px;
   padding-left: 20px;
+  background-color: #e6e6e6;
 }
 .nav-sidebar li a:focus {
-  background-color: #f1f1f1;
+  background-color: #e6e6e6;
   color:rgb(119,119,119);
 }
 .nav-sidebar li a:hover {
@@ -174,21 +182,27 @@ body {
  */
 
 .main {
-  padding: 20px;
+  padding-left: 10px;
+  padding-right: 20px;
 }
 @media (min-width: 768px) {
   .main {
-    padding-right: 40px;
+    padding-right: 20px;
     padding-left: 40px;
   }
 }
-.main .page-header {
-  margin-top: 0;
+.page-header {
+  margin-top: -21px;
+  margin-left: 16%;
+  background-color: rgba(53,29,25,0.25);
+  padding-top: 1px;
+  padding-bottom: 0px;
+  padding-left: 10px;
 }
 
 .main, .col-sm-9, .col-sm-offset-3, .col-md-10, .col-md-offset-2{
   padding-bottom: 0px;
-  margin-bottom: 0px;
+
 }
 section{
   padding-top: 50px;
@@ -196,7 +210,7 @@ section{
 }
 footer{
   z-index: 1000;
-  width: 100%;
+  width: 85%;
   border-top: 1px solid #e4e4e4;
   background-color: #f1f1f1;
   padding: 0px 14px;
