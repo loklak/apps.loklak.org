@@ -12,9 +12,9 @@
     <link rel="icon" type="image/png" href="../../artwork/favicon.png">
     <title>Query Browser</title>
       
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/dashboard.css" rel="stylesheet">
-    <link href="/css/loklak.css" rel="stylesheet">
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/dashboard.css" rel="stylesheet">
+    <link href="../../css/loklak.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -83,7 +83,7 @@
     <script>
     var app = angular.module('querybrowser', []);
     app.controller('queryCtrl', function($scope, $http) {
-        $http.get("/api/suggest.json?count=10000&order=desc&orderby=query_count")
+        $http.get("http://api.loklak.org/api/suggest.json?count=10000&order=desc&orderby=query_count")
         .then(function (response) {$scope.queries = response.data.queries;});
     });
     </script>
@@ -91,9 +91,9 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="../../js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>

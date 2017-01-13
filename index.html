@@ -9,16 +9,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="Content-Language" content="en, english" />
     <link rel="icon" type="image/png" href="http://loklak.org/artwork/favicon.png">
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/loklak.css" rel="stylesheet">
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/loklak.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="/js/html5shiv.min.js"></script>
       <script src="/js/respond.min.js"></script>
     <![endif]-->
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/angular.min.js"></script>
-    <script src="/js/angular-route.min.js"></script>
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/angular.min.js"></script>
+    <script src="../../js/angular-route.min.js"></script>
     <script src="../../js/loklak.js"></script>
     <meta name="description" content="loklak provides an easy-to-extend app infrastructure. Here is a list of large-data evaluation applictions.">
     <link rel="icon" type="image/png" href="/artwork/favicon.png">
@@ -78,11 +78,11 @@
             <div class="content class" ng-repeat="app in apps track by $index">
               <div ng-if = "searchTerm.length==0" class="span2 animated fadeIn" id="{{app.applicationCategory | nospace}}">
                 <div class="reveal">
-                  <img ng-src="../{{ app.name }}/screenshot.png" />
+                  <img ng-src="../apps/{{ app.name }}/screenshot.png" />
                   <div class="hidden">
                     <div class="caption">
                       <div class="centered">
-                        <p><a href='../{{ app.name }}'>{{ app.headline | uppercase}}</a></p>
+                        <p><a href='../apps/{{ app.name }}'>{{ app.headline | uppercase}}</a></p>
                         <p class="color-black">{{ app.alternativeHeadline }}</p>
                         <br/>
                         <p class="color-black">Author: <a href='{{ app.author.url }}'>{{ app.author.name | uppercase }}</a></p>
@@ -112,9 +112,9 @@
             </center>
         </div>
       </div>
-        <script src="/js/jquery.min.js" async></script>
-    <script src="/js/bootstrap.min.js" async></script>
-    <script src="/js/ie10-viewport-bug-workaround.js" async></script>
+        <script src="../../js/jquery.min.js" async></script>
+    <script src="../../js/bootstrap.min.js" async></script>
+    <script src="../../js/ie10-viewport-bug-workaround.js" async></script>
 
 
       </body>
