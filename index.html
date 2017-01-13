@@ -58,19 +58,20 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <div id="navSidebar">
-          <div><h4><center>CATEGORIES</center></h4></div>
             <ul class="nav nav-sidebar" isolateClick>
+                <div id="catTitle"><h4>Categories</h4></div>
                 <li ng-repeat="category in categoryKeys track by $index" class=""><a href="#{{category | nospace}}" ng-click="categoryFilter($event)" id="{{category | nospace}}">{{category}}</a></li>
               </ul>
           </div>
             <p class="color-black">Contribute your app on
             <a href="https://github.com/fossasia/apps.loklak.org">Github</a>!</p>
         </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <div>
-            <h1 class="color-black">
-              <code id="categoryName">loklak apps</code>
+        <div class="page-header">
+            <h1>
+              <code id="categoryName">All apps</code>
             </h1>
+          </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
             <center>
             <div class="content class" ng-repeat="app in apps track by $index">
               <div class="span2 animated fadeInRight" id="{{app.applicationCategory | nospace}}">
@@ -79,7 +80,8 @@
                   <div class="hidden">
                     <div class="caption">
                       <div class="centered">
-                        <p><a href='../{{ app.name }}'>{{ app.headline | uppercase}}</a></p>
+                        <p><a ng-if="app.name!='applist'"href='../{{ app.name }}'>{{ app.headline | uppercase}}</a></p>
+                        <p><a ng-if="app.name=='applist'"href='../'>{{ app.headline | uppercase}}</a></p
                         <p class="color-black">{{ app.alternativeHeadline }}</p>
                         <br/>
                         <p class="color-black">Author: <a href='{{ app.author.url }}'>{{ app.author.name | uppercase }}</a></p>
@@ -90,7 +92,6 @@
               </div>
             </div>
             </center>
-          </div>
         </div>
       </div>
         <script src="/js/jquery.min.js" async></script>
