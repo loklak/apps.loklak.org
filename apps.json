@@ -510,13 +510,48 @@
     }
   ],
   "categories": [
-    "Scraper",
-    "Accounts",
-    "Demo",
-    "Search",
-    "Visualizer",
-    "Internet Of Things",
-    "About Project"
+    {"name": "Scraper",
+     "image": "scraper.png",
+     "style" : {
+        "background-color": "#EF6C00"
+      }
+    },
+    {"name": "Accounts",
+     "image": "accounts.png",
+     "style" : {
+        "background-color": "#039BE5"
+      }
+    },
+    {"name": "Demo",
+     "image": "demo.png",
+     "style" : {
+        "background-color": "#536DFE"
+     }
+    },
+    {"name": "Search",
+     "image": "search.png",
+     "style" : {
+        "background-color": "#658092"
+      }
+    },
+    {"name": "Visualizer",
+     "image": "visualizer.png",
+     "style" : {
+        "background-color": "#009688"
+      }
+    },
+    {"name": "Internet Of Things",
+     "image": "iot.png",
+     "style" : {
+        "background-color": "#f44336"
+      }
+    },
+    {"name": "About Project",
+     "image": "about.png",
+     "style" : {
+        "background-color": "#e91e63"
+      }
+    }     
   ],
   "category": {
     "Scraper": [

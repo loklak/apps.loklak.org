@@ -6,7 +6,7 @@ app.controller("app_list", function($scope, $http) {
     $http.get('apps.json').success(function(data) {
         $scope.categoryKeys = data.categories;
         $scope.apps = data.apps;
-        $scope.categoryKeys.unshift('All');
+        $scope.categoryKeys.unshift({"name": "All","image":"all.png","style" : {"background-color": "#ED3B3B"}});
     });
 
     $scope.categoryFilter = function(event) {
