@@ -22,13 +22,13 @@
 }
 
 * {
-  font-family: 'Droid Sans Mono';
+  font-family: 'Roboto', sans-serif;
 }
 
 
 body {
   padding-top: 50px;
-  font: DroidSansMono;
+  font: Roboto;
 }
 
 .color-black{
