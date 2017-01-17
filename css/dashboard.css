@@ -58,11 +58,14 @@ ul.request {
 }
 .search {
   position: absolute;
-  top:8px;
+  top:18px;
   left:275px;
 }
 .search input{
-  width:550px;
+  width:450px;
+  height: 45px;
+  padding:8px;
+  bo
 }
 .search input:focus {
   border-color: rgb(119,119,119);
@@ -132,9 +135,30 @@ body {
  * Hide default border to remove 1px line.
  */
 .navbar-fixed-top {
-  border: 0;
+  padding: 15px;
+  border-color: #999;
+}
+.navbar-header{
 }
 
+.input-group-btn{
+  display: inline;
+  margin: 0px;
+}
+
+.form-control{
+display:inline;
+border-radius: 0px;
+}
+.input-group-btn:last-child>.btn{
+  margin-left: -3px;
+}
+.loklak-btn{
+  background-color: #d81b60;
+  color: white;
+  width: 45px;
+  height: 45px;
+}
 /*
  * Sidebar
  */
@@ -157,7 +181,12 @@ body {
     overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
   }
 }
-
+.sidebar{
+  margin-top: 30px;
+}
+.main-page{
+  margin-top: 30px;
+}
 .nav-sidebar {
   margin-right: -21px; /* 20px padding + 1px border */
   margin-bottom: 20px;
