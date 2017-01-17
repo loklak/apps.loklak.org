@@ -61,8 +61,18 @@
         <div class="col-sm-3 col-md-2 sidebar">
           <div id="navSidebar">
             <ul class="nav nav-sidebar" isolateClick>
-                <div id="catTitle"><h4>Categories</h4></div>
-                <li ng-repeat="category in categoryKeys track by $index" class=""><a href="#{{category | nospace}}" ng-click="categoryFilter($event)" id="{{category | nospace}}">{{category}}</a></li>
+                <div id="catTitle">
+                  <div class="icon-container-head"><img class="icon-header" ng-src="images/sidebar-images/menu.png"/></div> 
+                  <div class="category-main-header"><h4>Categories</h4></div>
+                </div>
+                <li ng-repeat="category in categoryKeys track by $index" class="">
+                  <a href="#{{category.name | nospace}}" ng-click="categoryFilter($event)" id="{{category.name | nospace}}">
+                    <div class="flex-container" id="{{category.name | nospace}}">
+                      <div class="icon-container" ng-style="{{category.style}}"><img class="icon" ng-src="images/sidebar-images/{{category.image}}" id="{{category.name | nospace}}"/></div> 
+                      <div class="category-main" id="{{category.name | nospace}}">{{category.name}}</div>
+                    </div>  
+                  </a>
+                </li>
               </ul>
           </div>
             <p class="color-black">Contribute your app on

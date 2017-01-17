@@ -2,9 +2,9 @@
  * Base structure
  */
 
-*, .list-group-item li {
+.list-group-item li {
   
-  color: Black;
+  color:black;
 }
 .sidebar, .sidebar a {
   
@@ -20,13 +20,13 @@ ul, p {
   color:black;
 }
 ul, p a:hover{
-  color:rgb(51,51,51);
+  
 }
 a {
   color:rgb(119,119,119);
 }
 a:hover{
-  color: White;
+  color: rgb(51,51,51);
 }
 .topmenu li a:focus {
   background-color: #f1f1f1;
@@ -87,10 +87,38 @@ ul.request {
   color: rgb(49,79,79);
 }
 #catTitle{
-  background-color: #d3d3d3;
+  background-color: #8bc34a;
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 15px;
+  color: white;
+  display: -webkit-flex;
+  display: flex;
+}
+.flex-container{
+  display: -webkit-flex;
+  display: flex;
+}
+.icon{
+  padding-left:20px;
+  padding-top:10px;
+  
+}
+.icon-container{
+  margin-left: -20px;
+  width:32%;
+  margin-top: -10px;
+  margin-bottom: -10px;
+}
+.icon-header{
+  padding-left: 8px;
+  padding-top: 8px;
+}
+.category-main-header{
+  padding-left: 22px;
+}
+.category-main{
+  padding-left: 10px;
 }
 #categoryName{
   margin-left: 30px;
@@ -176,6 +204,7 @@ body {
   background-color: grey;
   color:white;
 }
+
 
 /*
  * Main content
