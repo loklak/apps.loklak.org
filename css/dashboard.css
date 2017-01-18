@@ -60,12 +60,15 @@ ul.request {
   position: absolute;
   top:18px;
   left:275px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: stretch;
+  align-items: stretch;
 }
 .search input{
   width:450px;
   height: 45px;
   padding:8px;
-  bo
 }
 .search input:focus {
   border-color: rgb(119,119,119);
