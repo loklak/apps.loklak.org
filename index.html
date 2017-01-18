@@ -46,8 +46,12 @@
           <a class="navbar-brand brand" href="http://apps.loklak.org">
           loklak <span>apps</span>
           </a>
-          <div class="form-group search"><input type="text" class="form-control" id="usr" ng-model="searchTerm" 
-            ng-init="searchTerm = ''" placeholder="Search apps by app name or author's name"></div>
+          <div class="form-group search">
+            <input type="text" class="form-control" id="usr" ng-model="searchTerm"
+            ng-init="searchTerm = ''" placeholder="Search apps by app name or author's name">
+            <span class="input-group-btn">
+              <button class="btn loklak-btn" type="submit"><span class="glyphicon glyphicon-search"></span></button></span>
+         </div>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right topmenu">
@@ -56,7 +60,7 @@
         </div>
       </div>
     </nav>
-    <div class="container-fluid" ng-app="loklak" ng-controller="app_list">
+    <div class="container-fluid main-page" ng-app="loklak" ng-controller="app_list">
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <div id="navSidebar">
