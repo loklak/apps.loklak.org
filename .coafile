@@ -6,3 +6,4 @@ htmllint_ignore = indentation, optional_tag, concerns_separation, capitalization
 [css]
 bears = PHPCodeSnifferBear
 files = **.css
+ignore = **.min.css
