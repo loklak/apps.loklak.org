@@ -46,8 +46,8 @@
         <div ng-app="TweetSearch" ng-controller="Controller">
 
             <input type="text" id="query" ng-model="query" placeholder="Search tweet from Loklak">
-            <a href='#' id="button" ng-click="Search()">Search</a>
-
+            <button href='#' class="btn btn-default" type="button" id="button" ng-click="Search()">Search</button>
+            
             <br>
             <br>
             <br>
@@ -116,6 +116,13 @@
                 	$scope.userData = response.user;
                 });
             }
+            window.addEventListener("keydown",   function flagup(event)
+            {
+              if(event.key=='Enter')
+              {
+          $scope.Search();
+              }
+            });
 
         }]);
     </script>

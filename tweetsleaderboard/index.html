@@ -72,6 +72,13 @@
                  });
          
              }
+             window.addEventListener("keydown",   function flagup(event)
+            {
+              if(event.key=='Enter')
+              {
+          $scope.Search();
+              }
+            });
               $scope.spinner = false;
          }]);
       </script>
