@@ -112,8 +112,7 @@
                   <div class="hidden">
                     <div class="caption">
                       <div class="centered">
-                        <p><a ng-if="app.name!='applist'"href='../{{ app.name }}'>{{ app.headline | uppercase}}</a></p>
-                        <p><a ng-if="app.name=='applist'"href='../'>{{ app.headline | uppercase}}</a></p
+                        <p><a href='../{{ app.name }}'>{{ app.headline | uppercase}}</a></p>
                         <p class="color-black">{{ app.alternativeHeadline }}</p>
                         <br/>
                         <p class="color-black">Author: <a href='{{ app.author.url }}'>{{ app.author.name | uppercase }}</a></p>
