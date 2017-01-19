@@ -401,24 +401,6 @@
     {
       "@context": "http://schema.org",
       "@type": "SoftwareApplication",
-      "permissions": ["/api/apps.json"],
-      "name": "applist",
-      "headline": "loklak app list",
-      "alternativeHeadline": "work from GCI task",
-      "applicationCategory": "About Project",
-      "applicationSubCategory": "Apps listing",
-      "operatingSystem": "http://loklak.org",
-      "author": {
-        "@type": "Person",
-        "name": "Seva Zhidkov",
-        "email": "zhidkovseva@gmail.com",
-        "url": "https://github.com/sevazhidkov",
-        "sameAs": "https://github.com/sevazhidkov"
-      }
-    },
-    {
-      "@context": "http://schema.org",
-      "@type": "SoftwareApplication",
       "permissions": ["/api/peers.json"],
       "name": "oneClickDeploy",
       "headline": "One Click Deploy",
@@ -534,12 +516,6 @@
         "background-color": "#f44336"
       }
     },
-    {"name": "About Project",
-     "image": "about.png",
-     "style" : {
-        "background-color": "#e91e63"
-      }
-    },  
     {"name": "Misc",
      "image": "misc.png",
      "style" : {
@@ -583,7 +559,6 @@
     "Internet Of Things": [
       "NMEA",
       "oneClickDeploy"
-    ],
-    "About Project": ["applist"]
+    ]
   }
 }
