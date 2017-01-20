@@ -43,9 +43,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand brand" href="http://apps.loklak.org">
-          loklak <span>apps</span>
+          <div class="menubtn-and-brand">
+            <button type="button" class="btn menu-btn" data-toggle="collapse" data-target="#navSidebarMenu"><span class="glyphicon glyphicon-th"></span></button>
+            <a class="navbar-brand brand" href="http://apps.loklak.org">
+            loklak <span>apps</span>
           </a>
+          </div>
           <div class="form-group search">
             <input type="text" class="form-control" id="usr" ng-model="searchTerm"
             ng-init="searchTerm = ''" placeholder="Search apps by app name or author's name">
@@ -62,6 +65,22 @@
     </nav>
     <div class="container-fluid main-page" ng-app="loklak" ng-controller="app_list">
       <div class="row">
+          <div id="navSidebarMenu" class="collapse">
+            <ul class="nav nav-sidebar" isolateClick>
+                <div id="catTitle">
+                  <div class="icon-container-head"><img class="icon-header" ng-src="images/sidebar-images/menu.png"/></div> 
+                  <div class="category-main-header"><h4>Categories</h4></div>
+                </div>
+                <li ng-repeat="category in categoryKeys track by $index" class="">
+                  <a href="#{{category.name | nospace}}" ng-click="categoryFilter($event)" id="{{category.name | nospace}}">
+                    <div class="flex-container" id="{{category.name | nospace}}">
+                      <div class="icon-container" ng-style="{{category.style}}"><img class="icon" ng-src="images/sidebar-images/{{category.image}}" id="{{category.name | nospace}}"/></div> 
+                      <div class="category-main" id="{{category.name | nospace}}">{{category.name}}</div>
+                    </div>  
+                  </a>
+                </li>
+              </ul>
+          </div>
         <div class="col-sm-3 col-md-2 sidebar">
           <div id="navSidebar">
             <ul class="nav nav-sidebar" isolateClick>
