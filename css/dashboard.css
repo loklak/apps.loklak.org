@@ -36,20 +36,14 @@ a:hover{
   color:rgb(51,51,51);
   background-color:#f1f1f1;
 }
-.menubtn-and-brand {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-align-items: center;
-  align-items: center;
-}
 .brand {
   display: block;
-  height: 20px;
+  height: 50px;
   font-family: "Courier New";
-  padding:5px 10px;
-  font-size:20px;
+  padding:15px 15px;
+  font-size:35px;
   color: #C8254D;
-  line-height: 15px;
+  line-height: 20px;
 }
 .brand span{
   color:rgb(51,51,51);
@@ -64,14 +58,11 @@ ul.request {
 }
 .search {
   position: absolute;
-  top:18px;
+  top:8px;
   left:275px;
-  display:none;
 }
 .search input{
-  width:450px;
-  height: 45px;
-  padding:8px;
+  width:550px;
 }
 .search input:focus {
   border-color: rgb(119,119,119);
@@ -169,36 +160,9 @@ body {
  * Hide default border to remove 1px line.
  */
 .navbar-fixed-top {
-  padding: 15px;
-  border-color: #999;
-}
-.navbar-header{
+  border: 0;
 }
 
-.input-group-btn{
-  display: inline;
-  margin: 0px;
-}
-
-.form-control{
-display:inline;
-border-radius: 0px;
-}
-.input-group-btn:last-child>.btn{
-  margin-left: -3px;
-}
-.loklak-btn{
-  background-color: #d81b60;
-  color: white;
-  width: 45px;
-  height: 45px;
-}
-.menu-btn {
-  background-color: #d81b60;
-  color: white;
-  width: 40px;
-  height: 40px;
-}
 /*
  * Sidebar
  */
@@ -220,42 +184,8 @@ border-radius: 0px;
     overflow-x: hidden;
     overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
   }
-  .search {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-align-items: stretch;
-    align-items: stretch;
-  }
-  .menu-btn {
-    display: none;
-  }
-  #navSidebarMenu {
-    display:none;
-  }
-  .brand {
-    display: block;
-    height: 50px;
-    font-family: "Courier New";
-    padding:15px 15px;
-    font-size:35px;
-    color: #C8254D;
-    line-height: 20px;
-  }
-  .page-header {
-    margin-top: -21px;
-    margin-left: 16%;
-    background-color: rgba(53,29,25,0.25);
-    padding-top: 1px;
-    padding-bottom: 0px;
-    padding-left: 10px;
-  }
 }
-.sidebar{
-  margin-top: 30px;
-}
-.main-page{
-  margin-top: 30px;
-}
+
 .nav-sidebar {
   margin-right: -21px; /* 20px padding + 1px border */
   margin-bottom: 20px;
@@ -292,6 +222,7 @@ border-radius: 0px;
 }
 .page-header {
   margin-top: -21px;
+  margin-left: 16%;
   background-color: rgba(53,29,25,0.25);
   padding-top: 1px;
   padding-bottom: 0px;

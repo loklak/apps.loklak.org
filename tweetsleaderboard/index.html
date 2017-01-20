@@ -3,8 +3,9 @@
    <head>
    <link rel="icon" type="image/png" href="../../artwork/favicon.png">
       <title>Leaderboard</title>
-      <link href="css/style.css" rel="stylesheet"/>
-      <link href="css/bootstrap.min.css" rel="stylesheet"/>
+      <meta charset="utf-8">
+      <link href="css/style.css" rel="stylesheet">
+      <link href="css/bootstrap.min.css" rel="stylesheet">
       <script src="/js/angular.min.js"></script>
       <script src="/js/jquery.min.js"></script>
    </head>
@@ -18,15 +19,15 @@
                <div class="input-group" id="searchBar">
                   <input type="text" id="query" class="form-control" ng-model="query" placeholder="Search tweet from Loklak">
                   <span class="input-group-btn">
-                  <button href='#' class="btn btn-default" type="button" id="button" ng-click="Search()">Search</button>
+                  <button href="#" class="btn btn-default" type="button" id="button" ng-click="Search()">Search</button>
                   </span>
                </div>
             </div>
-            <div ng-if="spinner && !leaderboard"><img src="loading.gif" height="400" width="400"/></div>
+            <div ng-if="spinner && !leaderboard"><img src="loading.gif" height="400" width="400"></div>
             <br>
             <br>
             <br>
-            <table >
+            <table>
                <tr ng-if="leaderboard">
                   <th style="text-align: center;">UserName</th>
                   <th style="text-align: center;">Number of Tweets</th>
@@ -41,45 +42,35 @@
          </div>
       </center>
       <script>
-         var app = angular.module('TweetSearch', []);
+         var app=angular.module('TweetSearch', []);
          app.controller('Controller', ['$scope', '$http', '$sce', function($scope, $http, $sce) {
-         
-             $scope.Search = function() {
+             $scope.Search=function() {
                 $scope.spinner=true;
-                 var QueryCommand = 'http://api.loklak.org/api/search.json?callback=JSON_CALLBACK&q=' + $scope.query;
-         
+                 var QueryCommand='//api.loklak.org/api/search.json?callback=JSON_CALLBACK&q=' + $scope.query;
                  $http.jsonp(String(QueryCommand)).success(function(response) {
                      
-                     var data = response; 
-                     var statuses = data.statuses;
-                     var users = [];
-                     for (var i=0; i<statuses.length; i++) {
-                         user = statuses[i].screen_name; 
+                     var data=response;
+                     var statuses=data.statuses;
+                     var users=[];
+                     for (var i=0;i<statuses.length;i++) {
+                         user=statuses[i].screen_name;
                          users.push(user);
                      }
-                     var counts = {};
-                     for(var i = 0; i< users.length; i++) {
-                         var num = users[i];
-                         counts[num] = counts[num] ? counts[num]+1 : 1;
+                     var counts={};
+                     for(var i=0;i< users.length;i++) {
+                         var num=users[i];
+                         counts[num]=counts[num] ? counts[num]+1 : 1;
                      }
-                     var countArr = [];
+                     var countArr=[];
                      for (obj in counts){
                          countArr.push([obj,counts[obj]])
                      } 
                      countArr.sort(function(a,b){return b[1] - a[1]});
-                     $scope.leaderboard = countArr; 
-                     //console.log(counts); 
+                     $scope.leaderboard=countArr;
+                     //console.log(counts);
                  });
-         
              }
-             window.addEventListener("keydown",   function flagup(event)
-            {
-              if(event.key=='Enter')
-              {
-          $scope.Search();
-              }
-            });
-              $scope.spinner = false;
+              $scope.spinner=false;
          }]);
       </script>
    </body>

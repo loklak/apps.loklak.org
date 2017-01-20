@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="appListApp">
   <head>
-        <meta charset="utf-8">
+    <meta charset="utf-8">
     <meta name="robots" content="index,follow">
+<<<<<<< HEAD
+=======
     <meta http-equiv="cache-control" content="public">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+>>>>>>> add0f2f... Fixed html lint errors
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="Content-Language" content="en, english" />
-    <link rel="icon" type="image/png" href="http://loklak.org/artwork/favicon.png">
+    <meta name="Content-Language" content="en, english">
+    <link rel="icon" type="image/png" href="//loklak.org/artwork/favicon.png">
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/loklak.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -27,13 +30,11 @@
     <script src="../../js/angular-route.min.js"></script>
     <script src="../../js/angular-touch.min.js"></script>
     <link href="../../css/dashboard.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet"/>
-    <link href="css/animate.css" rel="stylesheet"/>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
     <script src="./app_list.js"></script>
-
   </head>
   <body data-spy="scroll" data-target="#navSidebar" data-offset="50">
-
     <nav class="navbar navbar-fixed-top navbar-light navbar-color">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -43,18 +44,10 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <div class="menubtn-and-brand">
-            <button type="button" class="btn menu-btn" data-toggle="collapse" data-target="#navSidebarMenu"><span class="glyphicon glyphicon-th"></span></button>
-            <a class="navbar-brand brand" href="http://apps.loklak.org">
-            loklak <span>apps</span>
+          <a class="navbar-brand brand" href="//apps.loklak.org">
+          loklak <span>apps</span>
           </a>
-          </div>
-          <div class="form-group search">
-            <input type="text" class="form-control" id="usr" ng-model="searchTerm"
-            ng-init="searchTerm = ''" placeholder="Search apps by app name or author's name">
-            <span class="input-group-btn">
-              <button class="btn loklak-btn" type="submit"><span class="glyphicon glyphicon-search"></span></button></span>
-         </div>
+          <div class="form-group search"><input type="text" class="form-control" id="usr" ng-model="searchTerm" ng-init="searchTerm=''" placeholder="Search apps by app name or author"s name"></div>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right topmenu">
@@ -65,41 +58,31 @@
     </nav>
     <div class="container-fluid main-page" ng-app="loklak" ng-controller="app_list">
       <div class="row">
-          <div id="navSidebarMenu" class="collapse">
-            <ul class="nav nav-sidebar" isolateClick>
-                <div id="catTitle">
-                  <div class="icon-container-head"><img class="icon-header" ng-src="images/sidebar-images/menu.png"/></div> 
-                  <div class="category-main-header"><h4>Categories</h4></div>
-                </div>
-                <li ng-repeat="category in categoryKeys track by $index" class="">
-                  <a href="#{{category.name | nospace}}" ng-click="categoryFilter($event)" id="{{category.name | nospace}}">
-                    <div class="flex-container" id="{{category.name | nospace}}">
-                      <div class="icon-container" ng-style="{{category.style}}"><img class="icon" ng-src="images/sidebar-images/{{category.image}}" id="{{category.name | nospace}}"/></div> 
-                      <div class="category-main" id="{{category.name | nospace}}">{{category.name}}</div>
-                    </div>  
-                  </a>
-                </li>
-              </ul>
-          </div>
         <div class="col-sm-3 col-md-2 sidebar">
           <div id="navSidebar">
             <ul class="nav nav-sidebar" isolateClick>
                 <div id="catTitle">
-                  <div class="icon-container-head"><img class="icon-header" ng-src="images/sidebar-images/menu.png"/></div> 
+                  <div class="icon-container-head"><img class="icon-header" ng-src="images/sidebar-images/menu.png"></div>
+<<<<<<< HEAD
+                  <div class="category-main-header">
+<h4>Categories</h4>
+</div>
+=======
                   <div class="category-main-header"><h4>Categories</h4></div>
+>>>>>>> add0f2f... Fixed html lint errors
                 </div>
                 <li ng-repeat="category in categoryKeys track by $index" class="">
                   <a href="#{{category.name | nospace}}" ng-click="categoryFilter($event)" id="{{category.name | nospace}}">
                     <div class="flex-container" id="{{category.name | nospace}}">
-                      <div class="icon-container" ng-style="{{category.style}}"><img class="icon" ng-src="images/sidebar-images/{{category.image}}" id="{{category.name | nospace}}"/></div> 
+                      <div class="icon-container" ng-style="{{category.style}}"><img class="icon" ng-src="images/sidebar-images/{{category.image}}" id="{{category.name | nospace}}"></div>
                       <div class="category-main" id="{{category.name | nospace}}">{{category.name}}</div>
-                    </div>  
+                    </div>
                   </a>
                 </li>
               </ul>
           </div>
             <p class="color-black">Contribute your app on
-            <a href="https://github.com/fossasia/apps.loklak.org">Github</a>!</p>
+            <a href="//github.com/fossasia/apps.loklak.org">Github</a>!</p>
         </div>
         <div class="page-header">
             <h1>
@@ -109,32 +92,32 @@
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
             <center>
             <div class="content class" ng-repeat="app in apps track by $index">
-              <div ng-if = "searchTerm.length==0" class="span2 animated fadeIn" id="{{app.applicationCategory | nospace}}">
+              <div ng-if="searchTerm.length==0" class="span2 animated fadeIn" id="{{app.applicationCategory | nospace}}">
                 <div class="reveal">
-                  <img ng-src="../{{ app.name }}/screenshot.png" />
+                  <img ng-src="../{{ app.name }}/screenshot.png">
                   <div class="hidden">
                     <div class="caption">
                       <div class="centered">
-                        <p><a href='../{{ app.name }}'>{{ app.headline | uppercase}}</a></p>
+                        <p><a href="../{{ app.name }}">{{ app.headline | uppercase}}</a></p>
                         <p class="color-black">{{ app.alternativeHeadline }}</p>
-                        <br/>
-                        <p class="color-black">Author: <a href='{{ app.author.url }}'>{{ app.author.name | uppercase }}</a></p>
+                        <br>
+                        <p class="color-black">Author: <a href="{{ app.author.url }}">{{ app.author.name | uppercase }}</a></p>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-
-              <div ng-if = "searchTerm.length>0 && ((app.name.toUpperCase().indexOf(searchTerm.toUpperCase())!=-1) || (app.headline.toUpperCase().indexOf(searchTerm.toUpperCase())!=-1) || ((app.author.name.toUpperCase().indexOf(searchTerm.toUpperCase())!=-1)))" class="span2 animated fadeIn" id="{{app.applicationCategory | nospace}}">
+              <div ng-if="searchTerm.length>0 && ((app.name.toUpperCase().indexOf(searchTerm.toUpperCase())!=-1) || (app.headline.toUpperCase().indexOf(searchTerm.toUpperCase())!=-1) || ((app.author.name.toUpperCase().indexOf(searchTerm.toUpperCase())!=-1)))" class="span2 animated fadeIn" id="{{app.applicationCategory | nospace}}">
                 <div class="reveal">
-                  <img ng-src="../{{ app.name }}/screenshot.png" />
+                  <img ng-src="../{{ app.name }}/screenshot.png">
                   <div class="hidden">
                     <div class="caption">
                       <div class="centered">
-                        <p><a href='../{{ app.name }}'>{{ app.headline | uppercase}}</a></p>
+                        <p><a ng-if="app.name!="applist""href="../{{ app.name }}">{{ app.headline | uppercase}}</a></p>
+                        <p><a ng-if="app.name=="applist""href="../">{{ app.headline | uppercase}}</a></p
                         <p class="color-black">{{ app.alternativeHeadline }}</p>
-                        <br/>
-                        <p class="color-black">Author: <a href='{{ app.author.url }}'>{{ app.author.name | uppercase }}</a></p>
+                        <br>
+                        <p class="color-black">Author: <a href="{{ app.author.url }}">{{ app.author.name | uppercase }}</a></p>
                       </div>
                     </div>
                   </div>
@@ -147,8 +130,5 @@
         <script src="/js/jquery.min.js" async></script>
     <script src="/js/bootstrap.min.js" async></script>
     <script src="/js/ie10-viewport-bug-workaround.js" async></script>
-
-
       </body>
-
     </html>
