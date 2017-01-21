@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html ng-app="Twitter">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <link rel="icon" type="image/png" href="../../artwork/favicon.png">
     <title>Tweet Search</title>
     <link rel="stylesheet" href="style.css">
-    <script src="http://code.angularjs.org/angular-1.0.0rc4.min.js"></script>
-    <script src="http://code.angularjs.org/angular-resource-1.0.0rc4.min.js"></script>
+    <script src="//code.angularjs.org/angular-1.0.0rc4.min.js"></script>
+    <script src="//code.angularjs.org/angular-resource-1.0.0rc4.min.js"></script>
   </head>
   <body>
- <div  ng-controller="TwitterCtrl">
+ <div ng-controller="TwitterCtrl">
   <form class="form-wrapper">
-  	<input type="text"  ng-model="searchTerm" placeholder="Search Tweet" id="search" required>
-	  <button type="submit" id="submit" ng-click="doSearch()" >Search</button>
+  <input type="text" ng-model="searchTerm" placeholder="Search Tweet" id="search" required>
+  <button type="submit" id="submit" ng-click="doSearch()">Search</button>
   </form>
   <h3>Results</h3>
   <div class="result-wrap">
@@ -23,16 +23,16 @@
   </div>
 </div>
    <script>
-angular.module('Twitter', ['ngResource']);
+angular.module("Twitter", ["ngResource"]);
 function TwitterCtrl($scope, $resource) {
-    $scope.twitter = $resource('http://api.loklak.org/api/:action',
+    $scope.twitter = $resource("//api.loklak.org/api/:action",
         {
-          action:'search.json', 
-          callback:'JSON_CALLBACK'
+          action:"search.json",
+          callback:"JSON_CALLBACK"
         },
         {
           get:{
-            method:'JSONP'
+            method:"JSONP"
           }
     });
     $scope.hideit = false;
@@ -43,6 +43,6 @@ function TwitterCtrl($scope, $resource) {
       $scope.twitterResult = $scope.twitter.get({q:$scope.searchTerm});
     };
 }
-</script> 
+</script>
   </body>
 </html>

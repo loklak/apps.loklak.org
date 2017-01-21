@@ -78,7 +78,7 @@
       "name": "forgotpassword",
       "headline": "Password Recovery",
       "alternativeHeadline": "Forgot Password",
-      "applicationCategory": "Misc",
+      "applicationCategory": "Accounts",
       "applicationSubCategory": "account operations",
       "operatingSystem": "http://loklak.org",
       "author": {
@@ -96,7 +96,7 @@
       "name": "boilerplate",
       "headline": "Boilerplate for loklak apps",
       "alternativeHeadline": "the 'hello world' app that you want to copy-paste for your own app",
-      "applicationCategory": "Misc",
+      "applicationCategory": "Demo",
       "applicationSubCategory": "Hello World",
       "operatingSystem": "http://loklak.org",
       "author": {
@@ -149,7 +149,7 @@
       "name": "loginpage",
       "headline": "Log In to Loklak",
       "alternativeHeadline": "Login",
-      "applicationCategory": "Misc",
+      "applicationCategory": "Accounts",
       "applicationSubCategory": "account operations",
       "operatingSystem": "http://loklak.org",
       "author": {
@@ -167,7 +167,7 @@
       "name": "resetpass",
       "headline": "Reset your Loklak Password",
       "alternativeHeadline": "Reset Password",
-      "applicationCategory": "Misc",
+      "applicationCategory": "Accounts",
       "applicationSubCategory": "account operations",
       "operatingSystem": "http://loklak.org",
       "author": {
@@ -240,7 +240,7 @@
       "name": "signup",
       "headline": "Sign Up to Loklak",
       "alternativeHeadline": "Sign Up",
-      "applicationCategory": "Misc",
+      "applicationCategory": "Accounts",
       "applicationSubCategory": "account operations",
       "operatingSystem": "http://loklak.org",
       "author": {
@@ -258,7 +258,7 @@
       "name": "accountpermissions",
       "headline": "View permissions",
       "alternativeHeadline": "Account Permissions",
-      "applicationCategory": "Misc",
+      "applicationCategory": "Accounts",
       "applicationSubCategory": "account operations",
       "operatingSystem": "http://loklak.org",
       "author": {
@@ -401,6 +401,24 @@
     {
       "@context": "http://schema.org",
       "@type": "SoftwareApplication",
+      "permissions": ["/api/apps.json"],
+      "name": "applist",
+      "headline": "loklak app list",
+      "alternativeHeadline": "work from GCI task",
+      "applicationCategory": "About Project",
+      "applicationSubCategory": "Apps listing",
+      "operatingSystem": "http://loklak.org",
+      "author": {
+        "@type": "Person",
+        "name": "Seva Zhidkov",
+        "email": "zhidkovseva@gmail.com",
+        "url": "https://github.com/sevazhidkov",
+        "sameAs": "https://github.com/sevazhidkov"
+      }
+    },
+    {
+      "@context": "http://schema.org",
+      "@type": "SoftwareApplication",
       "permissions": ["/api/peers.json"],
       "name": "oneClickDeploy",
       "headline": "One Click Deploy",
@@ -423,7 +441,7 @@
       "name": "keyRegistration",
       "headline": "Register a public key",
       "alternativeHeadline": "Key Registration",
-      "applicationCategory": "Misc",
+      "applicationCategory": "Accounts",
       "applicationSubCategory": "account operations",
       "operatingSystem": "http://loklak.org",
       "author": {
@@ -498,6 +516,18 @@
         "background-color": "#EF6C00"
       }
     },
+    {"name": "Accounts",
+     "image": "accounts.png",
+     "style" : {
+        "background-color": "#039BE5"
+      }
+    },
+    {"name": "Demo",
+     "image": "demo.png",
+     "style" : {
+        "background-color": "#536DFE"
+     }
+    },
     {"name": "Search",
      "image": "search.png",
      "style" : {
@@ -516,12 +546,12 @@
         "background-color": "#f44336"
       }
     },
-    {"name": "Misc",
-     "image": "misc.png",
+    {"name": "About Project",
+     "image": "about.png",
      "style" : {
-        "background-color": "#039BE5"
+        "background-color": "#e91e63"
       }
-    }   
+    }     
   ],
   "category": {
     "Scraper": [
@@ -559,6 +589,7 @@
     "Internet Of Things": [
       "NMEA",
       "oneClickDeploy"
-    ]
+    ],
+    "About Project": ["applist"]
   }
 }

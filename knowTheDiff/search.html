@@ -1,32 +1,37 @@
 <!DOCTYPE html>
 <html>
    <head>
+<meta charset="utf-8">
    <link rel="icon" type="image/png" href="../../artwork/favicon.png">
       <title>SearchResults</title>
+<<<<<<< HEAD
+      <link href="css/style.css" rel="stylesheet">
+=======
       <link href="css/style.css" rel="stylesheet"/>
-      <link href="css/bootstrap.min.css" rel="stylesheet"/>
-      <link rel="stylesheet" href="css/introjs.min.css"/>
+>>>>>>> add0f2f... Fixed html lint errors
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="css/introjs.min.css">
       <script src="../../js/angular.min.js"></script>
       <script src="../../js/jquery.min.js"></script>
       <script src="js/intro.min.js"></script>
    </head>
    <body>
    <a href="index.html">
-   <img style="height: 50px; width: 50px" src="img/home.png"/>
+   <img style="height: 50px; width: 50px" src="img/home.png">
    </a>
       <center>
          <h1>Search for the top five tweeters</h1>
          <br>
          <div ng-app="TweetSearch" ng-controller="Controller">
             <div class="form-group">
-               <div class="input-group" id="searchBar">
+               <div class="input-group" id="searchbar">
                   <input type="text" id="query" class="form-control" ng-model="query" placeholder="Search tweet from Loklak">
                   <span class="input-group-btn">
-                  <button href='#' class="btn btn-default" type="button" id="button" ng-click="Search()">Search</button>
+                  <button href="#" class="btn btn-default" type="button" id="button" ng-click="Search()">Search</button>
                   </span>
                </div>
             </div>
-            <div ng-if="spinner && !leaderboard"><img src="loading.gif" height="400" width="400"/></div>
+            <div ng-if="spinner && !leaderboard"><img src="loading.gif" height="400" width="400"></div>
             <br>
             <br>
             <br>
@@ -47,10 +52,10 @@
           var introguide = introJs();
           introguide.setOptions({
           steps: [
-          { 
-            element: '.results',
-            intro: 'The results here are just from your own peer. This does not include the complete aggregated count',
-            position: 'bottom'
+          {
+            element: ".results",
+            intro: "The results here are just from your own peer. This does not include the complete aggregated count",
+            position: "bottom"
           }
           ]
       });
@@ -58,20 +63,17 @@
     });
       </script>
       <script>
-         var app = angular.module('TweetSearch', []);
-         app.controller('Controller', ['$scope', '$http', '$sce', function($scope, $http, $sce) {
-         
+         var app = angular.module("TweetSearch", []);
+         app.controller("Controller", ["$scope", "$http", "$sce", function($scope, $http, $sce) {
              $scope.Search = function() {
                 $scope.spinner=true;
-                 var QueryCommand = 'http://api.loklak.org/api/search.json?callback=JSON_CALLBACK&q=' + $scope.query;
-         
+                 var QueryCommand = "http://api.loklak.org/api/search.json?callback=JSON_CALLBACK&q=" + $scope.query;
                  $http.jsonp(String(QueryCommand)).success(function(response) {
-                     
-                     var data = response; 
+                     var data = response;
                      var statuses = data.statuses;
                      var users = [];
                      for (var i=0; i<statuses.length; i++) {
-                         user = statuses[i].screen_name; 
+                         user = statuses[i].screen_name;
                          users.push(user);
                      }
                      var counts = {};
@@ -82,14 +84,14 @@
                      var countArr = [];
                      for (obj in counts){
                          countArr.push([obj,counts[obj]])
-                     } 
+                     }
                      countArr.sort(function(a,b){return b[1] - a[1]});
-                     $scope.leaderboard = countArr; 
-                     //console.log(counts); 
+                     $scope.leaderboard = countArr;
+                     //console.log(counts);
                  });
              }
               $scope.spinner = false;
-         }]); 
+         }]);
       </script>
    </body>
 </html>

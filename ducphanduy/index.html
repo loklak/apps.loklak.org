@@ -2,7 +2,8 @@
 <html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
+<meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="../../artwork/favicon.png">
     <title>Ducphanduy's Tweet Search Page</title>
 </head>
@@ -18,11 +19,10 @@
         <div ng-app="TweetSearch" ng-controller="Controller">
 
             <input type="text" id="query" ng-model="query" placeholder="Search tweet from Loklak">
-            <span class="input-group-btn">
-            <button href='#' class="btn btn-primary" type="button" id="button" ng-click="Search()">Search</button>   
-            </span>
+            <a href="#" id="button" ng-click="Search()">Search</a>
+
             <br>
-            <div ng-if="spinner && !data"><img src="loading.gif" height="150" width="150"/></div> <br>
+
             <table>
                 <tr ng-repeat="x in myData">
                     <td ng-bind-html="x.text"></td>
@@ -40,7 +40,7 @@
         app.controller('Controller', ['$scope', '$http', '$sce', function($scope, $http, $sce) {
 
             $scope.Search = function() {
-                $scope.spinner=true;
+
                 var QueryCommand = 'http://api.loklak.org/api/search.json?callback=JSON_CALLBACK&q=' + $scope.query;
 
                 $http.jsonp(String(QueryCommand)).then(function(response) {
@@ -51,15 +51,6 @@
                 });
             }
 
-            window.addEventListener("keydown",   function flagup(event)
-            {
-                if(event.key=='Enter')
-                {
-                    $scope.Search();
-                }
-            });
-            $scope.spinner = false;
-            
         }]);
     </script>
 </body>

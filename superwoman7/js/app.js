@@ -14,11 +14,4 @@ app.controller('tweet-search', function($scope, $http, $sce) {
 			alert('Oh no! An error! '+error);
 		});
 	}
-	window.addEventListener("keydown",   function flagup(event)
-     {
-              if(event.key=='Enter')
-              {
-          $scope.getTweets();
-              }
-    });
 });

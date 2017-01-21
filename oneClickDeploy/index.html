@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
+<meta charset="utf-8">
     <link rel="icon" type="image/png" href="../../artwork/favicon.png">
     <title>PeersDeployGame
     </title>
-    <link href="css/style.css" rel="stylesheet"/>
-    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <script src="../../js/angular.min.js"></script>
     <script src="../../js/jquery.min.js"></script>
     <script src="app.js"></script>
@@ -41,8 +42,8 @@
         <div class="panel-heading">Heroku Deployment
         </div>
         <div class="panel-body">
-          <a href="https://www.heroku.com/deploy/?template=https://github.com/loklak/loklak_server">
-            <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
+          <a href="//www.heroku.com/deploy/?template=//github.com/loklak/loklak_server">
+            <img src="//www.herokucdn.com/deploy/button.svg" alt="Deploy">
           </a>
         </div>
       </div>
@@ -50,8 +51,8 @@
         <div class="panel-heading">Scalingo Deployment
         </div>
         <div class="panel-body">
-          <a href="https://my.scalingo.com/deploy?source=https://github.com/loklak/loklak_server">
-            <img src="https://cdn.scalingo.com/deploy/button.svg" alt="Deploy on Scalingo" data-canonical-src="https://cdn.scalingo.com/deploy/button.svg" style="max-width:100%;">
+          <a href="//my.scalingo.com/deploy?source=//github.com/loklak/loklak_server">
+            <img src="//cdn.scalingo.com/deploy/button.svg" alt="Deploy on Scalingo" data-canonical-src="//cdn.scalingo.com/deploy/button.svg" style="max-width:100%;">
           </a>
         </div>
       </div>
@@ -59,8 +60,8 @@
         <div class="panel-heading">Bluemix deployment
         </div>
         <div class="panel-body">
-          <a href="https://bluemix.net/deploy?repository=https://github.com/loklak/loklak_server"> 
-            <img src="https://bluemix.net/deploy/button.png" alt="Deploy to Bluemix">
+          <a href="//bluemix.net/deploy?repository=//github.com/loklak/loklak_server">
+            <img src="//bluemix.net/deploy/button.png" alt="Deploy to Bluemix">
           </a>
         </div>
       </div>
@@ -68,8 +69,8 @@
         <div class="panel-heading">Docker Deployment
         </div>
         <div class="panel-body">
-          <a href="https://cloud.docker.com/stack/deploy/?repo=https://github.com/loklak/loklak_server">
-            <img src="https://files.cloud.docker.com/images/deploy-to-dockercloud.svg" alt="Deploy to Docker Cloud">
+          <a href="//cloud.docker.com/stack/deploy/?repo=//github.com/loklak/loklak_server">
+            <img src="//files.cloud.docker.com/images/deploy-to-dockercloud.svg" alt="Deploy to Docker Cloud">
           </a>
         </div>
       </div>
@@ -86,10 +87,10 @@
         height = 480;
     var color = d3.scale.category20();
     /* Initialize tooltip */
-    tip = d3.tip().attr('class', 'd3-tip').html(function(d) {
+    tip = d3.tip().attr("class", "d3-tip").html(function(d) {
       return d.name;
     });
-    var url = 'http://localhost:9000/apps/oneClickDeploy/test.json';
+    var url = "//localhost:9000/apps/oneClickDeploy/test.json";
     function getRandomInt(min, max) {
       return Math.floor(Math.random() * (max - min)) + min;
     }
@@ -99,7 +100,7 @@
       };
       peersList = json.peers;
       loklakObject = {
-        name:'loklak.org', x:0, y:0}
+        name:"loklak.org", x:0, y:0}
       nodes.push(loklakObject);
       count = getRandomInt(10,70);
       for (var i=0; i<peersList.length; i++) {
@@ -120,28 +121,28 @@
         linkObject.target = i+1;
         links.push(linkObject);
       }
-      var svg = d3.select('div.graph').append('svg')
-      .attr('width', width)
-      .attr('height', height);
+      var svg = d3.select("div.graph").append("svg")
+      .attr("width", width)
+      .attr("height", height);
       var force = d3.layout.force()
       .size([width, height])
       .nodes(nodes)
       .links(links);
       force.linkDistance(width/2);
-      var link = svg.selectAll('.link')
+      var link = svg.selectAll(".link")
       .data(links)
-      .enter().append('line')
-      .attr('class', 'link');
+      .enter().append("line")
+      .attr("class", "link");
       /* Invoke the tip in the context of your visualization */
       svg.call(tip)
-      var node = svg.selectAll('.node')
+      var node = svg.selectAll(".node")
       .data(nodes)
-      .enter().append('circle')
-      .attr('class', 'node')
+      .enter().append("circle")
+      .attr("class", "node")
       .attr("r", 4.5)
       .style("fill", function (d) { return color(d.class); })
-      .on('mouseover', tip.show)
-      .on('mouseout', tip.hide)
+      .on("mouseover", tip.show)
+      .on("mouseout", tip.hide)
       .call(force.drag);
       // Start the force layout.
       force

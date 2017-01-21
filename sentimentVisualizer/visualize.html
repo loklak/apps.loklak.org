@@ -4,9 +4,9 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <meta name="description" content="">
-        <meta name="author" content="">
+        <!-- The above 3 meta tags *must* come first in the head;any other head content must come *after* these tags -->
+        <meta name="description">
+        <meta name="author"s>
         <link rel="icon" type="image/png" href="../../artwork/favicon.png">
         <title>Sentimental Analysis</title>
         <!-- Bootstrap core CSS -->
@@ -19,7 +19,6 @@
         <script src="../../js/angular.min.js"></script>
         <script src="js/highcharts.js"></script>
         <script src="js/exporting.js"></script>
-
         <style>
             .post-wrapper:first-child .post-inner {
             border-top-color: rgba(0, 0, 0, 0.1);
@@ -65,7 +64,7 @@
             .post-wrapper .post-inner p.lead {
             font-size: 1.2em;
             }
-            .Emoji.Emoji--forText {	
+            .Emoji.Emoji--forText {
             width: 2%;
             height: 2%;
             padding: initial;
@@ -94,7 +93,7 @@
                             <div class="form-group">
                                 <div class="input-group input-group-xs ">
                                     <input name="q" type="text" id="query" class="form-control" ng-model="query" title="Search Twitter and the loklak network" placeholder="Search for a tweet text">
-                                    <span class="input-group-btn"><button class="btn btn btn-primary" href='#' type="button" id="button" ng-click="Search()">Visualize Emotion</button></span>
+                                    <span class="input-group-btn"><button class="btn btn btn-primary" href="#" type="button" id="button" ng-click="Search()">Visualize Emotion</button></span>
                                 </div>
                             </div>
                         </form>
@@ -104,9 +103,11 @@
             </div>
         </nav>
         <div class="container">
-            <br></br>
+            <br>
             <h1>Emotion and Data Visualization for: {{query}}</h1>
-        <center><div ng-if="spinner && !tweetsStatus"><img src="loading.gif" height="400" width="400"/></div></center>
+        <center>
+<div ng-if="spinner && !tweetsStatus"><img src="loading.gif" height="400" width="400"></div>
+</center>
         <div style="width: 100%;margin: 0 auto;">
             <div style="width: 50%;min-height: 400px;float: left;" class="pie-chart2"></div>
             <div style="width: 50%;min-height: 400px;float: left;" class="pie-chart"></div>
@@ -124,16 +125,13 @@
         </div>
     </body>
     <script>
-         var app = angular.module('TweetSearch', []);
-         app.controller('Controller', ['$scope', '$http', '$sce', function($scope, $http, $sce) {
-         
-             $scope.Search = function() {
+         var app = angular.module("TweetSearch", []);
+         app.controller("Controller", ["$scope", "$http", "$sce", function($scope, $http, $sce){
+             $scope.Search = function(){
                 $scope.spinner=true;
-                 var QueryCommand = 'http://api.loklak.org/api/search.json?callback=JSON_CALLBACK&q=' + $scope.query;
-         
-                 $http.jsonp(String(QueryCommand)).success(function(response) {
-                     
-                     var data = response; 
+                 var QueryCommand = "//api.loklak.org/api/search.json?callback=JSON_CALLBACK&q=" + $scope.query;
+                 $http.jsonp(String(QueryCommand)).success(function(response){
+                     var data = response;
                      var statuses = data.statuses;
                      var users = [];
                      var emotion = [];
@@ -141,9 +139,9 @@
                      var count = [];
                      var emotions_array = [];
                      var language_array = [];
-                     for (var i=0; i<statuses.length; i++) {
+                     for (var i=0;i<statuses.length;i++) {
                         if(statuses[i].classifier_emotion){
-                            user = statuses[i].screen_name; 
+                            user = statuses[i].screen_name;
                             emotion = statuses[i].classifier_emotion;
                             emotions_array.push(emotion);
                             text = statuses[i].text;
@@ -160,12 +158,12 @@
                         var emotions_name = [];
                         var key;
                         var y;
-                        for (var i = 0; i <= emotions_array.length; i++) {
+                        for (var i = 0;i <= emotions_array.length;i++) {
                             var emotionsObj =  {};
                             if (emotions_array[i] != current) {
                                 if (em_count > 0) {
-                                    emotionsObj['name'] = current;
-                                    emotionsObj['y'] = em_count;
+                                    emotionsObj["name"] = current;
+                                    emotionsObj["y"] = em_count;
                                     emotions_name.push(emotionsObj);
                                 }
                                 current = emotions_array[i];
@@ -176,12 +174,12 @@
                         }
                     language_array.sort();
                     var lang_name = [];
-                    for (var i = 0; i <= language_array.length; i++) {
+                    for (var i = 0;i <= language_array.length;i++) {
                             var languageObj =  {};
                             if (language_array[i] != current) {
                                 if (em_count > 0) {
-                                    languageObj['name'] = current;
-                                    languageObj['y'] = em_count;
+                                    languageObj["name"] = current;
+                                    languageObj["y"] = em_count;
                                     lang_name.push(languageObj);
                                 }
                                 current = language_array[i];
@@ -193,28 +191,28 @@
                      $scope.tweetsStatus = users;
                      $scope.emotions = emotions_name;
                      $scope.languages = lang_name;
-                     $('.pie-chart').highcharts({
+                     $(".pie-chart").highcharts({
                         chart: {
                             plotBackgroundColor: null,
                             plotBorderWidth: null,
                             plotShadow: false,
-                            type: 'pie'
+                            type: "pie"
                         },
                         title: {
                             text: $scope.query
                         },
                         tooltip: {
-                            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                            pointFormat: "{series.name}: <b>{point.percentage:.1f}%</b>"
                         },
                         plotOptions: {
                             pie: {
                                 allowPointSelect: true,
-                                cursor: 'pointer',
+                                cursor: "pointer",
                                 dataLabels: {
                                     enabled: true,
-                                    format : '',
+                                    format : "",
                                     style: {
-                                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || "black"
                                     }
                                 }
                             }
@@ -225,28 +223,28 @@
                             data: $scope.emotions
                         }]
                     });
-                     $('.pie-chart2').highcharts({
+                     $(".pie-chart2").highcharts({
                         chart: {
                             plotBackgroundColor: null,
                             plotBorderWidth: null,
                             plotShadow: false,
-                            type: 'pie'
+                            type: "pie"
                         },
                         title: {
                             text: $scope.query
                         },
                         tooltip: {
-                            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                            pointFormat: "{series.name}: <b>{point.percentage:.1f}%</b>"
                         },
                         plotOptions: {
                             pie: {
                                 allowPointSelect: true,
-                                cursor: 'pointer',
+                                cursor: "pointer",
                                 dataLabels: {
                                     enabled: true,
-                                    format : '',
+                                    format : "",
                                     style: {
-                                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || "black"
                                     }
                                 }
                             }
@@ -259,16 +257,7 @@
                     });
                  });
              }
-
-             window.addEventListener("keydown",   function flagup(event)
-            {
-              if(event.key=='Enter')
-              {
-            $scope.Search();
-              }
-          });
              $scope.spinner = false;
          }]);
-        
       </script>
 </html>
