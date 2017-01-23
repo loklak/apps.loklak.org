@@ -42,6 +42,12 @@ a:hover{
   -webkit-align-items: center;
   align-items: center;
 }
+.block {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
 .brand {
   display: block;
   height: 20px;
@@ -63,15 +69,18 @@ ul.request {
   list-style-type: none;
 }
 .search {
-  position: absolute;
-  top:18px;
-  left:275px;
-  display:none;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: stretch;
+  align-items: stretch;
+  margin-top:8px;
+  width:100%;
+  
 }
 .search input{
-  width:450px;
-  height: 45px;
+  height: 36px;
   padding:8px;
+  width:100%;
 }
 .search input:focus {
   border-color: rgb(119,119,119);
@@ -169,7 +178,10 @@ body {
  * Hide default border to remove 1px line.
  */
 .navbar-fixed-top {
-  padding: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  padding-bottom: 0px;
   border-color: #999;
 }
 .navbar-header{
@@ -191,7 +203,7 @@ border-radius: 0px;
   background-color: #d81b60;
   color: white;
   width: 45px;
-  height: 45px;
+  height: 36px;
 }
 .menu-btn {
   background-color: #d81b60;
@@ -206,6 +218,18 @@ border-radius: 0px;
 /* Hide for mobile, show later */
 .sidebar {
   display: none;
+}
+#navSidebarMenu {
+  margin-top: 35px;
+  margin-bottom: -38px
+}
+.page-header {
+  margin-top: 15px;
+  background-color: rgba(53,29,25,0.25);
+  padding-top: 1px;
+  padding-bottom: 0px;
+  padding-left: 10px
+  width:100%;
 }
 @media (min-width: 768px) {
   .sidebar {
@@ -225,9 +249,24 @@ border-radius: 0px;
     display: flex;
     -webkit-align-items: stretch;
     align-items: stretch;
+    position: absolute;
+    top:18px;
+    left:275px;
+    margin-top:0px;
+  }
+  .search input{
+    width:450px;
+    height: 45px;
+    padding:8px;
   }
   .menu-btn {
     display: none;
+  }
+  .loklak-btn{
+    background-color: #d81b60;
+    color: white;
+    width: 45px;
+    height: 45px;
   }
   #navSidebarMenu {
     display:none;
@@ -248,6 +287,11 @@ border-radius: 0px;
     padding-top: 1px;
     padding-bottom: 0px;
     padding-left: 10px;
+    margin-right: 0px;
+  }
+  .navbar-fixed-top {
+    padding: 15px;
+    border-color: #999;
   }
 }
 .sidebar{
@@ -290,13 +334,7 @@ border-radius: 0px;
     padding-left: 40px;
   }
 }
-.page-header {
-  margin-top: -21px;
-  background-color: rgba(53,29,25,0.25);
-  padding-top: 1px;
-  padding-bottom: 0px;
-  padding-left: 10px;
-}
+
 
 .main, .col-sm-9, .col-sm-offset-3, .col-md-10, .col-md-offset-2{
   padding-bottom: 0px;
