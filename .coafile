@@ -1,8 +1,27 @@
+[default]
+bears = LineLengthBear, SpaceConsistencyBear
+files = **.js, **.css, **.html, **.yml, **.json
+ignore = **.min.js, **.min.css
+max_line_length = 129
+use_spaces = True
+
 [html]
 bears = HTMLLintBear
 files = **.html
-htmllint_ignore = indentation, optional_tag, concerns_separation, capitalization
+htmllint_ignore = indentation, optional_tag, concerns_separation, capitalization, attr_lowercase
 
 [css]
-bears = PHPCodeSnifferBear
+bears = PHPCodeSnifferBe
 files = **.css
+ignore = **.min.css
+use_spaces = True
+
+[js]
+bears = PHPCodeSnifferBear
+files = **.js
+ignore = **.min.js
+javascript_strictness = False
+use_spaces = True
+check_class_declaration = False
+allow_multiple_statements_per_line = True
+blank_line_after_namespace_declaration = False

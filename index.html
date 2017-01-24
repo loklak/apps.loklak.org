@@ -20,7 +20,9 @@
     <script src="/js/angular.min.js"></script>
     <script src="/js/angular-route.min.js"></script>
     <script src="../../js/loklak.js"></script>
-    <meta name="description" content="loklak provides an easy-to-extend app infrastructure. Here is a list of large-data evaluation applictions.">
+    <meta name="description"
+          content="loklak provides an easy-to-extend app infrastructure.
+                   Here is a list of large-data evaluation applictions.">
     <link rel="icon" type="image/png" href="/artwork/favicon.png">
     <title>Loklak Apps</title>
     <script src="../../js/angular-route.min.js"></script>
@@ -37,7 +39,10 @@
     <nav class="navbar navbar-fixed-top navbar-light navbar-color">
       <div class="container-fluid">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed navbar-collapse-button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <button type="button"
+                  class="navbar-toggle collapsed navbar-collapse-button"
+                  data-toggle="collapse" data-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -45,18 +50,25 @@
           </button>
             <div class="block">
             <div class="menubtn-and-brand">
-              <button type="button" class="btn menu-btn" data-toggle="collapse" data-target="#navSidebarMenu"><span class="glyphicon glyphicon-th"></span></button>
+              <button type="button" class="btn menu-btn"
+                      data-toggle="collapse"
+                      data-target="#navSidebarMenu">
+                      <span class="glyphicon glyphicon-th"></span>
+              </button>
               <a class="navbar-brand brand" href="http://apps.loklak.org">
               loklak <span>apps</span>
             </a>
             </div>
             <div class="form-group search">
-              <input type="text" class="form-control typeahead" id="usr" ng-model="searchTerm"
+              <input type="text" class="form-control" id="usr" ng-model="searchTerm"
               ng-init="searchTerm = ''" placeholder="Search apps by app name or author's name">
               <span class="input-group-btn">
-                <button class="btn loklak-btn" type="submit"><span class="glyphicon glyphicon-search"></span></button></span>
+                <button class="btn loklak-btn" type="submit">
+                  <span class="glyphicon glyphicon-search"></span>
+                </button>
+              </span>
             </div>
-          </div> 
+          </div>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right topmenu">
@@ -65,20 +77,27 @@
         </div>
       </div>
     </nav>
-    <div class="container-fluid main-page" ng-app="loklak" ng-controller="app_list">
+    <div class="container-fluid main-page"
+         ng-app="loklak" ng-controller="app_list">
       <div class="row">
           <div id="navSidebarMenu" class="collapse">
             <ul class="nav nav-sidebar" isolateClick>
                 <div id="catTitle">
-                  <div class="icon-container-head"><img class="icon-header" ng-src="images/sidebar-images/menu.png"/></div> 
+                  <div class="icon-container-head">
+                    <img class="icon-header" ng-src="images/sidebar-images/menu.png"/>
+                  </div>
                   <div class="category-main-header"><h4>Categories</h4></div>
                 </div>
                 <li ng-repeat="category in categoryKeys track by $index" class="">
                   <a href="#{{category.name | nospace}}" ng-click="categoryFilter($event)" id="{{category.name | nospace}}">
                     <div class="flex-container" id="{{category.name | nospace}}">
-                      <div class="icon-container" ng-style="{{category.style}}"><img class="icon" ng-src="images/sidebar-images/{{category.image}}" id="{{category.name | nospace}}"/></div> 
-                      <div class="category-main" id="{{category.name | nospace}}">{{category.name}}</div>
-                    </div>  
+                      <div class="icon-container" ng-style="{{category.style}}">
+                        <img class="icon" ng-src="images/sidebar-images/{{category.image}}"
+                             id="{{category.name | nospace}}"/>
+                      </div>
+                      <div class="category-main"
+                           id="{{category.name | nospace}}">{{category.name}}</div>
+                    </div>
                   </a>
                 </li>
               </ul>
@@ -87,15 +106,20 @@
           <div id="navSidebar">
             <ul class="nav nav-sidebar" isolateClick>
                 <div id="catTitle">
-                  <div class="icon-container-head"><img class="icon-header" ng-src="images/sidebar-images/menu.png"/></div> 
+                  <div class="icon-container-head">
+                    <img class="icon-header" ng-src="images/sidebar-images/menu.png"/>
+                  </div>
                   <div class="category-main-header"><h4>Categories</h4></div>
                 </div>
                 <li ng-repeat="category in categoryKeys track by $index" class="">
                   <a href="#{{category.name | nospace}}" ng-click="categoryFilter($event)" id="{{category.name | nospace}}">
                     <div class="flex-container" id="{{category.name | nospace}}">
-                      <div class="icon-container" ng-style="{{category.style}}"><img class="icon" ng-src="images/sidebar-images/{{category.image}}" id="{{category.name | nospace}}"/></div> 
+                      <div class="icon-container" ng-style="{{category.style}}">
+                        <img class="icon" ng-src="images/sidebar-images/{{category.image}}"
+                             id="{{category.name | nospace}}"/>
+                      </div>
                       <div class="category-main" id="{{category.name | nospace}}">{{category.name}}</div>
-                    </div>  
+                    </div>
                   </a>
                 </li>
               </ul>
@@ -127,7 +151,11 @@
                 </div>
               </div>
 
-              <div ng-if = "searchTerm.length>0 && ((app.name.toUpperCase().indexOf(searchTerm.toUpperCase())!=-1) || (app.headline.toUpperCase().indexOf(searchTerm.toUpperCase())!=-1) || ((app.author.name.toUpperCase().indexOf(searchTerm.toUpperCase())!=-1)))" class="span2 animated fadeIn" id="{{app.applicationCategory | nospace}}">
+              <div ng-if = "searchTerm.length>0 &&
+                            ((app.name.toUpperCase().indexOf(searchTerm.toUpperCase())!=-1) ||
+                            (app.headline.toUpperCase().indexOf(searchTerm.toUpperCase())!=-1) ||
+                            ((app.author.name.toUpperCase().indexOf(searchTerm.toUpperCase())!=-1)))"
+                   class="span2 animated fadeIn" id="{{app.applicationCategory | nospace}}">
                 <div class="reveal">
                   <img ng-src="../{{ app.name }}/screenshot.png" />
                   <div class="hidden">
@@ -136,7 +164,9 @@
                         <p><a href='../{{ app.name }}'>{{ app.headline | uppercase}}</a></p>
                         <p class="color-black">{{ app.alternativeHeadline }}</p>
                         <br/>
-                        <p class="color-black">Author: <a href='{{ app.author.url }}'>{{ app.author.name | uppercase }}</a></p>
+                        <p class="color-black">
+                          Author: <a href='{{ app.author.url }}'>{{ app.author.name | uppercase }}</a>
+                        </p>
                       </div>
                     </div>
                   </div>

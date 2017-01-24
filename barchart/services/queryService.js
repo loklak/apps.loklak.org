@@ -1,25 +1,29 @@
-(function(){
+(function () {
     angular.module('myApp')
-    
-    .factory('queryService', 
-    function(dataService, analyticService, $localStorage){
-        
+
+    .factory('queryService',
+    function (dataService, analyticService, $localStorage) {
+
         return {
             queryTweets: queryTweets
         };
-        
-        function queryTweets(queryType, queryTerm, dateFrom, dateTo, maxHashtags, count){
-            dataService.getTweets(queryType, queryTerm, dateFrom, dateTo, count).then(function(data){
-                
+
+        function queryTweets(queryType, queryTerm,
+                             dateFrom, dateTo,
+                             maxHashtags, count) {
+            dataService.getTweets(queryType, queryTerm,
+                                  dateFrom, dateTo, count)
+                       .then(function (data) {
+
                 var newTweets;
-                if(!$localStorage.tweets || $localStorage.tweets.length === 0){
+                if(!$localStorage.tweets || $localStorage.tweets.length === 0) {
                     newTweets = data;
                     $localStorage.tweets = data;
                 } else {
                     newTweets = analyticService.getNewTweets(data);
                     $localStorage.tweets = newTweets.concat($localStorage.tweets);
-                }           
-                
+                }
+
                 // process if any new tweets
                 if(!newTweets.length) {
                     console.log("no new tweets");
@@ -30,9 +34,9 @@
                    // process all for hashtagfreq
                    analyticService.updateHashtagDateFreq(data, maxHashtags);
                 }
-                
+
             });
         }
-        
+
     })
 }());

@@ -16,13 +16,19 @@
          <div ng-app="TweetSearch" ng-controller="Controller">
             <div class="form-group">
                <div class="input-group" id="searchBar">
-                  <input type="text" id="query" class="form-control" ng-model="query" placeholder="Search tweet from Loklak">
+                  <input type="text" id="query"
+                         class="form-control" ng-model="query"
+                         placeholder="Search tweet from Loklak">
                   <span class="input-group-btn">
-                  <button href='#' class="btn btn-default" type="button" id="button" ng-click="Search()">Search</button>
+                  <button href='#' class="btn btn-default"
+                          type="button" id="button"
+                          ng-click="Search()">Search</button>
                   </span>
                </div>
             </div>
-            <div ng-if="spinner && !leaderboard"><img src="loading.gif" height="400" width="400"/></div>
+            <div ng-if="spinner && !leaderboard">
+                <img src="loading.gif" height="400" width="400"/>
+            </div>
             <br>
             <br>
             <br>
@@ -43,18 +49,19 @@
       <script>
          var app = angular.module('TweetSearch', []);
          app.controller('Controller', ['$scope', '$http', '$sce', function($scope, $http, $sce) {
-         
+
              $scope.Search = function() {
                 $scope.spinner=true;
-                 var QueryCommand = 'http://api.loklak.org/api/search.json?callback=JSON_CALLBACK&q=' + $scope.query;
-         
+                 var QueryCommand = 'http://api.loklak.org/api/search.json?callback=JSON_CALLBACK&q=' +
+                                    $scope.query;
+
                  $http.jsonp(String(QueryCommand)).success(function(response) {
-                     
-                     var data = response; 
+
+                     var data = response;
                      var statuses = data.statuses;
                      var users = [];
                      for (var i=0; i<statuses.length; i++) {
-                         user = statuses[i].screen_name; 
+                         user = statuses[i].screen_name;
                          users.push(user);
                      }
                      var counts = {};
@@ -65,12 +72,12 @@
                      var countArr = [];
                      for (obj in counts){
                          countArr.push([obj,counts[obj]])
-                     } 
+                     }
                      countArr.sort(function(a,b){return b[1] - a[1]});
-                     $scope.leaderboard = countArr; 
-                     //console.log(counts); 
+                     $scope.leaderboard = countArr;
+                     //console.log(counts);
                  });
-         
+
              }
              window.addEventListener("keydown",   function flagup(event)
             {
