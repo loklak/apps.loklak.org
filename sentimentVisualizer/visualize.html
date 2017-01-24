@@ -17,8 +17,8 @@
         <link href="css/starter-template.css" rel="stylesheet">
         <script src="../../js/jquery.min.js"></script>
         <script src="../../js/angular.min.js"></script>
-        <script src="js/highcharts.js"></script>
-        <script src="js/exporting.js"></script>
+        <script src="js/highcharts.min.js"></script>
+        <script src="js/exporting.min.js"></script>
 
         <style>
             .post-wrapper:first-child .post-inner {
@@ -65,7 +65,7 @@
             .post-wrapper .post-inner p.lead {
             font-size: 1.2em;
             }
-            .Emoji.Emoji--forText {	
+            .Emoji.Emoji--forText {
             width: 2%;
             height: 2%;
             padding: initial;
@@ -77,7 +77,9 @@
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <button type="button" class="navbar-toggle collapsed"
+                            data-toggle="collapse" data-target="#navbar"
+                            aria-expanded="false" aria-controls="navbar">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -93,8 +95,15 @@
                         <form class="navbar-form hidden-xs ng-pristine ng-valid">
                             <div class="form-group">
                                 <div class="input-group input-group-xs ">
-                                    <input name="q" type="text" id="query" class="form-control" ng-model="query" title="Search Twitter and the loklak network" placeholder="Search for a tweet text">
-                                    <span class="input-group-btn"><button class="btn btn btn-primary" href='#' type="button" id="button" ng-click="Search()">Visualize Emotion</button></span>
+                                    <input name="q" type="text" id="query"
+                                           class="form-control" ng-model="query"
+                                           title="Search Twitter and the loklak network"
+                                           placeholder="Search for a tweet text">
+                                    <span class="input-group-btn">
+                                    <button class="btn btn btn-primary" href='#'
+                                            type="button" id="button"
+                                            ng-click="Search()">Visualize Emotion</button>
+                                    </span>
                                 </div>
                             </div>
                         </form>
@@ -126,14 +135,14 @@
     <script>
          var app = angular.module('TweetSearch', []);
          app.controller('Controller', ['$scope', '$http', '$sce', function($scope, $http, $sce) {
-         
+
              $scope.Search = function() {
                 $scope.spinner=true;
                  var QueryCommand = 'http://api.loklak.org/api/search.json?callback=JSON_CALLBACK&q=' + $scope.query;
-         
+
                  $http.jsonp(String(QueryCommand)).success(function(response) {
-                     
-                     var data = response; 
+
+                     var data = response;
                      var statuses = data.statuses;
                      var users = [];
                      var emotion = [];
@@ -143,7 +152,7 @@
                      var language_array = [];
                      for (var i=0; i<statuses.length; i++) {
                         if(statuses[i].classifier_emotion){
-                            user = statuses[i].screen_name; 
+                            user = statuses[i].screen_name;
                             emotion = statuses[i].classifier_emotion;
                             emotions_array.push(emotion);
                             text = statuses[i].text;
@@ -269,6 +278,6 @@
           });
              $scope.spinner = false;
          }]);
-        
+
       </script>
 </html>

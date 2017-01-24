@@ -27,16 +27,22 @@ function updateResults(input) { // Function called to interpret the results from
 
   var media, mBody;
 
-  document.getElementById('tweetCount').innerHTML = "Found " + statuses.length + " tweets"; // Show amount of tweets in the alert
+  // Show amount of tweets in the alert
+  document.getElementById('tweetCount').innerHTML = "Found " + statuses.length + " tweets";
 
   for(i in statuses) {
-    current = document.getElementsByTagName('template')[0].content.children[0].cloneNode(true);  // Clone the tweet format, from the <template>
+    // Clone the tweet format, from the <template>
+    current = document.getElementsByTagName('template')[0].content.children[0].cloneNode(true);
 
     media = current.getElementsByClassName('media')[0];
-    media.getElementsByClassName('media-object')[0].src = statuses[i].user.profile_image_url_https; // Set user's picture
+    // Set user's picture
+    media.getElementsByClassName('media-object')[0].src = statuses[i].user.profile_image_url_https;
 
     mBody = media.getElementsByClassName('media-body')[0];
-    mBody.getElementsByTagName('h4')[0].innerHTML = '<a style="color: black;" href="https://twitter.com' + statuses[i].screen_name + '/">@' + statuses[i].screen_name + '</a> <small><a style="color: black;" href="' + statuses[i].link + '">' + new Date(statuses[i].created_at).toUTCString() + '</a></small>';  // Set username and tweet's date
+    // Set username and tweet's date
+    mBody.getElementsByTagName('h4')[0].innerHTML = '<a style="color: black;" href="https://twitter.com' +
+      statuses[i].screen_name + '/">@' + statuses[i].screen_name + '</a> <small><a style="color: black;" href="' +
+      statuses[i].link + '">' + new Date(statuses[i].created_at).toUTCString() + '</a></small>';
     mBody.getElementsByTagName('span')[0].innerHTML = statuses[i].text; // Set tweet's content
 
     tweetsBox.appendChild(current); // Add the complete tweet to the list

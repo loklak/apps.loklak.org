@@ -1,8 +1,7 @@
-$(document).ready(function()
-{
+$(document).ready(function () {
     var emailerr = false, session = true;
 
-    $('#submit').click(function(){
+    $('#submit').click(function () {
         checkEmpty();
         if(emailerr){
             $('#status-box').text("Please fill email");
@@ -23,7 +22,8 @@ $(document).ready(function()
         }
     });
 
-    function resetFields(){
+    function resetFields()
+    {
         $('#status-box').text("");
         $('#status-box').removeClass();
         $('#email').val("");
@@ -32,7 +32,8 @@ $(document).ready(function()
         $('#emailfield').removeClass();
     }
 
-    function checkEmpty(){
+    function checkEmpty()
+    {
         var emailval = $('#email').val();
         if(!emailval && !($('#email').is(":focus"))){
             $('#emailfield').text("Required field!");

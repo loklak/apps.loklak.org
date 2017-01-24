@@ -51,14 +51,14 @@ app.controller('search', function ($scope, $http) {
     }
     return hours + ':' + minutes;
   }
-  
+
   $scope.showModal = false;
 
   $scope.search = function() {
     query = $scope.query;
-    
+
     if (!query) {
-              //modal opened 
+              //modal opened
               $scope.showModal = !$scope.showModal;
               console.log("Modal opened");
               return;
@@ -104,7 +104,8 @@ app.controller('search', function ($scope, $http) {
     $scope.loading = 'Loading...'
     $scope.loaded = false;
     timezoneOffset = new Date().getTimezoneOffset();
-    $http.jsonp('http://loklak.org/api/search.json?callback=JSON_CALLBACK&q=' + query + '&timezoneOffset=' + timezoneOffset)
+    $http.jsonp('http://loklak.org/api/search.json?callback=JSON_CALLBACK&q=' + query +
+                '&timezoneOffset=' + timezoneOffset)
     .success(function(data, status, headers, config) {
       //$scope.result = data;
       for (var i = 0; i < data.statuses.length; i++) {
@@ -133,16 +134,16 @@ app.controller('search', function ($scope, $http) {
 });
 app.directive('modal', function () {
     return {
-      template: '<div class="modal fade">' + 
-          '<div class="modal-dialog">' + 
-            '<div class="modal-content">' + 
-              '<div class="modal-header" style="background-color:#d2322d">' + 
-                '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>' + 
-                '<h4 class="modal-title" style="color:white">{{ title }}</h4>' + 
-              '</div>' + 
-              '<div class="modal-body" ng-transclude></div>' + 
-            '</div>' + 
-          '</div>' + 
+      template: '<div class="modal fade">' +
+          '<div class="modal-dialog">' +
+            '<div class="modal-content">' +
+              '<div class="modal-header" style="background-color:#d2322d">' +
+                '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>' +
+                '<h4 class="modal-title" style="color:white">{{ title }}</h4>' +
+              '</div>' +
+              '<div class="modal-body" ng-transclude></div>' +
+            '</div>' +
+          '</div>' +
         '</div>',
       restrict: 'E',
       transclude: true,
@@ -172,6 +173,3 @@ app.directive('modal', function () {
       }
     };
   });
-
-
-

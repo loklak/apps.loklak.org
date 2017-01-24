@@ -1,10 +1,10 @@
 var app = angular.module('appListApp', ['loklak', 'ngTouch']);
 
-app.controller("app_list", function($scope, $http) {
+app.controller("app_list", function ($scope, $http) {
     $scope.apps = [];
     $scope.categoryKeys = [];
     var suggestionList = [];
-    $http.get('apps.json').success(function(data) {
+    $http.get('apps.json').success(function (data) {
         $scope.categoryKeys = data.categories;
         $scope.apps = data.apps;
         $scope.categoryKeys.unshift({"name": "All","image":"all.png","style" : {"background-color": "#ED3B3B"}});
@@ -18,9 +18,9 @@ app.controller("app_list", function($scope, $http) {
             queryTokenizer: Bloodhound.tokenizers.whitespace,
             local: suggestionList
         });
-        
+
         // Initializing the typeahead
-        
+
         $('.typeahead').typeahead({
             hint: true,
             highlight: true, /* Enable substring highlighting */
@@ -29,11 +29,11 @@ app.controller("app_list", function($scope, $http) {
             {
                 name: 'apps',
                 source: searchEngine
-        });        
+        });
     });
-       
 
-    $scope.categoryFilter = function(event) {
+
+    $scope.categoryFilter = function (event) {
         item = event.target.id;
         if (item != 'All') {
             itemName = item.match(/[A-Z][a-z]+/g);

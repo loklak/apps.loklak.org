@@ -8,7 +8,7 @@
       <link href="css/bootstrap.min.css" rel="stylesheet"/>
       <script src="../../js/angular.min.js"></script>
       <link href="css/json-formatter.css" rel="stylesheet"/>
-	  </head>
+    </head>
    <body ng-app="TweetSearch" ng-controller="Controller">
       <center>
          <h1>What would you like to scrape?</h1>
@@ -18,10 +18,10 @@
                <div class="input-group" id="searchBar" style="width:600px;">
                   <input type="text" id="url" class="form-control" ng-model="url" placeholder="Enter website address">
                   <span class="input-group-btn">
-                  <button href='#' class="btn btn-default" type="button" id="button" ng-click="Scrape()">Convert</button>   
+                  <button href='#' class="btn btn-default" type="button" id="button" ng-click="Scrape()">Convert</button>
                   </span>
                </div>
-                             	
+
             </div>
             <div ng-if="spinner && !data"><img src="loading.gif" height="400" width="400"/></div>
             <br>
@@ -32,29 +32,29 @@
       <div ng-if="data" style="padding-left:28%;">
         <json-formatter json="data" open="1"></json-formatter>
       </div>
-	  
+
       <script src="js/json-formatter.min.js"></script>
       <script>
-         angular.module('TweetSearch', ['jsonFormatter']). 
+         angular.module('TweetSearch', ['jsonFormatter']).
          controller('Controller', ['$scope', '$http', '$sce', function($scope, $http, $sce) {
-         
+
              $scope.Scrape = function() {
                 $scope.spinner=true;
-                 var QueryCommand = 'http://api.loklak.org/api/genericscraper.json?callback=JSON_CALLBACK&url=' + $scope.url;
+                 var QueryCommand = 'http://api.loklak.org/api/genericscraper.json?\
+                                     callback=JSON_CALLBACK&url=' +
+                                     $scope.url;
                  $http.jsonp(String(QueryCommand)).success(function(JSON) {
                   $scope.data = JSON;
-
                  });
-                
-                 
+
              };
-			  
- 			window.addEventListener("keydown",   function flagup(event)
+
+      window.addEventListener("keydown",   function flagup(event)
             {
-            	if(event.key=='Enter')
-            	{
-					$scope.Scrape();
-           		}
+              if(event.key=='Enter')
+              {
+          $scope.Scrape();
+              }
             });
             $scope.spinner = false;
          }]);

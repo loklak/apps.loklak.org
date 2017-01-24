@@ -1,6 +1,6 @@
 {
   "items": [
-  	{"About": "http://loklak.net/about"},
+    {"About": "http://loklak.net/about"},
     {"Search": "http://loklak.net"},
     {"Blog": "http://blog.loklak.net/"},
     {"Developers": "http://dev.loklak.org"},
