@@ -20,12 +20,63 @@
     <![endif]-->
 
     <script src="/js/angular.min.js"></script>
+    <style>
+      .search-tweets {
+      	width:800px;
+      	display: -webkit-flex;
+	    display: flex;
+	    -webkit-align-items: stretch;
+	    align-items: stretch;
+	    margin-left:350px;	
+	  }
+	   .search-tweets input{
+		  width:600px;
+		  height: 45px;
+		  padding:8px;
+	  }
+	  .search-btn{
+	    background-color: #d81b60;
+	    color: white;
+	    width: 50px;
+	    height: 45px;
+	  }
+	  .loader {
+		  border: 8px solid #f3f3f3;
+		  border-radius: 50%;
+		  border-top: 8px solid #D81B60;
+		  width: 100px;
+		  height: 100px;
+		  -webkit-animation: spin 2s linear infinite;
+		  animation: spin 2s linear infinite;
+		  position: relative;
+		  top:180px;
+		  left:-320px;
+	  }
+
+	  @-webkit-keyframes spin {
+		0% { -webkit-transform: rotate(0deg); }
+		100% { -webkit-transform: rotate(360deg); }
+      }
+
+	  @keyframes spin {
+		0% { transform: rotate(0deg); }
+		100% { transform: rotate(360deg); }
+      }
+    </style>
   </head>
 
   <body>
     <div ng-controller="histogram">
-      <h1>Tweets about Fossasia</h1>
-      <div id="myfirstchart" style="height: 250px;"></div>
+      <div class="form-group search-tweets">
+	        <input type="text" class="form-control" id="tweet-input" ng-model="tweet" ng-init="tweet = ''" ng-keyup="$event.keyCode == 13 ? drawGraph() : null" placeholder="Enter a tag to plot histogram">
+	        <span class="input-group-btn">
+	          <button class="btn search-btn" type="submit" ng-click="drawGraph()"><span class="glyphicon glyphicon-search"></span></button></span>
+	        <div class="loader"></div>  
+	  </div>
+	  <div id="main">
+	      <h1 id="header"></h1>
+	      <div id="myfirstchart" style="height: 250px;"></div>
+	  </div>    
     </div>
 
     <script src="/js/jquery.min.js"></script>
