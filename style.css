@@ -1,36 +1,36 @@
 .content { 
-	width: 100%; 
-	margin: 0px auto; 
+  width: 100%; 
+  margin: 0px auto; 
 }
 .span2 { 
-	width: 23%; 
-	padding: 0px;
-	margin-right: 16px;
-	margin-bottom: 16px;
-	float: left;
+  width: 23%; 
+  padding: 0px;
+  margin-right: 16px;
+  margin-bottom: 16px;
+  float: left;
 }
 .span2 img { 
-	max-width: 100%; 
-	border: 1px solid #adff30
+  max-width: 100%; 
+  border: 1px solid #adff30
 }
 p { 
   margin: 0.5em 0; 
 }
 .reveal p { 
-	margin: 0; 
+  margin: 0; 
 }
 .span2 p { 
-	text-align: center; 
+  text-align: center; 
 }
 .reveal .hidden { 
-	display: block !important; 
-	visibility: visible !important; 
+  display: block !important; 
+  visibility: visible !important; 
 }
 .product:hover .reveal img { 
-	opacity: 1; 
+  opacity: 1; 
 }
 .reveal { 
-	position: relative; 
+  position: relative; 
 }
 .reveal .hidden { 
   position: absolute; 
