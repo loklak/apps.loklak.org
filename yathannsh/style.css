@@ -21,7 +21,7 @@
       zoom:1;
     }
 
-    /*-------------------------------------*/	
+    /*-------------------------------------*/   
     
     .form-wrapper {
         width: 450px;
@@ -77,7 +77,7 @@
     }    
     
     .form-wrapper button {
-		overflow: visible;
+        overflow: visible;
         position: relative;
         float: right;
         border: 0;
@@ -95,9 +95,9 @@
         text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
     }   
       
-    .form-wrapper button:hover{		
+    .form-wrapper button:hover{     
         background: #e54040;
-    }	
+    }   
       
     .form-wrapper button:active,
     .form-wrapper button:focus{   
