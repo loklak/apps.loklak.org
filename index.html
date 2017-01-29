@@ -23,12 +23,12 @@
     <meta name="description" content="loklak provides an easy-to-extend app infrastructure. Here is a list of large-data evaluation applictions.">
     <link rel="icon" type="image/png" href="/artwork/favicon.png">
     <title>Loklak Apps</title>
-    <script src="../../js/jquery.min.js"></script>
     <script src="../../js/angular-route.min.js"></script>
     <script src="../../js/angular-touch.min.js"></script>
     <link href="../../css/dashboard.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet"/>
     <link href="css/animate.css" rel="stylesheet"/>
+    <script src="/js/typeahead.bundle.js"></script>
     <script src="./app_list.js"></script>
 
   </head>
@@ -43,20 +43,20 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          	<div class="block">
-	          <div class="menubtn-and-brand">
-	            <button type="button" class="btn menu-btn" data-toggle="collapse" data-target="#navSidebarMenu"><span class="glyphicon glyphicon-th"></span></button>
-	            <a class="navbar-brand brand" href="http://apps.loklak.org">
-	            loklak <span>apps</span>
-	          </a>
-	          </div>
-	          <div class="form-group search">
-	            <input type="text" class="form-control" id="usr" ng-model="searchTerm"
-	            ng-init="searchTerm = ''" placeholder="Search apps by app name or author's name">
-	            <span class="input-group-btn">
-	              <button class="btn loklak-btn" type="submit"><span class="glyphicon glyphicon-search"></span></button></span>
-	          </div>
-	        </div> 
+            <div class="block">
+            <div class="menubtn-and-brand">
+              <button type="button" class="btn menu-btn" data-toggle="collapse" data-target="#navSidebarMenu"><span class="glyphicon glyphicon-th"></span></button>
+              <a class="navbar-brand brand" href="http://apps.loklak.org">
+              loklak <span>apps</span>
+            </a>
+            </div>
+            <div class="form-group search">
+              <input type="text" class="form-control typeahead" id="usr" ng-model="searchTerm"
+              ng-init="searchTerm = ''" placeholder="Search apps by app name or author's name">
+              <span class="input-group-btn">
+                <button class="btn loklak-btn" type="submit"><span class="glyphicon glyphicon-search"></span></button></span>
+            </div>
+          </div> 
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right topmenu">
@@ -145,10 +145,11 @@
             </div>
             </center>
         </div>
-      </div>
-        <script src="/js/jquery.min.js" async></script>
-    <script src="/js/bootstrap.min.js" async></script>
-    <script src="/js/ie10-viewport-bug-workaround.js" async></script>
+      </div> 
+      <script src="/js/bootstrap.min.js" async></script>
+      <script src="/js/ie10-viewport-bug-workaround.js" async></script>
+      <script src="/js/jquery.min.js" async></script>
+      <script src="/js/typeahead.bundle.js" async></script>
 
 
       </body>
