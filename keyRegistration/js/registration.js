@@ -1,5 +1,4 @@
-$(document).ready(function()
-{
+$(document).ready(function () {
     var self = $('#self').prop("checked");
     self ? $('#email').addClass("hidden") : $('#email').removeClass("hidden");
     var create = $('#create').prop("checked");
@@ -11,13 +10,13 @@ $(document).ready(function()
 
     var algorithms;
 
-	// get password parameters
-	var regex;
-    $.ajax(	"/api/pubkey_registration.json", {
+    // get password parameters
+    var regex;
+    $.ajax( "/api/pubkey_registration.json", {
         data: { getParameters: true },
         dataType: 'json',
         success: function (response) {
-            if(response.self){
+            if(response.self) {
                 $('#status-box').text("");
                 $('#status-box').removeClass("error");
                 self ? $('#email').addClass("hidden") : $('#email').removeClass("hidden");
@@ -45,7 +44,7 @@ $(document).ready(function()
                         value : algorithm,
                         text : algorithm
                     }));
-                    if(!keySizeSet){
+                    if(!keySizeSet) {
                         $.each(algorithmObject.sizes, function (i, keySize) {
                             $('#keysizeSelect').append($('<option>', {
                                 value : keySize,
@@ -63,10 +62,12 @@ $(document).ready(function()
         },
         error: function (xhr, ajaxOptions, thrownError) {
             setError(thrownError);
-       },
+        },
+
     });
 
-    function setError(text){
+    function setError(text)
+    {
         $('#status-box').text(text);
         $('#status-box').addClass("error");
         $('#email').addClass("hidden");
@@ -77,12 +78,12 @@ $(document).ready(function()
         $('#options_general').addClass("hidden");
     }
 
-    $('#self').click(function(){
+    $('#self').click(function () {
         self = $(this).prop("checked");
         self ? $('#email').addClass("hidden") : $('#email').removeClass("hidden");
     });
 
-    $('#create').click(function(){
+    $('#create').click(function () {
         create = $(this).prop("checked");
         create ? $('#key').addClass("hidden") : $('#key').removeClass("hidden");
         create ? $('#typeSelect').addClass("hidden") : $('#typeSelect').removeClass("hidden");
@@ -91,21 +92,21 @@ $(document).ready(function()
         create ? $('#keysize_label').removeClass("hidden") : $('#keysize_label').addClass("hidden");
     });
 
-    $('#algorithmSelect').change(function(){
+    $('#algorithmSelect').change(function () {
         algorithm = algorithmSelect.value;
         console.log(algorithm);
         console.log("TODO: Implement change of key-sizes");
     });
 
-    $('#register').click(function(){
-        if(requiredFieldsSet()){
+    $('#register').click(function () {
+        if(requiredFieldsSet()) {
             var mail = encodeURIComponent($('#email').val());
             var key = encodeURIComponent($('#key').val());
 
             var data = {};
             data["algorithm"] = algorithmSelect.value;
             if(!self) data["id"] = mail;
-            if(create){
+            if(create) {
                 data["create"] = true;
                 data["key-size"] = keysizeSelect.value;
             }
@@ -115,7 +116,7 @@ $(document).ready(function()
             }
             //console.log(data);
 
-            $.ajax(	"/api/pubkey_registration.json", {
+            $.ajax( "/api/pubkey_registration.json", {
                 data: data,
                 dataType: 'json',
                 success: function (response) {
@@ -126,7 +127,7 @@ $(document).ready(function()
                     $('#pubkey_PEM').text(response.publickey_PEM);
                     $('#hash').text(response.keyhash);
                     $('#hash_URLSAVE').text(response.keyhash_urlsave);
-                    if(create){
+                    if(create) {
                         $('#privkey_DER').removeClass("hidden");
                         $('#privkey_DER_label').removeClass("hidden");
                         $('#privkey_DER').text(response.privatekey_DER_BASE64);
@@ -144,7 +145,8 @@ $(document).ready(function()
         }
     });
 
-    function resetFields(){
+    function resetFields()
+    {
         $('#status-box').text("");
         $('#status-box').removeClass("error");
         $('#email').val("");
@@ -155,13 +157,14 @@ $(document).ready(function()
         $('#key_label').removeClass("error");
     }
 
-    function requiredFieldsSet(){
+    function requiredFieldsSet()
+    {
         var emailval = $('#email').val();
         var keyval = $('#key').val();
 
         var result = true;
 
-        if(!self && !emailval && !($('#email').is(":focus"))){
+        if(!self && !emailval && !($('#email').is(":focus"))) {
             $('#valid').text("Required field!");
             $('#email').removeClass();
             $('#valid').removeClass();
@@ -169,7 +172,7 @@ $(document).ready(function()
             $('#valid').addClass("error");
             result = false;
         }
-        if(!create && !keyval && !($('#key').is(":focus"))){
+        if(!create && !keyval && !($('#key').is(":focus"))) {
             $('#key_label').text("Required field!");
             $('#key').removeClass();
             $('#key_label').removeClass();

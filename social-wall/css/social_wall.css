@@ -44,7 +44,7 @@
 .item {
   float: left;
 }
- 
+
 *,
 *:after,
 *:before {
@@ -68,9 +68,9 @@ body {
   color: #666;
 }
 
-.border-tlr-radius { 
+.border-tlr-radius {
   border-top-left-radius: 2px;
-  border-top-right-radius: 2px; 
+  border-top-right-radius: 2px;
 }
 
 .text-center { text-align: center; }
@@ -85,7 +85,6 @@ body {
   height: 4rem;
   width: 4rem;
 }
-
 
 .card {
   background-color: #fff;
@@ -109,7 +108,7 @@ body {
   padding-left: 16px;
   padding-right: 16px;
 }
- 
+
 .card__image {
   min-height: 100px;
   background-color: #eee;
@@ -168,7 +167,7 @@ body {
   padding-right: 1.6rem;
   padding-left: 1.6rem;
 }
-   
+
 .card__author {
   padding-top: 10px;
 }

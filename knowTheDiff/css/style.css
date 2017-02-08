@@ -44,40 +44,40 @@ body {
 }
 
 .wrapper {
-	width: 680px;
-	margin: 50px auto 100px;
+  width: 680px;
+  margin: 50px auto 100px;
 }
 .main, .sidebar {
-	float: left;
-	padding: 20px;
+  float: left;
+  padding: 20px;
 }
 .main {
-	width: 400px;
-	background-color: LightSlateGrey;
+  width: 400px;
+  background-color: LightSlateGrey;
 }
 .sidebar {
-	width: 200px;
-	background-color: Tomato;
+  width: 200px;
+  background-color: Tomato;
 }
 
 .faux .container {
-	background-color: Tomato;
+  background-color: Tomato;
 }
 .faux .sidebar {
-	background-color: inherit;
+  background-color: inherit;
 }
 
 .table .container {
-	display: table;
+  display: table;
 }
 .table .main {
-	float: none;
-	display: table-cell;
-	vertical-align: top;
+  float: none;
+  display: table-cell;
+  vertical-align: top;
 }
 .table .sidebar {
-	float: none;
-	display: table-cell;
+  float: none;
+  display: table-cell;
 }
 
 

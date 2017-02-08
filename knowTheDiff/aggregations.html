@@ -22,25 +22,29 @@
       <div class="wrapper" ng-controller="Controller">
         <div class="form-group first">
           <label class="col-md-4 control-label">Hashtag
-          </label>  
+          </label>
           <div class="col-md-6">
-            <input id="query" ng-model="query" type="text" placeholder="Search Loklak" class="form-control input-md query">
+            <input id="query" ng-model="query" type="text" placeholder="Search Loklak"
+                   class="form-control input-md query">
           </div>
-          <button href='#' class="btn btn-default" type="button" id="button" ng-click="SearchLoklak()">Search
+          <button href='#' class="btn btn-default" type="button" id="button"
+                  ng-click="SearchLoklak()">Search
           </button>
         </div>
         <div class="form-group second">
           <label class="col-md-4 control-label" for="from">Since Date
-          </label>  
+          </label>
           <div class="col-md-6">
-            <input id="since" name="since" type="date" ng-model="since" placeholder="Enter Since date here" class="form-control input-md fromDate"> 
+            <input id="since" name="since" type="date" ng-model="since"
+                   placeholder="Enter Since date here" class="form-control input-md fromDate">
           </div>
         </div>
         <div class="form-group third">
           <label class="col-md-4 control-label" for="from">Until Date
-          </label>  
+          </label>
           <div class="col-md-6">
-            <input id="until" name="until" type="date" ng-model="until" placeholder="Enter Until date here" class="form-control input-md toDate">
+            <input id="until" name="until" type="date" ng-model="until"
+                   placeholder="Enter Until date here" class="form-control input-md toDate">
           </div>
         </div>
         <br/>
@@ -74,7 +78,10 @@
           steps: [
             {
               element: '.results',
-              intro: 'This feature helps you to count up all the tweets which are indexed. This feature will not consider remote search results. Therefore the remote search is switched off by source=cache and the search results are switched off with count=0',
+              intro: 'This feature helps you to count up all the tweets which are indexed. \
+                      This feature will not consider remote search results. Therefore the remote \
+                      search is switched off by source=cache and the search results are switched \
+                      off with count=0',
               position: 'bottom'
             }
             ,
@@ -86,13 +93,15 @@
             ,
             {
               element: '.fromDate',
-              intro: 'Since the search results are huge you can limit the search by defining the dates.',
+              intro: 'Since the search results are huge you can limit the search by \
+                      defining the dates.',
               position: 'bottom'
             }
             ,
             {
               element: '.toDate',
-              intro: 'The limitation must have a difference of 4 days. So choose the end date accordingly.',
+              intro: 'The limitation must have a difference of 4 days. So choose the end \
+                      date accordingly.',
               position: 'bottom'
             }
           ]
@@ -113,9 +122,12 @@
             var until = [ date[3], mnths[date[1]], date[2] ].join("-");
             date2 = ($scope.since + "").split(" ");
             var since = [ date2[3], mnths[date2[1]], date2[2] ].join("-");
-            var QueryCommand = 'http://api.loklak.org/api/search.json?callback=JSON_CALLBACK&q=' + $scope.query + ' since:'+ since + ' until:' + until + '&source=cache&count=0&fields=mentions';
+            var QueryCommand = 'http://api.loklak.org/api/search.json?callback=JSON_CALLBACK&q=' +
+                               $scope.query + ' since:'+ since + ' until:' +
+                               until + '&source=cache&count=0&fields=mentions';
           }
-           var QueryCommand = 'http://api.loklak.org/api/search.json?callback=JSON_CALLBACK&q=' + $scope.query + '&source=cache&count=0&fields=mentions';
+           var QueryCommand = 'http://api.loklak.org/api/search.json?callback=JSON_CALLBACK&q=' +
+                              $scope.query + '&source=cache&count=0&fields=mentions';
           $scope.spinner=true;
           $http.jsonp(String(QueryCommand)).success(function(response) {
             var data = response;

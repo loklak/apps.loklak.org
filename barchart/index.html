@@ -9,15 +9,15 @@
     <meta name="author" content="leon"> <!-- CHANGE THIS -->
     <link rel="icon" type="image/png" href="/artwork/favicon.png">
     <title>loklak.org - Apps </title> <!-- CHANGE THIS -->
-    
+
     <!-- ngMaterial -->
     <link rel="stylesheet" href="css/angular-material.min.css">
-    <link href="css/style.css" rel="stylesheet"> 
-  
+    <link href="css/style.css" rel="stylesheet">
+
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <!-- <link href="/css/dashboard.css" rel="stylesheet"> -->
-    <link href="/css/loklak.css" rel="stylesheet"> 
-    
+    <link href="/css/loklak.css" rel="stylesheet">
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="/js/html5shiv.min.js"></script>
@@ -27,20 +27,26 @@
     <script src="../../js/angular-modules/angular.min.js"></script>
     <script src="../../js/angular-route.min.js"></script>
     <script src="../../js/loklak.js"></script>
-    
+
   </head>
 
   <body ng-app="myApp" >
       <nav class="navbar navbar-inverse navbar-fixed-top">
           <div class="container-fluid">
               <div class="navbar-header">
-                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                  <button type="button" class="navbar-toggle collapsed"
+                          data-toggle="collapse" data-target="#navbar"
+                          aria-expanded="false" aria-controls="navbar">
                       <span class="sr-only">Toggle navigation</span>
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                   </button>
-                  <a class="navbar-brand" href="http://loklak.org"><img src="/images/loklak_org.png" height="24" style="float:left;">: Bar Chart</a>
+                  <a class="navbar-brand" href="http://loklak.org">
+                  <img src="/images/loklak_org.png"
+                       height="24" style="float:left;">
+                  : Bar Chart
+                  </a>
               </div>
               <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -48,18 +54,24 @@
               </div>
           </div>
       </nav>
-      
+
       <!-- Fancy Form -->
       <div ng-controller="MainCtrl as main" ng-cloak="">
-          
+
           <div layout="column">
-          <form ng-submit="poll(query.type, query.term, query.interval, query.dateFrom, query.dateTo, query.maxHashtags, query.count)" 
-              class="layout-margin layout-fill" name="queryForm">
+          <form ng-submit="poll(query.type, query.term, query.interval,\
+                            query.dateFrom, query.dateTo, query.maxHashtags,\
+                            query.count)"
+                class="layout-margin layout-fill" name="queryForm">
               <!-- form name for ng-messages -->
-              
-              <md-content md-theme="docs-dark" layout-gt-sm="row" layout-xs="column" layout-padding layout="center center">
+
+              <md-content md-theme="docs-dark"
+                          layout-gt-sm="row"
+                          layout-xs="column"
+                          layout-padding
+                          layout="center center">
                   <div flex="10" ></div>
-                  
+
                   <md-input-container  class="md-block" flex-gt-sm>
                       <label>Query Type</label>
                       <md-select ng-model="query.type">
@@ -74,10 +86,11 @@
                   </md-input-container>
                   <md-input-container class="md-block" flex-gt-sm>
                       <label>Query Rate /min</label>
-                      <input type="number" step="1" name="interval" 
+                      <input type="number" step="1" name="interval"
                       ng-model="query.interval" min="1"
                       max="30" ng-pattern="/^\d+$/" />
-                      <div ng-messages="queryForm.interval.$error" multiple md-auto-hide="false">
+                      <div ng-messages="queryForm.interval.$error"
+                           multiple md-auto-hide="false">
                           <div ng-message="min">
                               Minimum 1 min
                           </div>
@@ -88,10 +101,11 @@
                   </md-input-container>
                   <md-input-container class="md-block" flex-gt-sm>
                       <label>Num. of tweets /query</label>
-                      <input type="number" step="100" name="count" 
+                      <input type="number" step="100" name="count"
                       ng-model="query.count" min="0"
-                      max="500" ng-pattern="/^\d+$/" />
-                      <div ng-messages="queryForm.count.$error" multiple md-auto-hide="false">
+                      max="500" ng-pattern="/^\d+$/"/>
+                      <div ng-messages="queryForm.count.$error"
+                           multiple md-auto-hide="false">
                           <div ng-message="min">
                               Minimum 0
                           </div>
@@ -102,10 +116,11 @@
                   </md-input-container>
                   <md-input-container class="md-block" flex-gt-sm>
                       <label>Max Num of Hashtags /day</label>
-                      <input type="number" step="1" name="hashtagF" 
-                      ng-model="query.maxHashtags" min="3"
-                      max="10" ng-pattern="/^\d+$/" />
-                      <div ng-messages="queryForm.hashtagF.$error" multiple md-auto-hide="false">
+                      <input type="number" step="1" name="hashtagF"
+                             ng-model="query.maxHashtags" min="3"
+                             max="10" ng-pattern="/^\d+$/" />
+                      <div ng-messages="queryForm.hashtagF.$error"
+                           multiple md-auto-hide="false">
                           <div ng-message="min">
                               Minimum 3 hashtags
                           </div>
@@ -114,14 +129,16 @@
                           </div>
                       </div>
                   </md-input-container>
-                  
+
                   <!-- Date picker -->
                   <div layout="column" style="margin-top:10px; margin-bottom:10px">
                       <md-checkbox ng-model="checkedDate" aria-label="Set Date Range" style="margin-left:15px">
                             Set Date Range
                       </md-checkbox>
-                      <md-datepicker md-max-date="maxDate" ng-model="query.dateFrom" md-placeholder="From:" ng-disabled="!checkedDate"></md-datepicker>
-                      <md-datepicker md-max-date="maxDate" ng-model="query.dateTo" md-placeholder="To:" ng-disabled="!checkedDate"></md-datepicker>
+                      <md-datepicker md-max-date="maxDate" ng-model="query.dateFrom"
+                                     md-placeholder="From:" ng-disabled="!checkedDate"></md-datepicker>
+                      <md-datepicker md-max-date="maxDate" ng-model="query.dateTo"
+                                     md-placeholder="To:" ng-disabled="!checkedDate"></md-datepicker>
                   </div>
 
 
@@ -142,20 +159,21 @@
 
               </md-content>
           </form>
-          
+
               <!-- Tabs to select chart -->
               <md-tabs md-center-tabs="true" md-stretch-tabs md-selected="selectedIndex">
-                  <md-tab label="Stacked Bar Charts"></md-tab> 
+                  <md-tab label="Stacked Bar Charts"></md-tab>
                   <md-tab label="Bubble Charts"></md-tab>
               </md-tabs>
-              
+
           </div>
           <!-- Load charts directives as partials using UI Router -->
           <div ui-view ng-class="transition"></div>
 
       </div>
-      
-      <!-- Angular deps, ngMaterial, ngMessages, localStorage, angulargrid, imgfallback -->
+
+      <!-- Angular deps, ngMaterial, ngMessages,
+           localStorage, angulargrid, imgfallback -->
       <script src="../../js/angular-modules/angular-sanitize.min.js"></script>
       <script src="../../js/angular-modules/angular-aria.min.js"></script>
       <script src="../../js/angular-modules/angular-animate.min.js"></script>
@@ -163,21 +181,21 @@
       <script src="../../js/angular-modules/ngStorage.min.js"></script>
       <script src="../../js/angular-modules/angular-messages.min.js"></script>
       <script src="../../js/moment.min.js"></script>
-      <script src="../../js/underscore-min.js"></script>
+      <script src="../../js/underscore.min.js"></script>
       <script src="../../js/angular-modules/angular-ui-router.min.js"></script>
       <script src="../../js/angular-modules/angular-momentjs.min.js"></script>
       <script src="app.js"></script>
-      
+
 
       <!-- Services -->
       <script src="services/dataService.js"></script>
       <script src="services/analyticService.js"></script>
       <script src="services/queryService.js"></script>
-      
+
       <!-- Chart Ctrl & Directives -->
       <script src="charts/bubbleCloud.js"></script>
       <script src="charts/barChart.js"></script>
-    
+
 
       <!-- d3  -->
       <script src="../../js/d3.min.js" charset="utf-8"></script>

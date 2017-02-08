@@ -1,34 +1,36 @@
-$(document).ready(function()
-{
-	$.ajax(	"/api/login.json", {
-	    data: { checkLogin: true },
-		dataType: "json",
-		success: function (response) {
-			if(response.loggedIn){
-				$("#status-box").text(response.message);
-				$("#status-box").addClass("error");
-				$("#loginForm").addClass("hidden");
-				$("#logoutForm").removeClass("hidden");
-			}
-		},
-		error: function (xhr, ajaxOptions, thrownError) {
-			$("#status-box").text(thrownError);
-			$("#status-box").addClass("error");
-		},
-	});
+$(document).ready(function () {
+    $.ajax( "/api/login.json", {
+        data: { checkLogin: true },
+        dataType: "json",
+        success: function (response) {
+            if(response.loggedIn) {
+                $("#status-box").text(response.message);
+                $("#status-box").addClass("error");
+                $("#loginForm").addClass("hidden");
+                $("#logoutForm").removeClass("hidden");
+            }
+        },
+        error: function (xhr, ajaxOptions, thrownError) {
+            $("#status-box").text(thrownError);
+            $("#status-box").addClass("error");
+        },
+    });
 
-    function setRemember(){
-        if($("#remember").is(":checked")){
+    function setRemember()
+    {
+        if($("#remember").is(":checked")) {
             $("#remember_hidden").val("cookie");
         }
         else{
             $("#remember_hidden").val("session");
         }
     }
-    $("#remember").click(function(){setRemember();});
+    $("#remember").click(function () {
+        setRemember();
+    });
     setRemember();
 
-	var optionsLogin = {
+    var optionsLogin = {
         url:        "/api/login.json",
         type:       "get",
         dataType:   "json",
@@ -41,7 +43,7 @@ $(document).ready(function()
         }
     };
 
-    $("#loginForm").submit(function() {
+    $("#loginForm").submit(function () {
         $(this).ajaxSubmit(optionsLogin);
         return false;
     });
@@ -62,7 +64,7 @@ $(document).ready(function()
         }
     };
 
-    $("#logoutForm").submit(function() {
+    $("#logoutForm").submit(function () {
         $(this).ajaxSubmit(optionsLogout);
         return false;
     });
