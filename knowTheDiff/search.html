@@ -47,7 +47,7 @@
           var introguide = introJs();
           introguide.setOptions({
           steps: [
-          { 
+          {
             element: '.results',
             intro: 'The results here are just from your own peer. This does not include the complete aggregated count',
             position: 'bottom'
@@ -60,18 +60,18 @@
       <script>
          var app = angular.module('TweetSearch', []);
          app.controller('Controller', ['$scope', '$http', '$sce', function($scope, $http, $sce) {
-         
+
              $scope.Search = function() {
                 $scope.spinner=true;
                  var QueryCommand = 'http://api.loklak.org/api/search.json?callback=JSON_CALLBACK&q=' + $scope.query;
-         
+
                  $http.jsonp(String(QueryCommand)).success(function(response) {
-                     
-                     var data = response; 
+
+                     var data = response;
                      var statuses = data.statuses;
                      var users = [];
                      for (var i=0; i<statuses.length; i++) {
-                         user = statuses[i].screen_name; 
+                         user = statuses[i].screen_name;
                          users.push(user);
                      }
                      var counts = {};
@@ -82,14 +82,14 @@
                      var countArr = [];
                      for (obj in counts){
                          countArr.push([obj,counts[obj]])
-                     } 
+                     }
                      countArr.sort(function(a,b){return b[1] - a[1]});
-                     $scope.leaderboard = countArr; 
-                     //console.log(counts); 
+                     $scope.leaderboard = countArr;
+                     //console.log(counts);
                  });
              }
               $scope.spinner = false;
-         }]); 
+         }]);
       </script>
    </body>
 </html>

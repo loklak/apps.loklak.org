@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app='loklak'>
+<html lang="en" ng-app="loklak">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -30,13 +30,18 @@
       <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
           <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
               <span class="sr-only">Toggle navigation</span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="http://loklak.org"><img src="../../images/loklak_org.png" height="24" style="float:left;">: Advanced Search</a>
+            <a class="navbar-brand" href="http://loklak.org">
+            <img src="../../images/loklak_org.png"
+                 height="24" style="float:left;">: Advanced Search
+            </a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
@@ -53,22 +58,27 @@
             <fieldset>
 
               <!-- Form Name -->
-              
+
 
               <!-- Text input-->
               <div class="form-group">
-                <label class="col-md-4 control-label" for="query">Query Text</label>  
+                <label class="col-md-4 control-label" for="query">Query Text</label>
                 <div class="col-md-8">
-                  <input id="query" id="query" name="query" type="text" placeholder="Query Text" class="form-control input-md" required="">
+                  <input id="query" id="query" name="query"
+                         type="text" placeholder="Query Text"
+                         class="form-control input-md" required="">
 
                 </div>
               </div>
 
               <!-- Text input-->
               <div class="form-group">
-                <label class="col-md-4 control-label" for="timezoneoffset">Time Zone Offset</label>  
+                <label class="col-md-4 control-label" for="timezoneoffset">Time Zone Offset</label>
                 <div class="col-md-8">
-                  <input id="timezoneoffset" id="timezoneoffset" name="timezoneoffset" type="text" placeholder="Enter the time zone offset in minutes" class="form-control input-md">
+                  <input id="timezoneoffset" id="timezoneoffset"
+                         name="timezoneoffset" type="text"
+                         placeholder="Enter the time zone offset in minutes"
+                         class="form-control input-md">
                 </div>
               </div>
 
@@ -156,37 +166,49 @@
 
               <!-- Text input-->
               <div class="form-group">
-                <label class="col-md-4 control-label" for="from">From User</label>  
+                <label class="col-md-4 control-label" for="from">From User</label>
                 <div class="col-md-8">
-                  <input id="from" name="from" type="text" placeholder="Enter username here" class="form-control input-md">
-                  <span class="help-block">this adds from:username and filters search for only the users</span>  
+                  <input id="from" name="from" type="text"
+                         placeholder="Enter username here"
+                         class="form-control input-md">
+                  <span class="help-block">this adds from:username and
+                                           filters search for only the
+                                           users</span>
                 </div>
               </div>
 
               <!-- Text input-->
               <div class="form-group">
-                <label class="col-md-4 control-label" for="from">Since Date</label>  
+                <label class="col-md-4 control-label" for="from">Since Date</label>
                 <div class="col-md-8">
-                  <input id="since" name="since" type="date" placeholder="Enter Since date here" class="form-control input-md">
-                  <span class="help-block">this adds since:YYYY-MM-DD and filters search for only the users</span>  
+                  <input id="since" name="since" type="date"
+                         placeholder="Enter Since date here"
+                         class="form-control input-md">
+                  <span class="help-block">this adds since:YYYY-MM-DD and filters search for only the users</span>
                 </div>
               </div>
 
               <!-- Text input-->
               <div class="form-group">
-                <label class="col-md-4 control-label" for="from">Until Date</label>  
+                <label class="col-md-4 control-label" for="from">Until Date</label>
                 <div class="col-md-8">
-                  <input id="until" name="until" type="date" placeholder="Enter Until date here" class="form-control input-md">
-                  <span class="help-block">this adds until:YYYY-MM-DD and filters search for only the users</span>  
+                  <input id="until" name="until" type="date"
+                         placeholder="Enter Until date here"
+                         class="form-control input-md">
+                  <span class="help-block">this adds until:YYYY-MM-DD and filters search for only the users</span>
                 </div>
               </div>
 
               <!-- Text input-->
               <div class="form-group">
-                <label class="col-md-4 control-label" for="near">Near Location</label>  
+                <label class="col-md-4 control-label" for="near">Near Location</label>
                 <div class="col-md-8">
-                  <input id="near" name="near" type="text" placeholder="Enter location nearby to search for" class="form-control input-md">
-                  <span class="help-block">this adds near:location_name and returns tweets near the given location for the given query</span>  
+                  <input id="near" name="near" type="text"
+                         placeholder="Enter location nearby to search for"
+                         class="form-control input-md">
+                  <span class="help-block">this adds near:location_name
+                                           and returns tweets near the given
+                                           location for the given query</span>
                 </div>
               </div>
 
@@ -205,19 +227,24 @@
 
               <!-- Text input-->
               <div class="form-group">
-                <label class="col-md-4 control-label" for="count">Count</label>  
+                <label class="col-md-4 control-label" for="count">Count</label>
                 <div class="col-md-8">
-                  <input id="count" name="count" type="text" placeholder="Integer value of number of results" class="form-control input-md">
-                  <span class="help-block">100 by default. You can have a custom number</span>  
+                  <input id="count" name="count" type="text"
+                         placeholder="Integer value of number of results"
+                         class="form-control input-md">
+                  <span class="help-block">100 by default. You can have a custom number</span>
                 </div>
               </div>
 
               <!-- Text input-->
               <div class="form-group">
-                <label class="col-md-4 control-label" for="limit">Limit</label>  
+                <label class="col-md-4 control-label" for="limit">Limit</label>
                 <div class="col-md-8">
-                  <input id="limit" name="limit" type="text" placeholder="Integer value to limit number of results" class="form-control input-md">
-                  <span class="help-block">Use this field to limit number of results from aggregations</span>  
+                  <input id="limit" name="limit" type="text"
+                         placeholder="Integer value to limit number of results"
+                         class="form-control input-md">
+                  <span class="help-block">Use this field to limit number
+                                           of results from aggregations</span>
                 </div>
               </div>
 

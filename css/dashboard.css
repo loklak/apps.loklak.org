@@ -3,11 +3,11 @@
  */
 
 .list-group-item li {
-  
+
   color:black;
 }
 .sidebar, .sidebar a {
-  
+
 }
 .sidebar a:hover {
   text-decoration: none;
@@ -20,7 +20,7 @@ ul, p {
   color:black;
 }
 ul, p a:hover{
-  
+
 }
 a {
   color:rgb(119,119,119);
@@ -75,7 +75,7 @@ ul.request {
   align-items: stretch;
   margin-top:8px;
   width:100%;
-  
+
 }
 .search input{
   height: 36px;
@@ -120,7 +120,7 @@ ul.request {
 .icon{
   padding-left:20px;
   padding-top:10px;
-  
+
 }
 .icon-container{
   margin-left: -20px;

@@ -1,8 +1,28 @@
+[default]
+bears = LineLengthBear, SpaceConsistencyBear
+files = **.js, **.css, **.html, **.yml, **.json
+ignore = **.min.js, **.min.css, tweetheatmap/public/lib/**, webtweets/js/bootstrap/**, webtweets/css/bootstrap.css, js/typeahead.bundle.js, webtweets/js/bootstrap.js
+max_line_length = 129
+use_spaces = True
+
 [html]
 bears = HTMLLintBear
 files = **.html
-htmllint_ignore = indentation, optional_tag, concerns_separation, capitalization
+htmllint_ignore = indentation, optional_tag, concerns_separation, capitalization, attr_lowercase
+ignore = tweetheatmap/public/lib/**
 
 [css]
-bears = PHPCodeSnifferBear
+bears = PHPCodeSnifferBe
 files = **.css
+ignore = **.min.css, tweetheatmap/public/lib/**, webtweets/css/bootstrap.css
+use_spaces = True
+
+[js]
+bears = PHPCodeSnifferBear
+files = **.js
+ignore = **.min.js, tweetheatmap/public/lib/**, /app/webtweets/js/bootstrap/**
+javascript_strictness = False
+use_spaces = True
+check_class_declaration = False
+allow_multiple_statements_per_line = True
+blank_line_after_namespace_declaration = False

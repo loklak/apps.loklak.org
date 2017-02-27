@@ -1,4 +1,4 @@
---- 
+---
 applications:
 - name: "Loklak Server"
   buildpack: "https://github.com/loklak/bluemix_buildpack_ant_loklak.git"

@@ -1,6 +1,6 @@
 #bar-example{
     width: 90%;
-    margin: 0 auto; 
+    margin: 0 auto;
     margin-top: 20vmin;
 }
 h3{
@@ -26,7 +26,7 @@ label.query{
     padding-left: 4px;
 }
 label.from{
-    font-weight: bold; 
+    font-weight: bold;
     margin-top: 15px;
     display: inline-block;
     margin-right: 7px;
