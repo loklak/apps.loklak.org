@@ -1,6 +1,6 @@
 $(document).ready( function () {
     $.ajax( "http://api.loklak.org/api/account-permissions.json", {
-        dataType: "json",
+        dataType: "jsonp",
         success (response) {
             $("#permissions").removeClass("hidden");
             $("#userName").children().first().append(response.userName);
@@ -11,7 +11,7 @@ $(document).ready( function () {
             jQuery.each(response.userRoleSpecificPermissions, function(service, obj){
                 $("#userRoleSpecificPermissions").append(service);
             });
-            $("#ParentUserRole").children().first().append(response.userRole);
+            $("#parentUserRole").children().first().append(response.userRole);
         },
         error (xhr, ajaxOptions, thrownError) {
             $("#notLoggedIn").removeClass("hidden");
@@ -19,9 +19,9 @@ $(document).ready( function () {
         }
     });
 
-    $.ajax( "/api/account-permissions.json", {
+    $.ajax( "http://api.loklak.org/api/account-permissions.json", {
         data: { getServiceList: true },
-        dataType: "json",
+        dataType: "jsonp",
         success (response) {
             jQuery.each(response.serviceList, function(i, service){
                 $("#serviceList").append("<div class='service' id='" +
@@ -31,7 +31,7 @@ $(document).ready( function () {
                                          "</span><div class='serviceContent'\
                                           valueSet=false></div></div><br>");
             });
-        }
+        },
     });
 
     $(document).on("click",".serviceTitle", function () {
@@ -40,9 +40,9 @@ $(document).ready( function () {
 
         if(child.attr("valueSet") === "false"){
             child.hide();
-            $.ajax( "/api/account-permissions.json", {
+            $.ajax( "http://api.loklak.org/api/account-permissions.json", {
                 data: { getServicePermissions: obj.attr("id") },
-                dataType: "json",
+                dataType: "jsonp",
                 success (response) {
                     if(Object.keys(response.servicePermissions).length > 0){
                         child.append("<ul></ul>");

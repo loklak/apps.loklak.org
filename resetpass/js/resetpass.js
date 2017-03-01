@@ -7,7 +7,7 @@ $(document).ready(function () {
 
     $.ajax( "http://api.loklak.org/api/recoverpassword.json", {
         data: { getParameters: true, token: urltoken },
-        dataType: 'json',
+        dataType: 'jsonp',
         success: function (response) {
             regex = response.regex;
             var regexTooltip = response.regexTooltip;
@@ -21,6 +21,7 @@ $(document).ready(function () {
             $('#pass').prop( "disabled", true );
             $('#confirmpass').prop( "disabled", true );
             $('#resetbut').prop( "disabled", true );
+            console.log(thrownError);
             tokenerr = true;
         },
     });
@@ -72,9 +73,9 @@ $(document).ready(function () {
         if(!total) {
             var newpass = $('#pass').val();
 
-            $.ajax( "/api/resetpassword.json", {
+            $.ajax( "http://api.loklak.org/api/resetpassword.json", {
                 data: { token: urltoken, newpass: newpass },
-                dataType: 'json',
+                dataType: 'jsonp',
                 success: function (response) {
                     resetFields();
                     $('#status-box').text(response.message);

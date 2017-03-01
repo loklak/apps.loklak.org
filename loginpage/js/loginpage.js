@@ -1,7 +1,7 @@
 $(document).ready(function () {
-    $.ajax( "/api/login.json", {
+    $.ajax( "http://api.loklak.org/api/login.json", {
         data: { checkLogin: true },
-        dataType: "json",
+        dataType: "jsonp",
         success: function (response) {
             if(response.loggedIn) {
                 $("#status-box").text(response.message);
@@ -31,9 +31,9 @@ $(document).ready(function () {
     setRemember();
 
     var optionsLogin = {
-        url:        "/api/login.json",
+        url:        "http://api.loklak.org/api/login.json",
         type:       "get",
-        dataType:   "json",
+        dataType:   "jsonp",
         success(response) {
             window.location = "/apps/applist/index.html";
         },
@@ -49,9 +49,9 @@ $(document).ready(function () {
     });
 
     var optionsLogout = {
-        url:        "/api/login.json",
+        url:        "http://api.loklak.org/api/login.json",
         type:       "get",
-        dataType:   "json",
+        dataType:   "jsonp",
         success(response) {
             $("#loginForm").removeClass("hidden");
             $("#logoutForm").addClass("hidden");
