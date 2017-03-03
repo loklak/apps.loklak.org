@@ -110,8 +110,13 @@ function getCheckedCheckboxValue(checkBoxObj) {
 function queryLoklak() {
     // Generates the XHR and display's content
     queryString = $('#queryGenerated').val();
-    $.getJSON(queryString, function (data, status) {
-        $('#queryResult').val(JSON.stringify(data, null, 2));
+    $.ajax({
+        url: queryString,
+        type: "get",
+        dataType: "jsonp",
+        success: function(data){
+            $('#queryResult').val(JSON.stringify(data, null, 2));
+        }
     });
 }
 
@@ -129,7 +134,7 @@ function constructQuery() {
     var ipField = $('#inputFieldArea').val();
 
     if (selectedAPI != 'search.json') {
-        serviceURL = $(location).attr('href').split('apps/LQL/')[0];
+        serviceURL = "http://api.loklak.org/";
         var constructedURL = serviceURL;
         constructedURL += 'api/' + selectedAPI;
         if (selectedAPI == 'xml2json.json' || selectedAPI == 'csv2json.json') {
@@ -142,7 +147,7 @@ function constructQuery() {
     else {
         var query = $('#query').val();
         var timeZoneOffset = $('#timezoneoffset').val();
-        var serviceURL = $(location).attr('href').split('apps/LQL/')[0];
+        var serviceURL = "http://api.loklak.org/";
         var constructedURL = serviceURL;
         var from = $('#from').val();
         var since = $('#since').val();
@@ -198,4 +203,18 @@ function constructQuery() {
         }
         $('#queryGenerated').val(constructedURL);
     }
+}
+
+function clearQueryResult() {
+    $('#queryResult').val("");
+}
+
+function copyQueryString() {
+    document.getElementById("queryGenerated").select();
+    document.execCommand('copy');
+}
+
+function copyQueryResult() {
+    document.getElementById("queryResult").select();
+    document.execCommand('copy');
 }
