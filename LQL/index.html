@@ -52,7 +52,9 @@
 
       <div class="container-fluid">
       <div class="row">
-      <center><p><h3>Loklak Query Language</h3></p></center>
+      <div id="header" style="margin-top: 60px; margin-bottom: 60px;">
+        <center><p><h3>Loklak Query Language</h3></p></center>
+      </div>
         <div class="col-md-6 col-lg-6 col-sm-12">
           <form class="form-horizontal">
             <fieldset>
@@ -269,18 +271,33 @@
           </form>
         </div>
         <div class="col-md-6 col-lg-6 col-sm-12">
-          <textarea name="queryGenerated" id="queryGenerated" cols="70" rows="10">
+          <textarea name="queryGenerated" id="queryGenerated" cols="68" rows="10">
 http://loklak.org/api/search.json
           </textarea>
-          <!-- Button -->
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="submitQuery"></label>
+          <!-- Buttons -->
+          <div class="form-group" style="display: block; float: left;">
             <div class="col-md-4" style="margin-bottom: 10px;margin-top: 10px;">
               <button id="submitQuery" name="submitQuery" class="btn btn-success" onclick="queryLoklak()">Query Loklak</button>
             </div>
           </div>
+          <div class="form-group" style="display: block; float: left;">
+            <div class="col-md-4" style="margin-bottom: 10px;margin-top: 10px;">
+              <button id="copyQueryString" name="copyQueryString" class="btn btn-success" onclick="copyQueryString()">copy</button>
+            </div>
+          </div>
           <!-- Button Ends -->
-          <textarea name="queryResult" id="queryResult" cols="70" rows="25"></textarea>
+          <textarea name="queryResult" id="queryResult" cols="68" rows="25"></textarea>
+          <!-- Buttons -->
+          <div class="form-group" style="display: block; float: left;">
+            <div class="col-md-4" style="margin-bottom: 10px;margin-top: 10px;">
+              <button id="clearQueryResult" name="clearQueryresult" class="btn btn-success" onclick="clearQueryResult()">Clear</button>
+            </div>
+          </div>
+          <div class="form-group" style="display: block; float: left;">
+            <div class="col-md-4" style="margin-bottom: 10px;margin-top: 10px;">
+              <button id="copyQueryResult" name="copyQueryresult" class="btn btn-success" onclick="copyQueryResult()">copy</button>
+            </div>
+          </div>
         </div>
       </div>
       </div>
