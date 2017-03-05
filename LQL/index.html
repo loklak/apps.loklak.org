@@ -274,15 +274,37 @@
           <textarea name="queryGenerated" id="queryGenerated" cols="70" rows="10">
 http://loklak.org/api/search.json
           </textarea>
-          <!-- Button -->
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="submitQuery"></label>
+          <!-- Buttons -->
+          <div class="form-group" style="display: block; float: left;">
             <div class="col-md-4" style="margin-bottom: 10px;margin-top: 10px;">
-              <button id="submitQuery" name="submitQuery" class="btn btn-success" onclick="queryLoklak()">Query Loklak</button>
+              <button id="submitQuery" name="submitQuery" class="btn btn-success"
+                onclick="queryLoklak()">Query Loklak</button>
             </div>
           </div>
+          <div class="form-group" style="display: block; float: left;">
+            <div class="col-md-4" style="margin-bottom: 10px;margin-top: 10px;">
+              <button id="copyQueryString" name="copyQueryString" class="btn btn-success"
+                onclick="copyQueryString()">copy</button>
+            </div>
+          </div>
+
           <!-- Button Ends -->
           <textarea name="queryResult" id="queryResult" cols="70" rows="25"></textarea>
+          <!-- Buttons -->
+          <div class="form-group" style="display: block; float: left;">
+            <div class="col-md-4" style="margin-bottom: 10px;margin-top: 10px;">
+              <button id="clearQueryResult" name="clearQueryresult" class="btn btn-success"
+                onclick="clearQueryResult()">Clear</button>
+            </div>
+          </div>
+          <div class="form-group" style="display: block; float: left;">
+            <div class="col-md-4" style="margin-bottom: 10px;margin-top: 10px;">
+              <button id="copyQueryResult" name="copyQueryresult" class="btn btn-success"
+                onclick="copyQueryResult()">copy</button>
+            </div>
+          </div>
+
+          <!-- Button Ends -->
         </div>
       </div>
       </div>

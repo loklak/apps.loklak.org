@@ -204,3 +204,17 @@ function constructQuery() {
         $('#queryGenerated').val(constructedURL);
     }
 }
+
+function clearQueryResult() {
+    $('#queryResult').val("");
+}
+
+function copyQueryString() {
+    document.getElementById("queryGenerated").select();
+    document.execCommand('copy');
+}
+
+function copyQueryResult() {
+    document.getElementById("queryResult").select();
+    document.execCommand('copy');
+}
