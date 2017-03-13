@@ -12,9 +12,9 @@ $(document).ready(function () {
 
     // get password parameters
     var regex;
-    $.ajax( "/api/pubkey_registration.json", {
+    $.ajax( "http://api.loklak.org/api/pubkey_registration.json", {
         data: { getParameters: true },
-        dataType: 'json',
+        dataType: 'jsonp',
         success: function (response) {
             if(response.self) {
                 $('#status-box').text("");
@@ -116,9 +116,9 @@ $(document).ready(function () {
             }
             //console.log(data);
 
-            $.ajax( "/api/pubkey_registration.json", {
+            $.ajax( "http://api.loklak.org/api/pubkey_registration.json", {
                 data: data,
-                dataType: 'json',
+                dataType: 'jsonp',
                 success: function (response) {
                     //resetFields();
                     $('#status-box').text(response.message);
