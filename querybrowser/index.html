@@ -36,7 +36,7 @@
     </script>
   </head>
 
-  <body>
+  <body style="overflow-x: auto; overflow-y: auto;">
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
@@ -61,39 +61,42 @@
       </div>
     </nav>
 
-    <div class="container-fluid">
+    <div class="container">
       <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
+        <h1 class="page-header">Query Browser</h1>
+        <p>This is a visualizer front-end for the <a href="/api.html#suggest">suggest api</a>.
+        The suggestion search index is a record of all search requests;
+        they can be used for suggestions, therefore the name.
+        </p>
+        <div class="row" ng-app="querybrowser" ng-controller="queryCtrl">
+          <table-responsive>
+            <table class="table table-striped table-bordered" style="width:100%;">
+              <thead>
+                <tr>
+                  <th style="vertical-align: top;text-align: left;">Query</th>
+                  <th style="vertical-align: top;text-align: right;">Query Count</th>
+                  <th style="vertical-align: top;text-align: right;">Retrieval Count</th>
+                  <th style="vertical-align: top;text-align: right;">Latest Query</th>
+                  <th style="vertical-align: top;text-align: right;">Next Retrieval</th>
+                  <th style="vertical-align: top;text-align: right;">Messages Per Day</th>
+                  <th style="vertical-align: top;text-align: right;">Message Period</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="query in queries">
+                  <td style="text-align: left;">{{query.query}}</td>
+                  <td style="text-align: right;">{{query.query_count}}</td>
+                  <td style="text-align: right;">{{query.retrieval_count}}</td>
+                  <td style="text-align: right;">{{query.query_last | date:'&nbsp;yyyy-MM-dd&nbsp;HH:mm'}}</td>
+                  <td style="text-align: right;">{{query.retrieval_next | date:'&nbsp;yyyy-MM-dd&nbsp;HH:mm'}}</td>
+                  <td style="text-align: right;">{{query.messages_per_day}}</td>
+                  <td style="text-align: right;">{{query.message_period}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </table-responsive>
         </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Query Browser</h1>
-          <p>This is a visualizer front-end for the <a href="/api.html#suggest">suggest api</a>.
-          The suggestion search index is a record of all search requests;
-          they can be used for suggestions, therefore the name.
-          </p>
-          <div class="row" ng-app="querybrowser" ng-controller="queryCtrl">
-            <table style="width:100%;">
-              <tr>
-                <th style="text-align:left;vertical-align:top;">Query</th>
-                <th style="text-align:right;vertical-align:top;">Query Count</th>
-                <th style="text-align:right;vertical-align:top;">Retrieval Count</th>
-                <th style="text-align:right;vertical-align:top;">Latest Query</th>
-                <th style="text-align:right;vertical-align:top;">Next Retrieval</th>
-                <th style="text-align:right;vertical-align:top;">Messages Per Day</th>
-                <th style="text-align:right;vertical-align:top;">Message Period</th>
-              </tr>
-              <tr ng-repeat="query in queries">
-                <td style="text-align:left;">{{query.query}}</td>
-                <td style="text-align:right;">{{query.query_count}}</td>
-                <td style="text-align:right;">{{query.retrieval_count}}</td>
-                <td style="text-align:right;">{{query.query_last | date:'&nbsp;yyyy-MM-dd&nbsp;HH:mm'}}</td>
-                <td style="text-align:right;">{{query.retrieval_next | date:'&nbsp;yyyy-MM-dd&nbsp;HH:mm'}}</td>
-                <td style="text-align:right;">{{query.messages_per_day}}</td>
-                <td style="text-align:right;">{{query.message_period}}</td>
-             </tr>
-           </table>
-        </div>
-       </div>
+      </div>
     </div>
 
     <!-- Bootstrap core JavaScript
