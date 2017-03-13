@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="loklak">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -26,6 +26,14 @@
     <script src="../../js/angular.min.js"></script>
     <script src="../../js/angular-route.min.js"></script>
     <script src="../../js/loklak.js"></script>
+    <script>
+      var app = angular.module('querybrowser', []);
+      app.controller('queryCtrl', function($scope, $http) {
+        $http.jsonp("http://api.loklak.org/api/suggest.json?callback=JSON_CALLBACK&count=10000" +
+          "&order=desc&orderby=query_count")
+        .then(function (response) {$scope.queries = response.data.queries;});
+      });
+    </script>
   </head>
 
   <body>
@@ -87,14 +95,6 @@
         </div>
        </div>
     </div>
-
-    <script>
-    var app = angular.module('querybrowser', []);
-    app.controller('queryCtrl', function($scope, $http) {
-        $http.get("/api/suggest.json?count=10000&order=desc&orderby=query_count")
-        .then(function (response) {$scope.queries = response.data.queries;});
-    });
-    </script>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
