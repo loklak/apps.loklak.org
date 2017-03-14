@@ -1,0 +1,18 @@
+{
+  "@context":"http://schema.org",
+  "@type":"SoftwareApplication",
+  "permissions":"/api/search.json",
+  "name":"collegeElections",
+  "headline":"CollegeLeaderboard",
+  "alternativeHeadline":"College Elections with loklak",
+  "applicationCategory":"Scraper",
+  "applicationSubCategory":"Text Retrieval",
+  "operatingSystem":"http://loklak.org",
+  "author":{
+    "@type":"Person",
+    "name":"Sushma Kukkadapu",
+    "email":"kukkadapusushma12@gmail.com",
+    "url":"https://github.com/KukkadapuSushma",
+    "sameAs":"https://github.com/KukkadapuSushma"
+  }
+}

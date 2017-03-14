@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+   <head>
+   <link rel="icon" type="image/png" href="../../artwork/favicon.png">
+      <title>Leaderboard</title>
+      <link href="css/style.css" rel="stylesheet"/>
+      <link href="css/bootstrap.min.css" rel="stylesheet"/>
+      
+      <script src="/js/angular.min.js"></script>
+      <script src="/js/jquery.min.js"></script>
+      <script src="../../js/jquery.min.js"></script>
+        <script src="../../js/angular.min.js"></script>
+        <script src="js/highcharts.min.js"></script>
+        <script src="js/exporting.min.js"></script>
+
+      <style>
+            .post-wrapper:first-child .post-inner {
+            border-top-color: rgba(0, 0, 0, 0.1);
+            }
+            .post-wrapper .post-inner {
+            background-color: white;
+            display: block;
+            cursor: pointer;
+            overflow: hidden;
+            text-decoration: none;
+            color: #666666;
+            -webkit-transition-duration: 0.25s;
+            transition-duration: 0.25s;
+            -webkit-transition-timing-function: ease-out;
+            transition-timing-function: ease-out;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            }
+            .post-wrapper .post-inner.open {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 1px rgba(0, 0, 0, 0.2);
+            border-bottom-color: transparent;
+            }
+            .post-wrapper .post-inner.open:hover {
+            background-color: white;
+            }
+            .post-wrapper .post-inner:hover {
+            background-color: #f0f2f5;
+            }
+            .post-wrapper .post-inner h2 {
+            font-weight: 400;
+            color: #54626C;
+            }
+            .post-wrapper .post-inner .text {
+            display: none;
+            }
+            .post-wrapper .post-inner p {
+            font-weight: 300;
+            padding: 10px 0;
+            }
+            .post-wrapper .post-inner p.lead {
+            font-size: 1.2em;
+            }
+            .Emoji.Emoji--forText {
+            width: 2%;
+            height: 2%;
+            padding: initial;
+            margin-left: 7px;
+            }
+
+			.serviceBox1, .serviceBox3{
+    		float:left;
+    		width:30%;
+    		height: 380px; 
+    		background-color: ;
+			}
+			.serviceBox2{
+				float: left;
+				width: 40%;
+				height: 380px;
+			}
+
+        </style>
+
+   </head>
+   <body background = "election.jpg">
+      <center>
+         <h1><b>COLLEGE ELECTIONS</b></h1>
+         <h3><em>Compare to find the LEADER!</em></h3>
+         <br>
+         <div ng-app="TweetSearch" ng-controller="Controller">
+            <div class="form-group">
+               <div class="input-group" id="searchBar">
+
+                  <table>
+                  <tr>
+                  	<td><input type="text" id="query1"
+                         class="form-control" ng-model="query1"
+                         placeholder="Enter nominee 1"></td>
+                  	<td><input type="text" id="query2"
+                         class="form-control" ng-model="query2"
+                         placeholder="Enter nominee 2"></td>
+                  </tr></table>
+                  <span class="input-group-btn">
+                  <button href='#' class="btn btn-default"
+                          type="button" id="button"
+                          ng-click="Search()">Compare</button>
+                  </span>
+                  
+                  
+               </div>
+            </div>
+            <div ng-if="spinner && !leaderboard1 && !leaderboard2">
+                <img src="loading.gif" height="400" width="400"/>
+            </div>
+            <br>
+            
+            <div style="width:100%;" class="container">
+
+               <div class="serviceBox1">
+                  <table>
+        				<tr>
+                  		<td ng-if="leaderboard1">
+                  		<table>
+                  		<th style="text-align: center;"><h2><b>{{query1}}</b></h2></th>
+                  		<tr> 
+                   		<td><h3>Total count of votes: &nbsp;&nbsp; {{leaderboard1}}</h3></td> </tr></table>
+                  		</td>
+                  		
+                  	  </tr>
+                  	  </table>
+                  	  </div>
+
+                  	  <div class="pie-chart2 serviceBox2"></div>
+            		 
+                  	  <div class="serviceBox3">
+                      <table>
+                  	  <tr>
+                  	  	
+                  		<td ng-if="leaderboard2">
+                  		<table>
+                  		<th style="text-align: center;"><h2><b>{{query2}}</b></h2></th>
+                  		<tr> 
+                  		<td><h3>Total count of votes : &nbsp;&nbsp; {{leaderboard2}}</h3></td> </tr></table>
+                  		</td>
+                	   
+                	</tr>
+                   
+                 </table>
+                </div>
+                
+             </div>
+             
+             <div class="container">
+             	<div ng-show="leaderboard1 < leaderboard2"><h2><b>~The winner is <font color = "#23b515"><em>"{{query2}}"</em></font>~</b></h2></div>
+             	<div ng-show="leaderboard1 > leaderboard2"><h2><b>~The winner is <font color = "#23b515"><em>"{{query1}}"</em></font>~</b></h2></div>
+             </div>
+
+            <br>
+            </div>
+            </div>
+         </div>
+         </div>
+         </div>
+         
+      </center>
+      <script>
+         var app = angular.module('TweetSearch', []);
+         app.controller('Controller', ['$scope', '$http', '$q', '$sce', function($scope, $http, $q, $sce) {
+
+             $scope.candidateReq = { one: '', two: ''};
+             $scope.leaderboard1 = 0;
+             $scope.leaderboard2 = 0;
+
+             $scope.Search = function() {
+                 
+                 $scope.spinner=true;
+
+                 var QueryCommand1 = 'https://loklak.org/api/search.json?callback=JSON_CALLBACK&q='+$scope.query1+'&source=cache&count=0&fields=mentions&limit=50';
+                 var countCandidate1 = 0;
+
+                 var QueryCommand2 = 'https://loklak.org/api/search.json?callback=JSON_CALLBACK&q='+$scope.query2+'&source=cache&count=0&fields=mentions&limit=50';
+                 var countCandidate2 = 0;
+
+                 $http.jsonp(QueryCommand1).then(function(response) {
+                    $scope.candidateReq.one = response.data
+                    //console.log('one');
+                    $http.jsonp(QueryCommand2).then(function(response) {
+                      $scope.candidateReq.two = response.data
+                      //console.log('two');
+                      //console.log($scope.candidateReq); // contains the data from both in $scope.candidateReq
+                      makeCalculations($scope.candidateReq.one, $scope.candidateReq.two);
+                    });
+                  });
+
+                 function calculateSum(object) {
+                  var mention = object.aggregations.mentions;
+                  var candidateSum = 0;
+                  var mentionedKeys = Object.keys(mention);
+                  for (var i = 0; i < mentionedKeys.length; i++) {
+                    candidateSum += mention[mentionedKeys[i]];
+                  }
+                  return candidateSum;
+                 }
+
+                 function makeCalculations(object1, object2) {
+
+                  // For object 1
+                  //console.log(object1);
+                  $scope.leaderboard1 = calculateSum(object1);
+
+                  // For object 2
+                  //console.log(object2);
+                  $scope.leaderboard2 = calculateSum(object2);
+
+                  // Now plotting the graph with these two values
+                  plotPieChart($scope.leaderboard1, $scope.leaderboard2)
+                 }
+
+                function plotPieChart(value1, value2) {
+                $('.pie-chart2').highcharts({
+                  chart: {
+                    plotBackgroundColor: '#d7dee5',
+                    plotBorderWidth: null,
+                    plotShadow: false,
+                    type: 'pie'
+                  },
+                  title: {
+                    text: "College Elections Results"
+                  },
+                  tooltip: {
+                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                  },
+                  plotOptions: {
+                    pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                      enabled: true,
+                      format : '',
+                      style: {
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                      }
+                    }
+                  }
+                },
+                  series: [{
+                    name: 'College Elections',
+                    colorByPoint: true,
+                    data: [{
+                      name: $scope.query1,
+                      colorByPoint: true,
+                      y: value1
+                    }, {
+                    name: $scope.query2,
+                    colorByPoint: true,
+                    y: value2,
+                    sliced: true,
+                    selected: true
+                    }]
+                  }]
+                });
+              }			
+		      }
+
+          window.addEventListener("keydown",   function flagup(event) {
+              if(event.key=='Enter') {
+          		  $scope.Search();
+              }
+          });
+          $scope.spinner = false;
+        }]);
+      </script>
+   </body>
+</html>
