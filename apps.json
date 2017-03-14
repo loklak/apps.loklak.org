@@ -162,6 +162,24 @@
     {
       "@context": "http://schema.org",
       "@type": "SoftwareApplication",
+      "permissions": ["/api/search.json"],
+      "name": "collegeElections",
+      "headline": "College Leaderboard",
+      "alternativeHeadline": "College Elections with loklak",
+      "applicationCategory": "Scraper",
+      "applicationSubCategory": "Text Retrieval",
+      "operatingSystem": "http://loklak.org",
+      "author": {
+        "@type": "Person",
+        "name": "Sushma Kukkadapu",
+        "email": "kukkadapusushma12@gmail.com",
+        "url": "https://github.com/KukkadapuSushma",
+        "sameAs": "https://github.com/KukkadapuSushma"
+      }
+    },
+    {
+      "@context": "http://schema.org",
+      "@type": "SoftwareApplication",
       "permissions": ["/api/login.json"],
       "name": "loginpage",
       "headline": "Log In to Loklak",
@@ -626,7 +644,8 @@
       "tweetsleaderboard",
       "histogram",
       "tweetfeed",
-      "superwoman7"
+      "superwoman7",
+      "collegeElections"
     ],
     "Accounts": [
       "forgotpassword",
