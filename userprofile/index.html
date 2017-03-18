@@ -6,7 +6,6 @@
     <title>User Profile Page</title>
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/loklak.css" rel="stylesheet">
-    <script src="/js/angular.min.js"></script>
     <script src="/js/jquery.min.js"></script>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootcards/1.0.0/css/bootcards-desktop.min.css">
 
@@ -47,7 +46,7 @@
         <h1>Enter the username of the user</h1>
 
 
-        <div ng-app="TweetSearch" ng-controller="Controller">
+        <div ng-controller="Controller">
 
             <input type="text" id="query" ng-model="query"
                    placeholder="Search tweet from Loklak">
@@ -113,19 +112,20 @@
 
             $scope.Search = function() {
 
-                var QueryCommand = 'http://api.loklak.org/api/search.json?\
-                                    callback=JSON_CALLBACK&q=' +
-                                    $scope.query;
+                var QueryCommand = 'http://api.loklak.org/api/search.json?' +
+                                   'callback=JSON_CALLBACK&q=' +
+                                   $scope.query;
 
                 $http.jsonp(String(QueryCommand)).success(function(response) {
+                    console.log(response);
                     $scope.myData = response.statuses;
                     for (var i = 0; i < $scope.myData.length; ++i) {
                         $scope.myData[i].text = $sce.trustAsHtml($scope.myData[i].text);
                     }
                 });
 
-                var userQueryCommand = 'http://api.loklak.org/api/user.json?\
-                                        callback=JSON_CALLBACK&screen_name=' +
+                var userQueryCommand = 'http://api.loklak.org/api/user.json?' +
+                                       'callback=JSON_CALLBACK&screen_name=' +
                                        $scope.query;
 
                 $http.jsonp(String(userQueryCommand)).success(function(response) {
