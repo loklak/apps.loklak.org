@@ -1,83 +1,81 @@
 <!DOCTYPE html>
 <html>
    <head>
-   <link rel="icon" type="image/png" href="../../artwork/favicon.png">
-      <title>Leaderboard</title>
-      <link href="css/style.css" rel="stylesheet"/>
-      <link href="css/bootstrap.min.css" rel="stylesheet"/>
-      
-      <script src="/js/angular.min.js"></script>
-      <script src="/js/jquery.min.js"></script>
-      <script src="../../js/jquery.min.js"></script>
-        <script src="../../js/angular.min.js"></script>
-        <script src="js/highcharts.min.js"></script>
-        <script src="js/exporting.min.js"></script>
+     <link rel="icon" type="image/png" href="../../artwork/favicon.png">
+     <title>Leaderboard</title>
+     <link href="css/style.css" rel="stylesheet"/>
+     <link href="css/bootstrap.min.css" rel="stylesheet"/>
+     <script src="/js/angular.min.js"></script>
+     <script src="/js/jquery.min.js"></script>
+     <script src="../../js/jquery.min.js"></script>
+     <script src="../../js/angular.min.js"></script>
+     <script src="js/highcharts.min.js"></script>
+     <script src="js/exporting.min.js"></script>
+     <style>
+       .post-wrapper:first-child .post-inner {
+         border-top-color: rgba(0, 0, 0, 0.1);
+       }
+       .post-wrapper .post-inner {
+         background-color: white;
+         display: block;
+         cursor: pointer;
+         overflow: hidden;
+         text-decoration: none;
+         color: #666666;
+         -webkit-transition-duration: 0.25s;
+         transition-duration: 0.25s;
+         -webkit-transition-timing-function: ease-out;
+         transition-timing-function: ease-out;
+         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+         padding: 20px;
+       }
+      .post-wrapper .post-inner.open {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        box-shadow: 0 4px 1px rgba(0, 0, 0, 0.2);
+        border-bottom-color: transparent;
+      }
+      .post-wrapper .post-inner.open:hover {
+        background-color: white;
+      }
+      .post-wrapper .post-inner:hover {
+        background-color: #f0f2f5;
+      }
+      .post-wrapper .post-inner h2 {
+        font-weight: 400;
+        color: #54626C;
+      }
+      .post-wrapper .post-inner .text {
+        display: none;
+      }
+      .post-wrapper .post-inner p {
+        font-weight: 300;
+        padding: 10px 0;
+      }
+      .post-wrapper .post-inner p.lead {
+        font-size: 1.2em;
+      }
+      .Emoji.Emoji--forText {
+        width: 2%;
+        height: 2%;
+        padding: initial;
+        margin-left: 7px;
+      }
 
-      <style>
-            .post-wrapper:first-child .post-inner {
-            border-top-color: rgba(0, 0, 0, 0.1);
-            }
-            .post-wrapper .post-inner {
-            background-color: white;
-            display: block;
-            cursor: pointer;
-            overflow: hidden;
-            text-decoration: none;
-            color: #666666;
-            -webkit-transition-duration: 0.25s;
-            transition-duration: 0.25s;
-            -webkit-transition-timing-function: ease-out;
-            transition-timing-function: ease-out;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            }
-            .post-wrapper .post-inner.open {
-            margin-top: 20px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-            box-shadow: 0 4px 1px rgba(0, 0, 0, 0.2);
-            border-bottom-color: transparent;
-            }
-            .post-wrapper .post-inner.open:hover {
-            background-color: white;
-            }
-            .post-wrapper .post-inner:hover {
-            background-color: #f0f2f5;
-            }
-            .post-wrapper .post-inner h2 {
-            font-weight: 400;
-            color: #54626C;
-            }
-            .post-wrapper .post-inner .text {
-            display: none;
-            }
-            .post-wrapper .post-inner p {
-            font-weight: 300;
-            padding: 10px 0;
-            }
-            .post-wrapper .post-inner p.lead {
-            font-size: 1.2em;
-            }
-            .Emoji.Emoji--forText {
-            width: 2%;
-            height: 2%;
-            padding: initial;
-            margin-left: 7px;
-            }
+      .serviceBox1, .serviceBox3 {
+        float:left;
+    	  width:30%;
+    	  height: 380px; 
+    	  background-color: ;
+      }
+      .serviceBox2 {
+        float: left;
+        width: 40%;
+        height: 380px;
+      }
 
-			.serviceBox1, .serviceBox3{
-    		float:left;
-    		width:30%;
-    		height: 380px; 
-    		background-color: ;
-			}
-			.serviceBox2{
-				float: left;
-				width: 40%;
-				height: 380px;
-			}
-
-        </style>
+    </style>
 
    </head>
    <body background = "election.jpg">
@@ -86,26 +84,26 @@
          <h3><em>Compare to find the LEADER!</em></h3>
          <br>
          <div ng-app="TweetSearch" ng-controller="Controller">
-            <div class="form-group">
-               <div class="input-group" id="searchBar">
-
-                  <table>
-                  <tr>
-                  	<td><input type="text" id="query1"
-                         class="form-control" ng-model="query1"
-                         placeholder="Enter nominee 1"></td>
-                  	<td><input type="text" id="query2"
-                         class="form-control" ng-model="query2"
-                         placeholder="Enter nominee 2"></td>
-                  </tr></table>
-                  <span class="input-group-btn">
-                  <button href='#' class="btn btn-default"
-                          type="button" id="button"
-                          ng-click="Search()">Compare</button>
-                  </span>
-                  
-                  
-               </div>
+           <div class="form-group">
+             <div class="input-group" id="searchBar">
+               <table>
+                 <tr>
+                   <td><input type="text" id="query1"
+                     class="form-control" ng-model="query1"
+                     placeholder="Enter nominee 1"></td>
+                   <td><input type="text" id="query2"
+                     class="form-control" ng-model="query2"
+                     placeholder="Enter nominee 2"></td>
+                 </tr>
+               </table>
+               <span class="input-group-btn">
+                 <button href='#' class="btn btn-default"
+                         type="button" id="button"
+                         ng-click="Search()">
+                           Compare
+                 </button>
+               </span>
+         </div>
             </div>
             <div ng-if="spinner && !leaderboard1 && !leaderboard2">
                 <img src="loading.gif" height="400" width="400"/>
