@@ -1,0 +1,18 @@
+{
+  "@context":"http://schema.org",
+  "@type":"SoftwareApplication",
+  "permissions":"/api/search.json",
+  "name":"whatsTrending",
+  "headline":"Top trending hashtags showing app",
+  "alternativeHeadline":"Top trending hashtags showing app",
+  "applicationCategory":"Visualizer",
+  "applicationSubCategory":"About project",
+  "operatingSystem":"http://loklak.org",
+  "author":{
+    "@type":"Person",
+    "name":"Deepjyoti Mondal",
+    "email":"djmdeveloper060796@gmail.com",
+    "url":"https://github.com/djmgit",
+    "sameAs":"https://github.com/djmgit"
+  }
+}
