@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html ng-app="Trending">
+  <head>
+    <title> #Whats Trending?</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/angular-route.min.js"></script>
+    <script src="js/highcharts.min.js"></script>
+    <script src="js/exporting.min.js"></script>
+    <script src="../js/angular.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("#filter-options").hide();
+        $("#filter-option").click(function (){
+          $("#filter-options").slideToggle("fast");
+        });
+      });
+    </script>
+  </head>
+  <body ng-controller="getHash">
+    <div id="filter">
+      <div id="head">
+        <div id="head-title">
+          # What's Trending ?
+        </div>
+        <div id="filter-option">
+          Apply filters
+        </div>
+      </div>
+      <div id="filter-options">
+        <div id="top-count">
+          <label id="top-count-label" for="top-count-input"> Top HashTags count </label>
+          <input type="text" name="top-count-input" value="10" ng-model="count">
+        </div>
+        <div id="start-date" class="date-filter">
+          <label id="start-date-label" for="start-date-input"> Start Date </label>
+          <input type="text" id="start-date-input" value="2016-06-01" ng-model="startdate" placeholder="yyyy-mm-dd">
+        </div>
+        <div id="end-date" class="date-filter">
+          <label id="end-date-label" for="end-date-input"> End Date </label>
+          <input type="text" id="end-date-input"  ng-model="enddate" placeholder="yyyy-mm-dd">
+        </div>
+        <div id="filter-button" ng-click="getTags()">
+          Filter
+        </div>
+      </div>
+    </div>
+    <div id="main">
+      <div class="loader" ng-if="loading"></div>
+      <div id="top-table-and-chart" ng-hide="loading">
+        <div id="top-table">
+          <div id="table-head">
+            <h2>Top {{count}} HashTags and their count</h2>
+          </div>
+          <div class="table-responsive table-scroll">
+            <table class="table table-hover table-bordered">
+              <thead>
+                <tr>
+                  <th> HashTag </th>
+                  <th> Count </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="hashtag in hashtags">
+                  <td> {{hashtag.name}} </td>
+                  <td> {{hashtag.count}} </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="top-chart" class="pie-chart">
+        </div>
+      </div>
+    </div>
+    <script src="js/app.js"></script>
+  </body>
+</html>

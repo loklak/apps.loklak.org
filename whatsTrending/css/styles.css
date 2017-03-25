@@ -1,0 +1,131 @@
+#main {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+#filter {
+  display: flex;
+  flex-direction: column;
+}
+
+#head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1a237e;
+  padding-top:12px;
+  padding-bottom: 12px;
+  padding-left: 12px;
+  padding-right: 12px;
+  font-size: 22px;
+  color: white;
+  box-shadow: 0px 4px 2px #212121;
+}
+
+#filter-option {
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.5s;
+  padding: 6px;
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: #757575;
+  color: #e0e0e0;
+}
+
+#filter-option:hover {
+  border-width: 0.5px;
+  border-color: white;
+  border-style: solid;
+  color: white;
+
+}
+
+#filter-options {
+  display:flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 20px;
+  padding-bottom: 12px;
+  background-color: white;
+  box-shadow: 0px 2px 10px #212121;
+}
+
+#filter-options input {
+  margin-left: 20px;
+  transition: all 0.5s;
+}
+
+#filter-button {
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.5s;
+  padding: 6px;
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: #9fa8da;
+  color: #283593;
+}
+
+#filter-button:hover {
+  border-color: #3949ab;
+}
+
+#top-table-and-chart {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+#top-table {
+  margin-top: 10px;
+  padding: 30px;
+  box-shadow: 1px 1px 2px #212121;
+  transition: all 0.5s;
+  max-height: 25%;
+  margin-right: 20px;
+  height: 25%;
+}
+
+#top-table:hover {
+  box-shadow: 2px 2px 4px #212121;
+}
+
+#top-chart {
+  padding: 30px;
+  box-shadow: 1px 1px 2px #212121;
+  transition: all 0.5s;
+}
+
+#top-chart:hover {
+  box-shadow: 2px 2px 4px #212121;
+}
+
+.table-scroll {
+  height: 400px;
+  overflow: auto;
+}
+
+.loader {
+    border: 8px solid #f3f3f3; /* Light grey */
+    border-top: 8px solid #e91e63; /* Blue */
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    animation: spin 2s linear infinite;
+    position: absolute;
+    left: 45%;
+    top: 40%;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
