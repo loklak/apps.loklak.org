@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
     <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
     <script src="../js/angular-route.min.js"></script>
     <script src="js/highcharts.min.js"></script>
     <script src="js/exporting.min.js"></script>
@@ -46,7 +47,24 @@
         </div>
       </div>
     </div>
+
     <div id="main">
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close close-modal" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Error</h4>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default close-btn" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="loader" ng-if="loading"></div>
       <div id="top-table-and-chart" ng-hide="loading">
         <div id="top-table">
