@@ -56,26 +56,26 @@ angular.element(document).ready(function () {
       $('#navbar > ul').prepend(liItem);
     });
   });
-});
-
-var lastScrollTop = $(window).scrollTop();
-$(window).scroll(function(event){
-  var st = $(this).scrollTop();
-  if (st <= 100){
-    $('nav').animate({
-      top: "0"
-    }, 40);
-    $('.sidebar').animate({
-      top: "7.4%"
-    }, 40);
-  }
-  else if(lastScrollTop <= 100 && st > lastScrollTop){
-    $('nav').animate({
-      top: "-20%"
-    }, 35);
-    $('.sidebar').animate({
-      top: "-5%"
-    }, 50);
-  }
-  lastScrollTop = st;
+  var lastScrollTop = $(window).scrollTop();
+  var sidebarTop = $('.sidebar').position().top;
+  $(window).scroll(function(event){
+    var st = $(this).scrollTop();
+    if (st <= 100){
+      $('nav').animate({
+        top: "0"
+      }, 40);
+      $('.sidebar').animate({
+        top: sidebarTop
+      }, 40);
+    }
+    else if(st > lastScrollTop && st > 100){
+      $('nav').animate({
+        top: "-20%"
+      }, 35);
+      $('.sidebar').animate({
+        top: "-5%"
+      }, 50);
+    }
+    lastScrollTop = st;
+  });
 });
