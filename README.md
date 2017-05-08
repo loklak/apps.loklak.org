@@ -3,7 +3,7 @@
 [![Join the chat at https://gitter.im/loklak/loklak](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/loklak/loklak)
 [![Percentage of issues still open](http://isitmaintained.com/badge/open/fossasia/apps.loklak.org.svg)](http://isitmaintained.com/project/fossasia/apps.loklak.org "Percentage of issues still open")
 [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/fossasia/apps.loklak.org.svg)](http://isitmaintained.com/project/fossasia/apps.loklak.org "Average time to resolve an issue")
-[![Twitter](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Wow Check Loklak on @gitHub @lklknt: https://github.com/fossasia/apps.loklak.org &url=%5Bobject%20Object%5D)
+[![Twitter](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Wow%20Check%20Loklak%20on%20@gitHub%20@lklknt:%20https://github.com/fossasia/apps.loklak.org%20&url=%5Bobject%20Object%5D)
 [![Twitter Follow](https://img.shields.io/twitter/follow/lklknt.svg?style=social&label=Follow&maxAge=2592000?style=flat-square)](https://twitter.com/lklknt)
 
 Loklak is a server application which is able to collect messages from various sources, including Twitter. The server contains a search index and a peer-to-peer index sharing interface. All messages are stored in an elasticsearch index. An automatic deployment from the development branch at GitHub is available for testing here https://loklak-server-dev.herokuapp.com
