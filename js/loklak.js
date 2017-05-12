@@ -63,18 +63,18 @@ angular.element(document).ready(function () {
     if (st <= 100){
       $('nav').animate({
         top: "0"
-      }, 40);
+      }, 10);
       $('.sidebar').animate({
         top: sidebarTop
-      }, 40);
+      }, 10);
     }
     else if(st > lastScrollTop && st > 100){
       $('nav').animate({
         top: "-20%"
-      }, 35);
+      }, 5);
       $('.sidebar').animate({
         top: "-5%"
-      }, 50);
+      }, 20);
     }
     lastScrollTop = st;
   });
