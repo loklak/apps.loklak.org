@@ -22,7 +22,7 @@
             <button href='#' class="btn btn-primary" type="button" id="button" ng-click="Search()">Search</button>
             </span>
             <br>
-            <div ng-if="spinner && !data"><img src="loading.gif" height="150" width="150"/></div> <br>
+            <div ng-if="spinner"><img src="loading.gif" height="150" width="150"/></div> <br>
             <table>
                 <tr ng-repeat="x in myData">
                     <td ng-bind-html="x.text"></td>
@@ -40,6 +40,9 @@
         app.controller('Controller', ['$scope', '$http', '$sce', function($scope, $http, $sce) {
 
             $scope.Search = function() {
+                if ($scope.query === undefined || $scope.query.length === 0) {
+                    return;
+                }
                 $scope.spinner=true;
                 var QueryCommand = 'http://api.loklak.org/api/search.json?callback=JSON_CALLBACK&q=' + $scope.query;
 
@@ -48,6 +51,7 @@
                     for (var i = 0; i < $scope.myData.length; ++i) {
                         $scope.myData[i].text = $sce.trustAsHtml($scope.myData[i].text);
                     }
+                    $scope.spinner = false;
                 });
             }
 
@@ -58,8 +62,6 @@
                     $scope.Search();
                 }
             });
-            $scope.spinner = false;
-
         }]);
     </script>
 </body>
