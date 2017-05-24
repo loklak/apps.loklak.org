@@ -4,9 +4,10 @@
    <link rel="icon" type="image/png" href="../../artwork/favicon.png">
       <title>Leaderboard</title>
       <link href="css/style.css" rel="stylesheet"/>
-      <link href="css/bootstrap.min.css" rel="stylesheet"/>
+      <link href="/css/bootstrap.min.css" rel="stylesheet"/>
       <script src="/js/angular.min.js"></script>
       <script src="/js/jquery.min.js"></script>
+      <script src="/js/bootstrap.min.js"></script>
    </head>
    <body>
       <center>
@@ -18,7 +19,8 @@
                <div class="input-group" id="searchBar">
                   <input type="text" id="query"
                          class="form-control" ng-model="query"
-                         placeholder="Search tweet from Loklak">
+                         placeholder="Search tweet from Loklak"
+                         ng-keyup="$event.keyCode == 13 ? Search() : null">
                   <span class="input-group-btn">
                   <button href='#' class="btn btn-default"
                           type="button" id="button"
@@ -26,14 +28,17 @@
                   </span>
                </div>
             </div>
-            <div ng-if="spinner && !leaderboard">
+            <div ng-if="spinner">
                 <img src="loading.gif" height="400" width="400"/>
+            </div>
+            <div ng-if="isError" class="error">
+              <span class="glyphicon glyphicon-warning-sign"></span> {{ error }}
             </div>
             <br>
             <br>
             <br>
-            <table >
-               <tr ng-if="leaderboard">
+            <table ng-if="leaderboard && !spinner">
+               <tr>
                   <th style="text-align: center;">UserName</th>
                   <th style="text-align: center;">Number of Tweets</th>
                </tr>
@@ -49,8 +54,15 @@
       <script>
          var app = angular.module('TweetSearch', []);
          app.controller('Controller', ['$scope', '$http', '$sce', function($scope, $http, $sce) {
-
+             $scope.error = "";
+             $scope.isError = false;
              $scope.Search = function() {
+                $scope.isError = false;
+                if ($scope.query === undefined || $scope.query === "") {
+                  $scope.isError = true;
+                  $scope.error = "Please enter something to search";
+                  return;
+                }
                 $scope.spinner=true;
                  var QueryCommand = 'http://api.loklak.org/api/search.json?callback=JSON_CALLBACK&q=' +
                                     $scope.query;
@@ -75,18 +87,10 @@
                      }
                      countArr.sort(function(a,b){return b[1] - a[1]});
                      $scope.leaderboard = countArr;
-                     //console.log(counts);
+                     $scope.spinner = false;
                  });
 
              }
-             window.addEventListener("keydown",   function flagup(event)
-            {
-              if(event.key=='Enter')
-              {
-          $scope.Search();
-              }
-            });
-              $scope.spinner = false;
          }]);
       </script>
    </body>
