@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="details">
+  <head>
+    <meta charset="utf-8">
+    <meta name="robots" content="index,follow">
+    <meta http-equiv="cache-control" content="public">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="Content-Language" content="en, english" />
+    <link rel="icon" type="image/png" href="http://loklak.org/artwork/favicon.png">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/details.css">
+    <link href="css/animate.css" rel="stylesheet"/>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/angular.min.js"></script>
+    <script src="/js/angular-route.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/details.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+      <div class="container-fluid navbar-container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="navbar-brand brand-container">
+            <a href="http://apps.loklak.org" class="loklak-brand"> <span class="loklak-header">
+              loklak </span> <span>apps</span></a>
+          </div>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="http://loklak.net/about">About</a></li>
+            <li><a href="http://loklak.net/">Search</a></li>
+            <li><a href="http://blog.loklak.net/">Blog</a></li>
+            <li><a href="http://dev.loklak.org/">Developers</a></li>
+            <li><a href="http://api.loklak.org/">Api</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="main app" ng-controller="detailsApp">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="sidebar">
+            <div class="sidebar-header">
+              <div class="sidebar-header-image">
+                <img src = "images/sidebar-images/menu.png">
+              </div>
+              <div class="category-header">
+                <h4>Categories</h4>
+              </div>
+            </div>
+            <div class="category-body">
+              <ul class="menu-list">
+                <li class="menu-list-item" ng-repeat="category in categories track by $index">
+                  <a href="/#{{category.name.split(' ').join('')}}" class="menu-item" id="{{category.name | nospace}}"
+                    ng-class="{selected: category.name.split(' ').join('') ==
+                      selectedApp.applicationCategory.split(' ').join('')}">
+                    <span class="category-image" ng-style = {{category.style}}>
+                      <img ng-src="images/sidebar-images/{{category.image}}">
+                    </span>
+                    <span class="category-name"> {{category.name}} </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="category-footer">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 middle">
+          haha
+        </div>
+        <div class="col-md-3">
+          <div class="similar-apps">
+            <div class="similar-apps-header">
+              <h4> Similar apps </h4>
+            </div>
+            <div class="similar-apps-list">
+              <div ng-repeat="app in similarApps" class="card fadeIn">
+                <a href="../details.html?q={{app.name}}">
+                  <img ng-src="../{{app.name}}/screenshot.png" class="similar-app-image" alt="App image">
+                  <div class="card-container">
+                    <h4>{{app.headline}}</h4>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <footer>
+  </footer>
+</html>
