@@ -31,7 +31,6 @@
     <link href="css/style.css" rel="stylesheet"/>
     <link href="css/animate.css" rel="stylesheet"/>
     <script src="/js/typeahead.bundle.js"></script>
-    <script src="./app_list.js"></script>
 </head>
 <body data-spy="scroll" data-target="#navSidebar" data-offset="50">
 <nav class="navbar navbar-fixed-top navbar-light navbar-color">
@@ -131,7 +130,9 @@ aria-controls="navbar">
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
             <center>
             <div class="content class" ng-repeat="app in apps track by $index">
-              <div ng-if = "searchTerm.length==0" class="span2 animated fadeIn" id="{{app.applicationCategory | nospace}}">
+              <div ng-if = "searchTerm.length == 0 && (category == null ||
+                (category == app.applicationCategory.split(' ').join('')))"
+                class="span2 animated fadeIn" id="{{app.applicationCategory | nospace}}">
                 <div class="reveal">
                   <img ng-src="../{{ app.name }}/screenshot.png" />
                   <div class="hidden">
@@ -172,6 +173,7 @@ aria-controls="navbar">
             </center>
         </div>
       </div>
+      <script src="./app_list.js"></script>
       <script src="/js/bootstrap.min.js" async></script>
       <script src="/js/ie10-viewport-bug-workaround.js" async></script>
       <script src="/js/typeahead.bundle.js" async></script>

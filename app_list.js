@@ -4,6 +4,14 @@ app.controller("app_list", function ($scope, $http) {
     $scope.apps = [];
     $scope.categoryKeys = [];
     var suggestionList = [];
+    $scope.category = null;
+    var addr = window.location + "";
+    if (addr.indexOf("#") !== -1) {
+        $scope.category = addr.split('#')[1];
+        $('#categoryName')[0].innerHTML = $scope.category;
+        $scope.category = $scope.category.replace(/ /g, '');
+        $scope.category = $scope.category === "All" ? null : $scope.category;
+    }
     $http.get('apps.json').success(function (data) {
         $scope.categoryKeys = data.categories;
         $scope.apps = data.apps;
@@ -32,8 +40,8 @@ app.controller("app_list", function ($scope, $http) {
         });
     });
 
-
     $scope.categoryFilter = function (event) {
+        $scope.category = null;
         item = event.target.id;
         if (item != 'All') {
             itemName = item.match(/[A-Z][a-z]+/g);
