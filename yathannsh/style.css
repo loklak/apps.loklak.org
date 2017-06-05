@@ -163,3 +163,7 @@ th {
   background: #2c3e50;
   font-weight: bold;
 }
+
+.error {
+  color: #EB1515;
+}

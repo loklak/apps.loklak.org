@@ -127,3 +127,7 @@ h3{
   text-align: center !important;
   padding: 20px !important;
 }
+
+.error {
+  color: #EB1515;
+}

@@ -49,10 +49,12 @@
         <div ng-controller="Controller">
 
             <input type="text" id="query" ng-model="query"
-                   placeholder="Search tweet from Loklak">
+                   placeholder="Search tweet from Loklak"
+                   ng-init="query = ''"
+                   ng-keyup="$event.keyCode == 13 && query != '' ? Search() : null">
             <button href='#' class="btn btn-default"
                     type="button" id="button"
-                    ng-click="Search()">Search</button>
+                    ng-click="query != '' ? Search() : null">Search</button>
             <br>
             <br>
             <br>
@@ -132,14 +134,6 @@
                     $scope.userData = response.user;
                 });
             }
-            window.addEventListener("keydown", function flagup(event)
-            {
-              if(event.key=='Enter')
-              {
-          $scope.Search();
-              }
-            });
-
         }]);
     </script>
 </body>

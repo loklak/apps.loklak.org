@@ -10,9 +10,14 @@
   </head>
   <body>
     <div  ng-controller="TwitterCtrl">
-      <form class="form-wrapper">
-        <input type="text"  ng-model="searchTerm" placeholder="Search Tweet" id="search" required>
+      <form class="form-wrapper" name="myForm">
+        <input type="text" ng-model="searchTerm" id="search"
+                   ng-keyup="$event.keyCode == 13 ? doSearch() : null"
+                   placeholder="Search Tweet">
         <button type="submit" id="submit" ng-click="doSearch()" >Search</button>
+        <div ng-if="isError" class="error">
+          <span class="glyphicon glyphicon-warning-sign"></span> {{ error }}
+        </div>
       </form>
       <h3>Results</h3>
       <div class="result-wrap">
@@ -37,10 +42,17 @@
           });
         $scope.hideit = false;
         $scope.doSearch = function () {
-        if ($scope.hideit !== true) {
-          $scope.hideit = !$scope.hideit;
-        }
-        $scope.twitterResult = $scope.twitter.get({q:$scope.searchTerm});
+          $scope.isError = false;
+          $scope.error = "";
+          if ($scope.searchTerm === undefined || $scope.searchTerm === "") {
+            $scope.isError = true;
+            $scope.error = "Please enter something to search";
+            return;
+          }
+          if ($scope.hideit !== true) {
+            $scope.hideit = !$scope.hideit;
+          }
+          $scope.twitterResult = $scope.twitter.get({q:$scope.searchTerm});
         };
       }
     </script>

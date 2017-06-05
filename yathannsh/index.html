@@ -11,8 +11,12 @@
   <body>
     <div  ng-controller="TwitterCtrl">
       <form class="form-wrapper cf">
-        <input type="text"  ng-model="searchTerm" placeholder="Search Tweet" required>
+        <input type="text"  ng-model="searchTerm" placeholder="Search Tweet"
+                   ng-keyup="$event.keyCode == 13 ? doSearch() : null">
         <button type="submit" ng-click="doSearch()" >Search</button>
+        <div ng-if="isError" class="error">
+          <span class="glyphicon glyphicon-warning-sign"></span> {{ error }}
+        </div>
       </form>
       <table class="table table-striped">
         <tr ng-repeat="tweet in twitterResult.statuses">
@@ -27,6 +31,13 @@
           {action:'search.json', q:'angularjs', callback:'JSON_CALLBACK'},
           {get:{method:'JSONP'}});
         $scope.doSearch = function () {
+          $scope.isError = false;
+          $scope.error = "";
+          if ($scope.searchTerm === undefined || $scope.searchTerm === "") {
+            $scope.isError = true;
+            $scope.error = "Please enter something to search";
+            return;
+          }
           $scope.twitterResult = $scope.twitter.get({q:$scope.searchTerm});
         };
       }
