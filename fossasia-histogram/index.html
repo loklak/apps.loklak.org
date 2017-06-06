@@ -69,10 +69,10 @@
     <div ng-controller="histogram">
       <div class="form-group search-tweets">
             <input type="text" class="form-control" id="tweet-input" ng-model="tweet"
-                   ng-init="tweet = ''" ng-keyup="$event.keyCode == 13 ? drawGraph() : null"
+                   ng-init="tweet = ''" ng-keyup="$event.keyCode == 13 && tweet != '' ? drawGraph() : null"
                    placeholder="Enter a tag to plot histogram">
             <span class="input-group-btn">
-              <button class="btn search-btn" type="submit" ng-click="drawGraph()">
+              <button class="btn search-btn" type="submit" ng-click="tweet != '' ? drawGraph() : null">
                 <span class="glyphicon glyphicon-search"></span>
               </button>
             </span>

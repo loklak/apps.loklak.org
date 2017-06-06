@@ -19,6 +19,7 @@
         <script src="../../js/angular.min.js"></script>
         <script src="js/highcharts.min.js"></script>
         <script src="js/exporting.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
 
         <style>
             .post-wrapper:first-child .post-inner {
@@ -98,11 +99,15 @@
                                     <input name="q" type="text" id="query"
                                            class="form-control" ng-model="query"
                                            title="Search Twitter and the loklak network"
-                                           placeholder="Search for a tweet text">
+                                           placeholder="Search for a tweet text"
+                                           ng-init="query = ''"
+                                           ng-keyup="$event.keyCode == 13 && query != '' ? Search() : null"
+                                           oninvalid="this.setCustomValidity('Please Enter something to Visualize')"
+                                           ng-required="true">
                                     <span class="input-group-btn">
                                     <button class="btn btn btn-primary" href='#'
                                             type="button" id="button"
-                                            ng-click="Search()">Visualize Emotion</button>
+                                            ng-click="query != '' ? Search() : null">Visualize Emotion</button>
                                     </span>
                                 </div>
                             </div>
@@ -268,14 +273,6 @@
                     });
                  });
              }
-
-             window.addEventListener("keydown",   function flagup(event)
-            {
-              if(event.key=='Enter')
-              {
-            $scope.Search();
-              }
-          });
              $scope.spinner = false;
          }]);
 

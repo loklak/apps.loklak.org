@@ -10,14 +10,15 @@
     <script src="/js/morris.min.js"></script>
     <script src="/js/angular.min.js"></script>
     <script src="/js/angular-resource.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
 </head>
 <body ng-controller="LoklakCtrl">
 <h3>Tweet Histogram Plotter</h3>
-<form>
-    <label for="query" class="query">Query: </label><input ng-model="query" id="query"/><br>
-    <label for="from" class="from">From: </label><input ng-model="from" id="from" type="date"/><br>
-    <label for="to" class="to">To: </label><input ng-model="to" id="to" type="date" /><br>
-    <a href="#" class='submit' ng-click="doSearch()">Plot</a>
+<form name="myform">
+    <label for="query" class="query">Query: </label><input ng-model="query" id="query"/ ng-required="true"><br>
+    <label for="from" class="from">From: </label><input ng-model="from" id="from" type="date" ng-required="true"/><br>
+    <label for="to" class="to">To: </label><input ng-model="to" id="to" type="date" ng-required="true"/><br>
+    <a href="#" class='submit' ng-click="myform.$valid && doSearch()">Plot</a>
 </form>
 <div id="bar-example" style="height: 250px;">
 </div>
