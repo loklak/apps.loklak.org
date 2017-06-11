@@ -26,6 +26,24 @@ body {
     color: rgb(51,51,51);
 }
 
+.menu-drawer {
+    display: none;
+    position: fixed;
+    padding: 12px;
+    color: white;
+    background-color: #C8254D   ;
+    border-radius: 10%;
+    margin-top: 80px;
+    margin-left: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.menu-drawer:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
 .sidebar {
     position: fixed;
     width: 16%;
@@ -33,6 +51,14 @@ body {
     height: 100%;
     overflow-y: auto;
     margin-top: 75px;
+    transition: all 0.3s;
+}
+
+.sidebar-header-close {
+    color: white;
+    cursor: pointer;
+    margin-left: 80px;
+    display: none;
 }
 
 .sidebar-header {
@@ -166,10 +192,6 @@ body {
     flex-wrap: wrap;
 }
 
-.image-loaded {
-    width: 100%;
-}
-
 .app-info {
     margin-right: 26px;
 }
@@ -238,7 +260,8 @@ body {
 
 @media (max-width: 960px) {
     .sidebar {
-        display: none;
+        width: 0px;
+        z-index: 1;
     }
 
     .similar-apps {
@@ -256,13 +279,18 @@ body {
         float: left;
     }
 
+    .menu-drawer {
+        display: block;
+        z-index: 1;
+    }
+
+    .sidebar-header-close {
+        display: block;
+    }
+
 }
 
 @media (max-width: 500px) {
-    .sidebar {
-        display: none;
-    }
-
     .similar-apps {
         margin-right: -100px;
         margin-left: 50px;
@@ -270,5 +298,15 @@ body {
 
     .app-info {
         margin-left: 0px;
+    }
+}
+
+@media (max-width: 350px) {
+    .loklak-brand {
+        font-size: 24px;
+    }
+
+    .app-image {
+        margin-right: 26px;
     }
 }
