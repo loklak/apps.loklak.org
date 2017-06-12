@@ -1,0 +1,55 @@
+body {
+    overflow-x: hidden;
+}
+
+.navbar-custom {
+    padding: 12px;
+    background-color: #F1F1F1;
+    margin-bottom: 0px;
+}
+
+.loklak-brand {
+    font-family: "Courier New";
+    font-size: 35px;
+    text-decoration: none;
+    line-height: 20px;
+    color: rgb(51,51,51);
+    line-height: 20px;
+}
+
+.loklak-header {
+    color: #C8254D;
+}
+
+.loklak-brand:hover {
+    text-decoration: none;
+    color: rgb(51,51,51);
+}
+
+.app {
+    margin-top: 100px;
+}
+
+.app-forum {
+    box-shadow: 0 4px 8px 2px rgba(0,0,0,0.2);
+    border-radius: 4px;
+    padding: 26px;
+}
+
+.forum-header {
+    color: #424242;
+    margin-top: 26px;
+}
+
+.app-forum-body {
+    color: #757575;
+    margin-top: 26px;
+    font-size: 18px;
+    margin-bottom: 26px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

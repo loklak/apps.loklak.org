@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="details">
+  <head>
+    <meta charset="utf-8">
+    <meta name="robots" content="index,follow">
+    <meta http-equiv="cache-control" content="public">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="Content-Language" content="en, english" />
+    <link rel="icon" type="image/png" href="http://loklak.org/artwork/favicon.png">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/forum.css">
+    <link href="css/animate.css" rel="stylesheet"/>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/angular.min.js"></script>
+    <script src="/js/angular-route.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+      <div class="container-fluid navbar-container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="navbar-brand brand-container">
+            <a href="http://apps.loklak.org" class="loklak-brand"> <span class="loklak-header">
+              loklak </span> <span>apps</span></a>
+          </div>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="http://loklak.net/about">About</a></li>
+            <li><a href="http://loklak.net/">Search</a></li>
+            <li><a href="http://blog.loklak.net/">Blog</a></li>
+            <li><a href="http://dev.loklak.org/">Developers</a></li>
+            <li><a href="http://api.loklak.org/">Api</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="main app">
+      <div cclas="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-8">
+          <div class="app-forum">
+            <div class="logo">
+              <img src="images/loklak_icon.png" class="img-responsive">
+            </div>
+            <h2 class="forum-header">
+              Welcome to Loklak Apps Discussion Forum.
+            </h2>
+            <div class="app-forum-body">
+              This is a forum where users of loklak apps can comment
+              on the various apps they have used and interact with co-users
+              and developers.
+            </div>
+            <div class="thread">
+              <div id="disqus_thread"></div>
+              <script>
+                /**
+                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT
+                *  DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT:
+                *  https://disqus.com/admin/universalcode/#configuration-variables*/
+                /*
+                var disqus_config = function () {
+                this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+                */
+                (function() { // DON'T EDIT BELOW THIS LINE
+                  var d = document, s = d.createElement('script');
+                  s.src = 'https://apps-loklak-org.disqus.com/embed.js';
+                  s.setAttribute('data-timestamp', +new Date());
+                  (d.head || d.body).appendChild(s);
+                })();
+              </script>
+              <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">
+                comments powered by Disqus.
+              </a></noscript>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
