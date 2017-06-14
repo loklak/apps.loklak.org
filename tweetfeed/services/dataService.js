@@ -22,7 +22,7 @@
             }
 
             var promise = $http.jsonp(String(uri))
-            .then(searchCompletead)
+            .then(searchCompleted)
             .catch(searchFailed);
 
             function searchCompleted(response)

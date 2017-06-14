@@ -1,0 +1,23 @@
+{
+  "@context":"http://schema.org",
+  "@type":"SoftwareApplication",
+  "permissions":"/api/search.json",
+  "name":"movietweets",
+  "headline":"Search movie tweets",
+  "alternativeHeadline":"work from GCI task",
+  "applicationCategory":"Search",
+  "applicationSubCategory":"Text Retrieval",
+  "operatingSystem":"http://loklak.org",
+  "promoImage":"promo.png",
+  "appImages":["disp1.png", "disp2.png", "disp3.png"],
+  "getStarted":"getStarted.md",
+  "appUse":"appUse.md",
+  "oneLineDescription":"Application to search Twitter for movie tweets",
+  "author":{
+    "@type":"Person",
+    "name":"YagoGG",
+    "email":"",
+    "url":"https://github.com/YagoGG",
+    "sameAs":"https://github.com/YagoGG"
+  }
+}

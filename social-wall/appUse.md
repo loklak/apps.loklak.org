@@ -1,0 +1,1 @@
+This app can be used to visualise twitter social wall

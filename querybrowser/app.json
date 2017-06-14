@@ -8,6 +8,11 @@
   "applicationCategory":"Search",
   "applicationSubCategory":"Text Retrieval",
   "operatingSystem":"http://loklak.org",
+  "promoImage":"promo.png",
+  "appImages":["disp1.png", "disp2.png"],
+  "getStarted":"getStarted.md",
+  "appUse":"appUse.md",
+  "oneLineDescription":"A frontend client for loklak suggest API",
   "author":{
     "@type":"Person",
     "name":"Anshuman Agarwal",
