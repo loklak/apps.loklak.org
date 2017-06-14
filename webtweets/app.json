@@ -1,0 +1,23 @@
+{
+  "@context":"http://schema.org",
+  "@type":"SoftwareApplication",
+  "permissions":"/api/search.json",
+  "name":"webtweets",
+  "headline":"FOSSASIA webtweets",
+  "alternativeHeadline":"",
+  "applicationCategory":"Search",
+  "applicationSubCategory":"",
+  "operatingSystem":"http://loklak.org",
+  "promoImage":"promo.png",
+  "appImages":["disp1.png", "disp2.png", "disp3.png"],
+  "getStarted":"getStarted.md",
+  "appUse":"appUse.md",
+  "oneLineDescription":"Application to show FOSSASIA tweets",
+  "author":{
+    "@type":"Organization",
+    "name":"FOSSASIA",
+    "email":"",
+    "url":"https://github.com/fossasia",
+    "sameAs":"https://github.com/fossasia"
+  }
+}

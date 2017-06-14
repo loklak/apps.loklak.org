@@ -1,0 +1,1 @@
+This app can be used to get a leaderboard of users

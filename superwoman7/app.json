@@ -8,6 +8,11 @@
   "applicationCategory":"Scraper",
   "applicationSubCategory":"Hello World",
   "operatingSystem":"http://loklak.org",
+  "promoImage":"promo.png",
+  "appImages":["disp1.png", "disp2.png", "disp3.png"],
+  "getStarted":"getStarted.md",
+  "appUse":"appUse.md",
+  "oneLineDescription":"Applicaton to recreate and visualise tweet timeline",
   "author":{
     "@type":"Person",
     "name":"Ruthvik Vijayakumar",

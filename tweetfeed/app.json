@@ -8,6 +8,11 @@
   "applicationCategory":"Scraper",
   "applicationSubCategory":"front-end app",
   "operatingSystem":"http://loklak.org",
+  "promoImage":"promo.png",
+  "appImages":["disp1.png", "disp2.png", "disp3.png"],
+  "getStarted":"getStarted.md",
+  "appUse":"appUse.md",
+  "oneLineDescription":"Application to visualize tweetfeed based on user query",
   "author":{
     "@type":"Person",
     "name":"Leon Mak",

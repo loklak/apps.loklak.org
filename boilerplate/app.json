@@ -8,6 +8,12 @@
   "applicationCategory":"Demo",
   "applicationSubCategory":"Hello World",
   "operatingSystem":"http://loklak.org",
+  "oneLineDescription": "Get started with loklak app development",
+  "getStarted": "getStarted.md",
+  "appUse": "appUse.md",
+  "others": "",
+  "promoImage": "promo.png",
+  "appImages": ["disp1.png", "disp2.png"],
   "author":{
     "@type":"Person",
     "name":"Michael Christen",

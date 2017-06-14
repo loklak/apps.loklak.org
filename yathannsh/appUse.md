@@ -1,0 +1,1 @@
+This app can be used for searching Twitter by user specifc keywords.

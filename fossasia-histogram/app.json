@@ -8,6 +8,12 @@
   "applicationCategory":"Scraper",
   "applicationSubCategory":"About project",
   "operatingSystem":"http://loklak.org",
+  "promoImage": "promo.png",
+  "appImages": ["disp1.png", "disp2.png", "disp3.png"],
+  "getStarted": "getStarted.md",
+  "appUse": "appUse.md",
+  "others": "others.md",
+  "oneLineDescription": "App to visualise loklak aggregation",
   "author":{
     "@type":"Person",
     "name":"Seva Zhidkov",

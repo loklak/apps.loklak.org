@@ -1,0 +1,1 @@
+This app can be used to visualise sentiment attached to tweets.

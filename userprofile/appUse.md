@@ -1,0 +1,1 @@
+This app can be used to get information about the profile of a twitter user.

@@ -8,6 +8,11 @@
   "applicationCategory":"Internet Of Things",
   "applicationSubCategory":"Peers Deployment",
   "operatingSystem":"http://loklak.org",
+  "promoImage":"promo.png",
+  "appImages":["disp1.png", "disp2.png", "disp3.png"],
+  "getStarted":"getStarted.md",
+  "appUse":"appUse.md",
+  "oneLineDescription":"Application to deploy loklak server and increase peers",
   "author":{
     "@type":"Person",
     "name":"Damini Satya",

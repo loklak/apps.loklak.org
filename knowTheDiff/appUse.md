@@ -1,0 +1,1 @@
+The app can be used to know the difference between loklak search and aggregation api.

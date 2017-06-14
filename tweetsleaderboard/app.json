@@ -8,6 +8,11 @@
   "applicationCategory":"Scraper",
   "applicationSubCategory":"Text Retrieval",
   "operatingSystem":"http://loklak.org",
+  "promoImage":"promo.png",
+  "appImages":["disp1.png", "disp2.png", "disp3.png"],
+  "getStarted":"getStarted.md",
+  "appUse":"appUse.md",
+  "oneLineDescription":"A Leaderboard based on the number of tweets",
   "author":{
     "@type":"Person",
     "name":"Damini Satya",

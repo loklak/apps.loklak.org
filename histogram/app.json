@@ -8,6 +8,11 @@
   "applicationCategory":"Scraper",
   "applicationSubCategory":"Text Retrieval",
   "operatingSystem":"http://loklak.org",
+  "promoImage":"promo.png",
+  "appImages":["disp1.png", "disp2.png", "disp3.png"],
+  "getStarted":"getStarted.md",
+  "appUse":"appUse.md",
+  "oneLineDescription":"Application to visualise loklak aggregation data",
   "author":{
     "@type":"Person",
     "name":"M.Yasoob Ullah",
