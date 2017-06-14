@@ -10,7 +10,7 @@
   "operatingSystem":"http://loklak.org",
   "promoImage":"promo.png",
   "appImages":["disp1.png", "disp2.png", "disp3.png"],
-  "oneLineDescrption":"An applicaton to get top trending hashtags on twitter",
+  "oneLineDescription":"An applicaton to get top trending hashtags on twitter",
   "getStarted":"getStarted.md",
   "appUse":"appUse.md",
   "others":"others.md",

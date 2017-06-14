@@ -19,6 +19,7 @@
     <script src="/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/showdown.min.js"></script>
     <script type="text/javascript" src="js/details.js"></script>
+    <script type="text/javascript" src="js/navdrawer.js"></script>
   </head>
   <body>
     <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -48,6 +49,9 @@
     <div class="main app" ng-controller="detailsApp">
       <div class="row">
         <div class="col-md-3">
+          <div class="menu-drawer">
+            <img src="images/sidebar-images/menu.png">
+          </div>
           <div class="sidebar">
             <div class="sidebar-header">
               <div class="sidebar-header-image">
@@ -55,6 +59,9 @@
               </div>
               <div class="category-header">
                 <h4>Categories</h4>
+              </div>
+              <div class="sidebar-header-close">
+                <img src = "images/sidebar-images/close.png">
               </div>
             </div>
             <div class="category-body">
@@ -79,14 +86,14 @@
           <div class="app-data">
             <div class="app-image-and-info">
               <div class="app-image">
-                <img ng-src="../{{selectedApp.name}}/promo.png" class="img-rounded image-loaded">
+                <img ng-src="../{{selectedApp.name}}/promo.png" class="img-rounded image-loaded img-responsive">
               </div>
               <div class="app-info">
                 <h2 class="app-name"> {{selectedApp.name}} </h2>
                 <h4 class="app-headline"> {{appData.headline}} </h4>
                 <h5 class="author"> <a href={{appData.author.url}} class="author-link">
                   by {{appData.author.name}} </a> </h5>
-                <div class="short-desc"> {{appData.oneLineDescrption}} </div>
+                <div class="short-desc"> {{appData.oneLineDescription}} </div>
                 <a href="../{{selectedApp.name}}" class="try-now"> Try Now </a>
               </div>
             </div>
