@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+        crossorigin="anonymous">
+  <!-- OpenLayers CSS -->
+  <link rel="stylesheet" href="http://openlayers.org/en/v3.12.1/css/ol.css" type="text/css">
+  <!-- OpenLayers JS -->
+  <script src="http://openlayers.org/en/v3.12.1/build/ol.js" type="text/javascript"></script>
+  <title>Loklak Emoji Heatmap</title>
+</head>
+<body background = "bg.jpg">
+  <div class="container">
+    <div class="page-header">
+      <h1>Loklak Emoji Heatmap</h1>
+      <h2><small>FOSSASIA</small></h2>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <input id="searchField" class="form-control" type="text" placeholder="Search Emoji" ng-required="true">
+      </div>
+      <div class="col-md-4">
+        <div class="btn-group">
+          <button id="searchButton" class='btn btn-success search-button' ng-show="Search" type="button">
+            <span style='padding-left:30px; padding-right:30px;'
+                                  class='glyphicon glyphicon-search'></span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div id="map"></div>
+      </div>
+    </div>
+    <footer>
+      <hr>
+      <div class="well">
+        <a href="http://loklak.org"><b>loklak public API</b></a>
+      </div>
+    </footer>
+  </div>
+  <!-- jQuery JS -->
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+          integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+          crossorigin="anonymous"></script>
+  <!-- Loklak Fetcher Client lib -->
+  <script src="./loklak-fetcher-client.js"></script>
+  <!-- Main script -->
+  <script src="./script.js"></script>
+</body>
+</html>
