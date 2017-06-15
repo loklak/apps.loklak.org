@@ -1,7 +1,7 @@
 [default]
 bears = LineLengthBear, SpaceConsistencyBear
 files = **.js, **.css, **.html, **.yml, **.json
-ignore = **.min.js, **.min.css, tweetheatmap/public/lib/**, webtweets/js/bootstrap/**, webtweets/css/bootstrap.css, js/typeahead.bundle.js, webtweets/js/bootstrap.js
+ignore = **.min.js, **.min.css, tweetheatmap/public/lib/**, webtweets/js/bootstrap/**, webtweets/css/bootstrap.css, js/typeahead.bundle.js, webtweets/js/bootstrap.js, **/node_modules/**, **/index_bundle.js, WorldMoodTracker/index.html
 max_line_length = 129
 use_spaces = True
 
@@ -20,7 +20,7 @@ use_spaces = True
 [js]
 bears = PHPCodeSnifferBear
 files = **.js
-ignore = **.min.js, tweetheatmap/public/lib/**, /app/webtweets/js/bootstrap/**
+ignore = **.min.js, tweetheatmap/public/lib/**, /app/webtweets/js/bootstrap/**, **/node_modules/**, **/index_bundle.js
 javascript_strictness = False
 use_spaces = True
 check_class_declaration = False
