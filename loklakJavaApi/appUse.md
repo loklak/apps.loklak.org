@@ -1,0 +1,1 @@
+This library provides data structures and access methods for https://github.com/loklak/loklak_server and https://github.com/loklak/loklak_wok_android . You can use it if you want to access the loklak api.
