@@ -1,0 +1,31 @@
+{
+  "name": "WorldMoodTracker",
+  "version": "0.0.1",
+  "description": "Track mood of people from around the globe",
+  "main": "index.js",
+  "repository": "https://github.com/fossasia/apps.loklak.org.git",
+  "author": "Pratyush Singh",
+  "license": "LGPL 2.1",
+  "dependencies": {
+    "css-loader": "^0.28.4",
+    "file-loader": "^0.11.2",
+    "html-webpack-plugin": "^2.28.0",
+    "path": "^0.12.7",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "style-loader": "^0.18.2",
+    "webpack": "^2.6.1",
+    "webpack-dev-server": "^2.4.5"
+  },
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1"
+  },
+  "scripts": {
+    "start": "webpack-dev-server",
+    "dev": "webpack-dev-server --watch",
+    "build": "webpack -p"
+  }
+}

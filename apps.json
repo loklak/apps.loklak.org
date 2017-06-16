@@ -638,6 +638,24 @@
         "url":"https://github.com/djmgit",
         "sameAs":"https://github.com/djmgit"
       }
+    },
+    {
+      "@context":"http://schema.org",
+      "@type":"SoftwareApplication",
+      "permissions":"/api/search.json",
+      "name":"WorldMoodTracker",
+      "headline":"Track mood of people from around the globe using loklak API",
+      "alternativeHeadline":"World Mood Tracker App",
+      "applicationCategory":"Visualizer",
+      "applicationSubCategory":"Map",
+      "operatingSystem":"http://loklak.org",
+      "author":{
+        "@type":"Person",
+        "name":"Pratyush Singh",
+        "url":"https://singhpratyush.in",
+        "sameAs":"https://github.com/singhpratyush",
+        "email":"singh.pratyush96@gmail.com"
+      }
     }
   ],
   "categories": [

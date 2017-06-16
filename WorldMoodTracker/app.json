@@ -1,0 +1,27 @@
+{
+  "@context": "http://schema.org",
+  "@type": "SoftwareApplication",
+  "permissions": "/api/search.json",
+  "name": "WorldMoodTracker",
+  "headline": "Track mood of people from around the globe",
+  "alternativeHeadline": "Track mood of people from around the globe",
+  "applicationCategory": "Visualization",
+  "applicationSubCategory": "Map",
+  "operatingSystem": "http://loklak.org",
+  "promoImage": "promo.png",
+  "appImages": [
+    "promo.png",
+    "promo.png"
+  ],
+  "oneLineDescription": "Track down the mood of people from different part of the world using loklak API and shows it on a map.",
+  "getStarted": "getStarted.md",
+  "appUse": "appUse.md",
+  "others": "others.md",
+  "author": {
+    "@type": "Person",
+    "name": "Pratyush Singh",
+    "email": "singh.pratyush96@gmail.com",
+    "url": "https://singhpratyush.in",
+    "sameAs": "https://github.com/singhpratyush"
+  }
+}
