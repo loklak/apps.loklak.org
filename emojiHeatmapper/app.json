@@ -9,6 +9,10 @@
   "alternativeHeadline": "Emoji Heatmapper with Loklak",
   "applicationCategory": "Visualizer",
   "applicationSubCategory": "Emoji",
+  "getStarted":"getStarted.md",
+  "appUse":"appUse.md",
+  "promoImage":"promo.png",
+  "appImages":["disp1.png", "disp2.png", "disp3.png"],
   "operatingSystem": "http://loklak.org",
   "author": {
     "@type": "Person",
