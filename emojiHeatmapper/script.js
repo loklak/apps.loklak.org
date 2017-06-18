@@ -9,22 +9,28 @@ var pointFeature = new ol.Feature(point);
 // Source and vector layer
 var vectorSource = new ol.source.Vector();
 
-var style = new ol.style.Style({
-    image: new ol.style.Circle({
-        fill: new ol.style.Fill({
-            color: 'rgba(255, 100, 50, 0.3)'
-        }),
-        stroke: new ol.style.Stroke({
-            width: 1,
-            color: 'rgba(255, 100, 50, 0.8)'
-        }),
-        radius: 7
+var style = new ol.style,Style({
+    stroke: new ol.style.Stroke({
+        color: [64, 200, 200, 0.5],
+        width: 5
     }),
+    text: new ol.style.Text({
+        font: '30px sans-serif',
+        text: document.getElementById('searchField').value !== '' ? document.getElementById('searchField').value : '',
+        fill: new ol.style.Fill({
+            color: [64, 64, 64, 0.75]
+        })
+    })
 });
+
+var styles = [style];
 
 var vectorLayer = new ol.layer.Vector({
     source: vectorSource,
-    style: style
+    style: function(feature, resolution) {
+    style.getText().setText(document.getElementById('searchField').value);
+    return styles;
+  }
 });
 
 // Maps
