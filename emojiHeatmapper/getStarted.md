@@ -5,8 +5,9 @@ on a **map**.
 
 #### How to use the app
 
-On launching the app the user is presented with the search bar and a empty
-map. When the user enters the emoji, then the points appear on the map as per the
-usage of that particular emoji in twitter.
+On launching the app the user is presented with the search bar and an empty
+map. When the user enters the emoji in the search bar, then points appears on
+the map according to the location tracked from the tweets. If in case instead of
+emoji if the user enters text, then an alert message gets popped up.
 
 The users can also zoom in the map to find the exact location of the tweet post.
