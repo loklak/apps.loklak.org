@@ -1,0 +1,23 @@
+{
+  "@context": "http://schema.org",
+  "@type": "SoftwareApplication",
+  "permissions": "/api/search.json",
+  "name": "loklakPythonApi",
+  "headline": "Loklak API for python",
+  "alternativeHeadline": "Loklak API for python",
+  "applicationCategory": "Loklak Libraries",
+  "applicationSubCategory": "library",
+  "operatingSystem": "http://loklak.org",
+  "promoImage": "promo.png",
+  "appImages": ["disp1.png"],
+  "oneLineDescription": "API for python as a replacement for twitter API",
+  "getStarted": "getStarted.md",
+  "appUse": "appUse.md",
+  "author": {
+    "@type": "organisation",
+    "name": "Loklak",
+    "email": "",
+    "url": "https://github.com/loklak/loklak_python_api",
+    "sameAs": "https://github.com/loklak/loklak_python_api"
+  }
+}

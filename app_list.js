@@ -8,7 +8,7 @@ app.controller("app_list", function ($scope, $http) {
     var addr = window.location + "";
     if (addr.indexOf("#") !== -1) {
         $scope.category = addr.split('#')[1];
-        $('#categoryName')[0].innerHTML = $scope.category;
+        $('#categoryName')[0].innerHTML = $scope.category.match(/[A-Z][a-z]+/g).join(" ");
         $scope.category = $scope.category.replace(/ /g, '');
         $scope.category = $scope.category === "All" ? null : $scope.category;
     }
