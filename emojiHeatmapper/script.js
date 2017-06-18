@@ -53,6 +53,27 @@ function emptyVector() {
   }
 }
 
+function validateQuery() {
+    var query = document.getElementById('searchField').value;
+    $.getJSON( "emoji.json", function(tweets) {
+        var flag = 0;
+        for(var i = 0; i < tweets.data.length; i++) {
+            if (tweets.data[i].indexOf(query) !== -1) {
+                flag = 1;
+                break;
+            }
+        }
+        if (flag == 1) {
+             //emoji found plotting map
+             updateMap();
+         }
+         else {
+             //emoji not found
+             alert("Enter an emoticon/emoji to see results");
+         }
+    });
+}
+
 function updateMap() {
   if(vectorSource.getFeatures().length > 0) { // Empty the vector, if full
     emptyVector();
@@ -77,10 +98,10 @@ loklakFetcher.getTweets(query, function(tweets) {
 }
 
 // Event listeners for updating the map
-document.getElementById('searchButton').addEventListener('click', updateMap);
+document.getElementById('searchButton').addEventListener('click', validateQuery);
 
 document.getElementById('searchField').addEventListener('keyup', function(e) {
   if(e.keyCode === 13) {
-    updateMap();
+    validateQuery();
   }
 });
