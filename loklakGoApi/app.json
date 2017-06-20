@@ -1,0 +1,25 @@
+{
+  "@context": "http://schema.org",
+  "@type": "SoftwareApplication",
+  "permissions": "/api/search.json",
+  "name": "loklakGoApi",
+  "headline": "Go wrapper for the loklak API",
+  "alternativeHeadline": "Go wrapper for the loklak API",
+  "applicationCategory": "Loklak Libraries",
+  "applicationSubCategory": "library",
+  "operatingSystem": "http://loklak.org",
+  "promoImage": "promo.png",
+  "appImages": [
+    "disp1.png"
+  ],
+  "oneLineDescription": "Library for using loklak API from Go",
+  "getStarted": "getStarted.md",
+  "appUse": "appUse.md",
+  "author": {
+    "@type": "organisation",
+    "name": "Loklak",
+    "email": "",
+    "url": "https://github.com/loklak/loklak_go_api",
+    "sameAs": "https://github.com/loklak/loklak_go_api"
+  }
+}

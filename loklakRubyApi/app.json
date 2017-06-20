@@ -1,0 +1,23 @@
+{
+  "@context": "http://schema.org",
+  "@type": "SoftwareApplication",
+  "permissions": "/api/search.json",
+  "name": "loklakRubyApi",
+  "headline": "Ruby wrapper for loklak.org API ",
+  "alternativeHeadline": "Ruby wrapper for loklak.org API ",
+  "applicationCategory": "Loklak Libraries",
+  "applicationSubCategory": "library",
+  "operatingSystem": "http://loklak.org",
+  "promoImage": "promo.png",
+  "appImages": ["disp1.png"],
+  "oneLineDescription": "API wrapper to use loklak API from Ruby",
+  "getStarted": "getStarted.md",
+  "appUse": "appUse.md",
+  "author": {
+    "@type": "organisation",
+    "name": "Loklak",
+    "email": "",
+    "url": "https://github.com/loklak/loklak_ruby_api",
+    "sameAs": "https://github.com/loklak/loklak_ruby_api"
+  }
+}

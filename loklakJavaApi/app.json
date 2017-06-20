@@ -1,0 +1,25 @@
+{
+  "@context": "http://schema.org",
+  "@type": "SoftwareApplication",
+  "permissions": "/api/search.json",
+  "name": "loklakJavaApi",
+  "headline": "Java library for the loklak API",
+  "alternativeHeadline": "Java library for the loklak API",
+  "applicationCategory": "Loklak Libraries",
+  "applicationSubCategory": "library",
+  "operatingSystem": "http://loklak.org",
+  "promoImage": "promo.png",
+  "appImages": [
+    "disp1.png"
+  ],
+  "oneLineDescription": "Library containing the methods for using loklak API",
+  "getStarted": "getStarted.md",
+  "appUse": "appUse.md",
+  "author": {
+    "@type": "organisation",
+    "name": "Loklak",
+    "email": "",
+    "url": "https://github.com/loklak/loklak_jlib_api",
+    "sameAs": "https://github.com/loklak/loklak_jlib_api"
+  }
+}

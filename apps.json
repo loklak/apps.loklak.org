@@ -656,6 +656,127 @@
         "sameAs":"https://github.com/singhpratyush",
         "email":"singh.pratyush96@gmail.com"
       }
+    },
+    {
+      "@context": "http://schema.org",
+      "@type": "SoftwareApplication",
+      "permissions": "/api/search.json",
+      "name": "loklakPythonApi",
+      "headline": "Loklak API for python",
+      "alternativeHeadline": "Loklak API for python",
+      "applicationCategory": "Loklak Libraries",
+      "applicationSubCategory": "library",
+      "operatingSystem": "http://loklak.org",
+      "promoImage": "promo.png",
+      "appImages": "",
+      "oneLineDescription": "API for python as a replacement for twitter API",
+      "getStarted": "getStarted.md",
+      "appUse": "appUse.md",
+      "author": {
+        "@type": "organisation",
+        "name": "Loklak",
+        "email": "",
+        "url": "https://github.com/loklak/loklak_python_api",
+        "sameAs": "https://github.com/loklak/loklak_python_api"
+      }
+    },
+    {
+      "@context": "http://schema.org",
+      "@type": "SoftwareApplication",
+      "permissions": "/api/search.json",
+      "name": "loklakRubyApi",
+      "headline": "Ruby wrapper for loklak.org API ",
+      "alternativeHeadline": "Ruby wrapper for loklak.org API ",
+      "applicationCategory": "Loklak Libraries",
+      "applicationSubCategory": "library",
+      "operatingSystem": "http://loklak.org",
+      "promoImage": "promo.png",
+      "appImages": ["disp1.png"],
+      "oneLineDescription": "API wrapper to use loklak API from Ruby",
+      "getStarted": "getStarted.md",
+      "appUse": "appUse.md",
+      "author": {
+        "@type": "organisation",
+        "name": "Loklak",
+        "email": "",
+        "url": "https://github.com/loklak/loklak_ruby_api",
+        "sameAs": "https://github.com/loklak/loklak_ruby_api"
+      }
+    },
+    {
+      "@context": "http://schema.org",
+      "@type": "SoftwareApplication",
+      "permissions": "/api/search.json",
+      "name": "loklakNodejsApi",
+      "headline": "Node js wrapper for the loklak API",
+      "alternativeHeadline": "Node js wrapper for the loklak API",
+      "applicationCategory": "Loklak Libraries",
+      "applicationSubCategory": "library",
+      "operatingSystem": "http://loklak.org",
+      "promoImage": "promo.png",
+      "appImages": [
+        "disp1.png"
+      ],
+      "oneLineDescription": "Library for using loklak API from NodeJs",
+      "getStarted": "getStarted.md",
+      "appUse": "appUse.md",
+      "author": {
+        "@type": "organisation",
+        "name": "Loklak",
+        "email": "",
+        "url": "https://github.com/loklak/loklak_nodejs_api",
+        "sameAs": "https://github.com/loklak/loklak_nodejs_api"
+      }
+    },
+    {
+      "@context": "http://schema.org",
+      "@type": "SoftwareApplication",
+      "permissions": "/api/search.json",
+      "name": "loklakGoApi",
+      "headline": "Go wrapper for the loklak API",
+      "alternativeHeadline": "Go wrapper for the loklak API",
+      "applicationCategory": "Loklak Libraries",
+      "applicationSubCategory": "library",
+      "operatingSystem": "http://loklak.org",
+      "promoImage": "promo.png",
+      "appImages": [
+        "disp1.png"
+      ],
+      "oneLineDescription": "Library for using loklak API from Go",
+      "getStarted": "getStarted.md",
+      "appUse": "appUse.md",
+      "author": {
+        "@type": "organisation",
+        "name": "Loklak",
+        "email": "",
+        "url": "https://github.com/loklak/loklak_go_api",
+        "sameAs": "https://github.com/loklak/loklak_go_api"
+      }
+    },
+    {
+      "@context": "http://schema.org",
+      "@type": "SoftwareApplication",
+      "permissions": "/api/search.json",
+      "name": "loklakJavaApi",
+      "headline": "Java library for the loklak API",
+      "alternativeHeadline": "Java library for the loklak API",
+      "applicationCategory": "Loklak Libraries",
+      "applicationSubCategory": "library",
+      "operatingSystem": "http://loklak.org",
+      "promoImage": "promo.png",
+      "appImages": [
+        "disp1.png"
+      ],
+      "oneLineDescription": "Library containing the methods for using loklak API",
+      "getStarted": "getStarted.md",
+      "appUse": "appUse.md",
+      "author": {
+        "@type": "organisation",
+        "name": "Loklak",
+        "email": "",
+        "url": "https://github.com/loklak/loklak_jlib_api",
+        "sameAs": "https://github.com/loklak/loklak_jlib_api"
+      }
     }
   ],
   "categories": [
@@ -681,6 +802,12 @@
      "image": "iot.png",
      "style" : {
         "background-color": "#f44336"
+      }
+    },
+    {"name": "Loklak Libraries",
+     "image": "api.png",
+     "style" : {
+        "background-color": "#37474f"
       }
     },
     {"name": "Misc",
