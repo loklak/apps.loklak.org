@@ -231,6 +231,34 @@ border-radius: 0px;
   padding-left: 10px
   width:100%;
 }
+.footer {
+  width: 100%;
+  background: #f2f2f2;
+  padding: 0px 14px;
+  border-top: 1px solid #e4e4e4;
+  display:  flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20vh;
+}
+.footer a {
+  padding: 0px 6px;
+  color: #666;
+  font-size: small;
+  line-height: 40px;
+}
+.left-side {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.right-side {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 @media (min-width: 768px) {
   .sidebar {
     position: fixed;
@@ -293,6 +321,30 @@ border-radius: 0px;
     padding: 15px;
     border-color: #999;
   }
+  .footer {
+    width: 100%;
+    background: #f2f2f2;
+    padding: 0px 14px;
+    border-top: 1px solid #e4e4e4;
+    display:  flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10vh;
+    position: relative;
+    margin-top: 220px;
+  }
+
+  .footer a {
+    padding: 0px 6px;
+    color: #666;
+    font-size: small;
+    line-height: 40px;
+  }
+
+  .main {
+    min-height: 300px;
+  }
 }
 .sidebar{
   margin-top: 30px;
@@ -327,6 +379,7 @@ border-radius: 0px;
 .main {
   padding-left: 10px;
   padding-right: 20px;
+  min-height: 300px;
 }
 @media (min-width: 768px) {
   .main {
@@ -344,32 +397,7 @@ section{
   padding-top: 50px;
   margin-top: -50px;
 }
-footer{
-  z-index: 1000;
-  width: 85%;
-  border-top: 1px solid #e4e4e4;
-  background-color: #f1f1f1;
-  padding: 0px 14px;
-  margin-top:30px;
-}
-footer a {
-    padding: 0px 14px;
-    color:rgb(119,119,119);
-    line-height: 40px;
-    display:block;
-    font-size: small;
-    font-family:"Courier New";
-}
-footer .left{
-  float:left;
-  color:#C8254D;
-}
-footer .right{
-  float:right;
-}
-footer .right:hover{
-  color:rgb(51,51,51);
-}
+
 /* styling for suggestion box */
 
 .tt-hint {

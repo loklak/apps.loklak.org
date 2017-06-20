@@ -258,6 +258,27 @@ body {
     color: #424242;
 }
 
+.footer {
+    width: 100%;
+    background: #f2f2f2;
+    padding: 0px 14px;
+    border-top: 1px solid #e4e4e4;
+    display:  flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10vh;
+    position: relative;
+    margin-top: 220px;
+}
+
+.footer a {
+    padding: 0px 6px;
+    color: #666;
+    font-size: small;
+    line-height: 40px;
+}
+
 @media (max-width: 960px) {
     .sidebar {
         width: 0px;
@@ -288,6 +309,33 @@ body {
         display: block;
     }
 
+    .footer {
+        width: 100%;
+        background: #f2f2f2;
+        padding: 0px 14px;
+        border-top: 1px solid #e4e4e4;
+        display:  flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10vh;
+    }
+    .footer a {
+        padding: 0px 6px;
+        color: #666;
+        font-size: small;
+        line-height: 40px;
+    }
+    .left-side {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .right-side {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
 
 @media (max-width: 500px) {
