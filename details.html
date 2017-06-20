@@ -12,7 +12,7 @@
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="stylesheet" type="text/css" href="css/details.css">
-    <link href="css/animate.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="/css/animate.css">
     <script src="/js/jquery.min.js"></script>
     <script src="/js/angular.min.js"></script>
     <script src="/js/angular-route.min.js"></script>
@@ -85,7 +85,7 @@
         <div class="col-md-6 middle">
           <div class="app-data">
             <div class="app-image-and-info">
-              <div class="app-image">
+              <div class="app-image animated fadeInDown">
                 <img ng-src="../{{selectedApp.name}}/promo.png" class="img-rounded image-loaded img-responsive">
               </div>
               <div class="app-info">
@@ -97,7 +97,7 @@
                 <a href="../{{selectedApp.name}}" class="try-now"> Try Now </a>
               </div>
             </div>
-            <div class="app-carousel">
+            <div class="app-carousel animated fadeIn">
               <div id="myCarousel" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner image-container">
                 </div>
@@ -140,7 +140,7 @@
               <h4> Similar apps </h4>
             </div>
             <div class="similar-apps-list">
-              <div ng-repeat="app in similarApps" class="card fadeIn">
+              <div ng-repeat="app in similarApps" class="card animated fadeInUp">
                 <a href="../details.html?q={{app.name}}">
                   <img ng-src="../{{app.name}}/screenshot.png" class="similar-app-image img-responsive" alt="App image">
                   <div class="card-container">
