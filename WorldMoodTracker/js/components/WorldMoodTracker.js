@@ -1,12 +1,15 @@
 import React from 'react';
+import Header from './Header';
+import WorldMap from './WorldMap';
+import Footer from './Footer';
 
 export default class WorldMoodTracker extends React.Component {
     render() {
         return (
             <div>
-                <h1>
-                    World Mood Tracker
-                </h1>
+                <Header/>
+                <WorldMap/>
+                <Footer />
             </div>
         )
     }
