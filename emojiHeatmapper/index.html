@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="http://openlayers.org/en/v3.12.1/css/ol.css" type="text/css">
   <!-- OpenLayers JS -->
   <script src="http://openlayers.org/en/v3.12.1/build/ol.js" type="text/javascript"></script>
+  <script type="text/JavaScript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
   <title>Loklak Emoji Heatmap</title>
 </head>
 <body background>
@@ -20,7 +21,8 @@
     </div>
     <div class="row">
       <div class="col-md-4">
-        <input id="searchField" class="form-control" type="text" placeholder="Search Emoji" ng-required="true">
+        <select id="searchField" class="form-control" type="text" placeholder="Search Emoji" ng-required="true">
+        </select>
       </div>
       <div class="col-md-4">
         <div class="btn-group">

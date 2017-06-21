@@ -1,3 +1,14 @@
+//Loading the dropdown
+$(document).ready(function(){
+  var listItems= "";
+  $.getJSON("emoji.json", function(json) {
+    for (var i = 0; i < json.data.length; i++){
+      listItems+= "<option value='" + json.data[i][1] + "'>" + json.data[i][1] + "</option>";
+    }
+    $("#searchField").html(listItems);
+  });
+});
+
 // Geometries
 var point = new ol.geom.Point(
     ol.proj.transform([3,50], 'EPSG:4326', 'EPSG:3857')
@@ -9,7 +20,7 @@ var pointFeature = new ol.Feature(point);
 // Source and vector layer
 var vectorSource = new ol.source.Vector();
 
-var style = new ol.style,Style({
+var style = new ol.style.Style({
     stroke: new ol.style.Stroke({
         color: [64, 200, 200, 0.5],
         width: 5
