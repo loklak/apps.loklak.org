@@ -132,6 +132,108 @@
               <div class="get-started-body others-md">
               </div>
             </div>
+            <div class="get-started additional-information">
+              <hr>
+              <div class="get-stared-header">
+                <h3 class="started-header"> Additional Information </h3>
+              </div>
+              <div class="get-started-body row">
+                <div ng-if="appData.updated !== undefined && appData.updated !== ''" class="col-md-4 add-info">
+                  <div class="info-type">
+                    <h5 class="info-header">
+                      <strong>Updated</strong>
+                    </h5>
+                  </div>
+                  <div class="info-body">
+                    {{appData.updated}}
+                  </div>
+                </div>
+                <div ng-if="appData.version !== undefined && appData.version !== ''" class="col-md-4 add-info">
+                  <div class="info-type">
+                    <h5 class="info-header">
+                      <strong>Version</strong>
+                    </h5>
+                  </div>
+                  <div class="info-body">
+                    {{appData.version}}
+                  </div>
+                </div>
+                <div ng-if="appData.appSource !== undefined && appData.appSource !== ''" class="col-md-4 add-info">
+                  <div class="info-type">
+                    <h5 class="info-header">
+                      <strong>App Source</strong>
+                    </h5>
+                  </div>
+                  <div class="info-body">
+                    <a href="{{appData.appSource}}"> View Source </a>
+                  </div>
+                </div>
+                <div ng-if="(appData.author.url !== undefined && appData.author.url !== '') ||
+                  (appData.author.email !== undefined && appData.author.email !== '')" class="col-md-4 add-info">
+                  <div class="info-type">
+                    <h5 class="info-header">
+                      <strong>Developer</strong>
+                    </h5>
+                  </div>
+                  <div class="info-body">
+                    <span ng-if="appData.author.url !== undefined && appData.author.url !== ''">
+                      <a href="{{appData.author.url}}"> Visit developer's website </a>
+                    </span><br>
+                    <span ng-if="appData.author.email !== undefined && appData.author.email !== ''">
+                      <a href="mailto:{{appData.author.email}}"> Send an email </a>
+                    </span>
+                  </div>
+                </div>
+                <div ng-if="appData.contributors !== undefined && appData.contributors !== ''" class="col-md-4 add-info">
+                  <div class="info-type">
+                    <h5 class="info-header">
+                      <strong>Contributors</strong>
+                    </h5>
+                  </div>
+                  <div class="info-body">
+                    <div class="dropdown">
+                      <div class="dropdown-toggle" type="button" data-toggle="dropdown">
+                        View all contributors
+                      </div>
+                      <ul class="dropdown-menu">
+                        <li ng-repeat="contributor in appData.contributors">
+                          <a href="{{contributor.url}}"> {{contributor.name}} </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div ng-if="appData.techStack !== undefined && appData.techStack !== ''" class="col-md-4 add-info">
+                  <div class="info-type">
+                    <h5 class="info-header">
+                      <strong>Technology Stack</strong>
+                    </h5>
+                  </div>
+                  <div class="info-body">
+                    <div class="dropdown">
+                      <div class="dropdown-toggle" type="button" data-toggle="dropdown">
+                        View technology stack
+                      </div>
+                      <ul class="dropdown-menu">
+                        <li ng-repeat="item in appData.techStack" class="tech-item">
+                           {{item}}
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div ng-if="appData.license !== undefined && appData.license !== ''" class="col-md-4 add-info">
+                  <div class="info-type">
+                    <h5 class="info-header">
+                      <strong>License</strong>
+                    </h5>
+                  </div>
+                  <div class="info-body">
+                    <a href="{{appData.license.url}}">{{appData.license.name}}</a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="col-md-3">
