@@ -1,1 +1,40 @@
 /* css to style the app */
+
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1 > span {
+    font-family: 'Work Sans', 'Open Sans', 'sans-serif';
+    background: -webkit-linear-gradient(180deg, #D02010 2%, #FFFB20 98%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+a {
+    color: black;
+}
+
+a:hover {
+    color: black;
+}
+
+li * a:visited {
+    color: black;
+    background-color: white !important;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.loklak {
+    font-family: 'Work Sans', 'Open Sans', 'sans-serif';
+    background: -webkit-linear-gradient(180deg, #D02010 2%, #FFFB20 98%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.footer-link a {
+    padding: 0 10px 0 10px;
+}
