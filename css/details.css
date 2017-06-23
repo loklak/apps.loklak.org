@@ -257,6 +257,29 @@ body {
     color: #424242;
 }
 
+.info-header {
+    color: #212121;
+}
+
+.add-info {
+  margin-bottom: 20px;
+}
+
+.dropdown {
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.dropdown:hover {
+    color: #bdbdbd;
+}
+
+.tech-item {
+    cursor: text;
+    color: #424242;
+    padding-left: 8px;
+}
+
 @media (max-width: 960px) {
     .sidebar {
         width: 0px;
