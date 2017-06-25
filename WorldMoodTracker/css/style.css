@@ -6,7 +6,7 @@
 
 h1 > span {
     font-family: 'Work Sans', 'Open Sans', 'sans-serif';
-    background: -webkit-linear-gradient(180deg, #D02010 2%, #FFFB20 98%);
+    background: -webkit-linear-gradient(0deg, #D02010 2%, #FFFB20 98%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -30,11 +30,35 @@ a:hover {
 
 .loklak {
     font-family: 'Work Sans', 'Open Sans', 'sans-serif';
-    background: -webkit-linear-gradient(180deg, #D02010 2%, #FFFB20 98%);
+    background: -webkit-linear-gradient(0deg, #D02010 2%, #FFFB20 98%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .footer-link a {
     padding: 0 10px 0 10px;
+}
+
+.scale-bar {
+    background: -webkit-linear-gradient(0deg, #D02010 2%, #FFFB20 98%);
+    height: 12px;
+}
+
+footer {
+    margin-top: 18px;
+}
+
+.scale-bar-text {
+    margin-bottom: 3px;
+}
+
+.map {
+    border: black 1px solid;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.scale-bar-container {
+    margin-top: 12px;
 }

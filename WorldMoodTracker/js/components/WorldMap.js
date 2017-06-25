@@ -1,6 +1,7 @@
 import React from 'react';
 import Datamap from 'datamaps';
 import styles from '../../../css/bootstrap.min.css';
+import customStyles from '../../css/style.css';
 
 export default class WorldMap extends React.Component {
     constructor() {
@@ -23,7 +24,7 @@ export default class WorldMap extends React.Component {
     render() {
         return (
             <div className={styles.container}>
-                <div id="map-container">
+                <div id="map-container" className={customStyles.map}>
                 </div>
             </div>
         )
@@ -61,13 +62,13 @@ export default class WorldMap extends React.Component {
                         geo.properties.name,
                         '</strong>',
                         '<div>',
-                        '<span style="font-size: 30px; color: yellow;">',
+                        '<span style="font-size: 30px; color: #FFFB20;">',
                         pScore,
                         '</span>',
                         '<br/>Positive',
                         '</div>',
                         '<div>',
-                        '<span style="font-size: 30px; color: brown;">',
+                        '<span style="font-size: 30px; color: #D02010;">',
                         nScore,
                         '</span>',
                         '<br/>Negative',
