@@ -7,9 +7,9 @@
   "author": "Pratyush Singh",
   "license": "LGPL 2.1",
   "dependencies": {
-    "axios": "^0.16.2",
     "css-loader": "^0.28.4",
     "datamaps": "^0.5.8",
+    "fetch-jsonp": "^1.1.1",
     "file-loader": "^0.11.2",
     "html-webpack-plugin": "^2.28.0",
     "path": "^0.12.7",

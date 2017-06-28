@@ -1644,6 +1644,10 @@ fbjs@^0.8.9:
     setimmediate "^1.0.5"
     ua-parser-js "^0.7.9"
 
+fetch-jsonp@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/fetch-jsonp/-/fetch-jsonp-1.1.1.tgz#b7b9fd7d3a4f74d38389f5ea2f2d0f46c34510e4"
+
 file-loader@^0.11.2:
   version "0.11.2"
   resolved "https://registry.yarnpkg.com/file-loader/-/file-loader-0.11.2.tgz#4ff1df28af38719a6098093b88c82c71d1794a34"

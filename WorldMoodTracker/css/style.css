@@ -53,7 +53,7 @@ footer {
 }
 
 .map {
-    border: black 1px solid;
+    border: black 2px solid;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
