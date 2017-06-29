@@ -76,7 +76,7 @@ view: new ol.View({
 function emptyVector() {
   var features = vectorSource.getFeatures();
 
-  for(var i = 0; i < features.length; i++) {
+  for (var i = 0; i < features.length; i++) {
     vectorSource.removeFeature(features[i]);
   }
 }
@@ -85,7 +85,7 @@ function validateQuery() {
     var query = document.getElementById('searchField').value;
     $.getJSON( "emoji.json", function(tweets) {
         var flag = 0;
-        for(var i = 0; i < tweets.data.length; i++) {
+        for (var i = 0; i < tweets.data.length; i++) {
             if (tweets.data[i].indexOf(query) !== -1) {
                 flag = 1;
                 break;
@@ -103,7 +103,7 @@ function validateQuery() {
 }
 
 function updateMap() {
-  if(vectorSource.getFeatures().length > 0) { // Empty the vector, if full
+  if (vectorSource.getFeatures().length > 0) { // Empty the vector, if full
     emptyVector();
   }
 
@@ -111,8 +111,15 @@ var query = document.getElementById('searchField').value;
 
 // Fetch loklak API data, and fill the vector
 loklakFetcher.getTweets(query, function(tweets) {
-    for(var i = 0; i < tweets.statuses.length; i++) {
-        if(tweets.statuses[i].location_point !== undefined){
+    var emotion = [];
+    var emotions_array = [];
+
+    for (var i = 0; i < tweets.statuses.length; i++) {
+        if (tweets.statuses[i].classifier_emotion) {
+            emotion = tweets.statuses[i].classifier_emotion;
+            emotions_array.push(emotion);
+        }
+        if (tweets.statuses[i].location_point !== undefined) {
             // Creation of the point with the tweet's coordinates
             //  Coords system swap is required: OpenLayers uses by default
             //  EPSG:3857, while loklak's output is EPSG:4326
@@ -121,6 +128,26 @@ loklakFetcher.getTweets(query, function(tweets) {
                 geometry: point
             }));
         }
+        emotions_array.sort();
+        emotion_array = jQuery.unique( emotions_array );
+
+        //Loading the sentiment
+        $(document).ready(function() {
+            var listItems= "";
+            if (emotions_array.length == 0) {
+                listItems = "No Sentiment data is available for " + query
+            }
+            if (emotion_array.length == 1) {
+                listItems += "<h3> Sentiment of " + query + " is ";
+            } else if (emotion_array.length > 1) {
+                listItems += "<h3> Sentiments of " + query + " are ";
+            }
+
+            var emotion_data = emotion_array.join(", ") + "."
+            listItems += emotion_data + "</h3>"
+
+            $("#sentiment").html(listItems);
+        });
     }
 });
 }
@@ -129,7 +156,7 @@ loklakFetcher.getTweets(query, function(tweets) {
 document.getElementById('searchButton').addEventListener('click', validateQuery);
 
 document.getElementById('searchField').addEventListener('keyup', function(e) {
-  if(e.keyCode === 13) {
+  if (e.keyCode === 13) {
     validateQuery();
   }
 });
