@@ -1,6 +1,6 @@
 {
   "name": "WorldMoodTracker",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "description": "Track mood of people from around the globe",
   "main": "index.js",
   "repository": "https://github.com/fossasia/apps.loklak.org.git",
