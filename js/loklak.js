@@ -70,7 +70,7 @@ angular.element(document).ready(function () {
     }
     else if(st > lastScrollTop && st > 100){
       $('nav').animate({
-        top: "-20%"
+        top: "-50%"
       }, 5);
       $('.sidebar').animate({
         top: "-5%"
