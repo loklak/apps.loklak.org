@@ -8,9 +8,14 @@
         integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
         crossorigin="anonymous">
   <!-- OpenLayers CSS -->
-  <link rel="stylesheet" href="http://openlayers.org/en/v3.12.1/css/ol.css" type="text/css">
+  <link rel="stylesheet" href="https://openlayers.org/en/v4.2.0/css/ol.css" type="text/css">
   <!-- OpenLayers JS -->
-  <script src="http://openlayers.org/en/v3.12.1/build/ol.js" type="text/javascript"></script>
+  <script src="https://openlayers.org/en/v4.2.0/build/ol.js" type="text/javascript"></script>
+
+  <!-- The line below is only needed for old environments like Internet Explorer and Android 4.x -->
+  <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL">
+  </script>
+
   <!-- Ajax -->
   <script type="text/JavaScript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 
@@ -18,12 +23,12 @@
   <link href="./lib/css/emoji.css" rel="stylesheet">
   <!-- End emoji-picker Stylesheets -->
 
-  <title>Loklak Emoji Map</title>
+  <title>Loklak Emoji Heatmap</title>
 </head>
 <body background>
   <div class="container">
     <div class="page-header">
-      <h1>Loklak Emoji Map</h1>
+      <h1>Loklak Emoji Heatmap</h1>
       <h2><small>FOSSASIA</small></h2>
     </div>
     <div class="row justify-content-center">
@@ -67,7 +72,7 @@
   <script src="./loklak-fetcher-client.js"></script>
   <!-- Main script -->
   <script src="./script.js"></script>
-  <script src="./emoji-map.js"></script>
+  <script src="./emoji-heatmap.js"></script>
 
   <!-- Begin emoji-picker JavaScript -->
   <script src="./lib/js/config.js"></script>
