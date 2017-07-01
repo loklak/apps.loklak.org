@@ -1,0 +1,255 @@
+body {
+    overflow-x: hidden;
+}
+
+.navbar-custom {
+    padding: 12px;
+    background-color: #F1F1F1;
+}
+
+.loklak-brand {
+    font-family: "Courier New";
+    font-size: 35px;
+    text-decoration: none;
+    line-height: 20px;
+    color: rgb(51,51,51);
+    line-height: 20px;
+}
+
+.loklak-brand:hover {
+    text-decoration: none;
+    color: rgb(51,51,51);
+}
+
+.loklak-header {
+    color: #C8254D;
+}
+
+.main {
+    margin: auto 35px;
+}
+
+.stat {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.input {
+    height: 230px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.input-body {
+    height: 190px;
+}
+
+.plot {
+    height: 300px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.plot-data {
+  overflow: auto;
+  height: 270px;
+}
+
+.tweet-input {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: space-around;
+    margin: auto 10px;
+}
+
+.tweet-search {
+    color: #FFFFFF;
+    background-color: #D81B60;
+}
+
+.tweet-search:hover {
+    color: #FFFFFF;
+}
+
+.tweet-search:focus {
+    color: #FFFFFF;
+}
+
+.tweet-reset {
+    color: #FFFFFF;
+    background-color: #D81B60;
+    display: block;
+    float: right;
+    margin: 10px 10px auto;
+}
+
+.tweet-reset:hover {
+    color: #FFFFFF;
+}
+
+.tweet-reset:focus {
+    color: #FFFFFF;
+}
+
+.tweet-input-field:focus {
+    border-color: #D81B60;
+}
+
+.error {
+    color: #e57373;
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 0.1px;
+    margin: 10px 10px auto;
+    padding: 6px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    transition: color 0.5s;
+}
+
+.error:hover {
+    color: #c62828;
+}
+
+.no-records {
+    color: #616161;
+}
+
+.loading-tweets {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-body {
+    overflow: auto;
+    height: 185px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.stat-item:hover {
+    color: #757575;
+    background-color: #eeeeee;
+}
+
+.remove {
+    color: #757575;
+    transition: color 0.5s;
+    cursor: pointer;
+}
+
+.remove:hover {
+    color: #212121;
+}
+
+.query-name {
+    cursor: pointer;
+}
+
+.tweet-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+
+.tweet-item:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.modal-body-custom {
+    height: 400px;
+    overflow: auto;
+}
+
+.link_and_author {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.tweet-link {
+    color: #C8254D;
+}
+
+.tweet-link:hover {
+    color: #C8254D;
+}
+
+.modal-header {
+    color: #C8254D;
+}
+
+.modal-button {
+    color: #C8254D;
+}
+
+.modal-button {
+    color: #C8254D;
+}
+
+.navbar {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.header-and-loader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.loader {
+    border: 2px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 2px solid #D81B60;
+    width: 25px;
+    height: 25px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    opacity: 20%;
+}
+
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 600px) {
+    .loklak-brand {
+        font-size: 18px;
+    }
+
+    .col-stat {
+        padding: 0px;
+    }
+
+    .col-input {
+        padding: 0px;
+    }
+
+    .col-plot {
+        padding: 0px;
+    }
+}
+
+@media (max-width: 370px) {
+    .loklak-brand {
+        font-size: 14px;
+    }
+}
