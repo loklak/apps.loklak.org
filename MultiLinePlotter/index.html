@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="multiLinePlotterApp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="robots" content="index,follow">
+    <meta http-equiv="cache-control" content="public">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="Content-Language" content="en, english" />
+    <link rel="icon" type="image/png" href="http://loklak.org/artwork/favicon.png">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/angular.min.js"></script>
+    <script src="/js/angular-route.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-custom navbar-custom">
+      <div class="container-fluid navbar-container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="navbar-brand brand-container">
+            <a href="http://apps.loklak.org" class="loklak-brand"> <span class="loklak-header">
+              loklak</span> <span>MultiLinePlotter</span></a>
+          </div>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="http://loklak.net/about">About</a></li>
+            <li><a href="http://loklak.net/">Search</a></li>
+            <li><a href="http://blog.loklak.net/">Blog</a></li>
+            <li><a href="http://dev.loklak.org/">Developers</a></li>
+            <li><a href="http://api.loklak.org/">API</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="main app" ng-controller="app">
+      <div id="tweetInfo" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Tweets containing {{ modalHeading }}</h4>
+            </div>
+            <div class="modal-body modal-body-custom">
+              <div class="loading-tweets">
+                <div ng-if="tweetsLoading" class="loader" style="width: 50px; height: 50px; position: relative;"></div>
+                <div ng-if="tweetsLoading"> Fetching tweets... </div>
+              </div>
+              <ul class="list-group stat-list tweet-list">
+                <div class="tweet-item list-group-item " ng-repeat="status in statuses">
+                  <div class="tweet_text">
+                    {{ status.text }}
+                  </div>
+                  <div class="link_and_author">
+                    <span class="author">
+                      by {{ status.screen_name }}
+                    </span>
+                    <span class="link">
+                      <a class="tweet-link" href="{{ status.link }}" target="_blank"> view tweet </a>
+                    </span>
+                  </div>
+                </div>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default modal-button" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row row-input-and-stat">
+        <div class="input-and-stat">
+          <div class="col-md-6 col-input">
+            <div class="panel panel-default input">
+              <div class="panel-heading header-and-loader">
+                <span class="input-header-text">Provide tweet query</span>
+                <div ng-if="graphLoading" class="loader"></div>
+              </div>
+              <div class="panel-body input-body">
+                <div class="tweet-input">
+                  <input type="text" class="form-control tweet-input-field" ng-model="tweet"
+                    ng-keyup="$event.keyCode == 13 ? search() : null" placeholder="Enter query word">
+                  <button type="button" class="btn tweet-search" ng-click="search()">
+                    <span class="glyphicon glyphicon-plus search-icon"></span>
+                  </button>
+                </div>
+                <div class="error" ng-if="isError">
+                  {{ error }}
+                </div>
+                <button type="button" class="btn tweet-reset" ng-click="reset()">
+                  <span class="glyphicon glyphicon glyphicon-refresh"> Reset</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-stat">
+            <div class="panel panel-default stat">
+              <div class="panel-heading">Search Record</div>
+              <div class="panel-body stat-body">
+                <div class="no-records" ng-if="queryRecords.length == 0">
+                  <h3>No records to be shown</h3>
+                </div>
+                <ul class="list-group stat-list">
+                  <div class="stat-item list-group-item " ng-repeat="record in queryRecords" ng-click="showInfo(record)">
+                    <div class="query-name">
+                      {{ record }}
+                    </div>
+                    <span class="glyphicon glyphicon-remove-circle remove" ng-click="remove(record)"></span>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 col-plot">
+          <div class="panel panel-default plot">
+            <div class="panel-heading">Aggregation Plot</div>
+            <div id="graph" class="panel-body plot-data">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <footer>
+    <script src="scripts/app.js"></script>
+  </footer>
+</html>
