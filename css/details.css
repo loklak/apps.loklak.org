@@ -280,6 +280,11 @@ body {
     padding-left: 8px;
 }
 
+.mail {
+    font-size: 15px;
+    margin: 2px;
+}
+
 @media (max-width: 960px) {
     .sidebar {
         width: 0px;

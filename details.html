@@ -177,11 +177,12 @@
                   </div>
                   <div class="info-body">
                     <span ng-if="appData.author.url !== undefined && appData.author.url !== ''">
-                      <a href="{{appData.author.url}}"> Visit developer's website </a>
-                    </span><br>
-                    <span ng-if="appData.author.email !== undefined && appData.author.email !== ''">
-                      <a href="mailto:{{appData.author.email}}"> Send an email </a>
+                      <a href="{{appData.author.url}}"> {{appData.author.name}} </a>
                     </span>
+                    <a ng-if="appData.author.email !== undefined && appData.author.email !== ''" class="mail"
+                      href="mailto:{{appData.author.email}}">
+                      <span class="glyphicon glyphicon-envelope"></span>
+                    </a>
                   </div>
                 </div>
                 <div ng-if="appData.contributors !== undefined && appData.contributors !== ''" class="col-md-4 add-info">
