@@ -120,6 +120,28 @@ body {
     align-items: center;
 }
 
+.selected-tweet-stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.tweet-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-label {
+    color: #616161;
+    text-align: center;
+}
+
+.stat-value {
+    color: #757575;
+}
+
 .stat-body {
     overflow: auto;
     height: 185px;
@@ -159,6 +181,11 @@ body {
     margin-bottom: 10px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     border-radius: 5px;
+    overflow-x: hidden;
+}
+
+.tweet-text {
+    word-wrap: break-word;
 }
 
 .tweet-item:hover {

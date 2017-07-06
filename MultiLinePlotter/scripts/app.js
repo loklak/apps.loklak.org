@@ -13,6 +13,8 @@ app.controller("app", function ($scope, $http) {
     $scope.tweetsLoading = false;
     $scope.currentTweet = null;
     $scope.modalHeading = null;
+    $scope.tweetStat = [];
+    $scope.selectedTweetStat = {};
 
     /* Function to check for error in inputs and call loklak api
        with the user provided query
@@ -64,8 +66,48 @@ app.controller("app", function ($scope, $http) {
                 $scope.data.push({day: date, [value]: aggregations[date]});
             }
         }
+
         $scope.ykeys.push($scope.tweet);
         $scope.labels.push($scope.tweet);
+
+        var maxStat = $scope.getMaxTweetNumAndDate(aggregations);
+        var avg = $scope.getAverageTweetNum(aggregations);
+
+        $scope.tweetStat.push({
+            tweet: $scope.tweet,
+            maxTweetCount: maxStat.count,
+            maxTweetOn: maxStat.date,
+            averageTweetsPerDay: avg,
+            aggregationsLength: Object.keys(aggregations).length
+        });
+
+        console.log($scope.tweetStat);
+
+    }
+
+    $scope.getMaxTweetNumAndDate = function(aggregations) {
+        var maxTweetDate = null;
+        var maxTweetNum = -1;
+
+        for (date in aggregations) {
+            if (aggregations[date] > maxTweetNum) {
+                maxTweetNum = aggregations[date];
+                maxTweetDate = date;
+            }
+        }
+
+        return {date: maxTweetDate, count: maxTweetNum};
+    }
+
+    $scope.getAverageTweetNum = function(aggregations) {
+        var avg = 0;
+        var sum = 0;
+
+        for (date in aggregations) {
+            sum += aggregations[date];
+        }
+
+        return parseInt(sum / Object.keys(aggregations).length);
     }
 
     $scope.plotGraph = function() {
@@ -106,6 +148,10 @@ app.controller("app", function ($scope, $http) {
             return item !== record;
         });
 
+        $scope.tweetStat = $scope.tweetStat.filter(function(item) {
+            return item.tweet !== record;
+        });
+
         $scope.plotGraph();
     }
 
@@ -114,6 +160,12 @@ app.controller("app", function ($scope, $http) {
         $scope.modalHeading = record;
         $scope.tweetsLoading = true;
         $scope.statuses = [];
+
+        var tweetData = $scope.tweetStat.filter(function(item) {
+            return item.tweet === record;
+        });
+
+        $scope.selectedTweetStat = tweetData[0];
         $('#tweetInfo').modal('show');
         $http.jsonp("http://api.loklak.org/api/search.json?callback=JSON_CALLBACK", {params: {q: record}})
                 .then(function(response) {
@@ -132,5 +184,6 @@ app.controller("app", function ($scope, $http) {
         $scope.labels = [];
         $scope.isError = false;
         $scope.error = null;
+        $scope.tweetStat = [];
     }
 });

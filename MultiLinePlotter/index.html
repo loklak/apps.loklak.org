@@ -53,13 +53,28 @@
               <h4 class="modal-title">Tweets containing {{ modalHeading }}</h4>
             </div>
             <div class="modal-body modal-body-custom">
-              <div class="loading-tweets">
-                <div ng-if="tweetsLoading" class="loader" style="width: 50px; height: 50px; position: relative;"></div>
-                <div ng-if="tweetsLoading"> Fetching tweets... </div>
+              <div class="selected-tweet-stats">
+                <div class="tweet-stat max-tweet">
+                  <div class="stat-label"> <h4>Maximum number of tweets containing '{{modalHeading}}' :</h4></div>
+                  <div class="stat-value"> <strong>{{selectedTweetStat.maxTweetCount}}</strong> tweets on
+                    <strong>{{selectedTweetStat.maxTweetOn}}</strong>
+                  </div>
+                </div>
+                <div ng-if="selectedTweetStat.averageTweetsPerDay !== 0" class="tweet-stat avg-tweet">
+                  <div class="stat-label"> <h4>Average number of tweets containing '{{modalHeading}}' :</h4></div>
+                  <div class="stat-value">
+                    <strong>{{selectedTweetStat.averageTweetsPerDay}}</strong> tweets per day over a period of last
+                    <strong>{{selectedTweetStat.aggregationsLength}}</strong> days
+                  </div>
+                </div>
+              </div>
+              <div ng-if="tweetsLoading" class="loading-tweets">
+                <div class="loader" style="width: 50px; height: 50px; position: relative;"></div>
+                <div> Fetching tweets... </div>
               </div>
               <ul class="list-group stat-list tweet-list">
                 <div class="tweet-item list-group-item " ng-repeat="status in statuses">
-                  <div class="tweet_text">
+                  <div class="tweet-text">
                     {{ status.text }}
                   </div>
                   <div class="link_and_author">
