@@ -13,10 +13,54 @@ export default class WorldMap extends React.Component {
         this.state = {
             map: null
         };
-        this.resize = this.resize.bind(this, this.state.map);
-        this.globalInfo = this.globalInfo.bind(this, this.state.global);
+        this.resize = this.resize.bind(this);
+        this.globalInfo = this.globalInfo.bind(this);
+        this.globalFetch = this.globalFetch.bind(this);
         // Resize map when window changes
         window.addEventListener('resize', this.resize);
+    }
+
+    globalFetch() {
+        let since;
+        let now = new Date();
+        if (!this.state.global) {
+            since = '';
+        } else {
+            switch (this.state.global.time) {
+                case 'All':
+                    since = '';
+                    break;
+                case 'Year':
+                    since = '&since=' + now.getFullYear();
+                    break;
+                case 'Month':
+                    since = '&since=' + now.getFullYear() + '-' + now.getMonth();
+                    break;
+                case 'Day':
+                    since = '&since=' + now.getFullYear() + '-' + now.getMonth() + '-' + now.getDate();
+                    break;
+                case 'Hour':
+                    since = '&since=' + now.getFullYear() + '-' + now.getMonth() + '-' + now.getDate() + 'T' + now.getHours();
+            }
+        }
+        this.setState(...this.state, {global: {fetching: true, fetched: false, errored: false}, mapBorder: '#ffffff'});
+        fetchJsonp(host + '/api/classifier.json?minified=true&classifier=emotion&all=true' + since, {
+            timeout: 20000
+        })
+            .then((response) => {
+                return response.json();
+            }).then((json) => {
+            let score = getScores(json.aggregations);
+            this.setState(...this.state, {
+                mapBorder: getColor(score), global: {
+                    fetching: false, fetched: true, errored: false, score: score
+                }
+            });
+        })
+        .catch((error) => {
+            this.setState(...this.state, {mapBorder: '#000000', global: {
+                fetching: false, fetched: false, errored: true, message: error}});
+        });
     }
 
     resize() {
@@ -41,25 +85,64 @@ export default class WorldMap extends React.Component {
             return (
                 <div>
                     <h4>Global statistics</h4>
-                    <span style={{fontSize: '30px', color: '#D02010'}}>
-                        {this.state.global.score.negative}
-                    </span> Negative
-                    <span style={{fontSize: '30px', color: '#FFFB20', marginLeft: '10px'}}>
-                        {this.state.global.score.positive}
-                    </span> Positive
+                    <div className={styles.row}>
+                    <div className={[styles.colXs12, styles.colSm6, styles.colMd6, styles.colLg6].join(' ')}>
+                        <span style={{fontSize: '30px', color: '#D02010'}}>
+                            {this.state.global.score.negative}
+                        </span> Negative
+                    </div>
+                    <div className={[styles.colXs12, styles.colSm6, styles.colMd6, styles.colLg6].join(' ')}>
+                        <span style={{fontSize: '30px', color: '#FFFB20'}}>
+                            {this.state.global.score.positive}
+                        </span> Positive
+                    </div>
+                </div>
                 </div>
             )
         }
         if (this.state.global.errored) {
             return (
-                <span className={styles.labelDanger}>Error loading global statistics: {this.state.global.message}</span>
+                <span className={styles.labelDanger}>Error loading global statistics: {this.state.global.message.message}</span>
             )
         }
+    }
+
+    changeGlobal(type) {
+        let globalType = type.target.innerHTML;
+        if (type.target.className.search(styles.active) >= 0) {
+            return;
+        }
+        let global = this.state.global;
+        global.time = globalType;
+        this.setState(...this.state, {global: global});
+        let elements = document.getElementsByClassName(styles.active);
+        for (let i = 0; i < elements.length; i++) {
+            elements[i].classList.remove(styles.active);
+        }
+        type.target.classList.add(styles.active);
+        this.globalFetch();
     }
 
     render() {
         return (
             <div className={styles.container}>
+                <div className={[styles.row, styles.textCenter].join(' ')}>
+                    <button className={[styles.btn, styles.btnDefault].join(' ')} onClick={this.changeGlobal.bind(this)}>
+                        All
+                    </button>
+                    <span className={[styles.btn, styles.btnDefault].join(' ')}  onClick={this.changeGlobal.bind(this)}>
+                        Year
+                    </span>
+                    <span className={[styles.btn, styles.btnDefault].join(' ')}  onClick={this.changeGlobal.bind(this)}>
+                        Month
+                    </span>
+                    <span className={[styles.btn, styles.btnDefault].join(' ')}  onClick={this.changeGlobal.bind(this)}>
+                        Day
+                    </span>
+                    <span className={[styles.btn, styles.btnDefault].join(' ')}  onClick={this.changeGlobal.bind(this)}>
+                        Hour
+                    </span>
+                </div>
                 <div id="map-container" className={customStyles.map} style={{borderColor: this.state.mapBorder}}>
                 </div>
                 <div className={styles.textCenter}>{this.globalInfo()}</div>
@@ -119,21 +202,11 @@ export default class WorldMap extends React.Component {
             global: {
                 fetching: false,
                 fetched: false,
-                errored: false
-            }
+                errored: false,
+                time: 'All'
+            },
         });
 
-        this.setState(...this.state, {global: {fetching: true, fetched: false, errored: false}});
-        fetchJsonp(host + '/api/classifier.json?minified=true&classifier=emotion&all=true')
-            .then((response) => {
-                return response.json();
-            }).then((json) => {
-                let score = getScores(json.aggregations);
-                this.setState(...this.state, {mapBorder: getColor(score), global: {
-                    fetching: false, fetched: true, errored: false, score: score}});
-            }).catch((error) => {
-                this.setState(...this.state, {mapBorder: '#000000', global: {
-                    fetching: false, fetched: false, errored: true, message: error}});
-            });
+        this.globalFetch();
     }
 }
