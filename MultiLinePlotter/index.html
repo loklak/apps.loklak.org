@@ -142,7 +142,17 @@
       <div class="row">
         <div class="col-md-12 col-plot">
           <div class="panel panel-default plot">
-            <div class="panel-heading">Aggregation Plot</div>
+            <div class="panel-heading">
+              <span ng-if="currentGraphType === 'aggregations'" class="header-text">
+                Aggregation Plot
+              </span>
+              <span ng-if="currentGraphType === 'stat'" class="header-text">
+                Statistics Plot (Maximum number of tweets and average number of tweets for queries)
+              </span>
+              <div class="switch" ng-click="toggle()">
+                <span ng-if="queryRecords.length !== 0" class="glyphicon glyphicon-stats"></span>
+              </div>
+            </div>
             <div id="graph" class="panel-body plot-data">
             </div>
           </div>

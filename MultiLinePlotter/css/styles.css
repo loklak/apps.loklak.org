@@ -47,6 +47,22 @@ body {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
+.switch {
+    float: right;
+    cursor: pointer;
+    font-size: 18px;
+    color: #9e9e9e;
+    transition: color 0.3s;
+}
+
+.switch:hover {
+    color: #616161;
+}
+
+.header-text {
+    color: #616161;
+}
+
 .plot-data {
   overflow: auto;
   height: 270px;

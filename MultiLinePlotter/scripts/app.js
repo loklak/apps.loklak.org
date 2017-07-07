@@ -7,6 +7,7 @@ app.controller("app", function ($scope, $http) {
     $scope.ykeys = [];
     $scope.labels = [];
     $scope.plot = null;
+    $scope.plotStat = null;
     $scope.queryRecords = [];
     $scope.statuses = [];
     $scope.graphLoading = false;
@@ -15,6 +16,7 @@ app.controller("app", function ($scope, $http) {
     $scope.modalHeading = null;
     $scope.tweetStat = [];
     $scope.selectedTweetStat = {};
+    $scope.currentGraphType = "aggregations";
 
     /* Function to check for error in inputs and call loklak api
        with the user provided query
@@ -36,7 +38,7 @@ app.controller("app", function ($scope, $http) {
             {params: {q: $scope.tweet, source: 'cache', count: '0', fields: 'created_at'}})
                 .then(function (response) {
                     $scope.getData(response.data.aggregations.created_at);
-                    $scope.plotGraph();
+                    $scope.plotData();
                     $scope.queryRecords.push($scope.tweet);
                     $scope.currentTweet = $scope.tweet;
                     $scope.tweet = "";
@@ -80,9 +82,6 @@ app.controller("app", function ($scope, $http) {
             averageTweetsPerDay: avg,
             aggregationsLength: Object.keys(aggregations).length
         });
-
-        console.log($scope.tweetStat);
-
     }
 
     $scope.getMaxTweetNumAndDate = function(aggregations) {
@@ -110,21 +109,42 @@ app.controller("app", function ($scope, $http) {
         return parseInt(sum / Object.keys(aggregations).length);
     }
 
-    $scope.plotGraph = function() {
-        if ($scope.plot === null) {
-            $scope.plot = new Morris.Line({
-                element: 'graph',
-                data: $scope.data,
-                xkey: 'day',
-                ykeys: $scope.ykeys,
-                labels: $scope.labels
-            });
-        } else {
-            $scope.plot.options.ykeys = $scope.ykeys;
-            $scope.plot.options.labels = $scope.labels;
-            $scope.plot.setData($scope.data);
-        }
+    $scope.plotAggregationGraph = function() {
+        $scope.plot = new Morris.Line({
+            element: 'graph',
+            data: $scope.data,
+            xkey: 'day',
+            ykeys: $scope.ykeys,
+            labels: $scope.labels,
+            hideHover: 'auto',
+            resize: true
+        });
         $scope.graphLoading = false;
+    }
+
+    $scope.plotStatGraph = function() {
+        $scope.plotStat = new Morris.Bar({
+            element: 'graph',
+            data: $scope.tweetStat,
+            xkey: 'tweet',
+            ykeys: ['maxTweetCount', 'averageTweetsPerDay'],
+            labels: ['Maximum no. of tweets : ', 'Average no. of tweets/day'],
+            parseTime: false,
+            hideHover: 'auto',
+            resize: true,
+            stacked: true,
+            barSizeRatio: 0.40
+        });
+        $scope.graphLoading = false;
+    }
+
+    $scope.plotData = function() {
+        $(".plot-data").html("");
+        if ($scope.currentGraphType === "aggregations") {
+            $scope.plotAggregationGraph();
+        } else {
+            $scope.plotStatGraph();
+        }
     }
 
     // Function to remove a series
@@ -152,7 +172,7 @@ app.controller("app", function ($scope, $http) {
             return item.tweet !== record;
         });
 
-        $scope.plotGraph();
+        $scope.plotData();
     }
 
     // Function to show all the tweets containing the given query word
@@ -174,12 +194,18 @@ app.controller("app", function ($scope, $http) {
                 });
     }
 
+    $scope.toggle = function() {
+        $scope.currentGraphType = $scope.currentGraphType === "aggregations" ? "stat" : "aggregations";
+        $scope.plotData();
+    }
+
     // Function to reset the app
     $scope.reset = function() {
         $scope.queryRecords = [];
         $scope.data = [];
         $(".plot-data").html("");
         $scope.plot = null;
+        $scope.plotStat = null;
         $scope.ykeys = [];
         $scope.labels = [];
         $scope.isError = false;
