@@ -1,4 +1,7 @@
-export default function getColor(score) {
+import {getScores} from './score';
+import {countryCodeConverter} from './index';
+
+export function getColor(score) {
     let p, n, maxP, maxN;
     maxP = p = score.positive;
     maxN = n = score.negative;
@@ -22,6 +25,26 @@ export default function getColor(score) {
         }
     };
     return rgbToHex(getColorForFraction(fraction, color));
+}
+
+export function getColorsForCountries(json) {
+    let dataMaping = {};
+    for (let key in json) {
+        if (json.hasOwnProperty(key)) {
+            if (key === 'GLOBAL') {
+                continue;
+            }
+            let score = getScores(json[key]);
+            let color = getColor(score);
+            key = countryCodeConverter(key);
+            dataMaping[key] = {
+                fillColor: color,
+                positiveScore: score.positive,
+                negativeScore: score.negative
+            };
+        }
+    }
+    return dataMaping;
 }
 
 function getFraction(p, n, pMax, nMax) {
