@@ -4,7 +4,7 @@ import styles from '../../../css/bootstrap.min.css';
 import customStyles from '../../css/style.css';
 import fetchJsonp from 'fetch-jsonp';
 import {getScores} from '../utils/score';
-import getColor from '../utils/color';
+import {getColor, getColorsForCountries} from '../utils/color';
 import {host} from '../index';
 
 export default class WorldMap extends React.Component {
@@ -44,23 +44,30 @@ export default class WorldMap extends React.Component {
             }
         }
         this.setState(...this.state, {global: {fetching: true, fetched: false, errored: false}, mapBorder: '#ffffff'});
-        fetchJsonp(host + '/api/classifier.json?minified=true&classifier=emotion&all=true' + since, {
-            timeout: 20000
+        fetchJsonp(host + '/api/classifier.json?minified=true&classifier=emotion&all=true&countries=all' + since, {
+            timeout: 50000
         })
             .then((response) => {
                 return response.json();
             }).then((json) => {
-            let score = getScores(json.aggregations);
+            let score = getScores(json.aggregations.GLOBAL);
             this.setState(...this.state, {
                 mapBorder: getColor(score), global: {
                     fetching: false, fetched: true, errored: false, score: score
                 }
             });
+            this.fillMap(json.aggregations);
         })
         .catch((error) => {
             this.setState(...this.state, {mapBorder: '#000000', global: {
                 fetching: false, fetched: false, errored: true, message: error}});
         });
+    }
+
+    fillMap(json) {
+        let newConfig = getColorsForCountries(json);
+        this.state.map.updateChoropleth(newConfig);
+        this.setState(...this.state, {map: this.state.map});
     }
 
     resize() {
@@ -157,7 +164,12 @@ export default class WorldMap extends React.Component {
                 responsive: true,
                 fills: {defaultFill: 'rgba(200,200,200,0.8)'},
                 geographyConfig: {
-                    highlightFillColor: '#707070',
+                    highlightFillColor: (data) => {
+                        if (data.fillColor) {
+                            return data.fillColor;
+                        }
+                        return '#707070';
+                    },
                     highlightBorderColor: 'rgba(243, 243, 21, 0.2)',
                     highlightBorderWidth: 4,
                     popupTemplate: function (geo, data) {
