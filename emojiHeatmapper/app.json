@@ -13,10 +13,17 @@
   "appUse":"appUse.md",
   "promoImage":"promo.png",
   "appImages":["disp1.png", "disp2.png", "disp3.png"],
+  "oneLineDescription":"An application which shows tweets contatining emoji as Emoji-heatmap and Emoji-map",
+  "contributors": [{"name": "kavithaenair"}],
+  "techStack": ["HTML", "CSS", "AngularJs", "Open Layers 3", "emoji-picker.js", "Bootstrap", "Loklak API"],
+  "license": {"name": "LGPL 2.1", "url": "https://www.gnu.org/licenses/old-licenses/lgpl-2.1"},
+  "version": "1.0",
+  "updated": "July 10,2017",
   "operatingSystem": "http://loklak.org",
   "author": {
     "@type": "Person",
     "name": "Kavitha E Nair",
+    "email": "kavitha.nair09@gmail.com",
     "url": "https://github.com/kavithaenair",
     "sameAs": "https://github.com/kavithaenair"
    }
