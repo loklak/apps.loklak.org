@@ -10,8 +10,7 @@
   "operatingSystem": "http://loklak.org",
   "promoImage": "promo.png",
   "appImages": [
-    "promo.png",
-    "promo.png"
+    "shot2.png"
   ],
   "oneLineDescription": "Track down the mood of people from different part of the world using loklak API and shows it on a map.",
   "getStarted": "getStarted.md",

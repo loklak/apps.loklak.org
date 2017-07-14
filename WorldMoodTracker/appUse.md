@@ -1,1 +1,1 @@
-<!-- use of this app -->
+Using the application is very simple. The section above the map holds various buttons that requests the data for the given time period and plots it on the map. You can simply click one of the buttons and change the data displayed on the map.
