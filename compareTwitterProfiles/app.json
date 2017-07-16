@@ -1,0 +1,21 @@
+{
+  "@context": "http://schema.org",
+  "@type": "SoftwareApplication",
+  "permissions": [
+    "/api/search.json",
+    "/api/user.json"
+  ],
+  "name": "compareTwitterProfiles",
+  "headline": "Compare Twitter User Profiles",
+  "alternativeHeadline": "Compare Twitter User Profiles",
+  "applicationCategory": "Visualizer",
+  "applicationSubCategory": "Text Retrieval",
+  "operatingSystem": "http://loklak.org",
+  "author": {
+    "@type": "Person",
+    "name": "Kavitha E Nair",
+    "email": "kavitha.nair09@gmail.com",
+    "url": "https://github.com/kavithaenair",
+    "sameAs": "https://github.com/kavithaenair"
+  }
+}
