@@ -51,7 +51,7 @@ angular.element(document).ready(function () {
         count = count + 1;
       }
 
-        liItem += "<a href='"+link+"'>"+name+"</a></li>";
+      liItem += "<a href='"+link+"'>"+name+"</a></li>";
       liItem = $(liItem);
       $('#navbar > ul').prepend(liItem);
     });
