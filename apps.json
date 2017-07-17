@@ -308,6 +308,35 @@
     {
       "@context": "http://schema.org",
       "@type": "SoftwareApplication",
+      "permissions": [
+        "/api/search.json",
+        "/api/user.json"
+      ],
+      "name": "compareTwitterProfiles",
+      "headline": "Compare Twitter Profiles",
+      "alternativeHeadline": "Compare Twitter Profiles",
+      "applicationCategory": "Visualizer",
+      "applicationSubCategory": "About Project",
+      "operatingSystem": "http://loklak.org",
+      "oneLineDescription":"An application which shows comparison between two twitter profiles",
+      "getStarted":"getStarted.md",
+      "appUse":"appUse.md",
+      "appSource": "https://github.com/fossasia/apps.loklak.org/tree/master/compareTwitterProfiles",
+      "contributors": [{"name": "kavithaenair"}],
+      "techStack": ["HTML", "CSS", "AngularJs", "Bootstrap", "Loklak API"],
+      "license": {"name": "LGPL 2.1", "url": "https://www.gnu.org/licenses/old-licenses/lgpl-2.1"},
+      "version": "1.0",
+      "updated": "July 17,2017",
+      "author": {
+        "@type": "Person",
+        "name": "Kavitha E Nair",
+        "url": "https://github.com/kavithaenair",
+        "sameAs": "https://github.com/kavithaenair"
+      }
+    },
+    {
+      "@context": "http://schema.org",
+      "@type": "SoftwareApplication",
       "permissions": ["/api/signup.json"],
       "name": "signup",
       "headline": "Sign Up to Loklak",
