@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="countryTweetApp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="robots" content="index,follow">
+    <meta http-equiv="cache-control" content="public">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="Content-Language" content="en, english" />
+    <link rel="icon" type="image/png" href="http://loklak.org/artwork/favicon.png">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css"
+     integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ=="
+     crossorigin=""/>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/angular.min.js"></script>
+    <script src="/js/angular-route.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"
+     integrity="sha512-A7vV8IFfih/D732iSSKi20u/ooOfj/AGehOKq0f4vLT1Zr2Y+RX7C+w8A1gaSasGtRUZpF/NZgzSAu4/Gc41Lg=="
+     crossorigin=""></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-custom">
+      <div class="container-fluid navbar-container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="navbar-brand brand-container">
+            <a href="http://apps.loklak.org" class="loklak-brand"> <span class="loklak-header">
+              loklak</span> <span>Country Tweet Map</span></a>
+          </div>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="http://loklak.net/about">About</a></li>
+            <li><a href="http://loklak.net/">Search</a></li>
+            <li><a href="http://blog.loklak.net/">Blog</a></li>
+            <li><a href="http://dev.loklak.org/">Developers</a></li>
+            <li><a href="http://api.loklak.org/">Api</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="main app" ng-controller="app">
+      <div id="statInfo" class="modal fade stat-info" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Country vs No.of tweets containing {{tweet}}</h4>
+            </div>
+            <div class="modal-body">
+              <div class="stat-table">
+                <ul class="list-group">
+                  <li class="list-group-item modal-item" ng-repeat="item in modalList">
+                    <span class="country-name"> {{item.country_name}}({{item.country_code}}) </span>
+                    <span class="badge"> {{item.count}} </span>
+                  </li>
+                </ul>
+              </div>
+              <div class="graph" id="graph">
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default modal-button" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="map" class="map">
+      </div>
+      <div class="controls-and-input">
+        <div class="row input">
+          <div class="col-md-6">
+            <div class="panel panel-default input">
+              <div class="panel-body input-panel">
+                <div class="tweet-input">
+                  <input type="text" class="form-control tweet-input-field" placeholder="Enter query word"
+                    ng-model="tweet" ng-keyup="$event.keyCode == 13 ? search() : null">
+                  <button type="button" class="btn tweet-search" ng-click="search()">
+                    <span class="glyphicon glyphicon-search search-icon"></span>
+                  </button>
+                </div>
+                <div class="filters">
+                  <input class="start-date form-control date" ng-model="startDate" ng-init="" placeholder="Start Date">
+                  <input class="end-date form-control date" ng-model="endDate" ng-init="" placeholder="End Date">
+                  <input class="count form-control" ng-model="count" ng-init="" placeholder="Count">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div ng-if="countryCount !== 0" class="statistics">
+              <div class="header-statistics">
+                <h4> Statistics </h4>
+              </div>
+              <div class="stat-body">
+                <div class="max">
+                  Maximum tweets from {{ tweetMaxCountries }} : {{ tweetMax }}
+                </div>
+                <button type="button" class="btn btn-default btn-small stat-button" ng-click="showStat()">
+                  Plot tweet distribution
+                  <span class="glyphicon glyphicon-stats"> </span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div ng-if="countryCount !== 0" class="legend">
+              <div class="legend-header">
+                <h4> Legend </h4>
+              </div>
+              <div class="legend-body">
+                <div class="text-and-img">
+                  <img src="images/marker-red.png" class="img-circle img-responsive legend-img">
+                  <div class="legend-text">
+                    Max tweets
+                  </div>
+                </div>
+                <div class="text-and-img">
+                  <img src="images/marker-blue.ico" class="img-circle img-responsive legend-img">
+                  <div class="legend-text">
+                    Medium tweets
+                  </div>
+                </div>
+                <div class="text-and-img">
+                  <img src="images/marker-green.ico" class="img-circle img-responsive legend-img">
+                  <div class="legend-text">
+                    Low tweets
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <footer>
+      <script src="scripts/app.js"></script>
+  </footer>
+</html>

@@ -1,0 +1,196 @@
+body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.navbar-custom {
+    padding: 12px;
+    background-color: #F1F1F1;
+    margin-bottom: 0px;
+}
+
+.loklak-brand {
+    font-family: "Courier New";
+    font-size: 35px;
+    text-decoration: none;
+    line-height: 20px;
+    color: rgb(51,51,51);
+    line-height: 20px;
+}
+
+.loklak-brand:hover {
+    text-decoration: none;
+    color: rgb(51,51,51);
+}
+
+.loklak-header {
+    color: #C8254D;
+}
+
+.map {
+    height: 360px;
+}
+
+.controls-and-input {
+    box-shadow: 0 -4px 8px 0 rgba(0,0,0,0.2);
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    height:200px;
+}
+
+.input-panel {
+    height: 170px;
+}
+
+.tweet-input {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: space-around;
+    margin-left:10px;
+    margin-right: 10px;
+}
+
+.tweet-search {
+    color: #FFFFFF;
+    background-color: #D81B60;
+}
+
+.tweet-input-field:focus {
+  border-color: #D81B60;
+}
+
+.stat-body {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.header-statistics {
+    color: #424242;
+}
+
+.max {
+    color: #757575;
+    font-size: 16px;
+}
+
+.max:hover {
+    color: #424242;
+    transition: all 0.5s;
+}
+
+.stat-button {
+    margin-top: 10px;
+    color: #fafafa;
+    background-color: #C8254D;
+}
+
+.stat-button:hover {
+    color: #fafafa;
+    background-color: #C8254D;
+}
+
+.stat-button:focus {
+    color: #fafafa;
+    background-color: #C8254D;
+}
+
+.legend-header {
+    color: #424242;
+}
+
+.legend-body {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.text-and-img {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.legend-text {
+    color: #757575;
+    font-size: 14px;
+}
+
+.legend-text:hover {
+    color: #424242;
+    transition: all 0.5s;
+}
+
+.legend-img {
+    width: 36px;
+    height: 36px;
+}
+
+.modal-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modal-button {
+    background-color: #C8254D;
+    color: white;
+}
+
+.modal-button:hover {
+    background-color: #C8254D;
+    color: white;
+}
+
+.stat-table {
+    height: 200px;
+    overflow: auto;
+}
+
+.filters input {
+    max-width: 180px;
+}
+
+.filters input:focus {
+    border-color: #D81B60;
+}
+
+.filters {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 10px;
+    margin-right: 10px;
+    flex-wrap: wrap;
+}
+
+.date {
+    position: relative;
+    z-index: 1000;
+}
+
+@media (max-width: 600px) {
+    .loklak-brand {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 370px) {
+    .loklak-brand {
+        font-size: 16px;
+    }
+
+    .filters {
+        justify-content: space-between;
+    }
+
+    .filters input {
+        max-width: 80px;
+    }
+}
