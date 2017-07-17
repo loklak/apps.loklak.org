@@ -8,5 +8,6 @@ To bundle the application, run `yarn build`. It uses `webpack` build in the back
 
 Also, add `yarn.lock` to `git` whenever you add/remove some package.
 
-Happy Coding :tada:
+Happy Coding!
+
 [@singhpratyush](https://github.com/singhpratyush).

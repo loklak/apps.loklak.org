@@ -6,6 +6,7 @@ import fetchJsonp from 'fetch-jsonp';
 import {getScores} from '../utils/score';
 import {getColor, getColorsForCountries} from '../utils/color';
 import {host} from '../index';
+import {getFromCache, updateCache} from '../utils/cache';
 
 export default class WorldMap extends React.Component {
     constructor() {
@@ -43,25 +44,47 @@ export default class WorldMap extends React.Component {
                     since = '&since=' + now.getFullYear() + '-' + now.getMonth() + '-' + now.getDate() + 'T' + now.getHours();
             }
         }
+        let timeRange = since === '' ? 'All' : since;
         this.setState(...this.state, {global: {fetching: true, fetched: false, errored: false}, mapBorder: '#ffffff'});
-        fetchJsonp(host + '/api/classifier.json?minified=true&classifier=emotion&all=true&countries=all' + since, {
-            timeout: 50000
-        })
+        let response = getFromCache(timeRange);
+        if (!response) {
+            fetchJsonp(host + '/api/classifier.json?minified=true&classifier=emotion&all=true&countries=all' + since, {
+                timeout: 50000
+            })
             .then((response) => {
-                return response.json();
-            }).then((json) => {
-            let score = getScores(json.aggregations.GLOBAL);
+                    return response.json();
+                }).then((json) => {
+                let score = getScores(json.aggregations.GLOBAL);
+                let color = getColor(score);
+                this.setState(...this.state, {
+                    mapBorder: getColor(score), global: {
+                        fetching: false, fetched: true, errored: false, score: score
+                    }
+                });
+                this.fillMap(json.aggregations);
+                let cacheData = {
+                    color: color,
+                    aggregations: json.aggregations,
+                    score: score
+                };
+                updateCache({
+                    time: timeRange,
+                    cache: cacheData
+                });
+            })
+            .catch((error) => {
+                this.setState(...this.state, {mapBorder: '#000000', global: {
+                    fetching: false, fetched: false, errored: true, message: error}});
+            });
+        } else {
             this.setState(...this.state, {
-                mapBorder: getColor(score), global: {
-                    fetching: false, fetched: true, errored: false, score: score
+                mapBorder: getColor(response.score), global: {
+                    fetching: false, fetched: true, errored: false, score: response.score
                 }
             });
-            this.fillMap(json.aggregations);
-        })
-        .catch((error) => {
-            this.setState(...this.state, {mapBorder: '#000000', global: {
-                fetching: false, fetched: false, errored: true, message: error}});
-        });
+            this.fillMap(response.aggregations);
+        }
+
     }
 
     fillMap(json) {
