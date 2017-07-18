@@ -69,26 +69,51 @@
                         <div id="contactCard">
                             <div class="panel panel-default">
                                 <div class="panel-heading clearfix">
-                                    <h3 class="panel-title pull-left">User 2 Profile</h3>
+                                    <h3 class="panel-title pull-left">User 1 Profile</h3>
                                 </div>
                                 <div class="list-group">
                                     <div class="list-group-item">
                                         <img src="{{userData1.profile_image_url}}" alt="" style="pull-left">
-                                        <h4 class="list-group-item-heading">{{userData1.name}}</h4>
+                                        <h4 class="list-group-item-heading">{{userData.name}}</h4>
                                     </div>
                                     <div class="list-group-item">
                                         <h4 class="list-group-item-heading">
-                                            <strong>{{userData1.followers_count}}</strong> Followers
+                                            <strong>{{userData.description}}</strong> Description
                                         </h4>
                                     </div>
                                     <div class="list-group-item">
                                         <h4 class="list-group-item-heading">
-                                            <strong>{{userData1.statuses_count}}</strong> Statuses
+                                            <strong>{{userData.followers_count}}</strong> Followers
                                         </h4>
                                     </div>
                                     <div class="list-group-item">
                                         <h4 class="list-group-item-heading">
-                                            <small>{{userData1.screen_name}}</small>
+                                            <strong>{{userData.friends_count}}</strong> Following
+                                        </h4>
+                                    </div>
+                                    <div class="list-group-item">
+                                        <h4 class="list-group-item-heading">
+                                            <strong>{{userData.statuses_count}}</strong> Statuses
+                                        </h4>
+                                    </div>
+                                    <div class="list-group-item">
+                                        <h4 class="list-group-item-heading">
+                                            <strong>{{userData.favourites_count}}</strong> Favourites
+                                        </h4>
+                                    </div>
+                                    <div class="list-group-item">
+                                        <h4 class="list-group-item-heading">
+                                            <strong>{{userData.created_at}}</strong> Created On
+                                        </h4>
+                                    </div>
+                                    <div class="list-group-item">
+                                        <h4 class="list-group-item-heading">
+                                            <strong>{{userData.location}}</strong> Location
+                                        </h4>
+                                    </div>
+                                    <div class="list-group-item">
+                                        <h4 class="list-group-item-heading">
+                                            <small>{{userData.screen_name}}</small>
                                         </h4>
                                     </div>
                                 </div>
@@ -108,12 +133,37 @@
                                     </div>
                                     <div class="list-group-item">
                                         <h4 class="list-group-item-heading">
+                                            <strong>{{userData1.description}}</strong> Description
+                                        </h4>
+                                    </div>
+                                    <div class="list-group-item">
+                                        <h4 class="list-group-item-heading">
                                             <strong>{{userData1.followers_count}}</strong> Followers
                                         </h4>
                                     </div>
                                     <div class="list-group-item">
                                         <h4 class="list-group-item-heading">
+                                            <strong>{{userData1.friends_count}}</strong> Following
+                                        </h4>
+                                    </div>
+                                    <div class="list-group-item">
+                                        <h4 class="list-group-item-heading">
                                             <strong>{{userData1.statuses_count}}</strong> Statuses
+                                        </h4>
+                                    </div>
+                                    <div class="list-group-item">
+                                        <h4 class="list-group-item-heading">
+                                            <strong>{{userData1.favourites_count}}</strong> Favourites
+                                        </h4>
+                                    </div>
+                                    <div class="list-group-item">
+                                        <h4 class="list-group-item-heading">
+                                            <strong>{{userData1.created_at}}</strong> Created On
+                                        </h4>
+                                    </div>
+                                    <div class="list-group-item">
+                                        <h4 class="list-group-item-heading">
+                                            <strong>{{userData1.location}}</strong> Location
                                         </h4>
                                     </div>
                                     <div class="list-group-item">
