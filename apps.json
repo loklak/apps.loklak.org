@@ -234,7 +234,7 @@
       "@context": "http://schema.org",
       "@type": "SoftwareApplication",
       "permissions": [
-        "/api/search.json",
+        "/api/search.json"
       ],
       "name": "emojiHeatmap",
       "headline": "Emoji Heatmap",
