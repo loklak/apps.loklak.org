@@ -44,7 +44,7 @@ app.controller("app", function ($scope, $http) {
         }
 
         // Change base url to api.loklak.org later
-        var url = "http://35.184.98.133/api/search.json?callback=JSON_CALLBACK&" + query;
+        var url = "http://35.184.151.104/api/search.json?callback=JSON_CALLBACK&" + query;
         var count = $(".count").val();
         if (count !== undefined && count !== "") {
             url  += "&count=" + count;
@@ -208,3 +208,13 @@ app.controller("app", function ($scope, $http) {
 
     $scope.setUpInitialMap();
 });
+
+function openNav() {
+    $(".sidenav").css("transform", "translateX(0px)");
+    $(".open").css("display", "none");
+}
+
+function closeNav() {
+    $(".sidenav").css("transform", "translateX(-260px)");
+    $(".open").css("display", "block");
+}
