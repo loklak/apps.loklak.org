@@ -12,7 +12,7 @@ Loklak is a server application which is able to collect messages from various so
 
 ## Communication
 
-Please join our mailing list to discuss questions regarding the project: https://groups.google.com/forum/#!forum/loklak
+Please join our mailing list to discuss questions regarding the project: https://groups.google.com/forum/#!forum/opntec-dev
 
 Our chat channel is on Gitter here: https://gitter.im/loklak/loklak
 
@@ -27,11 +27,11 @@ Some of the applications in the repository include-
 - barchart, a stacked bar chart using loklak_search and D3 stack layout
 - boilerplate, a 'hello world' loklak app
 - bubblecharts, a bubble chart using D3 pack layout and loklak
-- ducphanduy, a lokalk tweet search page using AngularJS
+- ducphanduy, a loklak tweet search page using AngularJS
 - forgotpassword, a accounts operations application for  password recovery system
-- fossasia-histrogram, a tweet analytcs application of loklak tweets histogram about FOSSASIA
+- fossasia-histogram, a tweet analytics application of loklak tweets histogram about FOSSASIA
 - histogram, a message visualiser encompassing a tweet histogram plotter
-- keyRegistration, a accounts operations application for registering a public key
+- keyRegistration, an accounts operations application for registering a public key
 - knowTheDiff, a software application comparing search and aggregations
 - loginPage, an account operations application to log in to loklak
 - oneClickDeploy, an API to increase loklak peers
@@ -94,7 +94,7 @@ Some of the applications in the repository include-
 
 ## How to run Loklak Apps locally
 
-You need to have NodeJS and NPM. To run Loklak Apps locally, follow the nexr steps
+You need to have NodeJS and NPM. To run Loklak Apps locally, follow the next steps
 
 1. Install http-server by running the command ```npm install -g http-server```
 2. Navigate the ```apps.loklak.org``` folder

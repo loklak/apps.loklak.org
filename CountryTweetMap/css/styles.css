@@ -28,19 +28,17 @@ body {
 }
 
 .map {
-    height: 360px;
+    height: 450px;
 }
 
 .controls-and-input {
     box-shadow: 0 -4px 8px 0 rgba(0,0,0,0.2);
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 20px;
-    height:200px;
+    padding: 20px;
+    height:170px;
 }
 
 .input-panel {
-    height: 170px;
+    height: 150px;
 }
 
 .tweet-input {
@@ -48,8 +46,7 @@ body {
     flex-direction: row;
     text-align: center;
     justify-content: space-around;
-    margin-left:10px;
-    margin-right: 10px;
+    margin: 0px 10px;
 }
 
 .tweet-search {
@@ -160,19 +157,142 @@ body {
 }
 
 .filters {
-    margin-top: 16px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 16px 10px 0px 10px;
     flex-wrap: wrap;
 }
 
 .date {
     position: relative;
     z-index: 1000;
+}
+
+.sidenav {
+    height: 100%;
+    transform: translateX(-260px);
+    width: 260px;
+    position: fixed;
+    z-index: 1001;
+    top: 0;
+    left: 0;
+    background-color: #fafafa;
+    overflow-x: hidden;
+    transition: transform 0.5s;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.sidebar-header {
+    background-color: #D81B60;
+    padding: 10px;
+}
+
+.header-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #fafafa;
+}
+
+.close {
+    color: #000000;
+    margin-left: 15px;
+}
+
+.open {
+    position: fixed;
+    z-index: 1000;
+    font-size: 20px;
+    top: 12%;
+    left: 1%;
+}
+
+.open:hover {
+    cursor: pointer;
+}
+
+.sidebar-body {
+    color: #fafafa;
+}
+
+.loader {
+    border: 2px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 2px solid #D81B60;
+    width: 25px;
+    height: 25px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    opacity: 20%;
+    display: flex;
+    align-items: center;
+    margin-left: 50%;
+    margin-top: 10px;
+    margin: 10px 0px 0px 50%;
+}
+
+.snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+}
+
+.snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (max-height: 600px) {
+    body {
+        overflow-y: auto;
+    }
+
+    .open {
+        top: 14%;
+        left: 4%;
+    }
 }
 
 @media (max-width: 600px) {

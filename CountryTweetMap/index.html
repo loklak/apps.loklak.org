@@ -25,31 +25,26 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   </head>
   <body>
-    <nav class="navbar navbar-default navbar-custom">
-      <div class="container-fluid navbar-container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <div class="navbar-brand brand-container">
-            <a href="http://apps.loklak.org" class="loklak-brand"> <span class="loklak-header">
-              loklak</span> <span>Country Tweet Map</span></a>
-          </div>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="http://loklak.net/about">About</a></li>
-            <li><a href="http://loklak.net/">Search</a></li>
-            <li><a href="http://blog.loklak.net/">Blog</a></li>
-            <li><a href="http://dev.loklak.org/">Developers</a></li>
-            <li><a href="http://api.loklak.org/">Api</a></li>
-          </ul>
+    <div class="sidenav">
+      <div class="sidebar-header">
+        <div class="header-text">
+          <h4> Loklak CountryTweetMap </h4>
+          <span class="glyphicon glyphicon-remove close" onclick="closeNav()"></span>
         </div>
       </div>
-    </nav>
+      <div class="sidebar-body">
+        <ul class="list-group">
+          <a href="http://loklak.net/about" class="list-group-item">About</a>
+          <a href="http://loklak.net/" class="list-group-item">Search</a>
+          <a href="http://blog.loklak.net/" class="list-group-item">Blog</a>
+          <a href="http://dev.loklak.org/" class="list-group-item">Developers</a>
+          <a href="http://api.loklak.org/" class="list-group-item">Api</a>
+        </ul>
+      </div>
+    </div>
+    <span onclick="openNav()" class="glyphicon glyphicon-menu-hamburger open"></span>
     <div class="main app" ng-controller="app">
+      <div class="snackbar">{{error}}</div>
       <div id="statInfo" class="modal fade stat-info" role="dialog">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -93,6 +88,8 @@
                   <input class="start-date form-control date" ng-model="startDate" ng-init="" placeholder="Start Date">
                   <input class="end-date form-control date" ng-model="endDate" ng-init="" placeholder="End Date">
                   <input class="count form-control" ng-model="count" ng-init="" placeholder="Count">
+                </div>
+                <div ng-if="isLoading" class="loader">
                 </div>
               </div>
             </div>

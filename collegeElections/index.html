@@ -13,70 +13,19 @@
       <script src="js/exporting.min.js"></script>
 
       <style>
-            .post-wrapper:first-child .post-inner {
-              border-top-color: rgba(0, 0, 0, 0.1);
-            }
-            .post-wrapper .post-inner {
-              background-color: white;
-              display: block;
-              cursor: pointer;
-              overflow: hidden;
-              text-decoration: none;
-              color: #666666;
-              -webkit-transition-duration: 0.25s;
-              transition-duration: 0.25s;
-              -webkit-transition-timing-function: ease-out;
-              transition-timing-function: ease-out;
-              border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-              padding: 20px;
-            }
-            .post-wrapper .post-inner.open {
-              margin-top: 20px;
-              margin-bottom: 20px;
-              border-radius: 5px;
-              box-shadow: 0 4px 1px rgba(0, 0, 0, 0.2);
-              border-bottom-color: transparent;
-            }
-            .post-wrapper .post-inner.open:hover {
-              background-color: white;
-            }
-            .post-wrapper .post-inner:hover {
-              background-color: #f0f2f5;
-            }
-            .post-wrapper .post-inner h2 {
-              font-weight: 400;
-              color: #54626C;
-            }
-            .post-wrapper .post-inner .text {
-              display: none;
-            }
-            .post-wrapper .post-inner p {
-              font-weight: 300;
-              padding: 10px 0;
-            }
-            .post-wrapper .post-inner p.lead {
-              font-size: 1.2em;
-            }
-            .Emoji.Emoji--forText {
-              width: 2%;
-              height: 2%;
-              padding: initial;
-              margin-left: 7px;
-            }
-            .serviceBox1, .serviceBox3 {
-              float:left;
-              width:30%;
-              height: 380px;
-              background-color: ;
-            }
+        .serviceBox1, .serviceBox3 {
+          float:left;
+          width:30%;
+          height: 380px;
+          background-color: ;
+        }
         .serviceBox2 {
-              float: left;
+          float: left;
           width: 40%;
           height: 380px;
         }
 
-        </style>
-
+      </style>
    </head>
    <body background = "election.jpg">
       <center>
@@ -189,11 +138,8 @@
 
                  $http.jsonp(QueryCommand1).then(function(response) {
                     $scope.candidateReq.one = response.data
-                    //console.log('one');
                     $http.jsonp(QueryCommand2).then(function(response) {
                       $scope.candidateReq.two = response.data
-                      //console.log('two');
-                      //console.log($scope.candidateReq); // contains the data from both in $scope.candidateReq
                       makeCalculations($scope.candidateReq.one, $scope.candidateReq.two);
                     });
                   });
@@ -211,11 +157,9 @@
                  function makeCalculations(object1, object2) {
 
                   // For object 1
-                  //console.log(object1);
                   $scope.leaderboard1 = calculateSum(object1);
 
                   // For object 2
-                  //console.log(object2);
                   $scope.leaderboard2 = calculateSum(object2);
 
                   // Now plotting the graph with these two values

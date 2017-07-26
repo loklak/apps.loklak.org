@@ -13,6 +13,7 @@ app.controller("app", function ($scope, $http) {
     $scope.map = null;
     $scope.plot = null;
     $scope.isLoading = false;
+    $scope.error = "";
     $(".date").datepicker();
     $(".date").datepicker( "option", "dateFormat", "yy-mm-dd");
     var LeafIcon = L.Icon.extend({
@@ -26,25 +27,58 @@ app.controller("app", function ($scope, $http) {
         blueIcon = new LeafIcon({iconUrl: 'images/marker-blue.ico'}),
         redIcon = new LeafIcon({iconUrl: 'images/marker-red.png'});
 
+    $scope.showSnackbar = function() {
+        $(".snackbar").addClass("show");
+        setTimeout(function(){ $(".snackbar").removeClass("show") }, 3000);
+    }
+
     // Function to search query using Loklak API
     $scope.search = function() {
+        $scope.error = "";
         if ($scope.tweet === undefined || $scope.tweet === "" || $scope.isLoading === true) {
+            if ($scope.tweet === undefined || $scope.tweet === "") {
+                $scope.error = "Please enter a valid query word."
+            }
+            if ($scope.isLoading === true) {
+                $scope.error = "Previous search not completed. Please wait...";
+            }
+            $scope.showSnackbar();
             return;
+        }
+
+        var count = $(".count").val();
+        if (count.length !== 0) {
+            if (/^\d+$/.test(count) === false) {
+                $scope.error = "Count should be a valid number.";
+                $scope.showSnackbar();
+                return;
+            }
+        }
+
+        var sinceDate = $(".start-date").val();
+        var endDate = $(".end-date").val();
+        if ((sinceDate !== undefined && endDate !== "") && (endDate !== undefined && endDate !== "")) {
+            var date1 = new Date(sinceDate);
+            var date2 = new Date(endDate);
+            if (endDate < sinceDate) {
+                $scope.error = "End date should be larger than start date";
+                $scope.showSnackbar();
+                return;
+            }
         }
 
         $scope.isLoading = true;
         var query = "q=" + $scope.tweet;
-        var sinceDate = $(".start-date").val();
+
         if (sinceDate !== undefined && sinceDate !== "" ) {
             query += "%20since:" + sinceDate;
         }
-        var endDate = $(".end-date").val();
         if (endDate !== undefined && endDate !== "") {
             query += "%20until:" + endDate;
         }
 
         // Change base url to api.loklak.org later
-        var url = "http://35.184.98.133/api/search.json?callback=JSON_CALLBACK&" + query;
+        var url = "http://35.184.151.104/api/search.json?callback=JSON_CALLBACK&" + query;
         var count = $(".count").val();
         if (count !== undefined && count !== "") {
             url  += "&count=" + count;
@@ -158,7 +192,7 @@ app.controller("app", function ($scope, $http) {
         var countryMediumGroup = L.layerGroup(countriesMedium);
         var countryLowGroup = L.layerGroup(countriesLow);
 
-        var background = L.tileLayer(
+        var backgroundLight = L.tileLayer(
             'http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
             {
                 maxZoom: 18,
@@ -172,7 +206,7 @@ app.controller("app", function ($scope, $http) {
                 [-90,-180],
                 [90, 180]
             ],
-            layers: [background, countryHighGroup, countryMediumGroup, countryLowGroup]
+            layers: [backgroundLight, countryHighGroup, countryMediumGroup, countryLowGroup]
         });
 
         var overlayMaps = {
@@ -181,7 +215,7 @@ app.controller("app", function ($scope, $http) {
             "Low tweets": countryLowGroup
         };
         var baseMaps = {
-            "Streets": background
+            "basemap": backgroundLight
         };
         L.control.layers(baseMaps, overlayMaps).addTo($scope.map);
         $scope.isLoading = false;
@@ -208,3 +242,13 @@ app.controller("app", function ($scope, $http) {
 
     $scope.setUpInitialMap();
 });
+
+function openNav() {
+    $(".sidenav").css("transform", "translateX(0px)");
+    $(".open").css("display", "none");
+}
+
+function closeNav() {
+    $(".sidenav").css("transform", "translateX(-260px)");
+    $(".open").css("display", "block");
+}
