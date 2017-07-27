@@ -14,6 +14,8 @@ app.controller("app", function ($scope, $http) {
     $scope.plot = null;
     $scope.isLoading = false;
     $scope.error = "";
+    $scope.heatmapData = [];
+    $scope.totalTweets = 0;
     $(".date").datepicker();
     $(".date").datepicker( "option", "dateFormat", "yy-mm-dd");
     var LeafIcon = L.Icon.extend({
@@ -91,6 +93,23 @@ app.controller("app", function ($scope, $http) {
             });
     }
 
+    // Prepare heatmap data
+    $scope.setupHeatMapData = function () {
+        $scope.totalTweets = 0;
+        $scope.heatmapData = [];
+
+        for (var key in $scope.tweetFreq) {
+            for (var i = 0; i < $scope.tweetFreq[key].length; i++) {
+                $scope.heatmapData.push([
+                    $scope.tweetFreq[key][0].place_country_center[1],
+                    $scope.tweetFreq[key][0].place_country_center[0],
+                    $scope.tweetFreq[key].length
+                ]);
+            }
+            $scope.totalTweets += $scope.tweetFreq[key].length;
+        }
+    }
+
     // Function to prepare frequency of tweets for individual countries
     $scope.prepareFreq = function(data) {
         data.forEach(function(status) {
@@ -105,8 +124,8 @@ app.controller("app", function ($scope, $http) {
         var sumLon = 0.0;
 
         for (var key in $scope.tweetFreq) {
-            sumLat += $scope.tweetFreq[key][0].place_country_center[0];
-            sumLon += $scope.tweetFreq[key][0].place_country_center[1];
+            sumLat += $scope.tweetFreq[key][0].place_country_center[1];
+            sumLon += $scope.tweetFreq[key][0].place_country_center[0];
             $scope.modalList.push({
                 country_name: $scope.tweetFreq[key][0].place_country,
                 country_code: $scope.tweetFreq[key][0].place_country_code,
@@ -116,6 +135,7 @@ app.controller("app", function ($scope, $http) {
         }
         mapCenterLat = sumLat / $scope.countryCount;
         mapCenterLon = sumLon / $scope.countryCount;
+        $scope.setupHeatMapData();
     }
 
     $scope.setUpInitialMap = function() {
@@ -175,15 +195,15 @@ app.controller("app", function ($scope, $http) {
             var markerIcon = null;
             var marker = null;
             if (size === $scope.tweetMax) {
-                markerIcon = L.marker(country.place_country_center, {icon: redIcon});
+                markerIcon = L.marker([country.place_country_center[1], country.place_country_center[0]], {icon: redIcon});
                 marker = $scope.getMarker(markerIcon, country, key);
                 countriesHigh.push(marker);
             } else if (size > rangeMid) {
-                markerIcon = L.marker(country.place_country_center, {icon: blueIcon});
+                markerIcon = L.marker([country.place_country_center[1], country.place_country_center[0]], {icon: blueIcon});
                 marker = $scope.getMarker(markerIcon, country, key);
                 countriesMedium.push(marker)
             } else {
-                markerIcon = L.marker(country.place_country_center, {icon: greenIcon});
+                markerIcon = L.marker([country.place_country_center[1], country.place_country_center[0]], {icon: greenIcon});
                 marker = $scope.getMarker(markerIcon, country, key);
                 countriesLow.push(marker);
             }
@@ -191,6 +211,20 @@ app.controller("app", function ($scope, $http) {
         var countryHighGroup = L.layerGroup(countriesHigh);
         var countryMediumGroup = L.layerGroup(countriesMedium);
         var countryLowGroup = L.layerGroup(countriesLow);
+
+        var gradientStart = (Math.round(($scope.totalTweets / 3) * 10) / 10).toFixed(1);
+        var gradientMiddle = (Math.round(($scope.totalTweets / 2) * 10) / 10).toFixed(1);
+        var gradientEnd = $scope.totalTweets;
+
+        var cfg = {
+            radius: 25,
+            max: $scope.totalTweets,
+            minOpacity: 0.5,
+            blur: 8,
+            maxZoom: 4
+        }
+
+        var heat = L.heatLayer($scope.heatmapData, cfg);
 
         var backgroundLight = L.tileLayer(
             'http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
@@ -212,12 +246,14 @@ app.controller("app", function ($scope, $http) {
         var overlayMaps = {
             "Maximum tweets": countryHighGroup,
             "Medium tweets": countryMediumGroup,
-            "Low tweets": countryLowGroup
+            "Low tweets": countryLowGroup,
+            "Heatmap": heat
         };
         var baseMaps = {
             "basemap": backgroundLight
         };
         L.control.layers(baseMaps, overlayMaps).addTo($scope.map);
+
         $scope.isLoading = false;
     }
 
