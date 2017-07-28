@@ -1,0 +1,68 @@
+body {
+  padding-top: 50px;
+}
+
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+.post-wrapper:first-child .post-inner {
+  border-top-color: rgba(0, 0, 0, 0.1);
+}
+
+.post-wrapper .post-inner {
+  background-color: white;
+  display: block;
+  cursor: pointer;
+  overflow: hidden;
+  text-decoration: none;
+  color: #666666;
+  -webkit-transition-duration: 0.25s;
+  transition-duration: 0.25s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.post-wrapper .post-inner.open {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 1px rgba(0, 0, 0, 0.2);
+  border-bottom-color: transparent;
+}
+
+.post-wrapper .post-inner.open:hover {
+  background-color: white;
+}
+
+.post-wrapper .post-inner:hover {
+  background-color: #f0f2f5;
+}
+
+.post-wrapper .post-inner h2 {
+  font-weight: 400;
+  color: #54626C;
+}
+
+.post-wrapper .post-inner .text {
+  display: none;
+}
+
+.post-wrapper .post-inner p {
+  font-weight: 300;
+  padding: 10px 0;
+}
+
+.post-wrapper .post-inner p.lead {
+  font-size: 1.2em;
+}
+
+.Emoji.Emoji--forText {
+  width: 2%;
+  height: 2%;
+  padding: initial;
+  margin-left: 7px;
+}
