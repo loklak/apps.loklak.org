@@ -1,0 +1,24 @@
+{
+  "@context": "http://schema.org",
+  "@type": "SoftwareApplication",
+  "permissions": "/api/search.json",
+  "name": "LoklakWordCloud",
+  "headline": "App to generate Word Cloud using Loklak",
+  "alternativeHeadline": "App to generate Word Cloud using Loklak",
+  "applicationCategory": "Visualization",
+  "applicationSubCategory": "",
+  "operatingSystem": "http://loklak.org",
+  "promoImage": "promo.png",
+  "appImages": "",
+  "oneLineDescription": "App to visualize Loklak data as word cloud",
+  "getStarted": "getStarted.md",
+  "appUse": "appUse.md",
+  "others": "others.md",
+  "author": {
+    "@type": "Person",
+    "name": "Deepjyoti Mondal",
+    "email": "djmdeveloper060796@gmail.com",
+    "url": "djmgit.github.io",
+    "sameAs": ""
+  }
+}
