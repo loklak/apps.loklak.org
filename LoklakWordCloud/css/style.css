@@ -61,3 +61,7 @@ body {
 .card:hover {
     box-shadow: 0 8px 16px 4px rgba(0,0,0,0.2);
 }
+
+.wordcloud .jqcloud-word {
+    cursor: pointer;
+}

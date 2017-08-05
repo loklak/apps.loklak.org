@@ -16,16 +16,22 @@ app.controller("app", function ($scope, $http) {
         $http.jsonp(url)
             .then(function (response) {
                 $scope.createWordCloudData(response.data.statuses);
+                $scope.tweet = null;
             });
     }
     $scope.createWordCloudData = function(data) {
         for (var i = 0; i < data.length; i++) {
             tweet = data[i];
-            tweetWords = tweet.text.replace(", ", " ").split(" ");
+
+            // use multiple delimiters for splitting
+            tweetWords = tweet.text.split(/[\s,;]+/);
 
             for (var j = 0; j < tweetWords.length; j++) {
                 word = tweetWords[j];
                 word = word.trim();
+                if (word === null) {
+                    continue;
+                }
                 if (word.startsWith("'") || word.startsWith('"') || word.startsWith("(") || word.startsWith("[")) {
                     word = word.substring(1);
                 }
@@ -33,6 +39,16 @@ app.controller("app", function ($scope, $http) {
                     word.endsWith("?") || word.endsWith(".")) {
                     word = word.substring(0, word.length - 1);
                 }
+
+                if ((word.indexOf("<")) !== -1 || (word.indexOf(">") !== -1)) {
+                    continue;
+                }
+
+                // discard words which contain only digits and nothing else
+                if (/^[0-9]+([.,][0-9]+)?$/.test(word)) {
+                    continue;
+                }
+                word = word.trim();
                 if (stopwords.indexOf(word.toLowerCase()) !== -1) {
                     continue;
                 }
@@ -41,6 +57,17 @@ app.controller("app", function ($scope, $http) {
                 }
                 if (word.startsWith("http") || word.startsWith("https")) {
                     continue;
+                }
+
+                /* following two conditions handles cases where there is no delimiter between
+                   a normal word and a hashtag or mention. We choose only the first word since
+                   hashtags and mentions are handles separately
+                 */
+                if (word.indexOf("#") !== -1) {
+                    word = word.split("#")[0];
+                }
+                if (word.indexOf("@") !== -1) {
+                    word = word.split("@")[0];
                 }
                 $scope.filteredWords.push(word);
             }
@@ -64,10 +91,16 @@ app.controller("app", function ($scope, $http) {
         });
 
         for (var word in $scope.wordFreq) {
-            data = {};
-            data["text"] = word;
-            data["weight"] = $scope.wordFreq[word];
-            $scope.wordCloudData.push(data);
+            $scope.wordCloudData.push({
+                text: word,
+                weight: $scope.wordFreq[word],
+                handlers: {
+                    click: function(e) {
+                        $scope.tweet = e.target.textContent;
+                        $scope.search();
+                    }
+                }
+            });
         }
 
         $scope.generateWordCloud();
