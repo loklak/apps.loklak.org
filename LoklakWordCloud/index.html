@@ -53,12 +53,30 @@
         </div>
         <div class="row">
           <div class="input-control card">
-            <div class="tweet-input">
-              <input type="text" class="form-control tweet-input-field" placeholder="Enter query word"
-                ng-model="tweet" ng-keyup="$event.keyCode == 13 ? search() : null">
-              <button type="button" class="btn tweet-search" ng-click="search()">
-                <span class="glyphicon glyphicon-search search-icon"></span>
-              </button>
+            <div class="col-md-6">
+              <div class="tweet-input">
+                <input type="text" class="form-control tweet-input-field" placeholder="Enter query word"
+                  ng-model="tweet" ng-keyup="$event.keyCode == 13 ? search() : null">
+                <button type="button" class="btn tweet-search" ng-click="search()">
+                  <span class="glyphicon glyphicon-search search-icon"></span>
+                </button>
+              </div>
+              <div class="date-filters">
+                <input class="start-date form-control date" ng-model="startDate" ng-init="" placeholder="Start Date">
+                <input class="end-date form-control date" ng-model="endDate" ng-init="" placeholder="End Date">
+              </div>
+            </div>
+            <div class="col-md-6 tweet-filters">
+              <strong>Filters</strong>
+              <hr>
+              <div class="filters">
+                <label class="checkbox-inline"><input type="checkbox" value="" ng-model="hashtags">Hashtags</label>
+                <label class="checkbox-inline"><input type="checkbox" value="" ng-model="mentions">Mentions</label>
+                <label class="checkbox-inline"><input type="checkbox" value="" ng-model="tweetbody">Tweet body</label>
+              </div>
+              <div class="filter-all">
+                <span class="select-all" ng-click="selectAll()"> Select all </span>
+              </div>
             </div>
           </div>
         </div>

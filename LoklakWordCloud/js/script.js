@@ -5,6 +5,13 @@ app.controller("app", function ($scope, $http) {
     $scope.wordFreq = {};
     $scope.wordCloudData = [];
     $scope.wordCloud = null;
+    $scope.hashtags = true;
+    $scope.mentions = true;
+    $scope.tweetbody = true;
+    $scope.allSelected = true;
+
+    $(".date").datepicker();
+    $(".date").datepicker( "option", "dateFormat", "yy-mm-dd");
 
     $scope.search = function () {
         $scope.wordFreq = [];
@@ -12,7 +19,20 @@ app.controller("app", function ($scope, $http) {
         $scope.filteredWords = [];
         $scope.wordFreq = {};
         var query = $scope.tweet.startsWith("#") ? $scope.tweet.substring(1) : $scope.tweet;
-        var url = "http://35.184.151.104/api/search.json?callback=JSON_CALLBACK&count=100&q=" + query;
+
+        var queryString = "q=" + query;
+        var sinceDate = $(".start-date").val();
+        var endDate = $(".end-date").val();
+
+        if (sinceDate !== undefined && sinceDate !== "" ) {
+            queryString += "%20since:" + sinceDate;
+        }
+        if (endDate !== undefined && endDate !== "") {
+            queryString += "%20until:" + endDate;
+        }
+
+        var url = "http://35.184.151.104/api/search.json?callback=JSON_CALLBACK&count=100&" + queryString;
+
         $http.jsonp(url)
             .then(function (response) {
                 $scope.createWordCloudData(response.data.statuses);
@@ -21,64 +41,68 @@ app.controller("app", function ($scope, $http) {
     }
     $scope.createWordCloudData = function(data) {
         for (var i = 0; i < data.length; i++) {
-            tweet = data[i];
+            var tweet = data[i];
 
             // use multiple delimiters for splitting
-            tweetWords = tweet.text.split(/[\s,;]+/);
+            if ($scope.tweetbody) {
+                var tweetWords = tweet.text.split(/[\s,;]+/);
+                for (var j = 0; j < tweetWords.length; j++) {
+                    var word = tweetWords[j];
+                    word = word.trim();
+                    if (word === null) {
+                        continue;
+                    }
+                    if (word.startsWith("'") || word.startsWith('"') || word.startsWith("(") || word.startsWith("[")) {
+                        word = word.substring(1);
+                    }
+                    if (word.endsWith("'") || word.endsWith('"') || word.endsWith(")") || word.endsWith("]") ||
+                        word.endsWith("?") || word.endsWith(".")) {
+                        word = word.substring(0, word.length - 1);
+                    }
+                    if ((word.indexOf("<")) !== -1 || (word.indexOf(">") !== -1)) {
+                        continue;
+                    }
 
-            for (var j = 0; j < tweetWords.length; j++) {
-                word = tweetWords[j];
-                word = word.trim();
-                if (word === null) {
-                    continue;
-                }
-                if (word.startsWith("'") || word.startsWith('"') || word.startsWith("(") || word.startsWith("[")) {
-                    word = word.substring(1);
-                }
-                if (word.endsWith("'") || word.endsWith('"') || word.endsWith(")") || word.endsWith("]") ||
-                    word.endsWith("?") || word.endsWith(".")) {
-                    word = word.substring(0, word.length - 1);
-                }
+                    // discard words which contain only digits and nothing else
+                    if (/^[0-9]+([.,][0-9]+)?$/.test(word)) {
+                        continue;
+                    }
+                    word = word.trim();
+                    if (stopwords.indexOf(word.toLowerCase()) !== -1) {
+                        continue;
+                    }
+                    if (word.startsWith("#") || word.startsWith("@")) {
+                        continue;
+                    }
+                    if (word.startsWith("http")) {
+                        continue;
+                    }
 
-                if ((word.indexOf("<")) !== -1 || (word.indexOf(">") !== -1)) {
-                    continue;
+                    /* following two conditions handles cases where there is no delimiter between
+                       a normal word and a hashtag or mention. We choose only the first word since
+                       hashtags and mentions are handled separately
+                     */
+                    if (word.indexOf("#") !== -1) {
+                        word = word.split("#")[0];
+                    }
+                    if (word.indexOf("@") !== -1) {
+                        word = word.split("@")[0];
+                    }
+                    $scope.filteredWords.push(word);
                 }
-
-                // discard words which contain only digits and nothing else
-                if (/^[0-9]+([.,][0-9]+)?$/.test(word)) {
-                    continue;
-                }
-                word = word.trim();
-                if (stopwords.indexOf(word.toLowerCase()) !== -1) {
-                    continue;
-                }
-                if (word.startsWith("#") || word.startsWith("@")) {
-                    continue;
-                }
-                if (word.startsWith("http") || word.startsWith("https")) {
-                    continue;
-                }
-
-                /* following two conditions handles cases where there is no delimiter between
-                   a normal word and a hashtag or mention. We choose only the first word since
-                   hashtags and mentions are handles separately
-                 */
-                if (word.indexOf("#") !== -1) {
-                    word = word.split("#")[0];
-                }
-                if (word.indexOf("@") !== -1) {
-                    word = word.split("@")[0];
-                }
-                $scope.filteredWords.push(word);
             }
 
-            tweet.hashtags.forEach(function (hashtag) {
-                $scope.filteredWords.push("#" + hashtag);
-            });
+            if ($scope.hashtags) {
+                tweet.hashtags.forEach(function (hashtag) {
+                    $scope.filteredWords.push("#" + hashtag);
+                });
+            }
 
-            tweet.mentions.forEach(function (mention) {
-                $scope.filteredWords.push("@" + mention);
-            });
+            if ($scope.mentions) {
+                tweet.mentions.forEach(function (mention) {
+                    $scope.filteredWords.push("@" + mention);
+                });
+            }
         }
 
         $scope.filteredWords.forEach(function (data) {
@@ -118,6 +142,20 @@ app.controller("app", function ($scope, $http) {
             });
         } else {
             $scope.wordCloud = $(".wordcloud").jQCloud('update', $scope.wordCloudData);
+        }
+    }
+
+    $scope.selectAll = function() {
+        $scope.allSelected = !$scope.allSelected;
+
+        if($scope.allSelected) {
+            $scope.hashtags = true;
+            $scope.mentions = true;
+            $scope.tweetbody = true;
+        } else {
+            $scope.hashtags = false;
+            $scope.mentions = false;
+            $scope.tweetbody = false;
         }
     }
 });

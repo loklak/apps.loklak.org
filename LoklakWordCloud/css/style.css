@@ -30,7 +30,6 @@ body {
     flex-direction: row;
     text-align: center;
     justify-content: space-around;
-    margin: 0px 10px;
 }
 
 .tweet-search {
@@ -48,7 +47,7 @@ body {
 }
 
 .input-control {
-    height: 180px;
+    min-height: 180px;
     padding: 20px;
 }
 
@@ -64,4 +63,47 @@ body {
 
 .wordcloud .jqcloud-word {
     cursor: pointer;
+}
+
+.date-filters {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 20px 0px;
+}
+
+.start-date {
+    margin-right: 5px;
+}
+
+.end-date {
+    margin-left: 5px;
+}
+
+.filters {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.filter-all {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+    transition: color 0.3s;
+}
+
+.select-all {
+    border: 1px solid;
+    transition: color 0.3s;
+    border-radius: 4px;
+    padding: 5px;
+    cursor: pointer;
+    color: #757575;
+}
+
+.select-all:hover {
+    color: #212121;
 }
