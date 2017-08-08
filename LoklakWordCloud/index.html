@@ -46,6 +46,7 @@
       </div>
     </nav>
     <div class="main app" ng-controller="app">
+      <div class="snackbar">{{error}}</div>
       <div class="container">
         <div class="row">
           <div class="wordcloud">
@@ -62,8 +63,10 @@
                 </button>
               </div>
               <div class="date-filters">
-                <input class="start-date form-control date" ng-model="startDate" ng-init="" placeholder="Start Date">
-                <input class="end-date form-control date" ng-model="endDate" ng-init="" placeholder="End Date">
+                <input class="start-date form-control date" ng-model="startDate" ng-init="" placeholder="From">
+                <input class="end-date form-control date" ng-model="endDate" ng-init="" placeholder="To">
+              </div>
+              <div ng-if="isLoading" class="loader">
               </div>
             </div>
             <div class="col-md-6 tweet-filters">
