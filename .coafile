@@ -1,7 +1,7 @@
 [default]
 bears = LineLengthBear, SpaceConsistencyBear
 files = **.js, **.css, **.html, **.yml, **.json
-ignore = **.min.js, **.min.css, tweetheatmap/public/lib/**, webtweets/js/bootstrap/**, webtweets/css/bootstrap.css, js/typeahead.bundle.js, webtweets/js/bootstrap.js, **/node_modules/**, **/index_bundle.js, WorldMoodTracker/index.html, emojiHeatmapper/emoji.json, emojiHeatmapper/lib/**
+ignore = **.min.js, **.min.css, tweetheatmap/public/lib/**, webtweets/js/bootstrap/**, webtweets/css/bootstrap.css, js/typeahead.bundle.js, webtweets/js/bootstrap.js, **/node_modules/**, **/index_bundle.js, WorldMoodTracker/index.html, emojiHeatmapper/emoji.json, emojiHeatmapper/lib/**, LoklakWordCloud/js/html2canvas.js
 max_line_length = 129
 use_spaces = True
 

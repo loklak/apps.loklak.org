@@ -11,6 +11,7 @@ app.controller("app", function ($scope, $http) {
     $scope.allSelected = true;
     $scope.error = null;
     $scope.isLoading = false;
+    $scope.download = false;
 
     $(".date").datepicker();
     $(".date").datepicker( "option", "dateFormat", "yy-mm-dd");
@@ -72,6 +73,7 @@ app.controller("app", function ($scope, $http) {
                 $scope.createWordCloudData(response.data.statuses);
                 $scope.tweet = "";
                 $scope.isLoading = false;
+                $scope.download = true;
             });
     }
     $scope.createWordCloudData = function(data) {
@@ -192,5 +194,19 @@ app.controller("app", function ($scope, $http) {
             $scope.mentions = false;
             $scope.tweetbody = false;
         }
+    }
+
+    $scope.export = function() {
+        html2canvas($(".wordcloud"), {
+          onrendered: function(canvas) {
+            var imgageData = canvas.toDataURL("image/png");
+            var newData = imgageData.replace(/^data:image\/png/, "data:application/octet-stream");
+            canvas.style.width = "80%";
+            $(".wordcloud-canvas").html(canvas);
+            $(".save-btn").attr("download", "Wordcloud.png").attr("href", newData);
+            $("#preview").modal('show');
+          },
+          background: "#ffffff"
+        });
     }
 });
