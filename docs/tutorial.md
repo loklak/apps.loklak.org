@@ -78,29 +78,47 @@ to accept th default ones. At any point of time you can quit this process by pre
 present you a preview of the app.json it has created.
 ```
 {
-  "@context": "http://schema.org", 
-  "@type": "SoftwareApplication", 
+  "@context": "http://schema.org",
+  "@type": "SoftwareApplication",
   "permissions": "/api/search.json", 
-  "name": "myfirstloklakapp", 
-  "headline": "My first app with loklak api", 
-  "alternativeHeadline": "My first app with loklak api", 
-  "applicationCategory": "Misc", 
-  "applicationSubCategory": "", 
-  "operatingSystem": "http://loklak.org", 
-  "promoImage": "promo.png", 
+  "name": "myloklakapp",
+  "headline": "My first loklak app",
+  "alternativeHeadline": "My first loklak app",
+  "applicationCategory": "Misc",
+  "applicationSubCategory": "",
+  "operatingSystem": "http://api.loklak.org",
+  "promoImage": "promo.png",
   "appImages": [
-    "preview1.png", 
-    "pr"
+    "preview1.png",
+    "preview2.png"
+  ],
+  "oneLineDescription": "my firest test app",
+  "getStarted": "getStarted.md",
+  "appUse": "appUse.md",
+  "others": "others.md",
+  "appSource": "",
+  "contributors": [
+    {
+      "url": "djmgit.github.io",
+      "name": "deep"
+    }
   ], 
-  "oneLineDescription": "A simple app", 
-  "getStarted": "getStarted.md", 
-  "appUse": "appUse.md", 
-  "others": "others.md", 
+  "techStack": [
+    "HTML",
+    "CSS",
+    "JS"
+  ],
+  "license": {
+    "url": "https://www.gnu.org/licenses/old-licenses/lgpl-2.1",
+    "name": "LGPL 2.1"
+  },
+  "version": "1.0",
+  "updated": "2017-8-7T12:50",
   "author": {
-    "@type": "Person", 
-    "name": "djmgit", 
-    "email": "djmdeveloper060796@gmail.com", 
-    "url": "", 
+    "@type": "Person",
+    "name": "deep",
+    "email": "djmdeveloper060796@gmail.com",
+    "url": "djmgit.github.io",
     "sameAs": ""
   }
 }
@@ -182,23 +200,28 @@ Given below is a sample app.json
   "@context":"http://schema.org",
   "@type":"SoftwareApplication",
   "permissions":"/api/search.json",
-  "name":"whatsTrending",
-  "headline":"Top trending hashtags showing app",
-  "alternativeHeadline":"Top trending hashtags showing app",
+  "name":"MultiLinePlotter",
+  "headline":"App to plot tweet aggregations and statistics",
+  "alternativeHeadline":"App to compare tweet aggregations and statistics",
   "applicationCategory":"Visualizer",
   "applicationSubCategory":"About project",
   "operatingSystem":"http://loklak.org",
   "promoImage":"promo.png",
   "appImages":["disp1.png", "disp2.png", "disp3.png"],
-  "oneLineDescrption":"An applicaton to analyse top trending hashtags on twitter",
+  "oneLineDescription":"An applicaton to visually compare tweet statistics",
   "getStarted":"getStarted.md",
   "appUse":"appUse.md",
-  "others":"others.md",
+  "appSource": "https://github.com/fossasia/apps.loklak.org/tree/master/MultiLinePlotter",
+  "contributors": [{"name": "djmgit", "url": "http://djmgit.github.io/"}],
+  "techStack": ["HTML", "CSS", "AngularJs", "Morris.js", "Bootstrap", "Loklak API"],
+  "license": {"name": "LGPL 2.1", "url": "https://www.gnu.org/licenses/old-licenses/lgpl-2.1"},
+  "version": "1.0",
+  "updated": "June 10,2017",
   "author":{
     "@type":"Person",
     "name":"Deepjyoti Mondal",
     "email":"djmdeveloper060796@gmail.com",
-    "url":"https://github.com/djmgit",
+    "url":"https://djmgit.github.io",
     "sameAs":"https://github.com/djmgit"
   }
 }
@@ -241,6 +264,26 @@ Minimum three preview images of your app of **width 800 pixels** and height mini
 Proper app documentation as mentioned above so that your app can be featured on the store listing page.
 
 **A properly configured app.json in the root directory of your app**
+
+## Making sure your app is ready for getting published
+
+Before publishing your app (as mentioned below) you must make sure your app is ready for being
+published. You can either do this by going through the above guidelines and cross checking whether
+your app satisfies all the point or not or else you can use review tool to automatically review
+your app and get informed about the existing problems in your app.
+
+### Using review script to review your app
+
+In order to automate your app review process, open your app directory in terminal and execute the
+following command.
+
+```
+../bin/review.sh
+
+```
+If your app fails to satisfy any of the points mentioned above, then it will be displayed
+on your terminal and you can take neccessary steps to solve it. Do not forget to re-run review
+script after making changes to make sure that your app has no more problems.
 
 ## Publishing your app
 

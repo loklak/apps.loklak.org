@@ -51,6 +51,23 @@ if __name__ == "__main__":
       print_problem("app directory name and name mentioned in app.json are different")
       print_info("app directory name and name mentioned in app.json must be same")
       problems_no += 1
+    if len(app_json.get("name")) > 16:
+      print_problem("app name size should be less than or equal to 16 characters")
+      problems_no += 1
+
+  if app_json.get("headline") == None:
+    print_problem("key headline is missing")
+    print_info("app.json must contain key headline")
+    problems_no += 1
+  else:
+    if (app_json.get("headline") == ""):
+      print_problem("headline cannot be empty")
+      problems_no += 1
+    else:
+      if len(app_json.get("headline")) > 45:
+        print_problem("headline size should be less than or equal to 45 characters")
+        problems_no += 1
+
   
   if app_json.get("applicationCategory") == None:
     print_problem("key applicationCategory missing in app.json")
@@ -69,6 +86,10 @@ if __name__ == "__main__":
     if app_json.get("oneLineDescription") == "":
       print_problem("oneLineDescription cannot be an empty string")
       problems_no += 1
+    else:
+      if len(app_json.get("oneLineDescription")) > 50:
+        print_problem("oneLineDescription size should be less than or equal to 50 characters")
+        problems_no += 1
   
   if app_json.get("author") == None:
     print_problem("author object missing in app.json")
@@ -109,6 +130,33 @@ if __name__ == "__main__":
         else:
           print_problem(image +" does not exists")
         problems_no += 1
+
+  if app_json.get("version") == None:
+    print_problem("version is missing")
+    print_info("app.json must specify version of the app")
+    problems_no += 1
+  else:
+    if app_json.get("version") == "":
+      print_problem("app version cannot be empty")
+      problems_no += 1
+
+  if app_json.get("updated") == None:
+    print_problem("last update date is missing")
+    print_info("app.json must specify the last update date")
+    problems_no += 1
+  else:
+    if app_json.get("updated") == "":
+      print_problem("last update date cannot be empty")
+      problems_no += 1
+
+  if app_json.get("techStack") == None:
+    print_problem("key techstack is missing")
+    print_info("app.json must specify the technology stack used in the app")
+    problems_no += 1
+  else:
+    if app_json.get("techStack") == "":
+      print_problem("techStach cannot be empty")
+      problems_no += 1
   
   if problems_no > 0:
     print_problem("Number of problems detected : " + str(problems_no))
