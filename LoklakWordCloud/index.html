@@ -19,6 +19,7 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link rel="stylesheet" type="text/css" href="css/jqcloud.min.css">
     <script type="text/javascript" src="js/jqcloud.min.js"></script>
+    <script type="text/javascript" src="js/html2canvas.js"></script>
   </head>
   <body>
     <nav class="navbar navbar-default navbar-custom navbar-custom">
@@ -46,6 +47,26 @@
       </div>
     </nav>
     <div class="main app" ng-controller="app">
+      <div id="preview" class="modal fade" role="dialog">
+        <div class="modal-dialog preview-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Preview image</h4>
+            </div>
+            <div class="modal-body canvas-body">
+              <div class="wordcloud-canvas" id="wordcloud-canvas">
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default modal-button" data-dismiss="modal">Close</button>
+              <a type="button" class="btn btn-default btn-sm save-btn" href="http://www.google.com">
+                <span class="glyphicon glyphicon-save"></span> Save
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="snackbar">{{error}}</div>
       <div class="container">
         <div class="row">
@@ -71,6 +92,7 @@
             </div>
             <div class="col-md-6 tweet-filters">
               <strong>Filters</strong>
+              <a class="export" ng-click="export()" ng-if="download">Export as image</a>
               <hr>
               <div class="filters">
                 <label class="checkbox-inline"><input type="checkbox" value="" ng-model="hashtags">Hashtags</label>

@@ -174,3 +174,31 @@ body {
     from {bottom: 30px; opacity: 1;}
     to {bottom: 0; opacity: 0;}
 }
+
+.export {
+    cursor: pointer;
+    float: right;
+    color: #C8254D;
+}
+
+.export:hover {
+    text-decoration: none;
+    color: #C8254D;
+}
+
+.export:focus {
+    text-decoration: none;
+    color: #C8254D;;
+}
+
+.canvas-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.preview-dialog {
+    width: 80%;
+    margin: auto;
+}
