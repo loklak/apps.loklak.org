@@ -66,7 +66,7 @@ app.controller("app", function ($scope, $http) {
             queryString += "%20until:" + endDate;
         }
 
-        var url = "http://35.184.151.104/api/search.json?callback=JSON_CALLBACK&count=100&" + queryString;
+        var url = "http://api.loklak.org/api/search.json?callback=JSON_CALLBACK&count=100&" + queryString;
         $scope.isLoading = true;
         $http.jsonp(url)
             .then(function (response) {

@@ -104,7 +104,7 @@ app.controller('search', function ($scope, $http) {
     $scope.loading = 'Loading...'
     $scope.loaded = false;
     timezoneOffset = new Date().getTimezoneOffset();
-    $http.jsonp('http://loklak.org/api/search.json?callback=JSON_CALLBACK&q=' + query +
+    $http.jsonp('http://api.loklak.org/api/search.json?callback=JSON_CALLBACK&q=' + query +
                 '&timezoneOffset=' + timezoneOffset)
     .success(function(data, status, headers, config) {
       //$scope.result = data;

@@ -28,7 +28,7 @@ window.loklakFetcher = (function () {
             }
 
         // Create the URL with all the parameters
-            var url = 'http://104.198.122.124/api/search.json' +
+            var url = 'http://api.loklak.org/api/search.json' +
                 '?callback=loklakFetcher.handleData' +
                 '&q=' + query +
                 '&source=' + options.source +
