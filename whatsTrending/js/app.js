@@ -1,6 +1,6 @@
 var app = angular.module('Trending', []);
 app.controller('getHash', ['$scope', '$http', '$q', '$sce', function($scope, $http, $q, $sce) {
-    $scope.queryUrl = "http://loklak.org/api/search.json?callback=JSON_CALLBACK&" +
+    $scope.queryUrl = "http://api.loklak.org/api/search.json?callback=JSON_CALLBACK&" +
                       "q=since:2016-06-01&source=cache&count=0&fields=hashtags&limit=10";
     $scope.count = 10;
     $scope.startdate = "2016-06-01";

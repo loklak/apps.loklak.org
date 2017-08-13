@@ -1,7 +1,7 @@
 function searchTweets() { // Query the loklak.org API
   var film = document.getElementById('film').value;
 
-  var url = 'http://loklak.org/api/search.json?q=' + film + ' film&minified=true&callback=updateResults';
+  var url = 'http://api.loklak.org/api/search.json?q=' + film + ' film&minified=true&callback=updateResults';
 
   document.body.removeChild(document.getElementById('loklakAPICall'));  // Delete old script calls
 

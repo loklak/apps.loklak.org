@@ -77,8 +77,7 @@ app.controller("app", function ($scope, $http) {
             query += "%20until:" + endDate;
         }
 
-        // Change base url to api.loklak.org later
-        var url = "http://35.184.151.104/api/search.json?callback=JSON_CALLBACK&" + query;
+        var url = "http://api.loklak.org/api/search.json?callback=JSON_CALLBACK&" + query;
         var count = $(".count").val();
         if (count !== undefined && count !== "") {
             url  += "&count=" + count;
