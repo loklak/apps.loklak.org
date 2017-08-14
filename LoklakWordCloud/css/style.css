@@ -202,3 +202,13 @@ body {
     width: 80%;
     margin: auto;
 }
+
+.type {
+    float: right;
+}
+
+.select-type {
+    color: #C8254D;
+    margin-left: 16px;
+    cursor: pointer;
+}

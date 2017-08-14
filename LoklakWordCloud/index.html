@@ -92,6 +92,15 @@
             </div>
             <div class="col-md-6 tweet-filters">
               <strong>Filters</strong>
+              <div class="dropdown type" ng-if="download">
+                <div class="dropdown-toggle select-type" data-toggle="dropdown">
+                  {{imageType}}
+                <span class="caret"></span></div>
+                <ul class="dropdown-menu">
+                  <li ng-click="changeType('png', 'png')"><a href="">png</a></li>
+                  <li ng-click="changeType('jpeg', 'jpg')"><a href="">jpeg</a></li>
+                </ul>
+              </div>
               <a class="export" ng-click="export()" ng-if="download">Export as image</a>
               <hr>
               <div class="filters">

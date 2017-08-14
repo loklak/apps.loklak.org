@@ -12,6 +12,8 @@ app.controller("app", function ($scope, $http) {
     $scope.error = null;
     $scope.isLoading = false;
     $scope.download = false;
+    $scope.imageType = "jpeg";
+    $scope.imageExt = "jpg";
 
     $(".date").datepicker();
     $(".date").datepicker( "option", "dateFormat", "yy-mm-dd");
@@ -19,6 +21,11 @@ app.controller("app", function ($scope, $http) {
     $scope.showError = function() {
         $(".snackbar").addClass("show");
         setTimeout(function(){ $(".snackbar").removeClass("show") }, 3000);
+    }
+
+    $scope.changeType = function(type, ext) {
+        $scope.imageType = type;
+        $scope.imageExt = ext;
     }
 
     $scope.search = function () {
@@ -199,11 +206,15 @@ app.controller("app", function ($scope, $http) {
     $scope.export = function() {
         html2canvas($(".wordcloud"), {
           onrendered: function(canvas) {
-            var imgageData = canvas.toDataURL("image/png");
-            var newData = imgageData.replace(/^data:image\/png/, "data:application/octet-stream");
+            var imgageData = canvas.toDataURL("image/" + $scope.imageType);
+            var regex = /^data:image\/jpeg/;
+            if ($scope.imageType === "png") {
+                regex = /^data:image\/png/;
+            }
+            var newData = imgageData.replace(regex, "data:application/octet-stream");
             canvas.style.width = "80%";
             $(".wordcloud-canvas").html(canvas);
-            $(".save-btn").attr("download", "Wordcloud.png").attr("href", newData);
+            $(".save-btn").attr("download", "Wordcloud." + $scope.imageExt).attr("href", newData);
             $("#preview").modal('show');
           },
           background: "#ffffff"
