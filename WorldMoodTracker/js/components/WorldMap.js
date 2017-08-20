@@ -7,10 +7,11 @@ import {getScores} from '../utils/score';
 import {getColor, getColorsForCountries} from '../utils/color';
 import {host} from '../index';
 import {getFromCache, updateCache} from '../utils/cache';
+import {reverseCountryCode} from "../utils";
 
 export default class WorldMap extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             map: null
         };
@@ -181,9 +182,15 @@ export default class WorldMap extends React.Component {
     }
 
     componentDidMount() {
+        let props = this.props;  // Can't be accessed with Datamap's done callback
         this.setState({
             map: new Datamap({
                 element: document.getElementById('map-container'),
+                done: function(datamap) {
+                    datamap.svg.selectAll('.datamaps-subunit').on('click', function (geography) {
+                        props.showStream(geography.properties.name, reverseCountryCode(geography.id));
+                    })
+                },
                 responsive: true,
                 fills: {defaultFill: 'rgba(200,200,200,0.8)'},
                 geographyConfig: {
