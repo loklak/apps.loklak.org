@@ -19,3 +19,5 @@ dist/loklak.jar
 
 # Node modules for sub apps
 **/node_modules
+
+./node_modules

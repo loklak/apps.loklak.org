@@ -32,9 +32,6 @@ app.filter("reverse", function () {
 });
 
 angular.element(document).ready(function () {
-  $(".menu-btn").click(function () {
-    //$("#navSidebar").show();
-  });
   var navString = "";
   var winLocation = window.location.href;
   $.getJSON("/cms/topmenu.json", function (data) {
