@@ -1,0 +1,10 @@
+{
+    "scripts": {
+        "update-driver": "./node_modules/protractor/bin/webdriver-manager update",
+        "start-driver": "./node_modules/protractor/bin/webdriver-manager start",
+        "test": "./node_modules/protractor/bin/protractor conf.js"
+    },
+    "dependencies": {
+        "protractor": "^5.1.2"
+    }
+}
