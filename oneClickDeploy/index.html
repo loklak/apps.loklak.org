@@ -77,6 +77,16 @@
           </a>
         </div>
       </div>
+      <div class="panel panel-default cardResize">
+        <div class="panel-heading">Azure Deployment
+        </div>
+        <div class="panel-body">
+          <a href="https://deploy.azure.com/?repository=https://github.com/loklak/loklak_server">
+            <img src="https://azuredeploy.net/deploybutton.svg"
+                 alt="Deploy to Azure">
+          </a>
+        </div>
+      </div>
     </div>
     <div class="graph right">
     </div>
@@ -103,7 +113,7 @@
       };
       peersList = json.peers;
       loklakObject = {
-        name:'loklak.org', x:0, y:0}
+        name:'api.loklak.org', x:0, y:0}
       nodes.push(loklakObject);
       count = getRandomInt(10,70);
       for (var i=0; i<peersList.length; i++) {
