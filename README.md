@@ -96,9 +96,10 @@ Some of the applications in the repository include-
 
 You need to have NodeJS and NPM. To run Loklak Apps locally, follow the next steps
 
-1. Install http-server by running the command ```npm install -g http-server```
-2. Navigate the ```apps.loklak.org``` folder
-3. Run the command ```http-server -o``` and the app will open on your default browser.
+1. Open apps.loklak.org project directory in terminal
+2. Run ```npm install```
+3. Run ```npm start```
+4. This starts the development server at port 8080. Open browser and visit http://127.0.0.1:8080
 
 ## How to run tests
 
@@ -106,9 +107,9 @@ Loklak apps site uses jasmine testing framework with protractor for testing.
 To run the tests follow the steps mentioned below.
 
 1. Open the project directory in terminal.
-2. Run ```npm install```
+2. Run ```npm install``` if you have not already
 3. Run ```npm run update-driver```
-4. Run Loklak apps at port 5000 using ```http-server -p 5000```
+4. Run Loklak apps using ```npm start```
 5. Run ```npm run start-driver```
 6. Finally start tests using ```npm test```
 

@@ -2,7 +2,7 @@
 
 describe("Testing Loklak apps home page", function() {
   beforeEach(function() {
-    browser.get("http://127.0.0.1:5000/");
+    browser.get("http://127.0.0.1:8080/");
   });
 
   it("should have a category name", function() {
@@ -41,7 +41,7 @@ describe("Testing Loklak apps home page", function() {
     categoryIds.forEach(function(id, index) {
       element(by.id(categoryIds[index])).click().then(function() {
         browser.getCurrentUrl().then(function(url) {
-          expect(url).toBe("http://127.0.0.1:5000/#/" + categoryIds[index]);
+          expect(url).toBe("http://127.0.0.1:8080/#/" + categoryIds[index]);
         });
         element(by.id("categoryName")).getText().then(function(text) {
           expect(text).toBe(categoryNames[index]);

@@ -1,10 +1,12 @@
 {
     "scripts": {
+        "start": "./node_modules/http-server/bin/http-server",
         "update-driver": "./node_modules/protractor/bin/webdriver-manager update",
         "start-driver": "./node_modules/protractor/bin/webdriver-manager start",
         "test": "./node_modules/protractor/bin/protractor conf.js"
     },
     "dependencies": {
+        "http-server": "^0.10.0",
         "protractor": "^5.1.2"
     }
 }
