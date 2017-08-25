@@ -227,7 +227,7 @@ if __name__ == "__main__" :
   index_html.close()
 
   app_json_file = open("app.json", 'w')
-  app_json_file.write(json.dumps(app_json, indent=2))
+  app_json_file.write('{}\n'.format(json.dumps(app_json, indent=2, separators=(',', ': '))))
   app_json_file.close()
 
   get_started_md = open("getStarted.md", 'w')
