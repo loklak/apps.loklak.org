@@ -285,6 +285,21 @@ If your app fails to satisfy any of the points mentioned above, then it will be 
 on your terminal and you can take neccessary steps to solve it. Do not forget to re-run review
 script after making changes to make sure that your app has no more problems.
 
+### Exposing your app on Loklak app wall
+
+When you visit Loklak apps site, you are presented with a number of tiles each displaying name, heading
+and author name of individual apps. Now after you create your app, you will also want to list your app
+on Loklak app wall. This can be done very easily using updatewall script. Open your app directory in terminal
+and execute the following
+
+```
+../bin/updatewall.sh
+
+```
+This will expose your app on Loklak app wall. If the app is already present on Loklak app wall then
+the above script will update Loklak app wall with the new changes you have made to your app.
+
+
 ## Publishing your app
 
 So finally your app is ready to be published and showcased on apps.loklak.org.
