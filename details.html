@@ -47,7 +47,21 @@
       </div>
     </nav>
     <div class="main app" ng-controller="detailsApp">
-      <div class="row">
+      <div ng-if="notFound" class="not-found">
+        <span class="brand-and-image">
+          <img src="images/loklak_icon.png">
+          <span class="loklak-brand"> <span class="loklak-header">
+            loklak </span> <span>apps</span>
+          </span>
+        </span>
+        <span class="error-404">
+          Error: Requested app not found
+        </span>
+        <span class="go-back">
+          <a href="/"> Go Back to Home Page >> </a>
+        </span>
+      </div>
+      <div ng-if="found" class="row">
         <div class="col-md-3">
           <div class="menu-drawer">
             <img src="images/sidebar-images/menu.png">

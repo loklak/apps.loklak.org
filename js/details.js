@@ -9,6 +9,9 @@ app.controller("detailsApp", function ($scope, $http) {
     $scope.selectedApp = null;
     $scope.appData = null;
     $scope.isOthers = false;
+    $scope.found = false;
+    $scope.notFound = false;
+    $("nav").hide();
     var converter = new showdown.Converter();
     var addr = window.location + "";
     if (addr.indexOf("?") !== -1) {
@@ -80,8 +83,13 @@ app.controller("detailsApp", function ($scope, $http) {
         for (var i = 0; i < $scope.apps.length; i++) {
             if ($scope.apps[i].name === $scope.appName) {
                 $scope.selectedApp = $scope.apps[i];
+                $scope.found = true;
+                $("nav").show();
                 break;
             }
+        }
+        if ($scope.found == false) {
+            $scope.notFound = true;
         }
     }
 
