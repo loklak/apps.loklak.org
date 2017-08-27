@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="TweetSearch">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Twitter Followers Insight</title>
+        <!-- Bootstrap core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <link rel="stylesheet" href="css/ie10-viewport-bug-workaround.css">
+        <!-- Custom styles for this template -->
+        <link href="css/starter-template.css" rel="stylesheet">
+        <link href="css/infoboxstyle.css" rel="stylesheet">
+        <script src="../../js/angular.min.js"></script>
+        <script src="js/script.js"></script>
+        <script src="../../js/jquery.min.js"></script>
+        <script src="js/highcharts.min.js"></script>
+        <script src="js/exporting.min.js"></script>
+    </head>
+    <body ng-controller="Controller">
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed"
+                        data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">Twitter Followers Insight
+                    </a>
+                </div>
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <form class="navbar-form hidden-xs ng-pristine ng-valid">
+                            <div class="form-group">
+                                <div class="input-group input-group-xs ">
+                                    <input name="q" type="text" id="query"
+                                        class="form-control" ng-model="query"
+                                        title="Search Twitter and the loklak network"
+                                        placeholder="Search for a User"
+                                        ng-init="query = ''"
+                                        ng-keyup="$event.keyCode == 13 ? Search() : null"
+                                        >
+                                    <span class="input-group-btn">
+                                        <button class="btn btn btn-primary" href='#'
+                                            type="button" id="button"
+                                            ng-click="Search()">Search
+                                        </button>
+                                    </span>
+                                    <div class="snackbar">{{error}}</div>
+                                </div>
+                            </div>
+                        </form>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div>
+            <br></br>
+            <center>
+            <h1>User Name: {{query}}</h1>
+                <div ng-if="spinner && !followersStatus && !followingStatus">
+                    <img src="loading.gif" height="400" width="400"/>
+                </div>
+            </center>
+            <div style="width: 100%;margin: 0 auto;">
+                <div style="width: 50%;min-height: 400px;float: left;" class="pie-chart"></div>
+                <div style="width: 50%;min-height: 400px;float: left;" class="pie-chart2"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div ng-if="followersStatus" class = "info-box">
+                        <center>
+                            <h2>Followers: {{ followersCount }}</h2>
+                        </center>
+                        <ul class="gallery-container" >
+                            <li class="gallery-item" style="list-style-type: none;"
+                                ng-repeat="value in followersStatus | limitTo: limitFollowers">
+                                <a href ng-click="Search(value[0])">
+                                    <div class="item-image">
+                                        <img src="{{ value[1] }}" style="height: 94px;width: 94px" />
+                                    </div>
+                                    <div class="item-desc">
+                                        <div class="item-name">
+                                            {{ value[2] }}
+                                        </div>
+                                        <div class="item-handle">
+                                            @{{ value[0] }}
+                                        </div>
+                                        <div class="item-followers">
+                                            <span class="item-label">Followers: </span>
+                                            <span class="item-content">{{ value[3] }}</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <button style="width:120px;text-align:center;margin:auto" class="more btn btn-primary btn-block"
+                        ng-click="loadMoreFollowers()">Load More!</button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div ng-if="followingStatus" class= "info-box">
+                        <center>
+                            <h2>Following: {{ followingCount }}</h2>
+                        </center>
+                        <ul class="gallery-container">
+                            <li class="gallery-item" style="list-style-type: none;"
+                                ng-repeat="value in followingStatus | limitTo: limitFollowing">
+                                <a href ng-click="Search(value[0])">
+                                    <div class="item-image">
+                                        <img src="{{ value[1] }}" style="height: 94px;width: 94px"/>
+                                    </div>
+                                    <div class="item-desc">
+                                        <div class="item-name">
+                                            {{ value[2] }}
+                                        </div>
+                                        <div class="item-handle">
+                                            @{{ value[0] }}
+                                        </div>
+                                        <div class="item-followers">
+                                            <span class="item-label">Followers: </span>
+                                            <span class="item-content">{{ value[3] }}</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <button style="width:120px;text-align:center;margin:auto" class="more btn btn-primary btn-block"
+                        ng-click="loadMoreFollowing()">Load More!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
