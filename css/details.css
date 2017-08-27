@@ -285,6 +285,34 @@ body {
     margin: 2px;
 }
 
+.not-found {
+    position: absolute;
+    top: 12%;
+    left: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Courier New";
+    text-decoration: none;
+    color: rgb(51,51,51);
+    min-height: 400px;
+    text-align: center;
+    margin: 20px;
+}
+
+.brand-and-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 240px;
+}
+
+.error-404 {
+    font-size: 28px;
+}
+
 @media (max-width: 960px) {
     .sidebar {
         width: 0px;
