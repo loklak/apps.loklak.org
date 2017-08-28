@@ -3,7 +3,7 @@ body {
 }
 
 .navbar-custom {
-    padding: 12px;
+    padding: 15px;
     background-color: #F1F1F1;
     margin-bottom: 0px;
 }
@@ -11,8 +11,9 @@ body {
 .loklak-brand {
     font-family: "Courier New";
     font-size: 35px;
+    height: 50px;
+    padding: 15px 0;
     text-decoration: none;
-    line-height: 20px;
     color: rgb(51,51,51);
     line-height: 20px;
 }
@@ -46,11 +47,11 @@ body {
 
 .sidebar {
     position: fixed;
-    width: 16%;
+    width: 17%;
     background-color: #F1F1F1;
     height: 100%;
     overflow-y: auto;
-    margin-top: 75px;
+    margin-top: 81px;
     transition: all 0.3s;
 }
 
@@ -262,7 +263,7 @@ body {
 }
 
 .add-info {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .dropdown {
@@ -311,6 +312,21 @@ body {
 
 .error-404 {
     font-size: 28px;
+}
+
+.contribute {
+    color: black;
+    margin: 20px;
+    text-decoration: none;
+}
+
+.contribute a {
+    color: rgb(119, 119, 119);
+    text-decoration: none;
+}
+
+.contribute a:hover {
+    color: black;
 }
 
 @media (max-width: 960px) {
