@@ -1,0 +1,31 @@
+{
+  "@context": "http://schema.org",
+  "@type": "SoftwareApplication",
+  "permissions": [
+    "/api/user.json"
+  ],
+  "name": "TwitterFollowersInsight",
+  "headline": "Twitter Followers Insight",
+  "alternativeHeadline": "Twitter Followers Insight",
+  "applicationCategory": "Visualizer",
+  "applicationSubCategory": "Text Retrieval",
+  "getStarted":"getStarted.md",
+  "appUse":"appUse.md",
+  "promoImage":"promo.png",
+  "appImages":["disp1.png", "disp2.png", "disp3.png"],
+  "oneLineDescription":"Application which shows country wise distribution of followers",
+  "operatingSystem": "http://api.loklak.org",
+  "contributors": [{"name": "kavithaenair"}],
+  "appSource": "https://github.com/fossasia/apps.loklak.org/tree/master/TwitterFollowersInsight",
+  "techStack": ["HTML", "CSS", "AngularJs", "Bootstrap", "Loklak API", "HighCharts"],
+  "license": {"name": "LGPL 2.1", "url": "https://www.gnu.org/licenses/old-licenses/lgpl-2.1"},
+  "version": "1.0",
+  "updated": "August 29,2017",
+  "author": {
+    "@type": "Person",
+    "name": "Kavitha E Nair",
+    "email": "kavitha.nair09@gmail.com",
+    "url": "https://github.com/kavithaenair",
+    "sameAs": "https://github.com/kavithaenair"
+  }
+}
