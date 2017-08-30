@@ -3,8 +3,8 @@
 [![Join the chat at https://gitter.im/loklak/loklak](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/loklak/loklak)
 [![Percentage of issues still open](http://isitmaintained.com/badge/open/fossasia/apps.loklak.org.svg)](http://isitmaintained.com/project/fossasia/apps.loklak.org "Percentage of issues still open")
 [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/fossasia/apps.loklak.org.svg)](http://isitmaintained.com/project/fossasia/apps.loklak.org "Average time to resolve an issue")
-[![Twitter](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Wow%20Check%20Loklak%20on%20@gitHub%20@lklknt:%20https://github.com/fossasia/apps.loklak.org%20&url=%5Bobject%20Object%5D)
-[![Twitter Follow](https://img.shields.io/twitter/follow/lklknt.svg?style=social&label=Follow&maxAge=2592000?style=flat-square)](https://twitter.com/lklknt)
+[![Twitter](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Wow%20Check%20Loklak%20on%20@gitHub%20@loklak_:%20https://github.com/fossasia/apps.loklak.org%20&url=%5Bobject%20Object%5D)
+[![Twitter Follow](https://img.shields.io/twitter/follow/loklak_.svg?style=social&label=Follow&maxAge=2592000?style=flat-square)](https://twitter.com/loklak_)
 
 Loklak is a server application which is able to collect messages from various sources, including Twitter. The server contains a search index and a peer-to-peer index sharing interface. All messages are stored in an elasticsearch index. An automatic deployment from the development branch at GitHub is available for testing here https://loklak-server-dev.herokuapp.com
 
@@ -48,6 +48,21 @@ Some of the applications in the repository include-
 - yasoob, a loklak search page
 - yathannsh, a loklak search page
 - newyear, a page that displays new year tweets using the loklak api
+- CountryTweetMap, an app to plot and compare tweet frequency on map
+- LoklakWordCloud, an app to generate Word Cloud using Loklak
+- MultiLinePlotter, an application to visually compare tweet statistics
+- TwitterFollowersInsight, an application to visually check followers country vice aggregation
+- WorldMoodTracker, an app track mood of people from around the globe
+- collegeElections, an application to conduct and evaluate college Elections
+- compareTwitterProfiles, an application which shows comparison between two twitter profiles
+- emojiHeatmap, an app which shows emoji usage in twitter
+- emojiHeatmapper, an application which shows tweets contatining emoji as Emoji-heatmap and Emoji-map
+- whatsTrending, an applicaton to get top trending hashtags on twitter
+- loklakGoApi, Library for using loklak API from Go
+- loklakJavaApi, Library containing the methods for using loklak API
+- loklakNodejsApi, Library for using loklak API from NodeJs
+- loklakPythonApi, API for python as a replacement for twitter API
+- loklakRubyApi, API wrapper to use loklak API from Ruby
 
 ## How to create a loklak app
 
