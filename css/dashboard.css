@@ -5,9 +5,7 @@
 .list-group-item li {
   color:black;
 }
-.sidebar, .sidebar a {
 
-}
 .sidebar a:hover {
   text-decoration: none;
 }
@@ -167,8 +165,7 @@ pre {
   padding-bottom: 0px;
   border-color: #999;
 }
-.navbar-header{
-}
+
 .input-group-btn{
   display: inline;
   margin: 0px;
@@ -212,7 +209,7 @@ pre {
   .navbar-header {
     float: none;
   }
-  .navbar-left,.navbar-right {
+  .navbar-left, .navbar-right {
     float: none !important;
   }
   .navbar-toggle {
