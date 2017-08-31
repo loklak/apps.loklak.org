@@ -5,6 +5,7 @@ app.controller("app_list", function ($scope, $http) {
     $scope.categoryKeys = [];
     var suggestionList = [];
     $scope.category = null;
+    $scope.notFound = false;
     var addr = window.location + "";
     if (addr.indexOf("#") !== -1) {
         $scope.category = addr.split('#')[1];
@@ -55,6 +56,23 @@ app.controller("app_list", function ($scope, $http) {
             $('#categoryName')[0].innerHTML = 'All apps';
             $('div.span2').show();
         }
+    }
+
+    $scope.checkApp = function() {
+        for (var i = 0; i < $scope.apps.length; i++) {
+            var app = $scope.apps[i];
+            var searchTerm = $scope.searchTerm;
+            if (
+               ((app.name.toUpperCase().indexOf(searchTerm.toUpperCase())!==-1) ||
+               (app.headline.toUpperCase().indexOf(searchTerm.toUpperCase())!==-1) ||
+               (app.author.name.toUpperCase().indexOf(searchTerm.toUpperCase())!==-1))) {
+                $scope.notFound = false;
+                $(".not-found").html("");
+                return;
+            }
+        }
+        $scope.notFound = true;
+        $(".not-found").html("No matching app found!");
     }
 });
 
