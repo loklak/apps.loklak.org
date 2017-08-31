@@ -32,7 +32,7 @@
     <script src="js/typeahead.bundle.js"></script>
     <script type="text/javascript" src="js/navdrawer-main.js"></script>
   </head>
-  <body data-spy="scroll" data-target="#navSidebar" data-offset="50">
+  <body data-spy="scroll" data-target="#navSidebar" data-offset="50" ng-app="loklak" ng-controller="app_list">
     <nav class="navbar navbar-fixed-top navbar-light navbar-color">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -49,7 +49,7 @@
           </a>
           <div class="form-group search">
             <input type="text" class="form-control" id="usr" ng-model="searchTerm"
-              ng-init="searchTerm = ''" placeholder="Search apps by app name or author's name">
+              ng-init="searchTerm = ''" placeholder="Search apps by app name or author's name" ng-change="checkApp()">
             <span class="input-group-btn">
               <button class="btn loklak-btn" type="submit">
                 <span class="glyphicon glyphicon-search"></span>
@@ -64,7 +64,7 @@
         </div>
       </div>
     </nav>
-    <div class="container-fluid main-page" ng-app="loklak" ng-controller="app_list">
+    <div class="container-fluid main-page">
       <div class="row">
         <div class="menu-drawer">
           <span class="glyphicon glyphicon-chevron-right"></span>
@@ -149,10 +149,12 @@
           </center>
         </div>
       </div>
+      <div class="not-found" ng-if="notFound">
+      </div>
     </div>
-      <script src="app_list.js"></script>
-      <script src="js/bootstrap.min.js" async></script>
-      <script src="js/ie10-viewport-bug-workaround.js" async></script>
-      <script src="js/typeahead.bundle.js" async></script>
+    <script src="app_list.js"></script>
+    <script src="js/bootstrap.min.js" async></script>
+    <script src="js/ie10-viewport-bug-workaround.js" async></script>
+    <script src="js/typeahead.bundle.js" async></script>
   </body>
 </html>
