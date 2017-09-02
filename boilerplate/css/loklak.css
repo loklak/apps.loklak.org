@@ -1,0 +1,52 @@
+/* Move down content because we have a fixed navbar that is 50px tall */
+@font-face {
+  font-family: 'Droid Sans Mono';
+  font-style: normal;
+  font-weight: 400;
+  src:
+  local('Droid Sans Mono'),
+  local('DroidSansMono'),
+  url('../fonts/DroidSansMono.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/DroidSansMono.woff') format('woff'),
+  url('../fonts/DroidSansMono.ttf')  format('truetype'),
+  url('../fonts/DroidSansMono.svg#svgFontName') format('svg');
+}
+
+@font-face {
+    font-family: 'MyFontFamily';
+    src:
+    url('myfont-webfont.eot?#iefix') format('embedded-opentype'),
+    url('myfont-webfont.woff') format('woff'),
+    url('myfont-webfont.ttf')  format('truetype'),
+    url('myfont-webfont.svg#svgFontName') format('svg');
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+
+body {
+  padding-top: 50px;
+  font: Roboto;
+}
+
+.color-black{
+  color: black;
+}
+
+.navbar-color{
+  background-color: #f1f1f1;
+}
+
+.navbar-collapse-button{
+  border: 1px solid #551a8e;
+}
+
+.navbar-collapse-button span.icon-bar{
+  background-color: #551a8e;
+}
+
+.hidden a:visited{
+  color: gray;
+}
