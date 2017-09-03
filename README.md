@@ -85,6 +85,10 @@ Some of the applications in the repository include-
     that the app calls. This is used to apply authorization markers to the app, so it becomes visible if the app
     is actually usable for the user. Examples:
     ```"permissions":"/api/suggest.json"```, or ```"permissions":"/api/settings.json,/api/account.json"```
+  - Alternatively, you can use **loklakinit** tool to automatically create your app directory structure, app.json
+    and initial dummy HTML, CSS, JS and documentation files to quickly get you started with your development work.
+    Learn more about the use of loklakinit tool [here](To know more in details about **developing a Loklak app**, preparing your app for **store listing** and updating Loklak
+    app wall with your new app, please follow this [tutorial](https://github.com/fossasia/apps.loklak.org/blob/master/docs/tutorial.md).
 
 2. Check quality of your app
   - Do a json-ld validation: use https://developers.google.com/structured-data/testing-tool/ to check your ```app.json```
@@ -106,6 +110,9 @@ Some of the applications in the repository include-
 3. Publish your app
   - Send a pull request to https://github.com/fossasia/apps.loklak.org
   - All your files must be contained into one commit
+
+To know more in details about **developing a Loklak app**, preparing your app for **store listing** and updating Loklak
+    app wall with your new app, please follow this [tutorial](https://github.com/fossasia/apps.loklak.org/blob/master/docs/tutorial.md)
 
 ## How to run Loklak Apps locally
 
@@ -140,7 +147,8 @@ Please help us follow the best practice to make it easy for the reviewer as well
  * Reference the issue numbers in the commit message. Follow the pattern ``` Fixes #<issue number> <commit message>```
  * Follow uniform design practices. The design language must be consistent throughout the app.
  * The pull request will not get merged until and unless the commits are squashed. In case there are multiple commits on the PR, the commit author needs to squash them and not the maintainers cherrypicking and merging squashes.
- * If the PR is related to any front end change, please attach relevant screenshots in the pull request description.
+ * If the PR is related to any front end change, please provide link to a sample deployment of the site with the
+   changes you have made.
 
 ## What is the software license?
 
