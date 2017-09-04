@@ -8,7 +8,7 @@
       "alternativeHeadline": "Application which converts web pages into structured data",
       "applicationCategory": "Scraper",
       "applicationSubCategory": "JSON Object Retrieval",
-      "operatingSystem": "http://loklak.org",
+      "operatingSystem": "http://api.loklak.org",
       "author": {
         "@type": "Person",
         "name": "Damini Satya",
@@ -26,7 +26,7 @@
       "alternativeHeadline": "work from GCI task",
       "applicationCategory": "Scraper",
       "applicationSubCategory": "About project",
-      "operatingSystem": "http://loklak.org",
+      "operatingSystem": "http://api.loklak.org",
       "author": {
         "@type": "Person",
         "name": "Seva Zhidkov",
@@ -44,7 +44,7 @@
       "alternativeHeadline": "A loklak tweet search page using Angular.js",
       "applicationCategory": "Scraper",
       "applicationSubCategory": "Text Retrieval",
-      "operatingSystem": "http://loklak.org",
+      "operatingSystem": "http://api.loklak.org",
       "author": {
         "@type": "Person",
         "name": "Duc Phan Duy",
@@ -62,7 +62,7 @@
       "alternativeHeadline": "A loklak API based twitter social-wall",
       "applicationCategory": "Scraper",
       "applicationSubCategory": "data aggregation",
-      "operatingSystem": "http://loklak.org",
+      "operatingSystem": "http://api.loklak.org",
       "author": {
         "@type": "Person",
         "name": "Sopan Khosla",
@@ -80,7 +80,7 @@
       "alternativeHeadline": "Forgot Password",
       "applicationCategory": "Misc",
       "applicationSubCategory": "account operations",
-      "operatingSystem": "http://loklak.org",
+      "operatingSystem": "http://api.loklak.org",
       "author": {
         "@type": "Person",
         "name": "Shiven Mian",
@@ -98,7 +98,7 @@
       "alternativeHeadline": "the 'hello world' app that you want to copy-paste for your own app",
       "applicationCategory": "Misc",
       "applicationSubCategory": "Hello World",
-      "operatingSystem": "http://loklak.org",
+      "operatingSystem": "http://api.loklak.org",
       "author": {
         "@type": "Person",
         "name": "Michael Christen",
@@ -115,7 +115,7 @@
       "alternativeHeadline": "work from GCI task",
       "applicationCategory": "Search",
       "applicationSubCategory": "Text Retrieval",
-      "operatingSystem": "http://loklak.org",
+      "operatingSystem": "http://api.loklak.org",
       "author": {
         "@type": "Person",
         "name": "M.Yasoob Ullah",
@@ -133,7 +133,7 @@
       "alternativeHeadline": "work from GCI task",
       "applicationCategory": "Search",
       "applicationSubCategory": "Text Retrieval",
-      "operatingSystem": "http://loklak.org",
+      "operatingSystem": "http://api.loklak.org",
       "author": {
         "@type": "Person",
         "name": "Fossasia",
@@ -150,7 +150,7 @@
       "alternativeHeadline": "A Leaderboard based on the number of tweets",
       "applicationCategory": "Scraper",
       "applicationSubCategory": "Text Retrieval",
-      "operatingSystem": "http://loklak.org",
+      "operatingSystem": "http://api.loklak.org",
       "author": {
         "@type": "Person",
         "name": "Damini Satya",
@@ -168,7 +168,7 @@
       "alternativeHeadline": "College Elections with loklak",
       "applicationCategory": "Scraper",
       "applicationSubCategory": "Text Retrieval",
-      "operatingSystem": "http://loklak.org",
+      "operatingSystem": "http://api.loklak.org",
       "author": {
         "@type": "Person",
         "name": "Sushma Kukkadapu",
@@ -186,7 +186,7 @@
       "alternativeHeadline": "Login",
       "applicationCategory": "Misc",
       "applicationSubCategory": "account operations",
-      "operatingSystem": "http://loklak.org",
+      "operatingSystem": "http://api.loklak.org",
       "author": {
         "@type": "Person",
         "name": "Shiven Mian",
@@ -204,7 +204,7 @@
       "alternativeHeadline": "Loklak-webtweets",
       "applicationCategory": "Misc",
       "applicationSubCategory": "Text Retrieval",
-      "operatingSystem": "http://loklak.org",
+      "operatingSystem": "http://api.loklak.org",
       "author": {
         "@type": "Person",
         "name": "Fossasia",
@@ -221,7 +221,7 @@
       "alternativeHeadline": "Reset Password",
       "applicationCategory": "Misc",
       "applicationSubCategory": "account operations",
-      "operatingSystem": "http://loklak.org",
+      "operatingSystem": "http://api.loklak.org",
       "author": {
         "@type": "Person",
         "name": "Shiven Mian",
@@ -266,7 +266,7 @@
       "alternativeHeadline": "list all queries made in loklak",
       "applicationCategory": "Search",
       "applicationSubCategory": "Text Retrieval",
-      "operatingSystem": "http://loklak.org",
+      "operatingSystem": "http://api.loklak.org",
       "author": {
         "@type": "Person",
         "name": "Anshuman Agarwal",
@@ -286,7 +286,7 @@
       "alternativeHeadline": "Tweet Heat Map",
       "applicationCategory": "Visualizer",
       "applicationSubCategory": "Hello World",
-      "operatingSystem": "http://loklak.org",
+      "operatingSystem": "http://api.loklak.org",
       "author": {
         "@type": "Person",
         "name": "Fossasia",
@@ -306,7 +306,7 @@
       "alternativeHeadline": "Using D3 stack layout",
       "applicationCategory": "Visualizer",
       "applicationSubCategory": "Hello World",
-      "operatingSystem": "http://loklak.org",
+      "operatingSystem": "http://api.loklak.org",
       "author": {
         "@type": "Person",
         "name": "Leon",
@@ -323,7 +323,7 @@
       "alternativeHeadline": "work from GCI task",
       "applicationCategory": "Scraper",
       "applicationSubCategory": "Text Retrieval",
-      "operatingSystem": "http://loklak.org",
+      "operatingSystem": "http://api.loklak.org",
       "author": {
         "@type": "Person",
         "name": "M.Yasoob Ullah",
@@ -344,7 +344,7 @@
       "alternativeHeadline": "Compare Twitter Profiles",
       "applicationCategory": "Visualizer",
       "applicationSubCategory": "About Project",
-      "operatingSystem": "http://loklak.org",
+      "operatingSystem": "http://api.loklak.org",
       "oneLineDescription":"An application which shows comparison between two twitter profiles",
       "getStarted":"getStarted.md",
       "appUse":"appUse.md",
@@ -398,7 +398,7 @@
       "alternativeHeadline": "Sign Up",
       "applicationCategory": "Misc",
       "applicationSubCategory": "account operations",
-      "operatingSystem": "http://loklak.org",
+      "operatingSystem": "http://api.loklak.org",
       "author": {
         "@type": "Person",
         "name": "Shiven Mian",
@@ -416,7 +416,7 @@
       "alternativeHeadline": "Account Permissions",
       "applicationCategory": "Misc",
       "applicationSubCategory": "account operations",
-      "operatingSystem": "http://loklak.org",
+      "operatingSystem": "http://api.loklak.org",
       "author": {
         "@type": "Person",
         "name": "Robert Mader",
@@ -443,7 +443,7 @@
       "alternativeHeadline": "Tracking GPS NMEA Data using Loklak and OpenStreetMaps",
       "applicationCategory": "Internet Of Things",
       "applicationSubCategory": "GPS",
-      "operatingSystem": "http://loklak.org",
+      "operatingSystem": "http://api.loklak.org",
       "author": {
         "@type": "Person",
         "name": "Sudheesh Singanamalla",
@@ -464,7 +464,7 @@
       "alternativeHeadline": "Using D3 pack layout",
       "applicationCategory": "Visualizer",
       "applicationSubCategory": "Hello World",
-      "operatingSystem": "http://loklak.org",
+      "operatingSystem": "http://api.loklak.org",
       "author": {
         "@type": "Person",
         "name": "Leon",
@@ -484,7 +484,7 @@
       "alternativeHeadline": "loklak heat mapper",
       "applicationCategory": "Visualizer",
       "applicationSubCategory": "Hello World",
-      "operatingSystem": "http://loklak.org",
+      "operatingSystem": "http://api.loklak.org",
       "author": {
         "@type": "Person",
         "name": "Fossasia",
@@ -504,7 +504,7 @@
       "alternativeHeadline": "Emoji Heatmapper with Loklak",
       "applicationCategory": "Visualizer",
       "applicationSubCategory": "Emoji",
-      "operatingSystem": "http://loklak.org",
+      "operatingSystem": "http://api.loklak.org",
       "author": {
         "@type": "Person",
         "name": "Kavitha E Nair",
@@ -523,7 +523,7 @@
       "alternativeHeadline": "loklakheatmap",
       "applicationCategory": "Visualizer",
       "applicationSubCategory": "Hello World",
-      "operatingSystem": "http://loklak.org",
+      "operatingSystem": "http://api.loklak.org",
       "author": {
         "@type": "Person",
         "name": "Fossasia",
@@ -548,7 +548,7 @@
       "alternativeHeadline": "Advanced Search Tool for Loklak",
       "applicationCategory": "Search",
       "applicationSubCategory": "Apps listing",
-      "operatingSystem": "http://loklak.org",
+      "operatingSystem": "http://api.loklak.org",
       "author": {
         "@type": "Person",
         "name": "Sudheesh Singanamalla",
@@ -566,7 +566,7 @@
       "alternativeHeadline": "Know more about Search aggregations",
       "applicationCategory": "Search",
       "applicationSubCategory": "Text Retrieval",
-      "operatingSystem": "http://loklak.org",
+      "operatingSystem": "http://api.loklak.org",
       "author": {
         "@type": "Person",
         "name": "Damini Satya",
@@ -584,7 +584,7 @@
       "alternativeHeadline": "Tool for visualizing the sentiment of a tweet",
       "applicationCategory": "Visualizer",
       "applicationSubCategory": "Text Retrieval",
-      "operatingSystem": "http://loklak.org",
+      "operatingSystem": "http://api.loklak.org",
       "author": {
         "@type": "Person",
         "name": "Damini Satya",
@@ -605,7 +605,7 @@
       "alternativeHeadline": "Twitter feed using poll and diff, infinite scroll",
       "applicationCategory": "Scraper",
       "applicationSubCategory": "front-end app",
-      "operatingSystem": "http://loklak.org",
+      "operatingSystem": "http://api.loklak.org",
       "author": {
         "@type": "Person",
         "name": "Leon Mak",
@@ -622,7 +622,7 @@
       "alternativeHeadline": "Increase Loklak peers",
       "applicationCategory": "Internet Of Things",
       "applicationSubCategory": "Peers Deployment",
-      "operatingSystem": "http://loklak.org",
+      "operatingSystem": "http://api.loklak.org",
       "author": {
         "@type": "Person",
         "name": "Damini Satya",
@@ -640,7 +640,7 @@
       "alternativeHeadline": "Key Registration",
       "applicationCategory": "Misc",
       "applicationSubCategory": "account operations",
-      "operatingSystem": "http://loklak.org",
+      "operatingSystem": "http://api.loklak.org",
       "author": {
         "@type": "Person",
         "name": "Robert Mader",
@@ -661,7 +661,7 @@
       "alternativeHeadline": "A user profile visualization using loklak",
       "applicationCategory": "Visualizer",
       "applicationSubCategory": "Text Retrieval",
-      "operatingSystem": "http://loklak.org",
+      "operatingSystem": "http://api.loklak.org",
       "author": {
         "@type": "Person",
         "name": "Sudheesh Singanamalla",
@@ -679,7 +679,7 @@
       "alternativeHeadline": "work from GCI task",
       "applicationCategory": "Search",
       "applicationSubCategory": "Text Retrieval",
-      "operatingSystem": "http://loklak.org",
+      "operatingSystem": "http://api.loklak.org",
       "author": {
         "@type": "Person",
         "name": "Yathannsh Kulshrestha",
@@ -697,7 +697,7 @@
       "alternativeHeadline": "A vertical message timeline",
       "applicationCategory": "Scraper",
       "applicationSubCategory": "Hello World",
-      "operatingSystem": "http://loklak.org",
+      "operatingSystem": "http://api.loklak.org",
       "author": {
         "@type": "Person",
         "name": "Ruthvik Vijayakumar",
@@ -714,7 +714,7 @@
       "alternativeHeadline":"Top trending hashtags showing app",
       "applicationCategory":"Visualizer",
       "applicationSubCategory":"About project",
-      "operatingSystem":"http://loklak.org",
+      "operatingSystem":"http://api.loklak.org",
       "author":{
         "@type":"Person",
         "name":"Deepjyoti Mondal",
@@ -732,7 +732,7 @@
       "alternativeHeadline":"World Mood Tracker App",
       "applicationCategory":"Visualizer",
       "applicationSubCategory":"Map",
-      "operatingSystem":"http://loklak.org",
+      "operatingSystem":"http://api.loklak.org",
       "author":{
         "@type":"Person",
         "name":"Pratyush Singh",
@@ -750,7 +750,7 @@
       "alternativeHeadline": "Loklak API for python",
       "applicationCategory": "Loklak Libraries",
       "applicationSubCategory": "library",
-      "operatingSystem": "http://loklak.org",
+      "operatingSystem": "http://api.loklak.org",
       "promoImage": "promo.png",
       "appImages": "",
       "oneLineDescription": "API for python as a replacement for twitter API",
@@ -773,7 +773,7 @@
       "alternativeHeadline": "Ruby wrapper for loklak.org API ",
       "applicationCategory": "Loklak Libraries",
       "applicationSubCategory": "library",
-      "operatingSystem": "http://loklak.org",
+      "operatingSystem": "http://api.loklak.org",
       "promoImage": "promo.png",
       "appImages": ["disp1.png"],
       "oneLineDescription": "API wrapper to use loklak API from Ruby",
@@ -796,7 +796,7 @@
       "alternativeHeadline": "Node js wrapper for the loklak API",
       "applicationCategory": "Loklak Libraries",
       "applicationSubCategory": "library",
-      "operatingSystem": "http://loklak.org",
+      "operatingSystem": "http://api.loklak.org",
       "promoImage": "promo.png",
       "appImages": [
         "disp1.png"
@@ -821,7 +821,7 @@
       "alternativeHeadline": "Go wrapper for the loklak API",
       "applicationCategory": "Loklak Libraries",
       "applicationSubCategory": "library",
-      "operatingSystem": "http://loklak.org",
+      "operatingSystem": "http://api.loklak.org",
       "promoImage": "promo.png",
       "appImages": [
         "disp1.png"
@@ -846,7 +846,7 @@
       "alternativeHeadline": "Java library for the loklak API",
       "applicationCategory": "Loklak Libraries",
       "applicationSubCategory": "library",
-      "operatingSystem": "http://loklak.org",
+      "operatingSystem": "http://api.loklak.org",
       "promoImage": "promo.png",
       "appImages": [
         "disp1.png"
@@ -871,7 +871,7 @@
       "alternativeHeadline":"App to compare tweet aggregations and statistics",
       "applicationCategory":"Visualizer",
       "applicationSubCategory":"About project",
-      "operatingSystem":"http://loklak.org",
+      "operatingSystem":"http://api.loklak.org",
       "promoImage":"promo.png",
       "appImages":["disp1.png", "disp2.png", "disp3.png"],
       "oneLineDescription":"An applicaton to visually compare tweet statistics",
@@ -930,7 +930,7 @@
       "alternativeHeadline":"App to generate Word Cloud using Loklak",
       "applicationCategory":"Visualizer",
       "applicationSubCategory":"About project",
-      "operatingSystem":"http://loklak.org",
+      "operatingSystem":"http://api.loklak.org",
       "promoImage":"promo.png",
       "appImages":["disp1.png", "disp2.png", "disp3.png"],
       "oneLineDescription":"App to visualize Loklak data as word cloud",
