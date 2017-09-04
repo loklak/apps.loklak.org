@@ -16,6 +16,7 @@
     "path": "^0.12.7",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-overlays": "^0.8.0",
     "style-loader": "^0.18.2",
     "webpack": "^2.6.1",
     "webpack-dev-server": "^2.4.5"
