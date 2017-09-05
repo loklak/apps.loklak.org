@@ -1,0 +1,65 @@
+body {
+    padding: 0px;
+}
+
+.sidebar {
+    background-color: #F1F1F1;
+    padding: 0px;
+    position: fixed;
+    text-decoration: none;
+    height: 100%;
+}
+
+.nav-sidebar {
+    background-color: #E6E6E6;
+    padding-top: 40px;
+}
+
+.nav-sidebar > li > a {
+    padding-right: 20px;
+    padding-left: 20px;
+    background-color: #e6e6e6;
+    color:rgb(119,119,119);
+}
+.nav-sidebar li a:focus {
+    background-color: #e6e6e6;
+    color:rgb(119,119,119);
+}
+.nav-sidebar li a:hover {
+    background-color: grey;
+    color:white;
+}
+
+footer {
+    z-index: 1000;
+    border-top: 1px solid #e4e4e4;
+    background-color: #f1f1f1;
+    padding: 0px 14px;
+    margin-top: 96px;
+}
+
+footer a {
+    padding: 0px 14px;
+    line-height: 40px;
+    display:block;
+    font-size: small;
+    font-family:"Courier New";
+}
+
+.right {
+    color: #7E7E7E;
+}
+
+.right:hover {
+    color: #424242;
+}
+
+.left, .left:hover {
+    color: #CB385C;
+}
+
+@media (max-width: 780px) {
+    .sidebar {
+        display: none;
+    }
+}
