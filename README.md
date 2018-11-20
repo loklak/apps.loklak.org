@@ -92,7 +92,7 @@ Some of the applications in the repository include-
 
 2. Check quality of your app
   - Do a json-ld validation: use https://developers.google.com/structured-data/testing-tool/ to check your ```app.json```
-  - Call http://api.loklak.org/api/apps.json to see if your ```app.json``` is included in the app list
+  - Call https://api.loklak.org/api/apps.json to see if your ```app.json``` is included in the app list
   - Check if all declarations in your ```app.json``` relate to your own app
     (if you copy-pasted another ```app.json```, you may have forgotten to change some fields)
   - Under Application Category try and choose one of the following Categories:

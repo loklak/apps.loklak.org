@@ -40,7 +40,7 @@
 
              $scope.Scrape = function() {
                 $scope.spinner=true;
-                 var QueryCommand = 'http://api.loklak.org/api/genericscraper.json?\
+                 var QueryCommand = 'https://api.loklak.org/api/genericscraper.json?\
                                      callback=JSON_CALLBACK&url=' +
                                      $scope.url;
                  $http.jsonp(String(QueryCommand)).success(function(JSON) {

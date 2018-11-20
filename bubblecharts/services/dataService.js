@@ -12,11 +12,11 @@
         {
 
             // user's tweets latest first
-            var defaultUri = "http://api.loklak.org/api/search.json?callback=JSON_CALLBACK&q=loklak";
+            var defaultUri = "https://api.loklak.org/api/search.json?callback=JSON_CALLBACK&q=loklak";
             var uri = "";
             if(queryType === "search") {
                 console.log(queryTerm);
-                uri = "http://api.loklak.org/api/search.json?callback=JSON_CALLBACK&q=" + queryTerm;
+                uri = "https://api.loklak.org/api/search.json?callback=JSON_CALLBACK&q=" + queryTerm;
             } else {
                 uri = defaultUri;
             }

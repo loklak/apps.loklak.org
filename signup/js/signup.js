@@ -1,7 +1,7 @@
 $(document).ready(function ()
 {
     // get password parameters
-    $.ajax( "http://api.loklak.org/api/signup.json", {
+    $.ajax( "https://api.loklak.org/api/signup.json", {
         data: { getParameters: true },
         dataType: "jsonp",
         success: function (response) {
@@ -170,7 +170,7 @@ $(document).ready(function ()
     $("#confirmpass").keyup(function (){checkConfirmPass();});
 
     var options = {
-        url:        "http://api.loklak.org/api/signup.json",
+        url:        "https://api.loklak.org/api/signup.json",
         type:       "get",
         dataType:   "jsonp",
         success(response) {

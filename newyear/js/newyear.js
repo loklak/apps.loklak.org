@@ -2,7 +2,7 @@ var app = angular.module("newyear", []);
 app.controller("TweetsController", ["$scope", "$http", function ($scope, $http) {
     $scope.d = new Date()
     $scope.n = $scope.d.getTimezoneOffset();
-    $scope.queryUrl = "http://api.loklak.org/api/search.json?timezoneOffset="+
+    $scope.queryUrl = "https://api.loklak.org/api/search.json?timezoneOffset="+
                       $scope.n+"&callback=JSON_CALLBACK&q=%23";
     $scope.queryTags = ["happynewyear", "newyear", "2017", "hello2017", "happy2017"];
     $scope.tweets = [];

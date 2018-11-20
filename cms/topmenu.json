@@ -4,6 +4,6 @@
     {"Search": "http://loklak.org"},
     {"Blog": "http://blog.loklak.net/"},
     {"Developers": "http://dev.loklak.org"},
-    {"API": "http://api.loklak.org"}
+    {"API": "https://api.loklak.org"}
   ]
 }

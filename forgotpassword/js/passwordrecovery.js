@@ -7,7 +7,7 @@ $(document).ready(function () {
             $('#status-box').text("Please fill email");
         } else{
             var mail = $('#email').val();
-            $.ajax( "http://api.loklak.org/api/recoverpassword.json", {
+            $.ajax( "https://api.loklak.org/api/recoverpassword.json", {
                 data: { forgotemail: mail },
                 dataType: 'jsonp',
                 success: function (response) {

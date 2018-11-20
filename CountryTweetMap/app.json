@@ -7,7 +7,7 @@
   "alternativeHeadline":"App to plot tweet distribution on map",
   "applicationCategory":"Visualizer",
   "applicationSubCategory":"About project",
-  "operatingSystem":"http://api.loklak.org",
+  "operatingSystem":"https://api.loklak.org",
   "promoImage":"promo.png",
   "appImages":["disp1.png", "disp2.png", "disp3.png"],
   "oneLineDescription":"An app to plot and compare tweet frequency on map",

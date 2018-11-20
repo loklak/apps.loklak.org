@@ -49,7 +49,7 @@ if __name__ == "__main__" :
   app_json["applicationSubCategory"] = ""
 
   # Value must be a string
-  app_json["operatingSystem"] = "http://api.loklak.org"
+  app_json["operatingSystem"] = "https://api.loklak.org"
 
   # Value must be a string
   app_json["promoImage"] = "promo.png"

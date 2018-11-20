@@ -2,7 +2,7 @@ var app = angular.module('tweet-timeline', ['angular-loading-bar']);
 app.controller('tweet-search', function ($scope, $http, $sce) {
     $scope.loading = true;
     $scope.getTweets = function () {
-        $http.jsonp('http://api.loklak.org/api/search.json?callback=JSON_CALLBACK&q='+
+        $http.jsonp('https://api.loklak.org/api/search.json?callback=JSON_CALLBACK&q='+
                      $scope.search).success( function (response) {
             $scope.tweets = response.statuses;
             for (var i = 0; i < $scope.tweets.length; ++i) {

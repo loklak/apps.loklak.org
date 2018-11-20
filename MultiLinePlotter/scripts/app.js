@@ -34,7 +34,7 @@ app.controller("app", function ($scope, $http) {
             return;
         }
         $scope.graphLoading = true;
-        $http.jsonp('http://api.loklak.org/api/search.json?callback=JSON_CALLBACK',
+        $http.jsonp('https://api.loklak.org/api/search.json?callback=JSON_CALLBACK',
             {params: {q: $scope.tweet, source: 'cache', count: '0', fields: 'created_at'}})
                 .then(function (response) {
                     $scope.getData(response.data.aggregations.created_at);
@@ -187,7 +187,7 @@ app.controller("app", function ($scope, $http) {
 
         $scope.selectedTweetStat = tweetData[0];
         $('#tweetInfo').modal('show');
-        $http.jsonp("http://api.loklak.org/api/search.json?callback=JSON_CALLBACK", {params: {q: record}})
+        $http.jsonp("https://api.loklak.org/api/search.json?callback=JSON_CALLBACK", {params: {q: record}})
                 .then(function(response) {
                     $scope.statuses = response.data.statuses;
                     $scope.tweetsLoading = false;

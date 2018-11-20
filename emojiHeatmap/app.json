@@ -14,7 +14,7 @@
   "promoImage":"promo.png",
   "appImages":["disp1.png", "disp2.png", "disp3.png"],
   "oneLineDescription":"App which shows emoji usage in twitter",
-  "operatingSystem": "http://api.loklak.org",
+  "operatingSystem": "https://api.loklak.org",
   "contributors": [{"name": "kavithaenair"}],
   "appSource": "https://github.com/fossasia/apps.loklak.org/tree/master/emojiHeatmap",
   "techStack": ["HTML", "CSS", "AngularJs", "Bootstrap", "Loklak API"],

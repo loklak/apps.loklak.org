@@ -12,7 +12,7 @@ $(document).ready(function () {
 
     // get password parameters
     var regex;
-    $.ajax( "http://api.loklak.org/api/pubkey_registration.json", {
+    $.ajax( "https://api.loklak.org/api/pubkey_registration.json", {
         data: { getParameters: true },
         dataType: 'jsonp',
         success: function (response) {
@@ -116,7 +116,7 @@ $(document).ready(function () {
             }
             //console.log(data);
 
-            $.ajax( "http://api.loklak.org/api/pubkey_registration.json", {
+            $.ajax( "https://api.loklak.org/api/pubkey_registration.json", {
                 data: data,
                 dataType: 'jsonp',
                 success: function (response) {

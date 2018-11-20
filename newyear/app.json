@@ -1,7 +1,7 @@
 {
   "@context":"http://schema.org",
   "@type":"SoftwareApplication",
-  "permissions":"http://api.loklak.org/api/search.json",
+  "permissions":"https://api.loklak.org/api/search.json",
   "name":"newyear",
   "headline":"New Year tweets collected with loklak",
   "alternativeHeadline":"Timeline of New Year Tweets",

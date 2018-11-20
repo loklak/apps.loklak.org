@@ -14,7 +14,7 @@ app.controller('Controller', ['$scope', '$http', '$sce', function($scope, $http,
         if (query !== undefined)
             $scope.query = query;
 
-        var QueryCommand = 'http://api.loklak.org/api/user.json?callback=JSON_CALLBACK&screen_name=' + $scope.query +
+        var QueryCommand = 'https://api.loklak.org/api/user.json?callback=JSON_CALLBACK&screen_name=' + $scope.query +
             '&followers=1000&following=1000';
 
         console.log($scope.query);

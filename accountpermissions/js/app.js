@@ -1,5 +1,5 @@
 $(document).ready( function () {
-    $.ajax( "http://api.loklak.org/api/account-permissions.json", {
+    $.ajax( "https://api.loklak.org/api/account-permissions.json", {
         dataType: "jsonp",
         success (response) {
             $("#permissions").removeClass("hidden");
@@ -19,7 +19,7 @@ $(document).ready( function () {
         }
     });
 
-    $.ajax( "http://api.loklak.org/api/account-permissions.json", {
+    $.ajax( "https://api.loklak.org/api/account-permissions.json", {
         data: { getServiceList: true },
         dataType: "jsonp",
         success (response) {
@@ -40,7 +40,7 @@ $(document).ready( function () {
 
         if(child.attr("valueSet") === "false"){
             child.hide();
-            $.ajax( "http://api.loklak.org/api/account-permissions.json", {
+            $.ajax( "https://api.loklak.org/api/account-permissions.json", {
                 data: { getServicePermissions: obj.attr("id") },
                 dataType: "jsonp",
                 success (response) {

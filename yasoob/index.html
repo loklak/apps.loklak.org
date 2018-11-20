@@ -30,7 +30,7 @@
     <script>
       angular.module('Twitter', ['ngResource']);
       function TwitterCtrl($scope, $resource) {
-        $scope.twitter = $resource('http://api.loklak.org/api/:action',
+        $scope.twitter = $resource('https://api.loklak.org/api/:action',
           {
             action:'search.json',
             callback:'JSON_CALLBACK'

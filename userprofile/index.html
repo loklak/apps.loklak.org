@@ -114,7 +114,7 @@
 
             $scope.Search = function() {
 
-                var QueryCommand = 'http://api.loklak.org/api/search.json?' +
+                var QueryCommand = 'https://api.loklak.org/api/search.json?' +
                                    'callback=JSON_CALLBACK&q=' +
                                    $scope.query;
 
@@ -126,7 +126,7 @@
                     }
                 });
 
-                var userQueryCommand = 'http://api.loklak.org/api/user.json?' +
+                var userQueryCommand = 'https://api.loklak.org/api/user.json?' +
                                        'callback=JSON_CALLBACK&screen_name=' +
                                        $scope.query;
 

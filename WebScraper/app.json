@@ -1,7 +1,7 @@
 {
   "@context":"http://schema.org",
   "@type":"SoftwareApplication",
-  "permissions":"http://api.loklak.org/api/genericscraper.json",
+  "permissions":"https://api.loklak.org/api/genericscraper.json",
   "name":"WebScraper",
   "headline":"WebScraper",
   "alternativeHeadline":"Application which converts web pages into structured data",

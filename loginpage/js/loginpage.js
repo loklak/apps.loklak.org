@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $.ajax( "http://api.loklak.org/api/login.json", {
+    $.ajax( "https://api.loklak.org/api/login.json", {
         data: { checkLogin: true },
         dataType: "jsonp",
         success: function (response) {
@@ -31,7 +31,7 @@ $(document).ready(function () {
     setRemember();
 
     var optionsLogin = {
-        url:        "http://api.loklak.org/api/login.json",
+        url:        "https://api.loklak.org/api/login.json",
         type:       "get",
         dataType:   "jsonp",
         success(response) {
@@ -49,7 +49,7 @@ $(document).ready(function () {
     });
 
     var optionsLogout = {
-        url:        "http://api.loklak.org/api/login.json",
+        url:        "https://api.loklak.org/api/login.json",
         type:       "get",
         dataType:   "jsonp",
         success(response) {

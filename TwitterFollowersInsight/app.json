@@ -14,7 +14,7 @@
   "promoImage":"promo.png",
   "appImages":["disp1.png", "disp2.png", "disp3.png"],
   "oneLineDescription":"Application which shows country wise distribution of followers",
-  "operatingSystem": "http://api.loklak.org",
+  "operatingSystem": "https://api.loklak.org",
   "contributors": [{"name": "kavithaenair"}],
   "appSource": "https://github.com/fossasia/apps.loklak.org/tree/master/TwitterFollowersInsight",
   "techStack": ["HTML", "CSS", "AngularJs", "Bootstrap", "Loklak API", "HighCharts"],

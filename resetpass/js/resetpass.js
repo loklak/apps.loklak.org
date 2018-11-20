@@ -5,7 +5,7 @@ $(document).ready(function () {
     var regex;
     var urltoken = getParameter('token');
 
-    $.ajax( "http://api.loklak.org/api/recoverpassword.json", {
+    $.ajax( "https://api.loklak.org/api/recoverpassword.json", {
         data: { getParameters: true, token: urltoken },
         dataType: 'jsonp',
         success: function (response) {
@@ -73,7 +73,7 @@ $(document).ready(function () {
         if(!total) {
             var newpass = $('#pass').val();
 
-            $.ajax( "http://api.loklak.org/api/resetpassword.json", {
+            $.ajax( "https://api.loklak.org/api/resetpassword.json", {
                 data: { token: urltoken, newpass: newpass },
                 dataType: 'jsonp',
                 success: function (response) {

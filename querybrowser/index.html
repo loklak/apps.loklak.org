@@ -29,7 +29,7 @@
     <script>
       var app = angular.module('querybrowser', []);
       app.controller('queryCtrl', function($scope, $http) {
-        $http.jsonp("http://api.loklak.org/api/suggest.json?callback=JSON_CALLBACK&count=10000" +
+        $http.jsonp("https://api.loklak.org/api/suggest.json?callback=JSON_CALLBACK&count=10000" +
           "&order=desc&orderby=query_count")
         .then(function (response) {$scope.queries = response.data.queries;});
       });

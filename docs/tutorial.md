@@ -86,7 +86,7 @@ present you a preview of the app.json it has created.
   "alternativeHeadline": "My first loklak app",
   "applicationCategory": "Misc",
   "applicationSubCategory": "",
-  "operatingSystem": "http://api.loklak.org",
+  "operatingSystem": "https://api.loklak.org",
   "promoImage": "promo.png",
   "appImages": [
     "preview1.png",

@@ -134,7 +134,7 @@ function constructQuery() {
     var ipField = $('#inputFieldArea').val();
 
     if (selectedAPI != 'search.json') {
-        serviceURL = "http://api.loklak.org/";
+        serviceURL = "https://api.loklak.org/";
         var constructedURL = serviceURL;
         constructedURL += 'api/' + selectedAPI;
         if (selectedAPI == 'xml2json.json' || selectedAPI == 'csv2json.json') {
@@ -147,7 +147,7 @@ function constructQuery() {
     else {
         var query = $('#query').val();
         var timeZoneOffset = $('#timezoneoffset').val();
-        var serviceURL = "http://api.loklak.org/";
+        var serviceURL = "https://api.loklak.org/";
         var constructedURL = serviceURL;
         var from = $('#from').val();
         var since = $('#since').val();

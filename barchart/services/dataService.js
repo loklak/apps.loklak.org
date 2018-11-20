@@ -12,7 +12,7 @@
         {
 
             // user's tweets latest first
-            var defaultUri = "http://api.loklak.org/api/search.json?\
+            var defaultUri = "https://api.loklak.org/api/search.json?\
                               callback=JSON_CALLBACK&q=loklak";
             var uri = "";
             var qCount = "&count=" + count;
@@ -21,13 +21,13 @@
                 if(typeof(dateFrom) !== "undefined" || typeof(dateTo) !== "undefined") {
                     var dateFromF = $moment(dateFrom).format('YYYY-MM-DD') || "";
                     var dateToF = $moment(dateTo).format('YYYY-MM-DD') || "";
-                    uri = "http://api.loklak.org/api/search.json?\
+                    uri = "https://api.loklak.org/api/search.json?\
                            callback=JSON_CALLBACK&q=" + queryTerm +
                            "+since:" + dateFromF + "+until:" + dateToF;
                     console.log(uri);
 
                 } else {
-                    uri = "http://api.loklak.org/api/search.json?\
+                    uri = "https://api.loklak.org/api/search.json?\
                            callback=JSON_CALLBACK&q=" + queryTerm;
                 }
             } else {
