@@ -43,7 +43,7 @@ $(function () {
 
 $('#search-but').click(function (event) {
   var query = $("#query").val();
-  query = 'http://api.loklak.org/api/search.json?q=' + encodeURIComponent(query);
+  query = 'https://api.loklak.org/api/search.json?q=' + encodeURIComponent(query);
 
   $("#masonry").empty();
   $("#masonry").html("<div class='item-size'></div>");
